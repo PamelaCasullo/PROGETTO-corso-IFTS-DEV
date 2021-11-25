@@ -1,7 +1,4 @@
 Hello world!
 Ora io aggiungo una nuova riga
-<<<<<<< HEAD
 Grazie gentilissimo
-=======
 Ciao sono Dorjan!
->>>>>>> 90b1b40ac6ef9eedb1798a92f3ea47b7fb127686
