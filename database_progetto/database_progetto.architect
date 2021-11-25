@@ -31,7 +31,7 @@
     <column id="COL7" populated="true" UUID="646fae39-a19b-4cc9-bcc3-724e89efc28e" autoIncrement="false" autoIncrementSequenceName="studente_numero_telefono_seq" defaultValue="" name="numero_telefono" nullable="0" physicalName="numero_telefono" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL8" populated="true" UUID="63cdb298-4f12-467a-b4bc-40d01f462ca4" autoIncrement="false" autoIncrementSequenceName="studente_data_di_ nascita_seq" defaultValue="" name="data_di_ nascita" nullable="0" physicalName="data_di_ nascita" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+    <column id="COL8" populated="true" UUID="63cdb298-4f12-467a-b4bc-40d01f462ca4" autoIncrement="false" autoIncrementSequenceName="studente_data_di_nascita_seq" defaultValue="" name="data_di_ nascita" nullable="0" physicalName="data_di_nascita" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
     </folder>
