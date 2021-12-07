@@ -3,4 +3,5 @@ cd (mi sposto nella cartella download-invio)
 -> ssh -i "C:\EC2_AWS_RIZZOLI.pem" ec2-user@ec2-13-59-158-203.us-east-2.compute.amazonaws.com
 
 COMANDO PER APRIRE POWER ARCHITECT:
-cd(mi sposto nella cartella di powerarchitect) java -jar architect.jar
+cdC:\Users\AdamaEmmanuelTraore\Desktop\DEV\SQL POWER ARCHITECS\architect-1.0.9
+ java -jar architect.jar
