@@ -1,6 +1,9 @@
 Per connettersi alla VM:
 	ssh -i "EC2_AWS_RIZZOLI.pem" ec2-user@ec2-18-222-171-165.us-east-2.compute.amazonaws.com
 
+Prima di accedere, dovete riavviare il servizio:
+	sudo service mysqld restart
+
 Per accedere a mysql:
 	mysql -u nomeUtente -p (premere invio e vi verrà chiesta la password, inseriritela e siete dentro!)
 
