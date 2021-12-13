@@ -13,7 +13,7 @@
   <table id="TAB1" populated="true" UUID="68f7b9d1-14b7-4974-9f26-07938d525826" name="student" objectType="TABLE" physicalName="student" >
    <remarks></remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL2" populated="true" UUID="0fbebba4-19cf-4dc3-a336-dbcd15fc47a4" autoIncrement="false" autoIncrementSequenceName="student_id_studente_seq" defaultValue="" name="id_student" nullable="0" physicalName="id_student" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL2" populated="true" UUID="0fbebba4-19cf-4dc3-a336-dbcd15fc47a4" autoIncrement="true" autoIncrementSequenceName="student_id_studente_seq" defaultValue="" name="id_student" nullable="0" physicalName="id_student" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL3" populated="true" UUID="d337f26b-007e-4751-a06a-ff94c336d0fb" autoIncrement="false" autoIncrementSequenceName="student_email_personale_seq" defaultValue="" name="personal_email" nullable="0" physicalName="personal_email" precision="320" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -34,7 +34,7 @@
     <column id="COL8" populated="true" UUID="63cdb298-4f12-467a-b4bc-40d01f462ca4" autoIncrement="false" autoIncrementSequenceName="student_date_of_birth_seq" defaultValue="" name="date_of_birth" nullable="0" physicalName="date_of_birth" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
-    <column id="COL9" populated="true" UUID="2a910238-0d78-467f-bd35-5c2fee7b9451" autoIncrement="false" autoIncrementSequenceName="course_id_course_seq" defaultValue="" name="id_course" nullable="0" physicalName="id_course" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL9" populated="true" UUID="2a910238-0d78-467f-bd35-5c2fee7b9451" autoIncrement="false" autoIncrementSequenceName="course_id_course_seq" defaultValue="" name="course_id_course" nullable="0" physicalName="course_id_course" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -95,7 +95,7 @@
     <column id="COL25" populated="true" UUID="b66bafe3-0012-489a-b7fd-96a527b8aaa8" autoIncrement="false" autoIncrementSequenceName="course_type_of_course_seq" defaultValue="" name="type_of_course" nullable="0" physicalName="type_of_course" precision="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks></remarks>
     </column>
-    <column id="COL26" populated="true" UUID="f4b687cf-39a7-476c-a9e8-3a42f2da7c30" autoIncrement="false" autoIncrementSequenceName="body_New Column_seq" defaultValue="" name="id_institution" nullable="0" physicalName="id_institution" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL26" populated="true" UUID="f4b687cf-39a7-476c-a9e8-3a42f2da7c30" autoIncrement="false" autoIncrementSequenceName="body_New Column_seq" defaultValue="" name="institution_id_institution" nullable="0" physicalName="institution_id_institution" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -112,7 +112,7 @@
   <table id="TAB29" populated="true" UUID="2ae4b253-e54a-4ad2-b17d-0adbf1e5d6cd" name="module" objectType="TABLE" physicalName="module" >
    <remarks></remarks>
    <folder id="FOLTAB291" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL30" populated="true" UUID="3de8357c-c74a-4fc6-a288-6494facb59bb" autoIncrement="false" autoIncrementSequenceName="module_id_module_seq" defaultValue="" name="id_module" nullable="0" physicalName="id_module" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL13" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL30" populated="true" UUID="3de8357c-c74a-4fc6-a288-6494facb59bb" autoIncrement="true" autoIncrementSequenceName="module_id_module_seq" defaultValue="" name="id_module" nullable="0" physicalName="id_module" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL13" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL31" populated="true" UUID="89904826-6a8f-40d5-909b-4ae3fe6e914a" autoIncrement="false" autoIncrementSequenceName="modulo_nome_seq" defaultValue="" name="title" nullable="0" physicalName="title" precision="50" referenceCount="1" scale="0" source-column-ref="COL16" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -124,7 +124,7 @@
     <column id="COL33" populated="true" UUID="00cc8ec3-0773-4811-8e65-4d820c6dd015" autoIncrement="false" autoIncrementSequenceName="modulo_tipo_corso_seq" defaultValue="" name="program" nullable="1" physicalName="program" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL34" populated="true" UUID="967bed0b-2759-481c-b643-add4d4b751bd" autoIncrement="false" autoIncrementSequenceName="course_id_course_seq" defaultValue="" name="id_course" nullable="0" physicalName="id_course" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL34" populated="true" UUID="967bed0b-2759-481c-b643-add4d4b751bd" autoIncrement="false" autoIncrementSequenceName="course_id_course_seq" defaultValue="" name="course_id_course" nullable="0" physicalName="course_id_course" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -144,7 +144,7 @@
     <column id="COL38" populated="true" UUID="174ccbe4-41ae-44c5-bb57-b60cd582ebfc" autoIncrement="true" autoIncrementSequenceName="lesson_id_lesson_seq" defaultValue="" name="id_lesson" nullable="0" physicalName="id_lesson" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL39" populated="true" UUID="4f73e81c-0990-4cb5-bd2f-e79c93972f31" autoIncrement="false" autoIncrementSequenceName="agenda_New Column_seq" defaultValue="" name="id_agenda" nullable="0" physicalName="id_agenda" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL39" populated="true" UUID="4f73e81c-0990-4cb5-bd2f-e79c93972f31" autoIncrement="false" autoIncrementSequenceName="agenda_New Column_seq" defaultValue="" name="agenda_id_agenda" nullable="0" physicalName="agenda_id_agenda" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL40" populated="true" UUID="c2169dcf-a395-4fbd-a8e1-1a86e2f70f24" autoIncrement="false" autoIncrementSequenceName="lesson_presenza_seq" defaultValue="" name="presence" nullable="0" physicalName="presence" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
@@ -164,7 +164,7 @@
   <table id="TAB43" populated="true" UUID="225dff46-70b2-43d1-8fb5-4f038d88811c" name="institution" objectType="TABLE" physicalName="institution" >
    <remarks></remarks>
    <folder id="FOLTAB431" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL44" populated="true" UUID="747e3823-7cdb-4057-82d1-ae88483ac380" autoIncrement="false" autoIncrementSequenceName="institution_id_istitution_seq" defaultValue="" name="id_institution" nullable="0" physicalName="id_institution" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL44" populated="true" UUID="747e3823-7cdb-4057-82d1-ae88483ac380" autoIncrement="true" autoIncrementSequenceName="institution_id_istitution_seq" defaultValue="" name="id_institution" nullable="0" physicalName="id_institution" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -181,13 +181,13 @@
   <table id="TAB47" populated="true" UUID="6f0b7735-edb7-4b21-a4eb-2aa55f31790a" name="agenda" objectType="TABLE" physicalName="agenda" >
    <remarks></remarks>
    <folder id="FOLTAB471" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL48" populated="true" UUID="5a4b2c92-d7bd-44c6-8d96-dccead234b95" autoIncrement="true" autoIncrementSequenceName="agenda_id_agenda_seq" defaultValue="" name="id_agenda" nullable="0" physicalName="id_agenda" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL48" populated="true" UUID="5a4b2c92-d7bd-44c6-8d96-dccead234b95" autoIncrement="true" autoIncrementSequenceName="agenda_id_agenda_seq" defaultValue="" name="id_agenda" nullable="0" physicalName="id_agenda" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL49" populated="true" UUID="b03bd7e5-8bb0-4a79-859b-9153bb0ab9a3" autoIncrement="false" autoIncrementSequenceName="module_id_module_seq" defaultValue="" name="id_module" nullable="0" physicalName="id_module" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL49" populated="true" UUID="b03bd7e5-8bb0-4a79-859b-9153bb0ab9a3" autoIncrement="false" autoIncrementSequenceName="module_id_module_seq" defaultValue="" name="module_id_module" nullable="0" physicalName="module_id_module" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL50" populated="true" UUID="9891236a-6a2c-42ea-82b0-1b74452e35a2" autoIncrement="false" autoIncrementSequenceName="teacher_id_teacher_seq" defaultValue="" name="id_teacher" nullable="0" physicalName="id_teacher" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL50" populated="true" UUID="9891236a-6a2c-42ea-82b0-1b74452e35a2" autoIncrement="false" autoIncrementSequenceName="teacher_id_teacher_seq" defaultValue="" name="teacher_id_teacher" nullable="0" physicalName="teacher_id_teacher" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL51" populated="true" UUID="c4822ed4-9571-4d98-b8cc-57056a8474a0" autoIncrement="false" autoIncrementSequenceName="agenda_description_seq" defaultValue="" name="description" nullable="1" physicalName="description" precision="1000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -210,14 +210,13 @@
   <table id="TAB55" populated="true" UUID="b2d90ef8-04be-4a9c-b801-8e07d117e463" name="exam" objectType="TABLE" physicalName="exam" >
    <remarks></remarks>
    <folder id="FOLTAB551" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL56" populated="true" UUID="82d9169b-185f-4b43-9aad-90f66f902aa8" autoIncrement="false" autoIncrementSequenceName="exam_id_esame_seq" defaultValue="" name="id_esame" nullable="0" physicalName="id_esame" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>
-</remarks>
+    <column id="COL56" populated="true" UUID="82d9169b-185f-4b43-9aad-90f66f902aa8" autoIncrement="true" autoIncrementSequenceName="exam_id_esame_seq" defaultValue="" name="id_esame" nullable="0" physicalName="id_esame" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
     </column>
     <column id="COL57" populated="true" UUID="5b38218b-b3e0-4571-bf71-8e4cf8c70ee3" autoIncrement="false" autoIncrementSequenceName="exam_voto_seq" defaultValue="" name="grade" nullable="1" physicalName="grade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL58" populated="true" UUID="be993ece-518b-4292-ae9b-d064ce714818" autoIncrement="false" autoIncrementSequenceName="agenda_New Column_seq" defaultValue="" name="id_agenda" nullable="0" physicalName="id_agenda" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL58" populated="true" UUID="be993ece-518b-4292-ae9b-d064ce714818" autoIncrement="false" autoIncrementSequenceName="agenda_New Column_seq" defaultValue="" name="agenda_id_agenda" nullable="0" physicalName="agenda_id_agenda" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -258,7 +257,7 @@
  <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true" target-catalog="database_progetto"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.9999999999999988" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.9999999999999988" viewportX="735" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="187" y="155" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB12" x="852" y="164" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB21" x="547" y="174" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
