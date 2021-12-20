@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/HOMEPAGE" android:title="Homepage"/>
+    <item android:id="@+id/LOGIN" android:title="Login"/>
+    <item android:id="@+id/CALENDAR" android:title="Calendario"/>
+    <item android:id="@+id/REGISTER" android:title="Registro"/>
+    <item android:id="@+id/PROFILE" android:title="Profilo Personale"/>
+    <item android:id="@+id/COMMUNICATION" android:title="Comunicazioni"/>
+</menu>
