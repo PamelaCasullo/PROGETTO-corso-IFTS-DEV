@@ -59,6 +59,14 @@ public class CommunicationActivity extends AppCompatActivity {
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
                 break;
+            case R.id.PRESENCE_ABSENCE: //TODO REMOVE FROM ANY CLASS!!!
+                Intent intentPresenceAbscence = new Intent(this,PresenceAbsenceActivity.class);
+                startActivity(intentPresenceAbscence);
+                break;
+            case R.id.VOTE: //TODO REMOVE FROM ANY CLASS!!!
+                Intent intentVote = new Intent(this,VoteActivity.class);
+                startActivity(intentVote);
+                break;
         }
         return false;
     }

@@ -6,4 +6,6 @@
     <item android:id="@+id/REGISTER" android:title="Registro"/>
     <item android:id="@+id/PROFILE" android:title="Profilo Personale"/>
     <item android:id="@+id/COMMUNICATION" android:title="Comunicazioni"/>
+    <item android:id="@+id/VOTE" android:title="Voti"/>
+    <item android:id="@+id/PRESENCE_ABSENCE" android:title="Presenze / Assenze"/>
 </menu>
