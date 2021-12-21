@@ -3,7 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="300dp"
 
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:background="@color/cardview_dark_background"
+        android:text="Profilo Dello Studente"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:background="@color/cardview_dark_background"
+        android:text="Comunicazioni"
+        />
 
 
 
