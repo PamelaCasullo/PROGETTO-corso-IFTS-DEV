@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RED">
         <activity
+            android:name=".CalendarDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".CommunicationActivity"
             android:exported="false" />
         <activity
