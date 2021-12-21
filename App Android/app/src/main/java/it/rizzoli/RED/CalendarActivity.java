@@ -36,11 +36,11 @@ public class CalendarActivity extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this,Homepage.class);
+                Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 break;
             case R.id.LOGIN:
-                Intent intentLogin = new Intent(this,Login.class);
+                Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
             case R.id.CALENDAR:
