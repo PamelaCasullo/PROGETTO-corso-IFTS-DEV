@@ -10,12 +10,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class Homepage extends AppCompatActivity {
+public class HomepageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.activity_homepage);
     }
 
     //istanziamo un menu
@@ -37,12 +37,12 @@ public class Homepage extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this,Homepage.class);
+                Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 Toast.makeText(this, "Siamo in "+this.getLocalClassName(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.LOGIN:
-                Intent intentLogin = new Intent(this,Login.class);
+                Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
             case R.id.CALENDAR:

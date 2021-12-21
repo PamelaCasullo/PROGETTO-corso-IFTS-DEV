@@ -5,17 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     }
+
+
 
     //istanziamo un menu
     @Override
@@ -36,11 +39,11 @@ public class Login extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this,Homepage.class);
+                Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 break;
             case R.id.LOGIN:
-                Intent intentLogin = new Intent(this,Login.class);
+                Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
             case R.id.CALENDAR:
