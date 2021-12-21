@@ -13,9 +13,6 @@
             android:name=".VoteActivity"
             android:exported="false" />
         <activity
-            android:name=".PresenceAbsenceActivity"
-            android:exported="false" />
-        <activity
             android:name=".CalendarDetailActivity"
             android:exported="false" />
         <activity
