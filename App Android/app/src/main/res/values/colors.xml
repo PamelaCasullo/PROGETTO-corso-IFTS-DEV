@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFFF0000</color>//TODO Delete this
-    <color name="purple_500">#FFFF0000</color> //TODO Change name color in RED
-    <color name="purple_700">#FF3700B3</color>
+    <color name="red">#FFFF0000</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
