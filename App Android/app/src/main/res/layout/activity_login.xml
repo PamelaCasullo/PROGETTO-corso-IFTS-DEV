@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:background="@color/cardview_dark_background"
         android:textColor="@color/white"
         android:text="Inserisci Dati Personali"
         android:textSize="20dp"
@@ -21,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="@color/white"
+        android:background="@color/cardview_dark_background"
         android:hint="email"
         android:textAlignment="center"
         android:inputType="textEmailAddress"
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColorHint="@color/white"
+        android:background="@color/cardview_dark_background"
         android:hint="Password"
         android:inputType="textPassword" />
     <Button
@@ -38,8 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
 
-        android:background="@android:color/white"
-        android:textColor="@android:color/black"
         android:text="Login" />
 
     <RadioGroup
@@ -50,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:background="@color/cardview_dark_background"
             android:text="Studente"
             android:onClick="onRadioButtonClicked"/>
 
@@ -58,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
+            android:background="@color/cardview_dark_background"
             android:textColor="@color/white"
             android:text="Docente" />
     </RadioGroup>
