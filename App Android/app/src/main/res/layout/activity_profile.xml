@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,5 +12,88 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/red"/>
+
+
+
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="105dp"
+        android:layout_toRightOf="@id/vista"
+        android:text="Nome"
+        android:textSize="20dp"
+        android:textColor="@color/red"
+        />
+
+    <TextView
+        android:id="@+id/cognome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="105dp"
+        android:layout_toRightOf="@id/nome"
+        android:text="Cognome"
+        android:textSize="20dp"
+        android:textColor="@color/red"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25/02/2003"
+        android:layout_toRightOf="@id/vista"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/nome"
+        android:textSize="20dp"
+        android:textColor="@color/red"
+        />
+    <TextView
+        android:id="@+id/email_personale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="email_personale"
+        android:layout_below="@id/vista"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/red"
+        />
+    <TextView
+        android:id="@+id/email_istituzionale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="email_istituzionale"
+        android:layout_below="@id/email_personale"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/red"
+        />
+    <TextView
+        android:id="@+id/num_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+39 123456789"
+        android:layout_below="@id/email_istituzionale"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/red"
+        />
+
+    <View
+
+        android:id="@+id/vista"
+        android:layout_width="126dp"
+        android:layout_height="165dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/red"/>
+
+
+</RelativeLayout>
