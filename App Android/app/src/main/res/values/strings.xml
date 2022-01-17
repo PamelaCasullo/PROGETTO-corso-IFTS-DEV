@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">RED</string>
+    <string name="Studente">Studente</string>
+    <string name="Docente">Docente</string>
+    <string name="Seleziona_una_voce">seleziona una voce</string>
 </resources>

@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,9 +26,11 @@ public class LoginActivity extends AppCompatActivity {
         Button pulsanteLoginText = findViewById(R.id.loginButtonText);
         //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
 
+
         pulsanteLoginText.setOnClickListener(v -> {
             EditText email_its = findViewById(R.id.email_its);
             EditText password_its = findViewById(R.id.password_its);
+            int prova = onRadioButtonClicked(v);
 
             if(email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
                 Toast.makeText(getApplicationContext(), "Benvenuto, Admin!",Toast.LENGTH_SHORT).show();
@@ -48,9 +53,34 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
+//@todo implementare RadioButton interaction
+    public int onRadioButtonClicked(View v ) {
+        //is checked?
+        boolean checked = ((RadioButton)v).isChecked();
+        String selected = "" ;
 
+        //switch for checked status
+
+        switch (v.getId()) {
+            case R.id.radio_docente: {
+                //bla bla bla
+                selected = "Docente";
+                Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.radio_studente: {
+                //bla bla
+                selected = "Studente";
+                Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
+        return v.getId();
+    }
 
     //istanziamo un menu
     @Override
