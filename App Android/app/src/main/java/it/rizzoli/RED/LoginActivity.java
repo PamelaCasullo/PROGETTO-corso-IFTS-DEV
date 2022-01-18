@@ -13,13 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -30,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
 
         studente_btn = (RadioButton) findViewById(R.id.radio_studente);
         docente_btn = (RadioButton) findViewById(R.id.radio_docente);
-
 
         pulsanteLoginText.setOnClickListener(v -> {
             EditText email_its = findViewById(R.id.email_its);
@@ -60,11 +57,8 @@ public class LoginActivity extends AppCompatActivity {
 
             } else { //dati errati
                 Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
-
             }
         });
-
-
     }
 
 
@@ -95,8 +89,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-
 /*
+=======
+
+
+>>>>>>> Stashed changes
     //istanziamo un menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

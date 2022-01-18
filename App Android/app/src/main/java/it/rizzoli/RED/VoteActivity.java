@@ -39,7 +39,7 @@ public class VoteActivity extends AppCompatActivity {
                 Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 break;
-            case R.id.LOGIN:
+            case R.id.LOGOUT:
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
