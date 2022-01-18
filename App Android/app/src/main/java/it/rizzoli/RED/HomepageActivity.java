@@ -36,11 +36,6 @@ public class HomepageActivity extends AppCompatActivity {
         int id_item = item.getItemId();
 
         switch (id_item) {
-            case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, HomepageActivity.class);
-                startActivity(intentHome);
-                Toast.makeText(this, "Siamo in "+this.getLocalClassName(), Toast.LENGTH_SHORT).show();
-                break;
             case R.id.LOGIN:
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
@@ -60,10 +55,6 @@ public class HomepageActivity extends AppCompatActivity {
             case R.id.COMMUNICATION:
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
-                break;
-            case R.id.VOTE: //TODO REMOVE FROM ANY CLASS!!!
-                Intent intentVote = new Intent(this,VoteActivity.class);
-                startActivity(intentVote);
                 break;
         }
         return false;

@@ -43,10 +43,6 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
-            case R.id.CALENDAR:
-                Intent intentCalendar = new Intent(this,CalendarActivity.class);
-                startActivity(intentCalendar);
-                break;
             case R.id.REGISTER:
                 Intent intentRegister = new Intent(this,RegisterActivity.class);
                 startActivity(intentRegister);
@@ -58,10 +54,6 @@ public class CalendarActivity extends AppCompatActivity {
             case R.id.COMMUNICATION:
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
-                break;
-            case R.id.VOTE: //TODO REMOVE FROM ANY CLASS!!!
-                Intent intentVote = new Intent(this,VoteActivity.class);
-                startActivity(intentVote);
                 break;
         }
         return false;

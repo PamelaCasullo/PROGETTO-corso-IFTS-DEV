@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-    
+
 /*
     //@todo implementare RadioButton interaction
     public int onRadioButtonClicked(View v) {
