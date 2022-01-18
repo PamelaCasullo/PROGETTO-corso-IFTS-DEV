@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -30,35 +31,32 @@ public class LoginActivity extends AppCompatActivity {
         pulsanteLoginText.setOnClickListener(v -> {
             EditText email_its = findViewById(R.id.email_its);
             EditText password_its = findViewById(R.id.password_its);
-            int prova = onRadioButtonClicked(v);
-
-            if(email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
+            //int prova = onRadioButtonClicked(v);
+            //System.out.println(prova);
+            if( //admin
+                email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
                 Toast.makeText(getApplicationContext(), "Benvenuto, Admin!",Toast.LENGTH_SHORT).show();
-            //corretto e admin
-            }else{
-                if(email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Docente!",Toast.LENGTH_SHORT).show();
-                    //corretto e docente
 
-                }else{
-                if(email_its.getText().toString().equals("studente@itsrizzoli.it")&&password_its.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Studente!",Toast.LENGTH_SHORT).show();
-                    //corretto e studente
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
-                    //dati errati
-                }
+            }else if( //docente
+                email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
+                Toast.makeText(getApplicationContext(), "Benvenuto, Docente!",Toast.LENGTH_SHORT).show();
 
-                }
+            }else if( //studente
+                email_its.getText().toString().equals("studente@itsrizzoli.it")&&password_its.getText().toString().equals("admin")) {
+                Toast.makeText(getApplicationContext(), "Benvenuto, Studente!",Toast.LENGTH_SHORT).show();
+
+            } else { //dati errati
+                Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
+
             }
         });
 
 
     }
-
-//@todo implementare RadioButton interaction
-    public int onRadioButtonClicked(View v ) {
+    
+/*
+    //@todo implementare RadioButton interaction
+    public int onRadioButtonClicked(View v) {
         //is checked?
         boolean checked = ((RadioButton)v).isChecked();
         String selected = "" ;
@@ -81,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         return v.getId();
     }
+ */
 
     //istanziamo un menu
     @Override
