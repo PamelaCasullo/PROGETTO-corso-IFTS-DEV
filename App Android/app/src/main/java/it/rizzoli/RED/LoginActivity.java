@@ -26,13 +26,9 @@ public class LoginActivity extends AppCompatActivity {
         RadioButton studente_btn,docente_btn ;
         //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
 
-<<<<<<< Updated upstream
         studente_btn = (RadioButton) findViewById(R.id.radio_studente);
         docente_btn = (RadioButton) findViewById(R.id.radio_docente);
 
-
-=======
->>>>>>> Stashed changes
         pulsanteLoginText.setOnClickListener(v -> {
             EditText email_its = findViewById(R.id.email_its);
             EditText password_its = findViewById(R.id.password_its);
@@ -40,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
             if( //admin
                 email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin") && docente_btn.isChecked()){
                 Toast.makeText(getApplicationContext(), "Benvenuto, Admin!",Toast.LENGTH_SHORT).show();
-<<<<<<< Updated upstream
 
                 Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
@@ -62,25 +57,6 @@ public class LoginActivity extends AppCompatActivity {
 
             } else { //dati errati
                 Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
-
-=======
-            //corretto e admin
-            }else{
-                if(email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Docente!",Toast.LENGTH_SHORT).show();
-                    //corretto e docente
-
-                }else{
-                if(email_its.getText().toString().equals("studente@itsrizzoli.it")&&password_its.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Studente!",Toast.LENGTH_SHORT).show();
-                    //corretto e studente
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
-                    //dati errati
-                }
-                }
->>>>>>> Stashed changes
             }
         });
     }
@@ -113,8 +89,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-
-<<<<<<< Updated upstream
 /*
 =======
 
