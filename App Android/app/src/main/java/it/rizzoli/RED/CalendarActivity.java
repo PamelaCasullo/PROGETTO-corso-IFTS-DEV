@@ -25,6 +25,9 @@ public class CalendarActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu,menu);
 
+        MenuItem item = menu.findItem(R.id.CALENDAR);
+        item.setVisible(false);
+
         return true;
     }
     //eseguiamo operazioni nel menu
@@ -39,7 +42,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 break;
-            case R.id.LOGIN:
+            case R.id.LOGOUT:
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
