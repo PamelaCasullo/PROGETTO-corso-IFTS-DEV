@@ -3,4 +3,6 @@
     <string name="Studente">Studente</string>
     <string name="Docente">Docente</string>
     <string name="Seleziona_una_voce">seleziona una voce</string>
+    <string name="email_hint">E-Mail</string>
+    <string name="password_hint">Password</string>
 </resources>
