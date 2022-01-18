@@ -25,25 +25,38 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button pulsanteLoginText = findViewById(R.id.loginButtonText);
+        RadioButton studente_btn,docente_btn ;
         //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
+
+        studente_btn = (RadioButton) findViewById(R.id.radio_studente);
+        docente_btn = (RadioButton) findViewById(R.id.radio_docente);
 
 
         pulsanteLoginText.setOnClickListener(v -> {
             EditText email_its = findViewById(R.id.email_its);
             EditText password_its = findViewById(R.id.password_its);
-            //int prova = onRadioButtonClicked(v);
-            //System.out.println(prova);
+
             if( //admin
-                email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
+                email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin") && docente_btn.isChecked()){
                 Toast.makeText(getApplicationContext(), "Benvenuto, Admin!",Toast.LENGTH_SHORT).show();
 
+                Intent intentHome = new Intent(this, HomepageActivity.class);
+                startActivity(intentHome);
+
+
             }else if( //docente
-                email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin")){
+                email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin")&& docente_btn.isChecked()){
                 Toast.makeText(getApplicationContext(), "Benvenuto, Docente!",Toast.LENGTH_SHORT).show();
 
+                Intent intentHome = new Intent(this, HomepageActivity.class);
+                startActivity(intentHome);
+
             }else if( //studente
-                email_its.getText().toString().equals("studente@itsrizzoli.it")&&password_its.getText().toString().equals("admin")) {
+                email_its.getText().toString().equals("studente@itsrizzoli.it")&&password_its.getText().toString().equals("admin")&& studente_btn.isChecked()) {
                 Toast.makeText(getApplicationContext(), "Benvenuto, Studente!",Toast.LENGTH_SHORT).show();
+
+                Intent intentHome = new Intent(this, HomepageActivity.class);
+                startActivity(intentHome);
 
             } else { //dati errati
                 Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
@@ -54,9 +67,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-/*
+
     //@todo implementare RadioButton interaction
-    public int onRadioButtonClicked(View v) {
+    public void onRadioButtonClicked(View v) {
         //is checked?
         boolean checked = ((RadioButton)v).isChecked();
         String selected = "" ;
@@ -66,21 +79,24 @@ public class LoginActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.radio_docente: {
                 //bla bla bla
-                selected = "Docente";
-                Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
-                break;
+                if(checked) {
+                    selected = "Docente";
+                    Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
+                    break;
+                }
             }
             case R.id.radio_studente: {
                 //bla bla
-                selected = "Studente";
-                Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
-                break;
+                if(checked) {
+                    selected = "Studente";
+                    Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
+                    break;
+                }
             }
         }
-        return v.getId();
     }
- */
 
+/*
     //istanziamo un menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -123,15 +139,12 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
                 break;
-            case R.id.VOTE: //TODO REMOVE FROM ANY CLASS!!!
-                Intent intentVote = new Intent(this,VoteActivity.class);
-                startActivity(intentVote);
-                break;
+
         }
         return false;
     }
 
-
+*/
 
     //todo interazione coi pulsanti
 }
