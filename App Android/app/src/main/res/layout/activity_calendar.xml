@@ -6,7 +6,7 @@
     tools:context=".CalendarActivity">
 
     <TextView
-        android:id="@+id/calendario"
+        android:id="@+id/CALENDAR_VIEW"
         android:text="Siamo nel Calendario!"
         android:textSize="20sp"
         android:layout_width="wrap_content"
@@ -18,11 +18,13 @@
          />
 
     <CalendarView
+        android:id="@+id/CALENDAR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:background="@color/red"
+
 
         />
 
