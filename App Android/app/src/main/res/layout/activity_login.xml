@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/backg"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LoginActivity">
+    tools:context=".PloginActivity">
 
     <TextView
         android:id="@+id/BenvenutoInRed"
@@ -59,27 +59,27 @@
         android:layout_below="@+id/info2"
         >
 
-    <RadioButton
-        android:id="@+id/radio_docente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:text="Docente"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:id="@+id/radio_docente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:text="Docente"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="onRadioButtonClicked"/>
 
-    <RadioButton
-        android:id="@+id/radio_studente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:text="Studente"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:id="@+id/radio_studente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:text="Studente"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="onRadioButtonClicked"/>
 
     </RadioGroup>
 
@@ -88,41 +88,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/RadioLogin"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal = "true"
-        android:padding="10dp"
+        android:background="@color/redb"
         android:ems="18"
         android:focusable="true"
         android:hint="@string/email_hint"
-        android:textColorHint="@color/white"
         android:inputType="textEmailAddress"
-        android:background="@color/redb"/>
+        android:padding="10dp"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/password_its"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/email_its"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal = "true"
-        android:padding="10dp"
+        android:background="@color/redb"
         android:ems="18"
         android:focusable="true"
         android:hint="@string/password_hint"
-        android:textColorHint="@color/white"
         android:inputType="textPassword"
-        android:background="@color/redb"/>
+        android:padding="10dp"
+        android:textColorHint="@color/white"/>
 
     <Button
         android:id="@+id/loginButtonText"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_gravity="end"
-        android:text="Login"
-        android:onclick = "login"/>
-
-    <RadioGroup
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password_its"
         android:layout_marginLeft="20dp"
@@ -132,5 +125,6 @@
         android:layout_centerHorizontal = "true"
         android:ems="15"
         app:backgroundTint="@color/red" />
+
 
 </RelativeLayout>
