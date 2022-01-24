@@ -3,7 +3,9 @@ package it.rizzoli.RED;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,11 +15,14 @@ import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalendarActivity extends AppCompatActivity {
 
     CalendarView calendar ;
     TextView calendar_view;
+
+    private final static String MY_PREFERENCES = "MyPref";
 
     Button closePopupBtn;
     PopupWindow popupWindow;
@@ -78,6 +83,13 @@ public class CalendarActivity extends AppCompatActivity {
             case R.id.LOGOUT:
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
+                //TODO Mettere questo pezzo di codice in una funzione, e implementarlo anche nelle altre activity
+                SharedPreferences preference = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preference.edit();
+                editor.clear();
+                editor.commit();
+                SharedPreferences preferiti = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+                Toast.makeText(this, "Ciao: " + preferiti.getAll(), Toast.LENGTH_LONG).show();
                 break;
             case R.id.REGISTER:
                 Intent intentRegister = new Intent(this,RegisterActivity.class);
@@ -94,43 +106,5 @@ public class CalendarActivity extends AppCompatActivity {
         }
         return false;
     }
-
-  /*  public boolean onOptionCalendarSelection(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        int id_item = item.getItemId();
-
-        switch (id_item) {
-            case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, HomepageActivity.class);
-                startActivity(intentHome);
-                break;
-            case R.id.LOGIN:
-                Intent intentLogin = new Intent(this, LoginActivity.class);
-                startActivity(intentLogin);
-                break;
-            case R.id.CALENDAR:
-                Intent intentCalendar = new Intent(this,CalendarActivity.class);
-                startActivity(intentCalendar);
-                break;
-            case R.id.REGISTER:
-                Intent intentRegister = new Intent(this,RegisterActivity.class);
-                startActivity(intentRegister);
-                break;
-            case R.id.PROFILE:
-                Intent intentProfile = new Intent(this,ProfileActivity.class);
-                startActivity(intentProfile);
-                break;
-            case R.id.COMMUNICATION:
-                Intent intentCommunication = new Intent(this,CommunicationActivity.class);
-                startActivity(intentCommunication);
-                break;
-            case R.id.VOTE: //TODO REMOVE FROM ANY CLASS!!!
-                Intent intentVote = new Intent(this,VoteActivity.class);
-                startActivity(intentVote);
-                break;
-        }
-        return false;
-    }
-    */
 
 }
