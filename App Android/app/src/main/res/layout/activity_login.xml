@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/backg"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".PloginActivity">
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/BenvenutoInRed"
@@ -113,13 +113,20 @@
         android:padding="10dp"
         android:textColorHint="@color/white"/>
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_its"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp" />
+
     <Button
         android:id="@+id/loginButtonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password_its"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:padding="15dp"
         android:text="Login"
         android:layout_centerHorizontal = "true"

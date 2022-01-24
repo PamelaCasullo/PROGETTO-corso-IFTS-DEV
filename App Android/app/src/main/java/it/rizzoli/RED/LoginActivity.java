@@ -127,6 +127,6 @@ public class LoginActivity extends AppCompatActivity {
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         String textEMAIL = preferiti.getString(TEXT_EMAIL_KEY, "Nessuna preferenza!");
         String textPW = preferiti.getString(TEXT_PW_KEY, "Nessuna preferenza!");
-        Toast.makeText(this, "E-mail" + textEMAIL + "Password" + textPW, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "E-mail: " + textEMAIL + " Password: " + textPW, Toast.LENGTH_LONG).show();
     }
 }
