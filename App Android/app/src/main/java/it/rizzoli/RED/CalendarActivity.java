@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 public class CalendarActivity extends AppCompatActivity {
@@ -16,16 +19,36 @@ public class CalendarActivity extends AppCompatActivity {
     CalendarView calendar ;
     TextView calendar_view;
 
+    Button closePopupBtn;
+    PopupWindow popupWindow;
+    LinearLayout linearLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
         calendar = findViewById(R.id.CALENDAR);
-      //  calendar_view
+        calendar_view = findViewById(R.id.CALENDAR_TEXT_VIEW);
 
+        closePopupBtn = findViewById(R.id.closePopupBtn);
+        linearLayout = findViewById(R.id.LinearLayout);
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                    // Store the value of date with format in String type Variable
+                    // Add 1 in month because month index is start with 0
+                    String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
+                    // set this date in TextView for Display
+                    calendar_view.setText(Date);
+
+                }
+
+            });
 
     }
+
 
     //istanziamo un menu
     @Override

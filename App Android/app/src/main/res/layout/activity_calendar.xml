@@ -5,17 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".CalendarActivity">
 
-    <TextView
-        android:id="@+id/CALENDAR_VIEW"
-        android:text="Siamo nel Calendario!"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="136dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="@color/red"
-         />
 
     <CalendarView
         android:id="@+id/CALENDAR"
@@ -24,8 +13,15 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:background="@color/red"
-
-
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="30dp"
+        android:textSize="22sp"
+        android:id="@+id/CALENDAR_TEXT_VIEW"
+        android:text="This is a popup window."/>
+
 
 </RelativeLayout>

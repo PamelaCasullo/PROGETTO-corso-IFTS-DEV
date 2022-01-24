@@ -2,7 +2,14 @@
     <string name="app_name">RED</string>
     <string name="Studente">Studente</string>
     <string name="Docente">Docente</string>
-    <string name="Seleziona_una_voce">seleziona una voce</string>
     <string name="email_hint">E-Mail</string>
     <string name="password_hint">Password</string>
+    <string name="Seleziona_una_voce">Seleziona una voce</string>
+    <string name="homepage">Homepage</string>
+    <string name="calendario">Calendario</string>
+    <string name="registro">Registro</string>
+    <string name="profilo_personale">Profilo Personale</string>
+    <string name="comunicazioni">Comunicazioni</string>
+    <string name="voti">Voti</string>
+    <string name="logout">Logout</string>
 </resources>

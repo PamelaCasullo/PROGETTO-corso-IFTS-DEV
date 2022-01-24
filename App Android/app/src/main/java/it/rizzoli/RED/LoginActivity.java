@@ -1,14 +1,10 @@
 package it.rizzoli.RED;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,18 +12,23 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
+
+    Button pulsanteLoginText;
+    RadioButton studente_btn,docente_btn;
+    boolean checked;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button pulsanteLoginText = findViewById(R.id.loginButtonText);
-        RadioButton studente_btn,docente_btn ;
+        pulsanteLoginText = findViewById(R.id.loginButtonText);
+
         //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
 
-        studente_btn = (RadioButton) findViewById(R.id.radio_studente);
-        docente_btn = (RadioButton) findViewById(R.id.radio_docente);
+        studente_btn = findViewById(R.id.radio_studente);
+        docente_btn = findViewById(R.id.radio_docente);
 
         pulsanteLoginText.setOnClickListener(v -> {
             EditText email_its = findViewById(R.id.email_its);
@@ -36,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
             if( //admin
                 email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin") && docente_btn.isChecked()){
                 Toast.makeText(getApplicationContext(), "Benvenuto, Admin!",Toast.LENGTH_SHORT).show();
+
+                
 
                 Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
@@ -62,11 +65,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    //@todo implementare RadioButton interaction
+    //@todo implements RadioButton interaction with database
     public void onRadioButtonClicked(View v) {
         //is checked?
-        boolean checked = ((RadioButton)v).isChecked();
-        String selected = "" ;
+         checked = ((RadioButton)v).isChecked();
+        String selected ;
 
         //switch for checked status
 
@@ -89,59 +92,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-/*
-=======
 
-
->>>>>>> Stashed changes
-    //istanziamo un menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu,menu);
-
-        return true;
-    }
-    //eseguiamo operazioni nel menu
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        int id_item = item.getItemId();
-
-        switch (id_item) {
-            case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, HomepageActivity.class);
-                startActivity(intentHome);
-                break;
-            case R.id.LOGIN:
-                Intent intentLogin = new Intent(this, LoginActivity.class);
-                startActivity(intentLogin);
-                break;
-            case R.id.CALENDAR:
-                Intent intentCalendar = new Intent(this,CalendarActivity.class);
-                startActivity(intentCalendar);
-                break;
-            case R.id.REGISTER:
-                Intent intentRegister = new Intent(this,RegisterActivity.class);
-                startActivity(intentRegister);
-                break;
-            case R.id.PROFILE:
-                Intent intentProfile = new Intent(this,ProfileActivity.class);
-                startActivity(intentProfile);
-                break;
-            case R.id.COMMUNICATION:
-                Intent intentCommunication = new Intent(this,CommunicationActivity.class);
-                startActivity(intentCommunication);
-                break;
-
-        }
-        return false;
-    }
-
-*/
-
-    //todo interazione coi pulsanti
 }

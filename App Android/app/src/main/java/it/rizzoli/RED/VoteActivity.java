@@ -15,6 +15,8 @@ public class VoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote);
+
+
     }
 
     //istanziamo un menu
@@ -24,6 +26,9 @@ public class VoteActivity extends AppCompatActivity {
 
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu,menu);
+
+        MenuItem item = menu.findItem(R.id.REGISTER);
+        item.setVisible(false);
 
         return true;
     }
