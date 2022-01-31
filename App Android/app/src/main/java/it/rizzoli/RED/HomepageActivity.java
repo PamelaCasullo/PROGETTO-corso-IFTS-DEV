@@ -3,7 +3,9 @@ package it.rizzoli.RED;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,6 +14,14 @@ import android.view.MenuItem;
 
 public class HomepageActivity extends AppCompatActivity {
 
+    //TODO METTERE OVUNQUE LA LOGOUT FUNZIONANTE(vedere commit 31/01/2022)
+    SharedPreferences sharedpreferences;
+    String email, password;
+    // key for storing email.
+    public static final String EMAIL_KEY = "textEMAIL";
+    private final static String MY_PREFERENCES = "MyPref";
+    // key for storing password.
+    public static final String PASSWORD_KEY = "textPW";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +50,21 @@ public class HomepageActivity extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.LOGOUT:
+                sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+                email = sharedpreferences.getString(EMAIL_KEY, null);
+                password = sharedpreferences.getString(PASSWORD_KEY, null);
+
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString(EMAIL_KEY,null);
+                editor.putString(PASSWORD_KEY,null);
+                editor.apply();
+
+
+
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
+
+                finish();
                 break;
             case R.id.CALENDAR:
                 Intent intentCalendar = new Intent(this,CalendarActivity.class);

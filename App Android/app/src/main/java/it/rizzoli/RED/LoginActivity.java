@@ -18,7 +18,10 @@ public class LoginActivity extends AppCompatActivity {
     Button pulsanteLoginText;
     RadioButton studente_btn,docente_btn;
     boolean checked;
-
+    EditText email_its;
+    EditText password_its;
+    String textEMAIL, textPW = null;
+    SharedPreferences sharedpreferences;
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
@@ -38,37 +41,48 @@ public class LoginActivity extends AppCompatActivity {
         studente_btn = findViewById(R.id.radio_studente);
         docente_btn = findViewById(R.id.radio_docente);
 
+        email_its = findViewById(R.id.email_its);
+        password_its = findViewById(R.id.password_its);
+
         pulsanteLoginText.setOnClickListener(v -> {
-            EditText email_its = findViewById(R.id.email_its);
-            EditText password_its = findViewById(R.id.password_its);
 
-            if( //admin
-                email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin") && docente_btn.isChecked()){
-                Toast.makeText(getApplicationContext(), "Benvenuto, Admin!",Toast.LENGTH_SHORT).show();
+                if ( //admin
+                        email_its.getText().toString().equals("admin@itsrizzoli.it") && password_its.getText().toString().equals("admin") && docente_btn.isChecked()) {
+                    Toast.makeText(getApplicationContext(), "Benvenuto, Admin!", Toast.LENGTH_SHORT).show();
 
-                
+                    SavePreferencesData(v);
 
-                Intent intentHome = new Intent(this, HomepageActivity.class);
-                startActivity(intentHome);
+                    Intent intentHome = new Intent(this, HomepageActivity.class);
+                    startActivity(intentHome);
+
+                    finish();
 
 
-            }else if( //docente
-                email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin")&& docente_btn.isChecked()){
-                Toast.makeText(getApplicationContext(), "Benvenuto, Docente!",Toast.LENGTH_SHORT).show();
+                } else if ( //docente
+                        email_its.getText().toString().equals("docente@itsrizzoli.it") && password_its.getText().toString().equals("admin") && docente_btn.isChecked()) {
+                    Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
+                    SavePreferencesData(v);
 
-                Intent intentHome = new Intent(this, HomepageActivity.class);
-                startActivity(intentHome);
+                    Intent intentHome = new Intent(this, HomepageActivity.class);
+                    startActivity(intentHome);
 
-            }else if( //studente
-                email_its.getText().toString().equals("studente@itsrizzoli.it")&&password_its.getText().toString().equals("admin")&& studente_btn.isChecked()) {
-                Toast.makeText(getApplicationContext(), "Benvenuto, Studente!",Toast.LENGTH_SHORT).show();
+                    finish();
 
-                Intent intentHome = new Intent(this, HomepageActivity.class);
-                startActivity(intentHome);
+                } else if ( //studente
+                        email_its.getText().toString().equals("studente@itsrizzoli.it") && password_its.getText().toString().equals("admin") && studente_btn.isChecked()) {
+                    Toast.makeText(getApplicationContext(), "Benvenuto, Studente!", Toast.LENGTH_SHORT).show();
 
-            } else { //dati errati
-                Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!",Toast.LENGTH_SHORT).show();
-            }  SavePreferencesData(v);
+                    SavePreferencesData(v);
+
+                    Intent intentHome = new Intent(this, HomepageActivity.class);
+                    startActivity(intentHome);
+
+                    finish();
+
+                } else { //dati errati
+                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_SHORT).show();
+                }
+
         });
     }
 
@@ -116,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
             // Lo salviamo nelle preferences
             editor.putString(TEXT_EMAIL_KEY, textDataEMAIL.toString());
             editor.putString(TEXT_PW_KEY, textDataPW.toString());
-            editor.commit();
+            editor.apply();
 
         }
         updatePreferencesData();
@@ -126,8 +140,21 @@ public class LoginActivity extends AppCompatActivity {
         // LEGGIAMO LA PREFERENZA
         SharedPreferences preferiti = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
-        String textEMAIL = preferiti.getString(TEXT_EMAIL_KEY, "Nessuna preferenza!");
-        String textPW = preferiti.getString(TEXT_PW_KEY, "Nessuna preferenza!");
+        textEMAIL = preferiti.getString(TEXT_EMAIL_KEY, null);
+        textPW = preferiti.getString(TEXT_PW_KEY, null);
         Toast.makeText(this, "E-mail: " + textEMAIL + " Password: " + textPW, Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updatePreferencesData();
+        if(textEMAIL!=null && textPW!=null) {
+            Intent i = new Intent(LoginActivity.this,HomepageActivity.class);
+            startActivity(i);
+        }
+
+    }
+
+
 }

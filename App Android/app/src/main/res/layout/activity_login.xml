@@ -114,11 +114,12 @@
         android:textColorHint="@color/white"/>
 
     <CheckBox
+        android:id="@+id/SALVADATI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password_its"
-        android:padding="10dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="20dp"
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/loginButtonText"
