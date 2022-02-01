@@ -6,7 +6,7 @@
     android:gravity="center"
     android:padding="10px"
     android:id="@+id/LinearLayout"
-     android:layout_width="match_parent">
+    android:layout_width="match_parent">
 
 <TextView
     android:layout_width="wrap_content"
@@ -16,8 +16,7 @@
     android:layout_alignParentTop="true"
     android:layout_alignParentLeft="true"
     android:layout_alignParentRight="true"
-    android:textAlignment="textStart"
-    />
+    android:textAlignment="textStart" />
 
     <TextView
         android:id="@+id/materiaDelGiorno_idMateria"
@@ -32,22 +31,19 @@
         android:textAlignment="center" />
 
     <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignEnd="@+id/materiaDelGiorno_idMateria"
         android:layout_marginTop="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="false"
-
-
         android:layout_marginStart="-3dp"
         android:layout_marginEnd="3dp"
         android:background="@color/cardview_dark_background"
         android:text="Descrizione"
         android:textAlignment="center"
         android:textColor="@color/white" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
