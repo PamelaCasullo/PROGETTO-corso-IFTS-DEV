@@ -1,45 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:stretchColumns="1">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
 
-    <TableRow>
-        <TextView
-            android:text="20/10/2021"
-            android:padding="10dp" />
-        <TextView
-            android:text="Android"
-            android:gravity="center"/>
-        <TextView
-            android:text="28"
-            android:gravity="right"
-            android:padding="10dp" />
-    </TableRow>
+    <!--barra con i titoli di data/materia/voto, niente id perchè non hanno bisogno di essere modificati-->
+    <LinearLayout
+        android:id="@+id/barraTitoli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:padding="20dp">
 
-    <TableRow>
         <TextView
-            android:text="17/11/2021"
-            android:padding="10dp" />
-        <TextView
-            android:text="HTML"
-            android:gravity="center" />
-        <TextView
-            android:text="28"
-            android:gravity="right"
-            android:padding="10dp" />
-    </TableRow>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:text="DATA"
+            android:textAlignment="center"
+            android:textColor="#80FF0000"
+            android:textSize="23dp" />
 
-    <TableRow>
         <TextView
-            android:text="15/12/2021"
-            android:padding="10dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MATERIA"
+            android:textAlignment="center"
+            android:textColor="#80FF0000"
+            android:textSize="23dp" />
+
         <TextView
-            android:text="DATABASE"
-            android:gravity="center"/>
-        <TextView
-            android:text="21"
-            android:gravity="right"
-            android:padding="10dp" />
-    </TableRow>
-</TableLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:text="VOTO"
+            android:textAlignment="center"
+            android:textColor="#80FF0000"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
+    <!--lista dei voti ottenuti tramite database-->
+    <ListView
+        android:id="@+id/listaVoti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/barraTitoli"
+        android:layout_above="@id/footer"
+        android:verticalScrollbarPosition="right"/>
+
+
+    <!--footer con sfondo rosso e nome progetto-->
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red"
+        android:text="Project.RED"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        tools:ignore="TextContrastCheck" />
+
+</RelativeLayout>
