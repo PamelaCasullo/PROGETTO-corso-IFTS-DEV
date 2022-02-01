@@ -16,7 +16,6 @@
     android:layout_alignParentTop="true"
     android:layout_alignParentLeft="true"
     android:layout_alignParentRight="true"
-
     android:textAlignment="textStart"
     />
 
