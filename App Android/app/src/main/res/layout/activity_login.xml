@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="50dp"
         android:paddingLeft="9dp"
         android:text="Benvenuto in"
         android:textColor="@color/white"
@@ -34,12 +34,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/BenvenutoInRed"
-        android:text="Sign in"
+        android:layout_centerHorizontal="true"
         android:paddingBottom="20dp"
-        android:layout_centerHorizontal = "true"
+        android:text="Sign in"
+        android:textColor="@color/white"
         android:textSize="50dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/info2"
         android:layout_width="wrap_content"
@@ -85,11 +85,13 @@
 
     <EditText
         android:id="@+id/email_its"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/RadioLogin"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/redb"
         android:ems="18"
         android:focusable="true"
@@ -100,34 +102,38 @@
 
     <EditText
         android:id="@+id/password_its"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/email_its"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/redb"
         android:ems="18"
         android:focusable="true"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textColorHint="@color/white"/>
+        android:textColorHint="@color/white" />
 
     <CheckBox
         android:id="@+id/SALVADATI"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_below="@+id/password_its"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="3dp"
         android:padding="10dp" />
 
     <Button
         android:id="@+id/loginButtonText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password_its"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_below="@+id/SALVADATI"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
         android:padding="15dp"
         android:text="Login"
         android:layout_centerHorizontal = "true"
