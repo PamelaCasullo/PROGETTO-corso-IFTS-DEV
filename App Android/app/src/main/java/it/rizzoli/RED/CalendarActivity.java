@@ -44,6 +44,7 @@ public class CalendarActivity extends AppCompatActivity {
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                     // Store the value of date with format in String type Variable
                     // Add 1 in month because month index is start with 0
+                    //TODO Eliminare le activity precedenti, perché ora quando si clicca su logout e successivamente si preme il tasto per tornare indietro, l'activity viene riaperta
                     String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
                     // set this date in TextView for Display
                     calendar_view.setText(Date);
