@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
         if(textEMAIL!=null && textPW!=null) {
             Intent i = new Intent(LoginActivity.this,HomepageActivity.class);
             startActivity(i);
+            finish();
         }
 
     }

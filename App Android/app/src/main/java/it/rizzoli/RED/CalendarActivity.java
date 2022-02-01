@@ -84,13 +84,6 @@ public class CalendarActivity extends AppCompatActivity {
             case R.id.LOGOUT:
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
-                //TODO Mettere questo pezzo di codice in una funzione, e implementarlo anche nelle altre activity
-                SharedPreferences preference = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = preference.edit();
-                editor.clear();
-                editor.commit();
-                SharedPreferences preferiti = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-                Toast.makeText(this, "Ciao: " + preferiti.getAll(), Toast.LENGTH_LONG).show();
                 break;
             case R.id.REGISTER:
                 Intent intentRegister = new Intent(this,RegisterActivity.class);
