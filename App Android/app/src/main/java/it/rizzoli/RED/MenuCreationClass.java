@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.view.MenuItem;
 
 //TODO FARE CLASSE GENERICA DEL MENU
-public class MenuCreationClass extends Activity {
+public class MenuCreationClass{
     SharedPreferences sharedpreferences;
     String email, password;
 
@@ -17,11 +17,12 @@ public class MenuCreationClass extends Activity {
     public final static String MY_PREFERENCES = "MyPref";
     // key for storing password.
     public static final String PASSWORD_KEY = "textPassword";
+/*
     public boolean MenuItemOperations( int id_item) {
 
         switch (id_item) {
             case R.id.LOGOUT:
-                Logout();
+                Logout(SharedPreferences.Editor editor);
 
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
@@ -47,15 +48,13 @@ public class MenuCreationClass extends Activity {
         }
         return true;
     }
-    public void Logout() {
-        sharedpreferences = getSharedPreferences(HomepageActivity.MY_PREFERENCES, Context.MODE_PRIVATE);
-        email = sharedpreferences.getString(HomepageActivity.EMAIL_KEY, null);
-        password = sharedpreferences.getString(HomepageActivity.PASSWORD_KEY, null);
 
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(email,null);
-        editor.putString(password,null);
+ */
+    public void Logout(SharedPreferences.Editor editor) {
+        editor.putString(EMAIL_KEY,null);
+        editor.putString(PASSWORD_KEY,null);
         editor.apply();
+
 
     }
 

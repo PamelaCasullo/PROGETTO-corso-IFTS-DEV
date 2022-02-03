@@ -51,8 +51,6 @@ public class HomepageActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
        // super.onOptionsItemSelected(item);
         int id_item = item.getItemId();
-
-
         switch (id_item) {
             case R.id.LOGOUT:
                 sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
@@ -60,11 +58,8 @@ public class HomepageActivity extends AppCompatActivity {
                 password = sharedpreferences.getString(PASSWORD_KEY, null);
 
                 SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(EMAIL_KEY,null);
-                editor.putString(PASSWORD_KEY,null);
-                editor.apply();
-
-
+                MenuCreationClass menuCreationClass = new MenuCreationClass();
+                menuCreationClass.Logout(editor);
 
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
@@ -88,10 +83,8 @@ public class HomepageActivity extends AppCompatActivity {
                 startActivity(intentCommunication);
                 break;
         }
-                return false;
 
-
-
+        return false;
     }
 
 
