@@ -11,7 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Data" />
+        android:text="Data"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/materia"
@@ -20,7 +21,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_toRightOf="@+id/data"
-        android:text="Materia" />
+        android:text="Materia"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/voto"
@@ -29,5 +31,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_toRightOf="@+id/materia"
-        android:text="Voti" />
+        android:text="Voti"
+        android:textColor="@color/red"/>
 </LinearLayout>
