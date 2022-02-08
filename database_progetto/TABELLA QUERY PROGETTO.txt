@@ -1,6 +1,6 @@
 QUERY,
        
-{LOGIN - Studente - Docente (GET):
+{LOGIN - Studente - Docente - Admin (GET):
 	
 	parametri:
 		- institutional_email
@@ -13,8 +13,6 @@ QUERY,
 
 {HOMEPAGE - Studente - Docente (GET):
 	
-
-	SEZIONE EVENTO RECENTE:
 	parametri:
 		- data
 		- id_corso
@@ -42,7 +40,7 @@ QUERY,
 
 {PROFILO PERSONALE - studente - docente (GET):
 
-	restituzione: 
+	Tutti i dati presi quando si effettua la login: 
 		- nome 
 		- cognome
 		- data di nascita (questo campo non è visibile per il docente)
@@ -96,3 +94,21 @@ QUERY,
 		- agenda (descrizione, data)
 		- esame (voto)
 }
+
+
+{PROFILO PERSONALE - STUDENTE - DOCENTE (PUT) {
+	
+	parametri:
+		- id_studente/id_docente
+		- email_personale 
+		- numero_telefonico
+		- password	
+}
+
+
+{PRESENZE - DOCENTE (PUT) {
+
+	parametri:
+		- id_docente
+		
+
