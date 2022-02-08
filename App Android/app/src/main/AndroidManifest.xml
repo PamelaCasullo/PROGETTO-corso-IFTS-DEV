@@ -22,7 +22,7 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".PresenceActivity"
             android:exported="false" />
         <activity
             android:name=".CalendarActivity"

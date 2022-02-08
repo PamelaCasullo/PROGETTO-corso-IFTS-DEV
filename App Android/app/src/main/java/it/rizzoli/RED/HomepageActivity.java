@@ -3,7 +3,6 @@ package it.rizzoli.RED;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +10,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
 public class HomepageActivity extends AppCompatActivity {
@@ -71,7 +69,7 @@ public class HomepageActivity extends AppCompatActivity {
                 startActivity(intentCalendar);
                 break;
             case R.id.REGISTER:
-                Intent intentRegister = new Intent(this,RegisterActivity.class);
+                Intent intentRegister = new Intent(this, PresenceActivity.class);
                 startActivity(intentRegister);
                 break;
             case R.id.PROFILE:

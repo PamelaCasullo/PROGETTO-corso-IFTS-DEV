@@ -9,12 +9,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class RegisterActivity extends AppCompatActivity {
+public class PresenceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_presence);
     }
 
     //istanziamo un menu
@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu,menu);
 
-        MenuItem item = menu.findItem(R.id.REGISTER);
+        MenuItem item = menu.findItem(R.id.PRESENCE);
         item.setVisible(false);
 
         return true;

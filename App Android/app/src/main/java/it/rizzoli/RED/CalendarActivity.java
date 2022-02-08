@@ -3,9 +3,7 @@ package it.rizzoli.RED;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,7 +13,6 @@ import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -82,8 +79,8 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
                 break;
-            case R.id.REGISTER:
-                Intent intentRegister = new Intent(this,RegisterActivity.class);
+            case R.id.PRESENCE:
+                Intent intentRegister = new Intent(this, PresenceActivity.class);
                 startActivity(intentRegister);
                 break;
             case R.id.PROFILE:
