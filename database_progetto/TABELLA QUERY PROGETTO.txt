@@ -1,0 +1,98 @@
+QUERY,
+       
+{LOGIN - Studente - Docente (GET):
+	
+	parametri:
+		- institutional_email
+		- password
+
+	restituzione:
+		- tutto (poi si fa la selezione)
+}
+
+
+{HOMEPAGE - Studente - Docente (GET):
+	
+
+	SEZIONE EVENTO RECENTE:
+	parametri:
+		- data
+		- id_corso
+	
+	restituzione:
+		- ultime (2 o 3) comunicazioni
+		- ultimo voto preso e lezione successiva
+			
+}
+
+
+{CALENDAR - studente - docente (GET):
+
+	parametri:
+		- data
+		- id_corso
+
+	restituzione:
+		(esami, descrizione delle lezioni, presenze)
+		- ultimi 7 giorni
+		- i 7 giorni successivi 
+
+}
+
+
+{PROFILO PERSONALE - studente - docente (GET):
+
+	restituzione: 
+		- nome 
+		- cognome
+		- data di nascita (questo campo non è visibile per il docente)
+		- email_istituzionale
+		- email_personale
+		- numero telefonico
+
+}	
+
+
+{COMUNICAZIONI - studente - docente (GET):
+	
+	parametri:
+		- id_corso
+
+	restituzione:
+		- ultime 20 (data e il corpo)
+
+}
+
+{PRESENZE - Studente (GET):
+
+	parametri:
+		- id_studente
+
+	restituzione:
+		- ultime 20 presenze o assenze
+
+}
+
+{VOTI - Studente (GET):
+
+	parametri:
+		- id_studente
+
+	restituzione:
+		- ultimi 20 VOTI
+
+}
+
+{VOTI - DOCENTE (GET):
+
+	parametri:
+		- id_teacher
+
+	restituzione:
+		- tutta tabella esame, agenda, modulo e tutto corso, studente
+		- studente (nome, cognome)
+		- corso (nome)
+		- modulo (nome)
+		- agenda (descrizione, data)
+		- esame (voto)
+}
