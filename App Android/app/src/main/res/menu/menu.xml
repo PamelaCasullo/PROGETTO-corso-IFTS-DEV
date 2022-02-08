@@ -7,7 +7,7 @@
         />
     <item android:id="@+id/CALENDAR"
         android:title="@string/calendario"/>
-    <item android:id="@+id/REGISTER"
+    <item android:id="@+id/PRESENCE"
         android:title="@string/registro"/>
     <item android:id="@+id/PROFILE"
         android:title="@string/profilo_personale" />

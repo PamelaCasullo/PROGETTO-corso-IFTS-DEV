@@ -25,7 +25,7 @@ public class VoteActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu,menu);
 
-        MenuItem item = menu.findItem(R.id.REGISTER);
+        MenuItem item = menu.findItem(R.id.VOTE);
         item.setVisible(false);
 
         return true;
@@ -50,8 +50,8 @@ public class VoteActivity extends AppCompatActivity {
                 Intent intentCalendar = new Intent(this,CalendarActivity.class);
                 startActivity(intentCalendar);
                 break;
-            case R.id.REGISTER:
-                Intent intentRegister = new Intent(this,RegisterActivity.class);
+            case R.id.PRESENCE:
+                Intent intentRegister = new Intent(this, PresenceActivity.class);
                 startActivity(intentRegister);
                 break;
             case R.id.PROFILE:

@@ -50,8 +50,8 @@ public class ProfileActivity extends AppCompatActivity {
                 Intent intentCalendar = new Intent(this,CalendarActivity.class);
                 startActivity(intentCalendar);
                 break;
-            case R.id.REGISTER:
-                Intent intentRegister = new Intent(this,RegisterActivity.class);
+            case R.id.PRESENCE:
+                Intent intentRegister = new Intent(this, PresenceActivity.class);
                 startActivity(intentRegister);
                 break;
             case R.id.COMMUNICATION:
