@@ -82,6 +82,10 @@ public class HomepageActivity extends AppCompatActivity {
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
                 break;
+            case R.id.VOTE:
+                Intent intentVote = new Intent(this,VoteActivity.class);
+                startActivity(intentVote);
+                break;
         }
 
         return false;

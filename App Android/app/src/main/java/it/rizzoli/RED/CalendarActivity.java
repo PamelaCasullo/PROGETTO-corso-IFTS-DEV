@@ -41,7 +41,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                     // Store the value of date with format in String type Variable
                     // Add 1 in month because month index is start with 0
                     String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
@@ -51,9 +51,7 @@ public class CalendarActivity extends AppCompatActivity {
                 }
 
             });
-
     }
-
 
     //istanziamo un menu
     @Override
@@ -95,6 +93,10 @@ public class CalendarActivity extends AppCompatActivity {
             case R.id.COMMUNICATION:
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
+                break;
+            case R.id.VOTE:
+                Intent intentVote = new Intent(this,VoteActivity.class);
+                startActivity(intentVote);
                 break;
         }
         return false;
