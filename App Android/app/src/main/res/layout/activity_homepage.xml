@@ -1,25 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/backg"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:context=".HomepageActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="45dp"
+        android:layout_margin="5dp"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <TextView
-        android:layout_width="200dp"
-        android:layout_height="300dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="false"
-        android:textAlignment="center"
-        android:textSize="@dimen/textMenuSize"
-        android:background="@color/cardview_dark_background"
-        android:text="Profilo Dello Studente" />
+        android:id="@+id/primo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="Nome e Cognome"
+        android:textColor="@color/red"
+        android:textSize="20dp" />
 
     <TextView
+        android:id="@+id/secondo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_below="@+id/primo"
+        android:layout_marginBottom="5dp"
+        android:text="E-Mail"
+        android:textColor="@color/red"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/terzo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_below="@+id/secondo"
+        android:text="Corso"
+        android:textColor="@color/red"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/listviewVoti"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:textAlignment="center"
-        android:textSize="@dimen/textSubmenuSize"
-        android:background="@color/cardview_dark_background"
-        android:text="Comunicazioni" />
+        android:layout_height="135dp"
+        android:layout_below="@+id/imageButton"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/buttonVoti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listviewVoti"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:ems="15"
+        android:padding="15dp"
+        android:text="Accedi ai voti"
+        app:backgroundTint="@color/redb" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:layout_below="@+id/buttonVoti"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:ems="15"
+        android:padding="15dp"
+        android:text="Vai a comunicazione"
+        app:backgroundTint="@color/redb" />
 
 </RelativeLayout>

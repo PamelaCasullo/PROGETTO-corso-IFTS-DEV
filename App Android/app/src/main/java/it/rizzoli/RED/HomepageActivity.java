@@ -68,7 +68,7 @@ public class HomepageActivity extends AppCompatActivity {
                 Intent intentCalendar = new Intent(this,CalendarActivity.class);
                 startActivity(intentCalendar);
                 break;
-            case R.id.REGISTER:
+            case R.id.PRESENCE:
                 Intent intentRegister = new Intent(this, PresenceActivity.class);
                 startActivity(intentRegister);
                 break;
@@ -79,6 +79,10 @@ public class HomepageActivity extends AppCompatActivity {
             case R.id.COMMUNICATION:
                 Intent intentCommunication = new Intent(this,CommunicationActivity.class);
                 startActivity(intentCommunication);
+                break;
+            case R.id.VOTE:
+                Intent intentVote = new Intent(this,VoteActivity.class);
+                startActivity(intentVote);
                 break;
         }
 
