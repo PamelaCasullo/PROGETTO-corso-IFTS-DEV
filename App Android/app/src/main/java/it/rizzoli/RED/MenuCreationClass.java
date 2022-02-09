@@ -1,11 +1,7 @@
 package it.rizzoli.RED;
 
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.view.MenuItem;
 
 //TODO FARE CLASSE GENERICA DEL MENU
 public class MenuCreationClass{
