@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/HOMEPAGE"
-        android:title="@string/homepage"
 
-        />
+    <item android:id="@+id/HOMEPAGE"
+        android:title="@string/homepage" />
+
     <item android:id="@+id/CALENDAR"
         android:title="@string/calendario"/>
+
     <item android:id="@+id/PRESENCE"
         android:title="@string/registro"/>
+
     <item android:id="@+id/PROFILE"
         android:title="@string/profilo_personale" />
+
     <item android:id="@+id/COMMUNICATION"
         android:title="@string/comunicazioni"/>
+
     <item android:id="@+id/VOTE"
         android:title="@string/voti"/>
+
     <item android:id="@+id/LOGOUT"
         android:title="@string/logout"/>
+
 </menu>

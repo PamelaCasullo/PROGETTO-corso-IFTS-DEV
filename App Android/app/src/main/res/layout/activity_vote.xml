@@ -47,17 +47,20 @@
     </LinearLayout>
 
     <!--lista dei voti ottenuti tramite database-->
+
+    <!--footer con sfondo rosso e nome progetto-->
+
     <ListView
         android:id="@+id/listaVoti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/footer"
         android:layout_below="@+id/barraTitoli"
-        android:verticalScrollbarPosition="right"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/backg"
-        />
+        android:verticalScrollbarPosition="right" />
 
-    <!--footer con sfondo rosso e nome progetto-->
     <TextView
         android:id="@+id/footer"
         android:layout_width="match_parent"

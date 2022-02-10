@@ -13,10 +13,6 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="textView" parent="@android:style/Widget.TextView">
-        <item name="selectorSize">@dimen/textSubmenuSize</item>
-        <item name="android:textSize">@dimen/textMenuSize</item>
-    </style>
 </resources>
 
 

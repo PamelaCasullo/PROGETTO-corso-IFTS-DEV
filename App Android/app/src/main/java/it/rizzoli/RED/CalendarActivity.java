@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
@@ -21,6 +22,9 @@ public class CalendarActivity extends AppCompatActivity {
 
     private final static String MY_PREFERENCES = "MyPref";
 
+    WebView webView;
+    public String fileName = "TimeTable.html";
+
     Button closePopupBtn;
     PopupWindow popupWindow;
     LinearLayout linearLayout;
@@ -30,24 +34,12 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        calendar = findViewById(R.id.CALENDAR);
-        calendar_view = findViewById(R.id.CALENDAR_TEXT_VIEW);
+        // INIZIALIZZA WEBVIEW
+        webView = (WebView) findViewById(R.id.webview);
 
-        closePopupBtn = findViewById(R.id.closePopupBtn);
-        linearLayout = findViewById(R.id.LinearLayout);
-
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                    // Store the value of date with format in String type Variable
-                    // Add 1 in month because month index is start with 0
-                    String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
-                    // set this date in TextView for Display
-                    calendar_view.setText(Date);
-
-                }
-
-            });
+        // VISUALIZZA IL CONTENUTO DELLA WEBVIEW DAL FILE HTML CHE STA NELL'ASSETS
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("file:///android_asset/" + fileName);
     }
 
     //istanziamo un menu

@@ -10,13 +10,22 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class HomepageActivity extends AppCompatActivity {
 
+    ListView lv = null;
+
     //TODO METTERE OVUNQUE LA LOGOUT FUNZIONANTE(vedere commit 31/01/2022)
     SharedPreferences sharedpreferences;
     String email, password;
+
+    Button bv;
 
     // key for storing email.
     public static final String EMAIL_KEY = "textEmail";
@@ -27,6 +36,36 @@ public class HomepageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        lv = findViewById(R.id.listaVoti);
+        Vote[] vote = new Vote[] {
+                new Vote("08/02/2022", "Applicationi Mobile Android", 18),
+                new Vote("18/01/2022", "Tecnologie Web per la UI ed il Back-End", 30),
+                new Vote("11/12/2021", "Gestione di dati e DataBase", 28),
+                new Vote("22/11/2021", "Realizzazione di applicazioni Java", 26),
+                new Vote("04/11/2021", "Processo di sviluppo del software", 23),
+                new Vote("17/10/2021", "Architetture e Sistemi", 21)
+        };
+
+        ListViewVotoAdapter lvva = new ListViewVotoAdapter(this, R.layout.activity_colonne_voti, vote);
+        lv.setAdapter(lvva);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                Vote v = lvva.getItem(pos);
+                Toast.makeText(HomepageActivity.this, v.data + " " + v.materia + " " + v.voto, Toast.LENGTH_LONG).show();
+            }
+        });
+
+    bv = findViewById(R.id.buttonVoti);
+        bv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent va = new Intent(getApplicationContext(), VoteActivity.class);
+                startActivity(va);
+            }
+        });
 
     }
 
