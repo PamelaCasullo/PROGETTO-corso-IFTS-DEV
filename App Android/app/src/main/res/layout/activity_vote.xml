@@ -10,7 +10,7 @@
         android:id="@+id/barraTitoli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/backg"
+        android:background="@color/redb"
         android:elevation="10dp"
         android:orientation="horizontal"
         android:padding="20dp">
@@ -21,8 +21,9 @@
             android:layout_marginRight="30dp"
             android:layout_weight="1"
             android:text="DATA"
+            android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/redb"
+            android:textColor="@color/black"
             android:textSize="@dimen/textMenuSize" />
 
         <TextView
@@ -30,8 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="MATERIA"
+            android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/redb"
+            android:textColor="@color/black"
             android:textSize="@dimen/textMenuSize" />
 
         <TextView
@@ -40,8 +42,9 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:text="VOTO"
+            android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/redb"
+            android:textColor="@color/black"
             android:textSize="@dimen/textMenuSize" />
 
     </LinearLayout>
@@ -69,6 +72,7 @@
         android:layout_centerHorizontal="true"
         android:background="@color/redb"
         android:text="\@ Copyright"
+        android:textStyle="italic"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15dp"

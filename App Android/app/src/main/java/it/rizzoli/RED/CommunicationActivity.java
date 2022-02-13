@@ -8,13 +8,38 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class CommunicationActivity extends AppCompatActivity {
+
+    ListView lvc;
+    ListViewComunicazioniAdapter lvca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_communication);
+
+        lvc = findViewById(R.id.listaComu);
+        Communication[] comu = new Communication[] {
+                new Communication("08/02/2022", "Salve ragazzi, domani le lezioni saranno sospese a causa dei sciopperi dei mezzi, grazie e buona serata"),
+                new Communication("18/01/2022", "Salve ragazzi, domani ci sara l'esame parziale di DataBase, grazie e buona serata"),
+                new Communication("11/12/2021", "Salve ragazzi, da domani ci sarà obbligatorio essere in possesso del greenpass per partecipare alle lezioni, grazie e buona serata"),
+                new Communication("22/11/2021", "Salve ragazzi, da domani le lezioni proseguiranno in FAD a causa dei positivi segnalati, grazie e buona serata")
+        };
+        lvca = new ListViewComunicazioniAdapter(this, R.layout.activity_colonne_communication, comu);
+        lvc.setAdapter(lvca);
+
+        lvc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                Communication c = lvca.getItem(pos);
+                Toast.makeText(CommunicationActivity.this, c.data + " " + c.comunicazioni, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     //istanziamo un menu

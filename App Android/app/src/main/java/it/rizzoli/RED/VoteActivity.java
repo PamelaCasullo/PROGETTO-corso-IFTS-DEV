@@ -14,7 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class VoteActivity extends AppCompatActivity {
-    ListView lv = null;
+    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

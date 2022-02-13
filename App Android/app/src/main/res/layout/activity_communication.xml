@@ -2,22 +2,63 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backg"
     tools:context=".CommunicationActivity">
 
-    <TextView
-        android:id="@+id/communication"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/barraTitoli"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background"
-        android:text="Comunicazioni"
-        android:textSize="@dimen/textMenuSize"
-        android:textAlignment="center" />
+        android:background="@color/redb"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:text="DATA"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMenuSize" />
+
+        <TextView
+            android:id="@+id/comunicazioni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="COMUNICAZIONI"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMenuSize" />
+    </LinearLayout>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listaComu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_below="@+id/barraTitoli" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/redb"
+        android:text="\@ Copyright"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        tools:ignore="TextContrastCheck" />
 
 </RelativeLayout>

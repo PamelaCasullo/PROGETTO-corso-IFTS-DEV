@@ -13,65 +13,14 @@
         android:layout_height="190dp"
         android:src="@drawable/home2" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imagebg"
-        android:text="queeeeeeeee" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:padding="45dp"
-        android:layout_below="@+id/imagebg"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <TextView
-        android:id="@+id/primo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="215dp"
-        android:layout_marginBottom="5dp"
-        android:text="Nome e Cognome"
-        android:textColor="@color/red"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/secondo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="130dp"
-        android:layout_below="@+id/primo"
-        android:layout_marginBottom="5dp"
-        android:text="E-Mail"
-        android:textColor="@color/red"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/terzo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="130dp"
-        android:layout_below="@+id/secondo"
-        android:text="Corso"
-        android:textColor="@color/red"
-        android:textSize="20dp" />
-
-
     <ListView
         android:id="@+id/listaVoti"
         android:layout_width="match_parent"
         android:layout_height="135dp"
         android:layout_above="@id/footer"
-        android:layout_below="@+id/imageButton"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/imagebg"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/backg"
         android:verticalScrollbarPosition="right" />
@@ -87,20 +36,20 @@
         android:ems="15"
         android:padding="15dp"
         android:text="Accedi ai voti"
-        app:backgroundTint="@color/redb"/>
+        app:backgroundTint="@color/redb" />
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listaComu"
         android:layout_width="match_parent"
         android:layout_height="217dp"
         android:layout_below="@+id/buttonVoti"
         android:background="@color/white" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/listview"
+        android:layout_below="@+id/listaComu"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:ems="15"

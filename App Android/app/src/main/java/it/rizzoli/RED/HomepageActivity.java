@@ -19,7 +19,10 @@ import android.widget.Toast;
 
 public class HomepageActivity extends AppCompatActivity {
 
-    ListView lv = null;
+    ListView lv;
+    ListViewVotoAdapter lvva;
+    ListView lvc;
+    ListViewComunicazioniAdapter lvca;
 
     //TODO METTERE OVUNQUE LA LOGOUT FUNZIONANTE(vedere commit 31/01/2022)
     SharedPreferences sharedpreferences;
@@ -47,7 +50,7 @@ public class HomepageActivity extends AppCompatActivity {
                 new Vote("17/10/2021", "Architetture e Sistemi", 21)
         };
 
-        ListViewVotoAdapter lvva = new ListViewVotoAdapter(this, R.layout.activity_colonne_voti, vote);
+        lvva = new ListViewVotoAdapter(this, R.layout.activity_colonne_voti, vote);
         lv.setAdapter(lvva);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,6 +60,26 @@ public class HomepageActivity extends AppCompatActivity {
                 Toast.makeText(HomepageActivity.this, v.data + " " + v.materia + " " + v.voto, Toast.LENGTH_LONG).show();
             }
         });
+
+        lvc = findViewById(R.id.listaComu);
+        Communication[] comu = new Communication[] {
+                new Communication("08/02/2022", "Salve ragazzi, domani le lezioni saranno sospese a causa dei sciopperi dei mezzi, grazie e buona serata"),
+                new Communication("18/01/2022", "Salve ragazzi, domani ci sara l'esame parziale di DataBase, grazie e buona serata"),
+                new Communication("11/12/2021", "Salve ragazzi, da domani ci sarà obbligatorio essere in possesso del greenpass per partecipare alle lezioni, grazie e buona serata"),
+                new Communication("22/11/2021", "Salve ragazzi, da domani le lezioni proseguiranno in FAD a causa dei positivi segnalati, grazie e buona serata")
+        };
+        lvca = new ListViewComunicazioniAdapter(this, R.layout.activity_colonne_communication, comu);
+        lvc.setAdapter(lvca);
+
+        lvc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                Communication c = lvca.getItem(pos);
+                Toast.makeText(HomepageActivity.this, c.data + " " + c.comunicazioni, Toast.LENGTH_LONG).show();
+            }
+        });
+
+
 
     bv = findViewById(R.id.buttonVoti);
         bv.setOnClickListener(new View.OnClickListener() {
