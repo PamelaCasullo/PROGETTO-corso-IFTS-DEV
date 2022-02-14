@@ -60,3 +60,27 @@
     transition: 0.5s;
     cursor: pointer;
 }
+
+/*LOGIN BUTTON STYLE*/
+.btn-outline-danger {
+    color: white;
+    border-color: white;
+}
+
+/*CHANGE THE ATTRIBUTE ON HOVER FOR LOGIN-BUTTON*/
+.btn-outline-danger:hover {
+    border-color: white;
+    transition: 0.5s;
+}
+
+/*RESET BUTTON STYLE*/
+.btn-outline-dark {
+    color: black;
+    border-color: black;
+}
+
+/*CHANGE THE ATTRIBUTE ON HOVER FOR RESET-BUTTON*/
+.btn-outline-dark:hover {
+    border-color: white;
+    transition: 0.5s;
+}
