@@ -23,10 +23,10 @@
             android:layout_marginRight="30dp"
             android:layout_weight="1"
             android:text="DATA"
-            android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/textMenuSize" />
+            android:textSize="@dimen/textMenuSize"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/comunicazioni"
@@ -34,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="COMUNICAZIONI"
-            android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/textMenuSize" />
+            android:textSize="22dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ListView

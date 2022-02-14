@@ -29,6 +29,7 @@ public class HomepageActivity extends AppCompatActivity {
     String email, password;
 
     Button bv;
+    Button bc;
 
     // key for storing email.
     public static final String EMAIL_KEY = "textEmail";
@@ -61,6 +62,16 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
+    bv = findViewById(R.id.buttonVoti);
+        bv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent va = new Intent(getApplicationContext(), VoteActivity.class);
+                startActivity(va);
+            }
+        });
+
+
         lvc = findViewById(R.id.listaComu);
         Communication[] comu = new Communication[] {
                 new Communication("08/02/2022", "Salve ragazzi, domani le lezioni saranno sospese a causa dei sciopperi dei mezzi, grazie e buona serata"),
@@ -79,14 +90,12 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
-
-
-    bv = findViewById(R.id.buttonVoti);
-        bv.setOnClickListener(new View.OnClickListener() {
+        bc = findViewById(R.id.buttonCom);
+        bc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent va = new Intent(getApplicationContext(), VoteActivity.class);
-                startActivity(va);
+                Intent ca = new Intent(getApplicationContext(), CommunicationActivity.class);
+                startActivity(ca);
             }
         });
 

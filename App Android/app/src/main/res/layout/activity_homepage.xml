@@ -42,8 +42,12 @@
         android:id="@+id/listaComu"
         android:layout_width="match_parent"
         android:layout_height="217dp"
+        android:layout_above="@id/footer"
         android:layout_below="@+id/buttonVoti"
-        android:background="@color/white" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/backg"
+        android:verticalScrollbarPosition="right" />
 
     <Button
         android:id="@+id/buttonCom"
