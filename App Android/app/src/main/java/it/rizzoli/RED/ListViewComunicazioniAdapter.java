@@ -29,6 +29,7 @@ public class ListViewComunicazioniAdapter extends ArrayAdapter<Communication> {
         for (int i = 0; i < object.length; i++)
             communications.add(object[i]);
     }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
