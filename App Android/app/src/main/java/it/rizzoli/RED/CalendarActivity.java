@@ -1,8 +1,5 @@
 package it.rizzoli.RED;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,19 +12,15 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-public class CalendarActivity extends AppCompatActivity {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-    CalendarView calendar ;
-    TextView calendar_view;
+public class CalendarActivity extends AppCompatActivity {
 
     private final static String MY_PREFERENCES = "MyPref";
 
     WebView webView;
     public String fileName = "TimeTable.html";
-
-    Button closePopupBtn;
-    PopupWindow popupWindow;
-    LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,15 +69,11 @@ public class CalendarActivity extends AppCompatActivity {
                 startActivity(intentRegister);
                 break;
             case R.id.PROFILE:
-                Intent intentProfile = new Intent(this,ProfileActivity.class);
+                Intent intentProfile = new Intent(this, ProfileActivity.class);
                 startActivity(intentProfile);
                 break;
-            case R.id.COMMUNICATION:
-                Intent intentCommunication = new Intent(this,CommunicationActivity.class);
-                startActivity(intentCommunication);
-                break;
             case R.id.VOTE:
-                Intent intentVote = new Intent(this,VoteActivity.class);
+                Intent intentVote = new Intent(this, VoteActivity.class);
                 startActivity(intentVote);
                 break;
         }

@@ -1,8 +1,5 @@
 package it.rizzoli.RED;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,8 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class VoteActivity extends AppCompatActivity {
-    ListView lv;
+    ListView lv = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,29 +65,10 @@ public class VoteActivity extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, HomepageActivity.class);
+                Intent intentHome = new Intent(this, MainActivity.class);
                 startActivity(intentHome);
                 break;
-            case R.id.LOGOUT:
-                Intent intentLogin = new Intent(this, LoginActivity.class);
-                startActivity(intentLogin);
-                break;
-            case R.id.CALENDAR:
-                Intent intentCalendar = new Intent(this,CalendarActivity.class);
-                startActivity(intentCalendar);
-                break;
-            case R.id.PRESENCE:
-                Intent intentRegister = new Intent(this, PresenceActivity.class);
-                startActivity(intentRegister);
-                break;
-            case R.id.PROFILE:
-                Intent intentProfile = new Intent(this,ProfileActivity.class);
-                startActivity(intentProfile);
-                break;
-            case R.id.COMMUNICATION:
-                Intent intentCommunication = new Intent(this,CommunicationActivity.class);
-                startActivity(intentCommunication);
-                break;
+
         }
         return false;
     }

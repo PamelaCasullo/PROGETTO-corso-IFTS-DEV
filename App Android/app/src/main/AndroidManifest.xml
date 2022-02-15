@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="it.rizzoli.RED">
-    
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RED">
+        <activity android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomepageActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
         <activity
             android:name=".VoteActivity"
             android:exported="false" />
@@ -16,30 +29,11 @@
             android:name=".CalendarDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".CommunicationActivity"
-            android:exported="false" />
-        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".PresenceActivity"
             android:exported="false" />
-        <activity
-            android:name=".CalendarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".HomepageActivity"
-            android:exported="false"/>
-
     </application>
 
 </manifest>

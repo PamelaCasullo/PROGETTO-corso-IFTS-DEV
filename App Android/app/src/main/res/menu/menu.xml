@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
 
-    <item android:id="@+id/HOMEPAGE"
-        android:title="@string/homepage" />
+    <group android:checkableBehavior="single">
 
-    <item android:id="@+id/CALENDAR"
-        android:title="@string/calendario"/>
+        <item android:id="@+id/HOMEPAGE"
+            android:title="@string/homepage"
+            android:icon="@drawable/ic_baseline_home_24"/>
 
-    <item android:id="@+id/PRESENCE"
-        android:title="@string/registro"/>
+        <item android:id="@+id/CALENDAR"
+            android:title="@string/calendario"
+            android:icon="@drawable/ic_baseline_calendar_month_24"/>
 
-    <item android:id="@+id/PROFILE"
-        android:title="@string/profilo_personale" />
+        <item android:id="@+id/PRESENCE"
+            android:title="@string/registro"
+            android:icon="@drawable/ic_baseline_menu_book_24"/>
 
-    <item android:id="@+id/COMMUNICATION"
-        android:title="@string/comunicazioni"/>
+        <item android:id="@+id/PROFILE"
+            android:title="@string/elenco_studenti"
+            android:icon="@drawable/ic_baseline_person_24"/>
 
-    <item android:id="@+id/VOTE"
-        android:title="@string/voti"/>
+        <item android:id="@+id/VOTE"
+            android:title="@string/voti"
+            android:icon="@drawable/ic_baseline_format_list_numbered_24"/>
 
-    <item android:id="@+id/LOGOUT"
-        android:title="@string/logout"/>
+        <item android:id="@+id/LOGOUT"
+            android:title="@string/logout"
+            android:icon="@drawable/ic_baseline_login_24"/>
+
+    </group>
 
 </menu>

@@ -1,13 +1,13 @@
 package it.rizzoli.RED;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PresenceActivity extends AppCompatActivity {
 
@@ -49,19 +49,15 @@ public class PresenceActivity extends AppCompatActivity {
                 startActivity(intentLogin);
                 break;
             case R.id.CALENDAR:
-                Intent intentCalendar = new Intent(this,CalendarActivity.class);
+                Intent intentCalendar = new Intent(this, CalendarActivity.class);
                 startActivity(intentCalendar);
                 break;
             case R.id.PROFILE:
-                Intent intentProfile = new Intent(this,ProfileActivity.class);
+                Intent intentProfile = new Intent(this, ProfileActivity.class);
                 startActivity(intentProfile);
                 break;
-            case R.id.COMMUNICATION:
-                Intent intentCommunication = new Intent(this,CommunicationActivity.class);
-                startActivity(intentCommunication);
-                break;
             case R.id.VOTE:
-                Intent intentVote = new Intent(this,VoteActivity.class);
+                Intent intentVote = new Intent(this, VoteActivity.class);
                 startActivity(intentVote);
                 break;
         }

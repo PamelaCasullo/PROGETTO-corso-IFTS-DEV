@@ -9,33 +9,35 @@
         android:id="@+id/data"
         android:layout_weight="33"
         android:layout_width="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Data"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/materia"
         android:layout_weight="33"
         android:layout_width="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
         android:gravity="center"
         android:layout_toRightOf="@+id/data"
         android:text="Materia"
-        android:textColor="@color/white"/>
+        android:textStyle="italic"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/voto"
         android:layout_weight="33"
         android:layout_width="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
         android:gravity="center"
         android:layout_toRightOf="@+id/materia"
         android:text="Voti"
-        android:textColor="@color/red"/>
+        android:textColor="@color/green"/>
 </LinearLayout>

@@ -24,10 +24,10 @@
         android:layout_toRightOf="@+id/BenvenutoInRed"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:textStyle="bold"
         android:text="RED!"
         android:textColor="@color/red"
-        android:textSize="40dp"/>
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/info"
