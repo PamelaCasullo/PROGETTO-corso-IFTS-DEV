@@ -84,3 +84,44 @@
     border-color: white;
     transition: 0.5s;
 }
+
+/*TYPING ANIMATION*/
+.typewriter {
+    overflow: hidden; 
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .15em; 
+    margin-bottom: 20px;
+    animation: 
+      typing 3.5s steps(40, end),
+      typing-effect .75s infinite;
+}
+  
+  /*TYPING EFFECT*/
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+ 
+/*RED-APP TITLE BACKGROUND*/
+.bg-red-app { 
+    background-color: darkred;
+    border-radius: 5px;
+    padding: 5px 5px;
+    text-shadow: 2px 3px 0px black;
+    color: white;
+}
+
+/*WELCOME-TO TITLE BACKGROUND*/
+.bg-welcome-to {
+    text-shadow: 2px 3px 0px darkred;
+    color: white;
+}
+
+/*LOGIN FORM TITLE BACKGROUND*/
+.bg-login {
+    text-shadow: 2px 3px 0px black;
+    color: white;
+    text-align: center;
+}
+
