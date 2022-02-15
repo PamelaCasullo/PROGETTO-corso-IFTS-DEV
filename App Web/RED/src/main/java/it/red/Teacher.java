@@ -5,16 +5,16 @@ public class Teacher {
 	private int id_teacher;
 	private String personal_email;
 	private String institutional_email;
-	private String name;
+	private String first_name;
 	private String last_name;
 	private String phone_number;
 	private String password;
 	
-	public Teacher(int id_teacher, String personal_email, String institutional_email, String name, String last_name, String phone_number, String password) {
+	public Teacher(int id_teacher, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, String password) {
 		this.id_teacher = id_teacher;
 		this.personal_email = personal_email;
 		this.institutional_email = institutional_email;
-		this.name = name;
+		this.first_name = first_name;
 		this.last_name = last_name;
 		this.phone_number = phone_number;
 		this.password = password;
@@ -46,11 +46,11 @@ public class Teacher {
 	}
 	
 	public String getName() {
-		return name;
+		return first_name;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.first_name = name;
 	}
 	
 	public String getLast_name() {

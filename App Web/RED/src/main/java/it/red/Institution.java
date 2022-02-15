@@ -1,8 +1,13 @@
 package it.red;
 
+
 public class Institution {
 	private int id_institution;
 	private String name;
+
+	public Institution() {
+		
+	}
 	
 	public Institution(int id_institution, String name) {
 		this.id_institution = id_institution;
