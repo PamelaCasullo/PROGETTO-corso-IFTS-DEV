@@ -6,18 +6,18 @@ public class Student {
 	private int id_student;
 	private String personal_email;
 	private String institutional_email;
-	private String name;
+	private String first_name;
 	private String last_name;
 	private String phone_number;
 	private Date date_of_birth;
 	private String password;
 	
 	
-	public Student(int id_student, String personal_email, String institutional_email, String name, String last_name, String phone_number, Date date_of_birth, String password) {
+	public Student(int id_student, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, Date date_of_birth, String password) {
 		this.id_student = id_student;
 		this.personal_email = personal_email;
 		this.institutional_email = institutional_email;
-		this.name = name;
+		this.first_name = first_name;
 		this.last_name = last_name;
 		this.phone_number = phone_number;
 		this.date_of_birth = date_of_birth;
@@ -49,11 +49,11 @@ public class Student {
 	}
 	
 	public String getName() {
-		return name;
+		return first_name;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.first_name = name;
 	}
 	
 	public String getLast_name() {

@@ -1,0 +1,86 @@
+/*FOCUS COLOR FOR INPUT EMAIL/PASSWORD*/
+.form-control:focus {
+    border-color: black;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.075) inset, 0px 5px 10px black;
+    transition: 0.4s;
+}
+
+
+.black-color-ground {
+    background: linear-gradient(360deg, #000000, #484848) fixed;     
+}
+
+
+/*MAKE THE CIRCLE BUTTON OF RADIO DISSAPEAR*/
+.radio-check-input {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+/*CHANGE THE ATTRIBUTE WHEN THE RADIO IS CHECKED*/
+.radio-check-input:checked + label{
+    background-color: darkred;
+    color: white;
+    transition: 0.5s;
+}
+
+/*STUDENT BUTTON*/
+.radio-check-student-label {
+    border: 1px solid black;
+    padding: 5px 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: black;
+    background-color: white;
+}
+
+/*CHANGE THE ATTRIBUTE ON HOVER FOR STUDENT*/
+.radio-check-student-label:hover {
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/*TEACHER BUTTON*/
+.radio-check-teacher-label {
+    border: 1px solid black;
+    padding: 5px 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
+    background-color: white;
+}
+
+/*CHANGE THE ATTRIBUTE ON HOVER FOR TEACHER*/
+.radio-check-teacher-label:hover {
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/*LOGIN BUTTON STYLE*/
+.btn-outline-danger {
+    color: white;
+    border-color: white;
+}
+
+/*CHANGE THE ATTRIBUTE ON HOVER FOR LOGIN-BUTTON*/
+.btn-outline-danger:hover {
+    border-color: white;
+    transition: 0.5s;
+}
+    
+/*RESET BUTTON STYLE*/
+.btn-outline-dark {
+    color: black;
+    border-color: black;
+}
+
+/*CHANGE THE ATTRIBUTE ON HOVER FOR RESET-BUTTON*/
+.btn-outline-dark:hover {
+    border-color: white;
+    transition: 0.5s;
+}
