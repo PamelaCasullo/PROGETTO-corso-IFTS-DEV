@@ -13,6 +13,9 @@ public class Student {
 	private String password;
 	private String photo;
 	
+public Student() {
+		
+	}
 	
 	public Student(int id_student, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, Date date_of_birth, String password,String photo) {
 		this.id_student = id_student;

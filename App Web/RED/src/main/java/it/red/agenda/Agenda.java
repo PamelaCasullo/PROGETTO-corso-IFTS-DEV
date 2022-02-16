@@ -9,6 +9,10 @@ public class Agenda {
 	private int agenda_id_module;
 	private int agenda_id_teacher;
 
+	public Agenda() {
+		
+	}
+	
 	public Agenda(int id_agenda, Date date, String description, int agenda_id_module, int agenda_id_teacher) {
 		this.id_agenda = id_agenda;
 		this.date = date;

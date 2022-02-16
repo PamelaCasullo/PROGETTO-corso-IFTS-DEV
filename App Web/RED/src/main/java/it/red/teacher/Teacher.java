@@ -11,6 +11,10 @@ public class Teacher {
 	private String password;
 	private String photo;
 
+	public Teacher() {
+		
+	}
+	
 	public Teacher(int id_teacher, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, String password,String photo) {
 		this.id_teacher = id_teacher;
 		this.personal_email = personal_email;
