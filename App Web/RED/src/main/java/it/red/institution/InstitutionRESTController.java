@@ -1,4 +1,4 @@
-package it.red;
+package it.red.institution;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class InstitutionRESTController {
 		return repository.findAll();
 	}
 	//aggiungere un'istituzione
-	@RequestMapping(value="/Institutions/add", method=RequestMethod.POST)
+	@RequestMapping(value="/Institutions/addInstitution", method=RequestMethod.POST)
 	protected ResponseEntity<String> addInstitution(@RequestBody Institution newInstitution) {
 		if(this.repository.save(newInstitution)>0) 
 			return new ResponseEntity<String>("OK",HttpStatus.CREATED);
@@ -36,7 +36,7 @@ public class InstitutionRESTController {
 	}
 
 	//cercare un'istituzione tramite chiave
-	@RequestMapping(value="/Institutions/{name}", method=RequestMethod.GET)
+	@RequestMapping(value="/Institutions/search/{id_institution}", method=RequestMethod.GET)
 	protected ResponseEntity<String> searchInstitution(@PathVariable int id) {
 		
 		Institution ins = this.repository.findValueById(id);
@@ -46,7 +46,7 @@ public class InstitutionRESTController {
 			return new ResponseEntity<String>("KO",HttpStatus.NOT_FOUND);
 	}
 	//aggiornare un istituto
-	@RequestMapping(value="/Institutions/{name}", method=RequestMethod.PUT) 
+	@RequestMapping(value="/Institutions/update/{id_institution}", method=RequestMethod.PUT) 
 	public Institution updateInsitutionById(@PathVariable long id, @RequestBody Institution institutionModify) {
 		
 		Institution i = this.repository.findValueById(id);
@@ -58,7 +58,7 @@ public class InstitutionRESTController {
 		return i;
 	}
 	//eliminare un'istituzione
-	@RequestMapping(value="/Institutions/{name}", method=RequestMethod.DELETE) 
+	@RequestMapping(value="/Institutions/delete/{id_institution}", method=RequestMethod.DELETE) 
 	public void deleteInst(@PathVariable long id) {
 		
 		this.repository.deleteValueById(id);

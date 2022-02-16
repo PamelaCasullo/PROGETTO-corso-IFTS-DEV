@@ -1,4 +1,4 @@
-package it.red;
+package it.red.institution;
 
 import java.util.List;
 

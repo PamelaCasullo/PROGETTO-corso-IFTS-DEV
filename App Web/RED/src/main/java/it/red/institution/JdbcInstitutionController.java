@@ -1,4 +1,4 @@
-package it.red;
+package it.red.institution;
 
 import java.util.List;
 
@@ -44,12 +44,12 @@ public class JdbcInstitutionController implements InstitutionRepository{
 
 	@Override
 	public int deleteValueById(long id) {
-		return jdbcTemplate.update("DELETE FROM players WHERE id_institution=?", id);
+		return jdbcTemplate.update("DELETE FROM institution WHERE id_institution=?", id);
 	}
 
 	@Override
 	public int deleteAll() {
-		return jdbcTemplate.update("DELETE ALL FROM institution");
+		return jdbcTemplate.update("DELETE * FROM institution");
 
 	}
 

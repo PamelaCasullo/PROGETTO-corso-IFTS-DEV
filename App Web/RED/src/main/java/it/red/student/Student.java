@@ -1,4 +1,4 @@
-package it.red;
+package it.red.student;
 
 import java.sql.Date;
 
@@ -11,9 +11,10 @@ public class Student {
 	private String phone_number;
 	private Date date_of_birth;
 	private String password;
+	private String photo;
 	
 	
-	public Student(int id_student, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, Date date_of_birth, String password) {
+	public Student(int id_student, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, Date date_of_birth, String password,String photo) {
 		this.id_student = id_student;
 		this.personal_email = personal_email;
 		this.institutional_email = institutional_email;
@@ -22,6 +23,7 @@ public class Student {
 		this.phone_number = phone_number;
 		this.date_of_birth = date_of_birth;
 		this.password = password;
+		this.photo=photo;
 	}
 	
 	public int getId_student() {
@@ -48,11 +50,11 @@ public class Student {
 		this.institutional_email = institutional_email;
 	}
 	
-	public String getName() {
+	public String getFirstName() {
 		return first_name;
 	}
 	
-	public void setName(String name) {
+	public void setFirstName(String name) {
 		this.first_name = name;
 	}
 	
@@ -86,5 +88,13 @@ public class Student {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}	
 }
