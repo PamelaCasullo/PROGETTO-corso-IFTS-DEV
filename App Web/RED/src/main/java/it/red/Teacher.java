@@ -1,6 +1,8 @@
 package it.red;
 
 public class Teacher {
+	
+	private int id_teacher;
 	private String personal_email;
 	private String institutional_email;
 	private String first_name;
@@ -8,13 +10,23 @@ public class Teacher {
 	private String phone_number;
 	private String password;
 	
-	public Teacher(String personal_email, String institutional_email, String first_name, String last_name, String phone_number, String password) {
+	public Teacher(int id_teacher, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, String password) {
+		this.id_teacher = id_teacher;
 		this.personal_email = personal_email;
 		this.institutional_email = institutional_email;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.phone_number = phone_number;
 		this.password = password;
+	}
+	
+	
+	public int getId_teacher() {
+		return id_teacher;
+	}
+	
+	public void setId_teacher(int id_teacher) {
+		this.id_teacher = id_teacher;
 	}
 
 	public String getPersonal_email() {

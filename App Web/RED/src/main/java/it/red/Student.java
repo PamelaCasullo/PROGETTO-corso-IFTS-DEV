@@ -3,6 +3,7 @@ package it.red;
 import java.sql.Date;
 
 public class Student {
+	private int id_student;
 	private String personal_email;
 	private String institutional_email;
 	private String first_name;
@@ -12,7 +13,8 @@ public class Student {
 	private String password;
 	
 	
-	public Student(String personal_email, String institutional_email, String first_name, String last_name, String phone_number, Date date_of_birth, String password) {
+	public Student(int id_student, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, Date date_of_birth, String password) {
+		this.id_student = id_student;
 		this.personal_email = personal_email;
 		this.institutional_email = institutional_email;
 		this.first_name = first_name;
@@ -20,6 +22,14 @@ public class Student {
 		this.phone_number = phone_number;
 		this.date_of_birth = date_of_birth;
 		this.password = password;
+	}
+	
+	public int getId_student() {
+		return id_student;
+	}
+	
+	public void setId_student(int id_student) {
+		this.id_student = id_student;
 	}
 	
 	public String getPersonal_email() {

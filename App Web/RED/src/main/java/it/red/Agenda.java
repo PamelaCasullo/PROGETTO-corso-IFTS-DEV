@@ -3,16 +3,26 @@ package it.red;
 import java.sql.Date;
 
 public class Agenda {
+	private int id_agenda;
 	private Date date;
 	private String description;
 	private int agenda_id_module;
 	private int agenda_id_teacher;
 
-	public Agenda(Date date, String description, int agenda_id_module, int agenda_id_teacher) {
+	public Agenda(int id_agenda, Date date, String description, int agenda_id_module, int agenda_id_teacher) {
+		this.id_agenda = id_agenda;
 		this.date = date;
 		this.description = description;
 		this.agenda_id_module = agenda_id_module;
 		this.agenda_id_teacher = agenda_id_teacher;
+	}
+	
+	public int getId_agenda() {
+		return id_agenda;
+	}
+	
+	public void setId_agenda(int id_agenda) {
+		this.id_agenda = id_agenda;
 	}
 	
 	public Date getDate() {
