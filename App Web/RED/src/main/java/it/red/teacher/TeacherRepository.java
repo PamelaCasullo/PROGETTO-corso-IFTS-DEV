@@ -1,26 +1,23 @@
-package it.red.student;
+package it.red.teacher;
 
 import java.util.List;
 
-
-
-public interface StudentRepository {
-	
+public interface TeacherRepository {
 	//POST
 	//salva un T del DB. Ritorna 1 se modifica effettuata, altrimenti ritorna -1) 
-	int save(Student p);
+	int save(Teacher p);
 	
 	//GET
 	//recupera al DB un T
-	Student findValueById(long id);
+	Teacher findValueById(long id);
 	
 	//GET
 	//recupera una lista di tutti T
-	List<Student> findAll();
+	List<Teacher> findAll();
 	
 	//GET
 	//aggiorno un T, passandogli un T
-	long updateValueById(Student p);
+	long updateValueById(Teacher p);
 		
 	//GET
 	//Cancello un T dal DB tramite id T
@@ -30,6 +27,4 @@ public interface StudentRepository {
 	//GET
 	//cancella tutti i record
 	int deleteAll();
-
-
 }

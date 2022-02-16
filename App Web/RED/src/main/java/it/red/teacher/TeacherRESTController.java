@@ -1,4 +1,4 @@
-package it.red.student;
+package it.red.teacher;
 
 import java.util.List;
 
@@ -16,45 +16,39 @@ import it.red.JdbcUtilityInterface;
 
 
 @RestController
-public class StudentRESTController implements JdbcUtilityInterface<Student> {
+public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 
 	@Autowired
 	@Qualifier("MYSQL")
-	StudentRepository repository;
+	TeacherRepository repository;
 
-	//showAll
-	@RequestMapping(value="/Students/showAll", method=RequestMethod.GET)
-	public List<Student> showItems() {
+	@RequestMapping(value="/Teachers/showAll")
+	public List<Teacher> showItems() {
 		return repository.findAll();
 	}
 
-	//add
-	@RequestMapping(value="/Students/add/newStudent", method=RequestMethod.POST)
-	public ResponseEntity<String> addElement(@RequestBody Student newStudent) {
-		if(this.repository.save(newStudent)>0)
+	
+	@RequestMapping(value="/Teachers/add/newTeacher", method=RequestMethod.POST)
+	public ResponseEntity<String> addElement(@RequestBody Teacher newItem) {
+		if(this.repository.save(newItem)>0)
 			return new ResponseEntity<String>("SAVED",HttpStatus.CREATED);
 		else 
 			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_ACCEPTABLE);
 	}
 
-	//doRetrieveByKey
-	@RequestMapping(value="/Students/search/{id_student}", method=RequestMethod.PUT)
+	@RequestMapping(value="/Students/search/{id_teacher}", method=RequestMethod.PUT)
 	public ResponseEntity<String> searchElementById(@RequestBody int id) {
 		if(this.repository.findValueById(id)!=null)
 			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
 		else 
-			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);	
+			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
 	}
 
-	//update 
-	@RequestMapping(value="/Students/update/{id_student}", method=RequestMethod.PUT) 
-	public Student updateElementById(@PathVariable long id, @RequestBody Student stMod) {
+	@Override
+	public Teacher updateElementById(@PathVariable long id,@RequestBody Teacher stMod) {
+		Teacher i = this.repository.findValueById(id);
 
-		Student i = this.repository.findValueById(id);
-
-		if(stMod.getDate_of_birth()!=null) {
-			i.setDate_of_birth(stMod.getDate_of_birth());
-		}
+		
 		if(stMod.getPersonal_email()!=null) {
 			i.setPersonal_email(stMod.getPersonal_email());
 		}
@@ -71,14 +65,16 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		this.repository.updateValueById(i);
 		return i;
 	}
+	
 
-	//delete
-	@RequestMapping(value="/Students/delete/{id_student}", method=RequestMethod.DELETE) 
+	@Override
 	public void deleteElement(@PathVariable long id) {
-
 		this.repository.deleteValueById(id);
-
+		
 	}
+	
+	
+	
 
 
 }
