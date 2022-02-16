@@ -3,26 +3,16 @@ package it.red;
 import java.sql.Date;
 
 public class Course {
-	private int id_course;
 	private String name;
 	private Date start_date;
 	private String type_of_course;
 	private int course_id_institution;
 	
-	public Course(int id_course, String name, Date start_date, String type_of_course, int institution_id_institution) {
-		this.id_course = id_course;
+	public Course(String name, Date start_date, String type_of_course, int institution_id_institution) {
 		this.name = name;
 		this.start_date = start_date;
 		this.type_of_course = type_of_course;
 		this.course_id_institution = institution_id_institution;
-	}
-
-	public int getId_course() {
-		return id_course;
-	}
-
-	public void setId_course(int id_course) {
-		this.id_course = id_course;
 	}
 
 	public String getName() {

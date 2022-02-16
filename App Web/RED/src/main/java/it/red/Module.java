@@ -1,26 +1,16 @@
 package it.red;
 
 public class Module {
-	private int id_module;
 	private String title;
 	private int duration;
 	private String program;
 	private int module_id_course;
 	
-	public Module(int id_module, String title, int duration, String program, int module_id_course) {
-		this.id_module = id_module;
+	public Module(String title, int duration, String program, int module_id_course) {
 		this.title = title;
 		this.duration = duration;
 		this.program = program;
 		this.module_id_course = module_id_course;
-	}
-
-	public int getId_module() {
-		return id_module;
-	}
-
-	public void setId_module(int id_module) {
-		this.id_module = id_module;
 	}
 
 	public String getTitle() {
