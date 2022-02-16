@@ -1,4 +1,4 @@
-package it.red;
+package it.red.course;
 
 import java.sql.Date;
 

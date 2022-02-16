@@ -1,4 +1,4 @@
-package it.red;
+package it.red.module;
 
 public class Module {
 	private int id_module;

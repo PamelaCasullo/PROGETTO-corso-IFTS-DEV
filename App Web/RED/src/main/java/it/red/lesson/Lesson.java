@@ -1,4 +1,4 @@
-package it.red;
+package it.red.lesson;
 
 public class Lesson {
 	private int id_lesson;

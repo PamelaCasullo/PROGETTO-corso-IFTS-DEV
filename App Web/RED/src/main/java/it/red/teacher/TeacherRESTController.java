@@ -66,7 +66,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return i;
 	}
 	
-	@RequestMapping(value="/Teachers/search/{id_teacher}", method=RequestMethod.DELETE) 
+	@RequestMapping(value="/Teachers/search/{id_teacher}", method=RequestMethod.DELETE)
 	public void deleteElement(@PathVariable long id) {
 		this.repository.deleteValueById(id);
 		

@@ -1,4 +1,4 @@
-package it.red;
+package it.red.agenda;
 
 import java.sql.Date;
 
