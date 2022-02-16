@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     ListView lv;
     Button bv;
+    ListViewVotoAdapter lvva;
 
     //TODO METTERE OVUNQUE LA LOGOUT FUNZIONANTE(vedere commit 31/01/2022)
     SharedPreferences sharedpreferences;
@@ -41,37 +42,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // SERVE A VISUALIZZARE LA MINILISVIEW NELLA HOMEPAGE
-        lv = findViewById(R.id.listaVoti);
-        Vote[] vote = new Vote[]{
-                new Vote("08/02/2022", "Applicationi Mobile Android", 18),
-                new Vote("18/01/2022", "Tecnologie Web per la UI ed il Back-End", 30),
-                new Vote("11/12/2021", "Gestione di dati e DataBase", 28),
-                new Vote("22/11/2021", "Realizzazione di applicazioni Java", 26),
-                new Vote("04/11/2021", "Processo di sviluppo del software", 23),
-                new Vote("17/10/2021", "Architetture e Sistemi", 21)
-        };
-
-        ListViewVotoAdapter lvva = new ListViewVotoAdapter(this, R.layout.activity_colonne_voti, vote);
-        lv.setAdapter(lvva);
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
-                Vote v = lvva.getItem(pos);
-                Toast.makeText(MainActivity.this, v.data + " " + v.materia + " " + v.voto, Toast.LENGTH_LONG).show();
-            }
-        });
-
-        // QUESTO E' IL BOTTONE DEI VOTI PER ACCEDERE ALL'ACTIVITY VOTI
-        bv = findViewById(R.id.buttonVoti);
-        bv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent va = new Intent(getApplicationContext(), VoteActivity.class);
-                startActivity(va);
-            }
-        });
 
         // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
 
@@ -85,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     // SERVE A, QUANDO CLICCO SUL MENU SI APRE
@@ -131,4 +102,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return false;
     }
+
 }

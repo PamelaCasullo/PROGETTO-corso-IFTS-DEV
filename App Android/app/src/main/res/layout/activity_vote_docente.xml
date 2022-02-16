@@ -1,0 +1,89 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--barra con i titoli di data/materia/voto, niente id perchè non hanno bisogno di essere modificati-->
+    <LinearLayout
+        android:id="@+id/barraTitoli"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bgred"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="DATA"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMenuSize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Nome/Cognome"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMenuSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Materia"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMenuSize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="VOTO"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMenuSize" />
+
+    </LinearLayout>
+
+    <!--lista dei voti ottenuti tramite database-->
+
+    <!--footer con sfondo rosso e nome progetto-->
+
+    <ListView
+        android:id="@+id/listaVotiDocente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footer"
+        android:layout_below="@+id/barraTitoli"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/bgcol"
+        android:verticalScrollbarPosition="right" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/redb"
+        android:text="\@ Copyright"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        tools:ignore="TextContrastCheck" />
+
+</RelativeLayout>

@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     tools:ignore="HardcodedText"
-    tools:context=".HomepageActivity">
+    tools:context=".HomePageDocenteActivity">
 
     <RelativeLayout
         android:background="@drawable/bgcol"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:padding="25dp"
-            android:text="Studente"
+            android:text="Docente"
             android:textColor="@color/red"
             android:textSize="50dp"
             android:textStyle="bold" />
@@ -86,7 +86,7 @@
             android:textStyle="italic" />
 
         <ListView
-            android:id="@+id/listaVoti"
+            android:id="@+id/listaVotiDocente"
             android:layout_width="match_parent"
             android:layout_height="135dp"
             android:layout_above="@id/footer"
@@ -97,17 +97,16 @@
             android:background="@drawable/bgred"
             android:verticalScrollbarPosition="right" />
 
-
         <Button
-            android:id="@+id/buttonVoti"
+            android:id="@+id/buttonVotiDocente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/listaVoti"
+            android:layout_below="@+id/listaVotiDocente"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:ems="15"
             android:padding="15dp"
-            android:text="Visualizza i voti"
+            android:text="Accedi ai voti"
             app:backgroundTint="@color/redb" />
 
         <FrameLayout
@@ -123,7 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/menu"
+        app:menu="@menu/menu_docente"
         app:headerLayout="@layout/layout_navigation_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

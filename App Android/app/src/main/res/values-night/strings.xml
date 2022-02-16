@@ -4,8 +4,9 @@
     <string name="homepage">Homepage</string>
     <string name="calendario">Calendario</string>
     <string name="registro">Registro</string>
-    <string name="profilo_personale">Profilo Personale</string>
+    <string name="elenco_studenti">Elenco studenti</string>
     <string name="comunicazioni">Comunicazioni</string>
     <string name="voti">Voti</string>
+    <string name="voti_doc">Assegna voti</string>
     <string name="logout">Logout</string>
 </resources>

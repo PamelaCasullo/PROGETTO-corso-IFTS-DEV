@@ -65,7 +65,7 @@ public class VoteActivity extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, MainActivity.class);
+                Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 break;
 
