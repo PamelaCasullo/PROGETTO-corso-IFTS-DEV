@@ -5,16 +5,44 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PresenceActivity extends AppCompatActivity {
 
+    ListView lp = null;
+    ListViewPresenceAdapter lvpa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presence);
+
+        lp = findViewById(R.id.listaPresence);
+        Presence[] presence = new Presence[] {
+                new Presence("08/02/2022", "Traore Adama Emmanuel", "P", "/", "/"),
+                new Presence("18/01/2022", "Pamela Casullo Maura", "P", "/", "/"),
+                new Presence("11/12/2021", "Lorenzo Passoni", "/", "A", "/"),
+                new Presence("22/11/2021", "Dorjan Curtis", "P", "/", "/"),
+                new Presence("04/11/2021", "Pablo Escobar", "/", "/", "R: 20min"),
+                new Presence("17/10/2021", "Luciano Pelato", "/", "/", "R: 2ore")
+        };
+
+        lvpa = new ListViewPresenceAdapter(this, R.layout.colonne_presence, presence);
+        lp.setAdapter(lvpa);
+
+        lp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                Presence p = lvpa.getItem(pos);
+                Toast.makeText(PresenceActivity.this, p.data + " " + p.nome_cognome + " " + p.presente + " " + p.ritardo + " " + p.assente, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     //istanziamo un menu
