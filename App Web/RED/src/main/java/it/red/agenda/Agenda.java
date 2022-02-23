@@ -6,6 +6,7 @@ public class Agenda {
 	private int id_agenda;
 	private Date date;
 	private String description;
+	private boolean sign;
 	private int agenda_id_module;
 	private int agenda_id_teacher;
 
@@ -13,10 +14,11 @@ public class Agenda {
 		
 	}
 	
-	public Agenda(int id_agenda, Date date, String description, int agenda_id_module, int agenda_id_teacher) {
+	public Agenda(int id_agenda, Date date, String description, boolean sign, int agenda_id_module, int agenda_id_teacher) {
 		this.id_agenda = id_agenda;
 		this.date = date;
 		this.description = description;
+		this.sign = sign;
 		this.agenda_id_module = agenda_id_module;
 		this.agenda_id_teacher = agenda_id_teacher;
 	}
@@ -43,6 +45,14 @@ public class Agenda {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public boolean getSign() {
+		return sign;
+	}
+	
+	public void setSign(boolean sign) {
+		this.sign = sign;
 	}
 	
 	public int getModule_id_module() {
