@@ -1,4 +1,4 @@
-package it.red.agenda;
+package it.red.lesson;
 
 import java.util.List;
 
@@ -11,27 +11,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.red.JdbcUtilityInterface;
+import it.red.agenda.Agenda;
 
 @RestController
-public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
+public class LessonRESTController implements JdbcUtilityInterface<Lesson> {
 	@Autowired
 	@Qualifier("MYSQL")
-	AgendaRepository repository;
-	
-	@RequestMapping(value="/Agenda/showAll")
-	public List<Agenda> showItems() {
+	LessonRepository repository;
+
+	@RequestMapping(value="/Lessons/showAll")
+	public List<Lesson> showItems() {
 		return repository.findAll();
 	}
 
-	@RequestMapping(value="/Agenda/add/newElement", method=RequestMethod.POST)
-	public ResponseEntity<String> addElement(Agenda newItem) {
+	@RequestMapping(value="/Lessons/add/newElement", method=RequestMethod.POST)
+	public ResponseEntity<String> addElement(Lesson newItem) {
 		if(this.repository.save(newItem)>0)
 			return new ResponseEntity<String>("SAVED",HttpStatus.CREATED);
 		else 
 			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_ACCEPTABLE);
 	}
 
-	@RequestMapping(value="/Agenda/search/{id_agenda}", method=RequestMethod.PUT)
+	@RequestMapping(value="/Lessons/search/{id_lesson}", method=RequestMethod.POST)
 	public ResponseEntity<String> searchElementById(int id) {
 		if(this.repository.findValueById(id)!=null)
 			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
@@ -39,12 +40,13 @@ public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
 			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
 	}
 
-	@RequestMapping(value="/Agenda/update/{id_agenda}", method=RequestMethod.PUT)
-	public Agenda updateElementById(long id, Agenda stMod) {
-		Agenda i = this.repository.findValueById(id);
+	@RequestMapping(value="/Lessons/update/{id_lesson}", method=RequestMethod.POST)
+	public Lesson updateElementById(long id, Lesson stMod) {
+		Lesson i = this.repository.findValueById(id);
 
-		
-		if(stMod.getDescription()!=null) 
+		/*this.presence = presence;
+		this.grade = grade;*/
+		if(stMod.getPresence()!=true) 
 			i.setDescription(stMod.getDescription());
 	
 
@@ -52,10 +54,9 @@ public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
 		return i;
 	}
 
-	@RequestMapping(value="/Agenda/delete/{id_agenda}", method=RequestMethod.PUT)
+	@RequestMapping(value="/Lessons/delete/{id_lesson}", method=RequestMethod.POST)
 	public void deleteElement(long id) {
-		this.repository.deleteValueById(id);
+		// TODO Auto-generated method stub
 		
 	}
-
 }

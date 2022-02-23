@@ -7,6 +7,10 @@ public class Module {
 	private String program;
 	private int module_id_course;
 	
+	public Module() {
+		
+	}
+	
 	public Module(int id_module, String title, int duration, String program, int module_id_course) {
 		this.id_module = id_module;
 		this.title = title;

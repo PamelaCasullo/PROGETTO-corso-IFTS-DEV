@@ -7,6 +7,8 @@ public class Lesson {
 	private int grade;
 	private int lesson_id_student;
 	
+	public Lesson() {}
+	
 	public Lesson(int id_lesson, int lesson_id_agenda, boolean presence, int grade, int lesson_id_student) {
 		this.id_lesson = id_lesson;
 		this.lesson_id_agenda = lesson_id_agenda;
@@ -30,11 +32,11 @@ public class Lesson {
 		this.lesson_id_agenda = agenda_id_agenda;
 	}
 	
-	public boolean getTeacher_presence() {
+	public boolean getPresence() {
 		return presence;
 	}
-	public void setTeacher_presence(boolean teacher_presence) {
-		this.presence = teacher_presence;
+	public void setPresence(boolean presence) {
+		this.presence = presence;
 	}
 	
 	public int getGrade() {
