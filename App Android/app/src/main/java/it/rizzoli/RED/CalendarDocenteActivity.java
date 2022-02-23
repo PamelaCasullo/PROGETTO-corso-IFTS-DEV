@@ -1,25 +1,33 @@
 package it.rizzoli.RED;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.RadioButton;
+import android.webkit.WebView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+public class CalendarDocenteActivity extends AppCompatActivity {
 
-public class ProfileActivity extends AppCompatActivity {
-    EditText email;
-    EditText password;
-    RadioButton studenteButton, docenteButton;
+    private final static String MY_PREFERENCES = "MyPref";
+
+    WebView webView;
+    public String fileName = "TimeTable.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_calendar_docente);
+
+        // INIZIALIZZA WEBVIEW
+        webView = (WebView) findViewById(R.id.webview_docente);
+
+        // VISUALIZZA IL CONTENUTO DELLA WEBVIEW DAL FILE HTML CHE STA NELL'ASSETS
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("file:///android_asset/" + fileName);
     }
 
     //istanziamo un menu
@@ -28,9 +36,9 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
 
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu,menu);
+        menuInflater.inflate(R.menu.menu_docente,menu);
 
-        MenuItem item = menu.findItem(R.id.PROFILE);
+        MenuItem item = menu.findItem(R.id.CALENDARDOC);
         item.setVisible(false);
 
         return true;
@@ -43,27 +51,28 @@ public class ProfileActivity extends AppCompatActivity {
         int id_item = item.getItemId();
 
         switch (id_item) {
-            case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, HomepageActivity.class);
+            case R.id.HOMEPAGEDOC:
+                Intent intentHome = new Intent(this, HomePageDocenteActivity.class);
                 startActivity(intentHome);
                 break;
-            case R.id.LOGOUT:
+            case R.id.LOGOUTDOC:
                 Intent intentLogin = new Intent(this, LoginActivity.class);
                 startActivity(intentLogin);
-                break;
-            case R.id.CALENDAR:
-                Intent intentCalendar = new Intent(this, CalendarActivity.class);
-                startActivity(intentCalendar);
                 break;
             case R.id.PRESENCE:
                 Intent intentRegister = new Intent(this, PresenceActivity.class);
                 startActivity(intentRegister);
                 break;
-            case R.id.VOTE:
+            case R.id.PROFILEDOC:
+                Intent intentProfile = new Intent(this, ProfileActivity.class);
+                startActivity(intentProfile);
+                break;
+            case R.id.VOTEDOC:
                 Intent intentVote = new Intent(this, VoteActivity.class);
                 startActivity(intentVote);
                 break;
         }
         return false;
     }
+
 }

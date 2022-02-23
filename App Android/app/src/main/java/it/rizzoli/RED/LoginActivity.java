@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -54,24 +53,24 @@ public class LoginActivity extends AppCompatActivity {
 
                     SavePreferencesData(v);
 
-                    Intent intentHome = new Intent(this, HomepageActivity.class);
+                    Intent intentHome = new Intent(this, MainActivity.class);
                     startActivity(intentHome);
 
                     finish();
 
 
                 } else if ( //docente
-                        email.getText().toString().equals("docente@itsrizzoli.it") && password.getText().toString().equals("admin") && docenteButton.isChecked()) {
+                        email.getText().toString().equals("docente@itsrizzoli.it") && password.getText().toString().equals("docente") && docenteButton.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
                     SavePreferencesData(v);
 
-                    Intent intentHome = new Intent(this, HomepageActivity.class);
+                    Intent intentHome = new Intent(this, HomePageDocenteActivity.class);
                     startActivity(intentHome);
 
                     finish();
 
                 } else if ( //studente
-                        email.getText().toString().equals("studente@itsrizzoli.it") && password.getText().toString().equals("admin") && studenteButton.isChecked()) {
+                        email.getText().toString().equals("studente@itsrizzoli.it") && password.getText().toString().equals("studente") && studenteButton.isChecked()) {
                     Toast.makeText(getApplicationContext(), "Benvenuto, Studente!", Toast.LENGTH_SHORT).show();
 
                     SavePreferencesData(v);
@@ -152,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         updatePreferencesData();
         if(textEmail != null && textPassword != null) {
-            Intent i = new Intent(LoginActivity.this,HomepageActivity.class);
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
             finish();
         }

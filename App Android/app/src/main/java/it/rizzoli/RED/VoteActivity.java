@@ -56,6 +56,7 @@ public class VoteActivity extends AppCompatActivity {
 
         return true;
     }
+
     //eseguiamo operazioni nel menu
 
     @Override
@@ -65,10 +66,25 @@ public class VoteActivity extends AppCompatActivity {
 
         switch (id_item) {
             case R.id.HOMEPAGE:
-                Intent intentHome = new Intent(this, MainActivity.class);
+                Intent intentHome = new Intent(this, HomepageActivity.class);
                 startActivity(intentHome);
                 break;
-
+            case R.id.LOGOUT:
+                Intent intentLogin = new Intent(this, LoginActivity.class);
+                startActivity(intentLogin);
+                break;
+            case R.id.CALENDAR:
+                Intent intentCalendar = new Intent(this, CalendarActivity.class);
+                startActivity(intentCalendar);
+                break;
+            case R.id.PROFILE:
+                Intent intentProfile = new Intent(this, ProfileActivity.class);
+                startActivity(intentProfile);
+                break;
+            case R.id.PRESENCE:
+                Intent intentRegister = new Intent(this, PresenceActivity.class);
+                startActivity(intentRegister);
+                break;
         }
         return false;
     }

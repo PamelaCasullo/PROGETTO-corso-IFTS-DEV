@@ -14,54 +14,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imagebg"
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:src="@drawable/home2" />
 
         <TextView
             android:id="@+id/testo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="330dp"
             android:textAlignment="center"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/imagebg"
-            android:text="Qui devo aggiungere altre cose per abbellire la HOMEPAGE!"
-            android:textStyle="italic"
+            android:text="BENVENUTO"
+            android:textColor="@color/red"
+            android:textStyle="bold"
             android:textSize="22dp"/>
-
-        <ListView
-            android:id="@+id/listaVoti"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:layout_above="@id/footer"
-            android:layout_below="@+id/testo"
-            android:layout_marginTop="90dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bgred"
-            android:verticalScrollbarPosition="right" />
-
-
-        <Button
-            android:id="@+id/buttonVoti"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/listaVoti"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
-            android:ems="15"
-            android:padding="15dp"
-            android:text="Accedi ai voti"
-            app:backgroundTint="@color/redb"/>
 
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/appBarLayout" />
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 

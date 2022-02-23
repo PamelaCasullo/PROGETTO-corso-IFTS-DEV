@@ -9,7 +9,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RED">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".CalendarDocenteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VoteDocenteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomepageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomePageDocenteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PresenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,22 +45,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomepageActivity"
-            android:exported="false"/>
         <activity
-            android:name=".CalendarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".VoteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CalendarDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PresenceActivity"
+            android:name=".MainActivity"
             android:exported="false" />
     </application>
 

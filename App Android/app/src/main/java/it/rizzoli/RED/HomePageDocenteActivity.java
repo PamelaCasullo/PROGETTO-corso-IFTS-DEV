@@ -17,50 +17,49 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class HomepageActivity extends AppCompatActivity {
-
+public class HomePageDocenteActivity extends AppCompatActivity {
     ListView lv;
-    ListViewVotoAdapter lvva;
+    ListViewVotoDocenteAdapter lvvad;
+    Button bvd;
 
     //TODO METTERE OVUNQUE LA LOGOUT FUNZIONANTE(vedere commit 31/01/2022)
     SharedPreferences sharedpreferences;
     String email, password;
-
-    Button bv;
 
     // key for storing email.
     public static final String EMAIL_KEY = "textEmail";
     public final static String MY_PREFERENCES = "MyPref";
     // key for storing password.
     public static final String PASSWORD_KEY = "textPassword";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_home_page_docente);
 
-        lv = findViewById(R.id.listaVoti);
-        Vote[] vote = new Vote[] {
-                new Vote("08/02/2022", "Applicationi Mobile Android", 18),
-                new Vote("18/01/2022", "Tecnologie Web per la UI ed il Back-End", 30),
-                new Vote("11/12/2021", "Gestione di dati e DataBase", 28),
-                new Vote("22/11/2021", "Realizzazione di applicazioni Java", 26),
-                new Vote("04/11/2021", "Processo di sviluppo del software", 23),
-                new Vote("17/10/2021", "Architetture e Sistemi", 21)
+        lv = findViewById(R.id.listaVotiDocente);
+        VoteDocente[] vote = new VoteDocente[]{
+                new VoteDocente("08/02/2022", "Traore Adama Emmanuel", "Applicationi Mobile Android", 25),
+                new VoteDocente("18/01/2022", "Pamela Casullo Maura", "Applicationi Mobile Android", 30),
+                new VoteDocente("11/12/2021", "Lorenzo Passoni", "Applicationi Mobile Android", 28),
+                new VoteDocente("22/11/2021", "Dorjan Curtis", "Applicationi Mobile Android", 26),
+                new VoteDocente("04/11/2021", "Pablo Escobar", "Applicationi Mobile Android", 23),
+                new VoteDocente("17/10/2021", "Luciano Pelato", "Applicationi Mobile Android", 21)
         };
 
-        lvva = new ListViewVotoAdapter(this, R.layout.activity_colonne_voti, vote);
-        lv.setAdapter(lvva);
+        lvvad = new ListViewVotoDocenteAdapter(this, R.layout.activity_colonne_voti_docente, vote);
+        lv.setAdapter(lvvad);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
-                Vote v = lvva.getItem(pos);
-                Toast.makeText(HomepageActivity.this, v.data + " " + v.materia + " " + v.voto, Toast.LENGTH_LONG).show();
+                VoteDocente v = lvvad.getItem(pos);
+                Toast.makeText(HomePageDocenteActivity.this, v.data + " " + v.nome_cognome + " " + v.materia + " " + v.voto, Toast.LENGTH_LONG).show();
             }
         });
 
-    bv = findViewById(R.id.buttonVoti);
-        bv.setOnClickListener(new View.OnClickListener() {
+        bvd = findViewById(R.id.buttonVotiDocente);
+        bvd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent va = new Intent(getApplicationContext(), VoteActivity.class);
@@ -76,9 +75,9 @@ public class HomepageActivity extends AppCompatActivity {
         //super.onCreateOptionsMenu(menu);
 
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu,menu);
+        menuInflater.inflate(R.menu.menu_docente,menu);
 
-        MenuItem item = menu.findItem(R.id.HOMEPAGE);
+        MenuItem item = menu.findItem(R.id.HOMEPAGEDOC);
         item.setVisible(false);
 
         return true;
@@ -87,7 +86,7 @@ public class HomepageActivity extends AppCompatActivity {
 //TODO 1 Aggiungere toast ovunque nei menu
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-       // super.onOptionsItemSelected(item);
+        // super.onOptionsItemSelected(item);
         int id_item = item.getItemId();
         switch (id_item) {
             case R.id.LOGOUT:
@@ -124,5 +123,4 @@ public class HomepageActivity extends AppCompatActivity {
 
         return false;
     }
-
 }
