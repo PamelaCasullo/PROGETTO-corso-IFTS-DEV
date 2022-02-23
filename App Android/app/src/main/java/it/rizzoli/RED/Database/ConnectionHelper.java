@@ -25,8 +25,8 @@ public class ConnectionHelper {
         String connURL = null;
 
         try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            connURL="jdbc:jtds:sqlserver://"+ip+":"+port+";"+"databasename="+database+";user="+uname+";password="+passw;
+            Class.forName("com.mysql.jdbc.Driver");
+            connURL="jdbc:mysql://"+ip+":"+port+";"+"databasename="+database+";user="+uname+";password="+passw;
             connection= DriverManager.getConnection(connURL);
 
 
