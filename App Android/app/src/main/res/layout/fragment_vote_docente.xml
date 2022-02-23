@@ -53,7 +53,7 @@
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/textMenuSize" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
