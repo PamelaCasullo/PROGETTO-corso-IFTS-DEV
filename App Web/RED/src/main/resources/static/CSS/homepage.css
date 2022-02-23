@@ -1,0 +1,12 @@
+.navbar {
+    padding: 5px;
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
