@@ -17,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     Button pulsanteLoginText;
     RadioButton studenteButton, docenteButton;
+    boolean isStudent = true; //else is teacher
     boolean checked;
     EditText email;
     EditText password;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     //private final static String TEXT_PW_KEY = "textPW";
     private final static String TEXT_EMAIL_KEY = "textEmail";
     private final static String TEXT_PW_KEY = "textPassword";
+    private final static String TEXT_KIND_KEY = "radioBtnKind";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.radio_docente: {
                 //bla bla bla
                 if(checked) {
+                    isStudent = false;
                     selected = "Docente";
                     Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
                     break;
@@ -109,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.radio_studente: {
                 //bla bla
                 if(checked) {
+                    isStudent = true;
                     selected = "Studente";
                     Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
                     break;
@@ -131,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
             // Lo salviamo nelle preferences
             editor.putString(TEXT_EMAIL_KEY, textDataEmail.toString());
             editor.putString(TEXT_PW_KEY, textDataPassword.toString());
+            editor.putBoolean(TEXT_KIND_KEY, isStudent);
             editor.apply();
 
         }
@@ -143,6 +148,7 @@ public class LoginActivity extends AppCompatActivity {
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         textEmail = preferiti.getString(TEXT_EMAIL_KEY, null);
         textPassword = preferiti.getString(TEXT_PW_KEY, null);
+        isStudent = preferiti.getBoolean(TEXT_KIND_KEY, true);
         Toast.makeText(this, "E-mail: " + textEmail + " Password: " + textPassword, Toast.LENGTH_LONG).show();
     }
 
@@ -151,9 +157,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         updatePreferencesData();
         if(textEmail != null && textPassword != null) {
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
+            if(isStudent) {
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+
+            else {
+                Intent i = new Intent(LoginActivity.this, MainActivityDoc.class);
+                startActivity(i);
+                finish();
+            }
         }
 
     }
