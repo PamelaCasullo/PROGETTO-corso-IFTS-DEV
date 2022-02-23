@@ -2,12 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:weightSum="100">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/data"
-        android:layout_weight="10"
+        android:layout_weight="4"
         android:layout_width="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp"
@@ -18,11 +17,11 @@
 
     <TextView
         android:id="@+id/nome_cognome"
-        android:layout_weight="35"
+        android:layout_weight="25"
         android:layout_width="0dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_toRightOf="@+id/data"
@@ -32,11 +31,11 @@
 
     <TextView
         android:id="@+id/presente"
-        android:layout_weight="20"
+        android:layout_weight="15"
         android:layout_width="0dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_toRightOf="@+id/nome_cognome"

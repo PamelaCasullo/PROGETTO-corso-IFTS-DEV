@@ -6,7 +6,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".MainActivityDoc"
     tools:openDrawer="start">
 
     <RelativeLayout
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/menu"
-        app:headerLayout="@layout/nav_header" />
+        app:menu="@menu/menu_docente"
+        app:headerLayout="@layout/nav_header_docente" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

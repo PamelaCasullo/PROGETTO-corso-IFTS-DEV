@@ -38,14 +38,14 @@ public class ListViewVotoDocenteAdapter extends ArrayAdapter<VoteDocente> {
             LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(res, parent, false);
 
-            ListViewVotoDocenteAdapter.viewHolder vh = new ListViewVotoDocenteAdapter.viewHolder();
+            viewHolder vh = new viewHolder();
             vh.dataTextView = convertView.findViewById(R.id.data);
             vh.nome_cognomeTextView = convertView.findViewById(R.id.nome_cognome);
             vh.materiaTextView = convertView.findViewById(R.id.materia);
             vh.votoTextView = convertView.findViewById(R.id.voto);
             convertView.setTag(vh);
         }
-        ListViewVotoDocenteAdapter.viewHolder vh = (ListViewVotoDocenteAdapter.viewHolder) convertView.getTag();
+        viewHolder vh = (viewHolder) convertView.getTag();
         VoteDocente i = getItem(position);
         vh.dataTextView.setText(i.data);
         vh.nome_cognomeTextView.setText(i.nome_cognome);

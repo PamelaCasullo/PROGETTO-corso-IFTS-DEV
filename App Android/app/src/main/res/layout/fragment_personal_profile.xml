@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bgcol">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profilo Personale"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:textStyle="bold"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="75dp"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/batman"
+            android:clickable="true"
+            android:scaleType="fitCenter"
+            android:focusable="true" />
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:drawablePadding="7dp"
+        android:drawableLeft="@drawable/ic_baseline_badge_24"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/redb"
+        android:text="MATRICOLA:    #xxxxxx"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_account_balance_24"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/redb"
+        android:text="CORSO:          IFTS Developer"/>
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/redb"
+        android:text="NOME/COGN.:     xxxxxxxxx xxxxxx"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/redb"
+        android:text="E-MAIL:       studente@itsrizzoli.it"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_cake_24"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/redb"
+        android:text="DATA:        02/04/2001"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_accessibility_new_24"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:background="@color/redb"
+        android:text="GENERE:       Maschio"/>
+
+
+</LinearLayout>

@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
+    //private final static String TEXT_EMAIL_KEY = "textEMAIL";
+    //private final static String TEXT_PW_KEY = "textPW";
     private final static String TEXT_EMAIL_KEY = "textEmail";
     private final static String TEXT_PW_KEY = "textPassword";
 
@@ -62,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
                     SavePreferencesData(v);
 
-                    Intent intentHome = new Intent(this, HomePageDocenteActivity.class);
+                    Intent intentHome = new Intent(this, MainActivityDoc.class);
                     startActivity(intentHome);
 
                     finish();
@@ -73,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     SavePreferencesData(v);
 
-                    Intent intentHome = new Intent(this, HomepageActivity.class);
+                    Intent intentHome = new Intent(this, MainActivity.class);
                     startActivity(intentHome);
 
                     finish();

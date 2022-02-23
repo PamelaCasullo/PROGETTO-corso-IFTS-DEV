@@ -6,9 +6,8 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
     tools:ignore="HardcodedText"
-    tools:context=".HomePageDocenteActivity">
+    tools:openDrawer="start">
 
     <RelativeLayout
         android:background="@drawable/bgcol"
@@ -123,6 +122,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/menu_docente"
-        app:headerLayout="@layout/layout_navigation_header" />
+        app:headerLayout="@layout/nav_header_docente" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

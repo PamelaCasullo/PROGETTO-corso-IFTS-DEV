@@ -16,8 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class MainActivityDoc extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
@@ -32,12 +31,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // key for storing password.
     public static final String PASSWORD_KEY = "textPassword";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_main_doc);
 
         // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
 
@@ -53,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                    new HomepageFragment()).commit();
-            navigationView.setCheckedItem(R.id.HOMEPAGE);
+                    new HomepageDocenteFragment()).commit();
+            navigationView.setCheckedItem(R.id.HOMEPAGEDOC);
         }
 
         // SERVE PER FAR APPARIRE L'AMBURGER MENU
@@ -74,27 +71,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.CALENDAR:
+            case R.id.CALENDARDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new CalendarFragment()).commit();
+                        new CalendarDocenteFragment()).commit();
                 break;
-            case R.id.HOMEPAGE:
+            case R.id.HOMEPAGEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new HomepageFragment()).commit();
+                        new HomepageDocenteFragment()).commit();
                 break;
-            case R.id.PRESENCE:
+            case R.id.PRESENCEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new PresenceFragment()).commit();
+                        new PresenceDocenteFragment()).commit();
                 break;
-            case R.id.PROFILE:
+            case R.id.PROFILEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new ProfileFragment()).commit();
+                        new ProfileDocenteFragment()).commit();
                 break;
-            case R.id.VOTE:
+            case R.id.VOTEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new VoteFragment()).commit();
+                        new VoteDocenteFragment()).commit();
                 break;
-            case R.id.LOGOUT:
+            case R.id.LOGOUTDOC:
                 sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
                 email = sharedpreferences.getString(EMAIL_KEY, null);
                 password = sharedpreferences.getString(PASSWORD_KEY, null);
@@ -108,9 +105,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 finish();
                 break;
-            case R.id.PERSONAL_PROFILE:
+            case R.id.PERSONAL_PROFILEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new PersonalProfileFragment()).commit();
+                        new PersonalProfileDocenteFragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -125,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setCancelable(false)
                 .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        MainActivity.this.finish();
+                        MainActivityDoc.this.finish();
                     }
                 })
                 .setNegativeButton("No", null)

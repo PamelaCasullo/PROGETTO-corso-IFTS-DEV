@@ -7,6 +7,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".LoginActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/BenvenutoInRed"
         android:layout_width="wrap_content"
@@ -131,12 +139,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SALVADATI"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="10dp"
+        android:ems="15"
         android:padding="@dimen/textMenuSize"
         android:text="Login"
-        android:layout_centerHorizontal = "true"
-        android:ems="15"
         app:backgroundTint="@color/red" />
+
+    </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

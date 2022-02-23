@@ -39,7 +39,7 @@ public class ListViewPresenceAdapter extends ArrayAdapter<Presence> {
             LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(res, parent, false);
 
-            ListViewPresenceAdapter.viewHolder vh = new ListViewPresenceAdapter.viewHolder();
+            viewHolder vh = new viewHolder();
             vh.dataTextView = convertView.findViewById(R.id.data);
             vh.nome_cognomeTextView = convertView.findViewById(R.id.nome_cognome);
             vh.presenteTextView = convertView.findViewById(R.id.presente);
@@ -47,7 +47,7 @@ public class ListViewPresenceAdapter extends ArrayAdapter<Presence> {
             vh.assenteTextView = convertView.findViewById(R.id.assente);
             convertView.setTag(vh);
         }
-        ListViewPresenceAdapter.viewHolder vh = (ListViewPresenceAdapter.viewHolder) convertView.getTag();
+        viewHolder vh = (viewHolder) convertView.getTag();
         Presence p = getItem(position);
         vh.dataTextView.setText(p.data);
         vh.nome_cognomeTextView.setText(p.nome_cognome);

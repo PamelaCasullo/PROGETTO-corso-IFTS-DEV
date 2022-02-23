@@ -10,31 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RED">
         <activity
-            android:name=".CalendarDocenteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".VoteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".VoteDocenteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CalendarDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomepageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomePageDocenteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PresenceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CalendarActivity"
+            android:name=".MainActivityDoc"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
