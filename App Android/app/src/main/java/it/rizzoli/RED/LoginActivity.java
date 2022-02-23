@@ -25,8 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
-    //private final static String TEXT_EMAIL_KEY = "textEMAIL";
-    //private final static String TEXT_PW_KEY = "textPW";
     private final static String TEXT_EMAIL_KEY = "textEmail";
     private final static String TEXT_PW_KEY = "textPassword";
 

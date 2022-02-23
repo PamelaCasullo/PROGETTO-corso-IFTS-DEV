@@ -47,7 +47,9 @@ public class LessonRESTController implements JdbcUtilityInterface<Lesson> {
 		/*this.presence = presence;
 		this.grade = grade;*/
 		if(stMod.getPresence()!=true) 
-			i.setDescription(stMod.getDescription());
+			i.setPresence(stMod.getPresence());
+		if(stMod.getGrade()!=0) 
+			i.setGrade(stMod.getGrade());
 	
 
 		this.repository.updateValueById(i);
