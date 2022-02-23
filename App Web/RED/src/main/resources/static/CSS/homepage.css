@@ -60,14 +60,13 @@
 .log-out:hover {
     background-color: black;
     color: white;
-    border: 1px solid white;
 }
 
 /*PULSANTE VOTI*/
 .button-votes {
     border: 5px;
     background-color: darkred;
-    color: white;
+    color: black;
     border-radius: 5px;
     box-shadow: 0px 3px 5px black;
     border: 1px solid transparent;
@@ -77,6 +76,9 @@
 .button-votes:hover {
     background-color: black;
     color: white;
-    border: 1px solid white;
     transition: 0.4s;  
 }
+
+
+
+
