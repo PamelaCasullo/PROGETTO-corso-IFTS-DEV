@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,100 +11,106 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
-        <nav class="navbar navbar-expand-lg navbar-light">
+  <body class="black-color-ground">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px 3px 0px darkred;">
+          
+          <!--PROFILO-->
           <div class="container-fluid">
-            <div class="navbar-brand" href="#">
-                <img
+            <div class="navbar-brand" href="#" id="user_img_profile">
+              
+              <!--IMMAGINE PROFILO-->
+              <img
                 src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
                 class="rounded-circle"
                 height="55px"
                 width="55px"
+                style="border: 1px solid red;"
               />
-              <span>DORJAN KURTI<span class="badge bg-danger" style="padding: 5px; margin-left: 5px">STUDENTE</span></span>
-            </div>
+
+              <!--NOME E COGNOME UTENTE-->
+              <span class="titles-underline" id="user_name_lastname">DORJAN KURTI
+                
+                <!--OCCUPAZIONE-->
+                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">STUDENTE</span></span>
+            
+              </div>
+
+            <!--VOCI MENU-->
             <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link navlink-effect" href="#">HOMEPAGE</a>
+              </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">CALENDARIO</a>
+                  <a class="nav-link navlink-effect" href="#">CALENDARIO</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">PRESENZE</a>
+                  <a class="nav-link navlink-effect" href="#">PRESENZE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">VOTI</a>
+                  <a class="nav-link navlink-effect" href="#">ELENCO STUDENTI</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  <a class="nav-link navlink-effect" href="#">VOTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link log-out" href="index.htm">LOGOUT</a>
                 </li>
               </ul>
           </div>
         </nav>
       </div>
 
+      <!--CORPO DELLA HOMEPAGE-->
       <div class="container" style="margin: auto; padding: 0;">
-        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row" style="margin: 38.400px">
           <div class="col-md-9">
-            <h2>LEZIONI PIU' VICINE</h2>
-            <div class="list-group">
+
+            <!--TITOLO PROSSIME LEZIONI-->
+            <h2 class="titles-shadow titles-underline">PROSSIME LEZIONI</h2>
+            
+            <!--PROSSIME LEZIONI-->
+            <div class="list-group" style="box-shadow: 0px 3px 0px darkred;">
                 <a href="#" class="list-group-item list-group-item-action active" aria-current="true" style="background-color: darkred;">
                   <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
+                   
+                    <!--NOME LEZIONE-->
+                    <h5 class="mb-1" id="lesson_name">Lesson Name</h5>
+                    <!--DATA ORARIO-->
+                    <small id="datetime_calendar">datetime</small>
+                  
                   </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small>And some small print.</small>
+                  
+                  <!--DESCRIZIONE-->
+                  <p class="mb-1" id="lesson_description">Description</p>
+                  
+                  <!--DOCENTE-->
+                  <small id="teacher">Teacher</small>
+                
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small class="text-muted">And some muted small print.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Some placeholder content in a paragraph.</p>
-                  <small class="text-muted">And some muted small print.</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">List group item heading</h5>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
-                    <small class="text-muted">And some muted small print.</small>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">List group item heading</h5>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
-                    <small class="text-muted">And some muted small print.</small>
-                  </a>
+              
               </div>
         </div>
-          <div class="col-6 col-md-3">
-            <h2>VOTI RECENTI</h2>
-            <p style="padding: 5px;">Visualizza tutti i voti<button style="border: 1px solid black; border-radius: 4px; background-color: red; color: white; margin-left: 5px;">-></button><p>
+        
+        <!--VOTI-->
+          <div class="col-6 col-md-3" style="box-shadow: 0px 3px 0px darkred; border-radius: 5px;">
+            <h2 class="titles-shadow">VOTI RECENTI</h2>
+            <p style="padding: 5px;" class="titles-shadow titles-underline">Visualizza tutti i voti<button class="button-votes">-></button><p>
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                      <label style="display: block;">JAVA</label>
-                      <span style="margin: auto;">12/03/2021</span>
-                      <span class="badge bg-primary rounded-pill">23</span>
+                      
+                      <!--NOME MODULO-->
+                      <span id="module_name">JAVA</span>
+                      
+                      <!--DATA VOTO-->
+                      <span style="margin: auto;" id="vote_date">12/03/2021</span>
+                      
+                      <!--VOTO-->
+                      <span class="badge bg-primary rounded-pill" id="vote">23</span>
+                    
                     </li>
                   </ul>
-                  
-
-
-                
             </div>
-            
         </div>
     
 

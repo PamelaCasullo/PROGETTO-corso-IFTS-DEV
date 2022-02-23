@@ -10,3 +10,73 @@
     text-decoration: none;
 }
 
+.black-color-ground {
+    background: linear-gradient(360deg, #000000, #484848) fixed;     
+}
+
+.titles-underline {
+    color: white;
+    box-shadow: 0px 3px 0px darkred;
+}
+
+.titles-shadow {
+    text-shadow: 2px 3px 0px darkred;
+    color: white;
+}
+
+/*LINK DEL NAVBAR*/
+.navlink-effect {
+    text-shadow: 2px 3px 0px darkred;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.navlink-effect:hover {
+    text-shadow: 2px 3px 5px black;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: darkred;
+    transition: 0.4s;
+    box-shadow: 0px 3px 5px black;
+}
+
+.navlink-effect:visited {
+    color: white;
+}
+
+/*PULSANTE LOG-OUT*/
+.log-out {
+    border: 5px;
+    background-color: darkred;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px black;
+    border: 1px solid transparent;
+    margin-left: 10px;
+}
+
+.log-out:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+/*PULSANTE VOTI*/
+.button-votes {
+    border: 5px;
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px black;
+    border: 1px solid transparent;
+    margin-left: 10px;
+}
+
+.button-votes:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    transition: 0.4s;  
+}
