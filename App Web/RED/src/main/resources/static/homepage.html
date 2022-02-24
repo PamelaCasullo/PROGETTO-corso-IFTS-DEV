@@ -7,9 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./CSS/homepage.css" rel="stylesheet">
+    <link href="./CSS/style.css" rel="stylesheet">
 
-    <title>Hello, world!</title>
+    <title>RED-HOME</title>
   </head>
   <body class="black-color-ground">
         <!--NAVBAR-->
@@ -38,13 +38,13 @@
             <!--VOCI MENU-->
             <ul class="nav justify-content-end">
               <li class="nav-item">
-                <a class="nav-link navlink-effect" href="#">HOMEPAGE</a>
+                <a class="nav-link navlink-effect" href="homepage.html">HOMEPAGE</a>
               </li>
                 <li class="nav-item">
-                  <a class="nav-link navlink-effect" href="#">CALENDARIO</a>
+                  <a class="nav-link navlink-effect" href="calendar.html">CALENDARIO</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link navlink-effect" href="#">PRESENZE</a>
+                  <a class="nav-link navlink-effect" href="presence.html">PRESENZE</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link navlink-effect" href="#">ELENCO STUDENTI</a>
@@ -53,7 +53,7 @@
                   <a class="nav-link navlink-effect" href="#">VOTI</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link log-out" href="index.htm">LOGOUT</a>
+                  <a class="nav-link log-out" href="index.html">LOGOUT</a>
                 </li>
               </ul>
           </div>
@@ -62,8 +62,8 @@
 
       <!--CORPO DELLA HOMEPAGE-->
       <div class="container" style="margin: auto; padding: 0;">
-        <div class="row" style="margin: 38.400px">
-          <div class="col-md-9">
+        <div class="row" style="margin-left: 5%; margin: auto; margin-top: 50px;">
+          <div class="col-md-6">
 
             <!--TITOLO PROSSIME LEZIONI-->
             <h2 class="titles-shadow titles-underline">PROSSIME LEZIONI</h2>
@@ -81,7 +81,7 @@
                   </div>
                   
                   <!--DESCRIZIONE-->
-                  <p class="mb-1" id="lesson_description">Description</p>
+                  <p class="mb-1" id="lesson_description">description</p>
                   
                   <!--DOCENTE-->
                   <small id="teacher">Teacher</small>
@@ -92,11 +92,11 @@
         </div>
         
         <!--VOTI-->
-          <div class="col-6 col-md-3" style="box-shadow: 0px 3px 0px darkred; border-radius: 5px;">
+          <div class="col-md-6" style="box-shadow: 0px 3px 0px darkred; border-radius: 5px;">
             <h2 class="titles-shadow">VOTI RECENTI</h2>
             <p style="padding: 5px;" class="titles-shadow titles-underline">Visualizza tutti i voti<button class="button-votes">VAI</button><p>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #484848; border: 1px solid black">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="background-color: #484848; border: 1px solid ;">
                       
                       <!--NOME MODULO-->
                       <span id="module_name" style="color: white;">MODULE NAME</span>
