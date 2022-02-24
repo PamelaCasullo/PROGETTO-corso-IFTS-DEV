@@ -79,6 +79,11 @@
     transition: 0.4s;  
 }
 
-
+.rounded-background-color {
+    border: 1px solid black;
+    background-color: darkred;
+    box-shadow: 0px 3px 5px black;
+    color: white;
+}
 
 
