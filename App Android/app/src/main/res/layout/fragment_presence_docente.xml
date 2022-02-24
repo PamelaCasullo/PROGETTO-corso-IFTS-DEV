@@ -1,3 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation"
+    tools:ignore="HardcodedText"
+    tools:openDrawer="start">
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +22,7 @@
         android:id="@+id/barraTitoli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bgnav"
+        android:background="@drawable/gradient_center3_3"
         android:elevation="10dp"
         android:orientation="horizontal"
         android:padding="15dp">
@@ -22,7 +34,7 @@
             android:text="DATA"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15dp" />
 
         <TextView
@@ -32,7 +44,7 @@
             android:text="NOME/COGNOME"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15dp" />
 
         <TextView
@@ -42,7 +54,7 @@
             android:text="PRESENTE"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15dp" />
 
         <TextView
@@ -52,7 +64,7 @@
             android:text="RITARDO"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15dp" />
 
         <TextView
@@ -63,7 +75,7 @@
             android:text="ASSENTE"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -80,7 +92,6 @@
         android:layout_below="@+id/barraTitoli"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/bgcol"
         android:verticalScrollbarPosition="right" />
 
     <TextView
@@ -98,3 +109,4 @@
         tools:ignore="TextContrastCheck" />
 
 </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

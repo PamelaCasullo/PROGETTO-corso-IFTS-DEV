@@ -10,22 +10,8 @@
     tools:openDrawer="start">
 
     <RelativeLayout
-        android:background="@drawable/bgcol"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-        <TextView
-            android:id="@+id/testo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="330dp"
-            android:textAlignment="center"
-            android:layout_centerHorizontal="true"
-            android:text="BENVENUTO"
-            android:textColor="@color/red"
-            android:textStyle="bold"
-            android:textSize="22dp"/>
 
         <FrameLayout
             android:id="@+id/frameLayout"

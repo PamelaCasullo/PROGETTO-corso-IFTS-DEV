@@ -1,5 +1,6 @@
 package it.rizzoli.RED;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 
@@ -21,6 +23,14 @@ public class HomepageDocenteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_homepage_docente, container, false);
 
+        // CODICE PER L'ANIMAZIONE DI BACKGROUNG
+        DrawerLayout drawerLayout = view.findViewById(R.id.my_drawer_layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
+        // CODICE PER LA VISUALIZZAZIONE DELLA LISTVIEW
         lv = view.findViewById(R.id.listaVotiDocente);
         VoteDocente[] vote = new VoteDocente[]{
                 new VoteDocente("08/02/2022", "Traore Adama Emmanuel", "Applicationi Mobile Android", 25),

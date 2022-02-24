@@ -42,6 +42,7 @@ public class MainActivityDoc extends AppCompatActivity implements NavigationView
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
         navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getBackground().setAlpha(120);
 
         // SERVE PER COLLEGARSI CON IL LAYOUT DELL'AMBURGER MENU (PER APRIRE E CHIUDERE)
         drawerLayout.addDrawerListener(actionBarDrawerToggle);

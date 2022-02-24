@@ -6,6 +6,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation"
     tools:openDrawer="start">
 
     <RelativeLayout
@@ -18,7 +19,7 @@
             android:id="@+id/barraTitoli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bgnav"
+            android:background="@drawable/gradient_center3_3"
             android:elevation="10dp"
             android:orientation="horizontal"
             android:padding="20dp">
@@ -31,7 +32,7 @@
                 android:text="DATA"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/textMenuSize" />
 
             <TextView
@@ -41,7 +42,7 @@
                 android:text="MATERIA"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/textMenuSize" />
 
             <TextView
@@ -52,7 +53,7 @@
                 android:text="VOTO"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/textMenuSize" />
 
         </LinearLayout>
@@ -69,7 +70,6 @@
             android:layout_below="@+id/barraTitoli"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp"
-            android:background="@drawable/bgcol"
             android:verticalScrollbarPosition="right" />
 
         <TextView

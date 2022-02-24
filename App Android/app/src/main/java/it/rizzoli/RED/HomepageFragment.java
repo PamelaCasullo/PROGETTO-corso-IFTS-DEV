@@ -1,5 +1,6 @@
 package it.rizzoli.RED;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 public class HomepageFragment extends Fragment {
@@ -24,6 +26,14 @@ public class HomepageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_homepage, container, false);
 
+        // CODICE PER L'ANIMAZIONE DI BACKGROUNG
+        DrawerLayout drawerLayout = view.findViewById(R.id.my_drawer_layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
+        // CODICE PER LA VISUALIZZAZIONE DELLA LISTVIEW
         lv = view.findViewById(R.id.listaVoti);
         Vote[] vote = new Vote[] {
                 new Vote("08/02/2022", "Applicationi Mobile Android", 18),

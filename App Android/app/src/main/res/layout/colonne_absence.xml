@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Data"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/nome_cognome"
@@ -27,7 +27,7 @@
         android:layout_toRightOf="@+id/data"
         android:text="Nome e Cognome"
         android:textStyle="italic"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/presente"
@@ -55,7 +55,7 @@
         android:layout_toRightOf="@+id/absence"
         android:text="Ritarddo"
         android:textStyle="italic"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/assente"

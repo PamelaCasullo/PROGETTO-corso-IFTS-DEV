@@ -6,6 +6,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation"
     tools:ignore="HardcodedText"
     tools:openDrawer="start">
 
@@ -14,7 +15,6 @@
         android:layout_height="match_parent">
 
     <RelativeLayout
-        android:background="@drawable/bgcol"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -56,7 +56,7 @@
             android:layout_marginTop="20dp"
             android:text="Cos'è"
             android:layout_marginLeft="140dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22dp"
             android:textStyle="bold" />
 
@@ -84,7 +84,7 @@
             android:text="R.E.D è un innovatissimo Registro Elettronico Digitale, che accompagna i nostri collaboratori (Docenti, Studenti e clienti) durante l'evoluzione digitale."
             android:textAlignment="viewStart"
             android:padding="30dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15dp"
             android:textStyle="italic" />
 
