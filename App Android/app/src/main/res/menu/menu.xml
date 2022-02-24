@@ -19,7 +19,7 @@
         <item
             android:id="@+id/PRESENCE"
             android:icon="@drawable/ic_baseline_menu_book_24"
-            android:title="@string/registro" />
+            android:title="@string/absence" />
 
         <item
             android:id="@+id/PROFILE"

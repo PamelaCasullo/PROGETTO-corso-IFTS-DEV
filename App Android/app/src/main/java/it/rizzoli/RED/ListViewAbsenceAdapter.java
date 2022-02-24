@@ -12,10 +12,10 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class ListViewPresenceAdapter extends ArrayAdapter<Presence> {
+public class ListViewAbsenceAdapter extends ArrayAdapter<Absence> {
     Context ctx = null;
     int res = 0;
-    ArrayList<Presence> presence = new ArrayList<>();
+    ArrayList<Absence> absence = new ArrayList<>();
 
     public class viewHolder {
         TextView dataTextView;
@@ -25,12 +25,12 @@ public class ListViewPresenceAdapter extends ArrayAdapter<Presence> {
         TextView assenteTextView;
     }
 
-    public ListViewPresenceAdapter(Context context, int resource, Presence[] object) {
+    public ListViewAbsenceAdapter(Context context, int resource, Absence[] object) {
         super(context, resource, object);
         ctx = context;
         res = resource;
         for (int i = 0; i < object.length; i++)
-            presence.add(object[i]);
+            absence.add(object[i]);
     }
     @NonNull
     @Override
@@ -48,7 +48,7 @@ public class ListViewPresenceAdapter extends ArrayAdapter<Presence> {
             convertView.setTag(vh);
         }
         viewHolder vh = (viewHolder) convertView.getTag();
-        Presence p = getItem(position);
+        Absence p = getItem(position);
         vh.dataTextView.setText(p.data);
         vh.nome_cognomeTextView.setText(p.nome_cognome);
         vh.presenteTextView.setText(p.presente);

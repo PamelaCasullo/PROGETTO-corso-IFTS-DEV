@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.PRESENCE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new PresenceFragment()).commit();
+                        new AbsenceFragment()).commit();
                 break;
             case R.id.PROFILE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,

@@ -52,7 +52,7 @@
         android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_toRightOf="@+id/presence"
+        android:layout_toRightOf="@+id/absence"
         android:text="Ritarddo"
         android:textStyle="italic"
         android:textColor="@color/black"/>

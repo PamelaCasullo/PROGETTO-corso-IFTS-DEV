@@ -81,7 +81,7 @@ public class MainActivityDoc extends AppCompatActivity implements NavigationView
                 break;
             case R.id.PRESENCEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new PresenceDocenteFragment()).commit();
+                        new AbsenceDocenteFragment()).commit();
                 break;
             case R.id.PROFILEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
