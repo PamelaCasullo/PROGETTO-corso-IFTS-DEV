@@ -54,7 +54,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:text="MODULO:    Applicazioni Mobile Android"/>
+        android:hint="MODULO"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:text="CORSO:       IFTS Developer"/>
+        android:hint="CORSO"/>
 
     <EditText
         android:id="@+id/nome"
@@ -79,7 +79,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:text="NOME/COGN.:     yyyyyy yyyyy"/>
+        android:hint="NOME E COGNOME"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -91,7 +91,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:text="E-MAIL:       docente@itsrizzoli.it"/>
+        android:hint="E-MAIL"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -103,7 +103,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:text="DATA:        21/09/1247"/>
+        android:hint="DATA"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -115,7 +115,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:text="GENERE:       Onnipotente"/>
+        android:hint="GENERE"/>
 
 
 </LinearLayout>

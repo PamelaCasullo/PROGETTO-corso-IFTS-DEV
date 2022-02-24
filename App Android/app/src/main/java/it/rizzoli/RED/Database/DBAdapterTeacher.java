@@ -26,16 +26,17 @@ public class DBAdapterTeacher {
     private static final String TB_F8="password";
 
     public DBAdapterTeacher(Context context) {
+
         this.context = context;
-    }
-    public DBAdapterTeacher open() throws SQLException {
         dbHelper = new DatabaseHelper(context);
+    }
+    public void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
-        return this;
     }
     public void close() {
         dbHelper.close();
     }
+
     private ContentValues createContentValue(String first_name, String last_name,
                                              String phone_number, String personal_email, String istitutional_email,
                                              String photo, String password) {
@@ -84,4 +85,16 @@ public class DBAdapterTeacher {
         Cursor c = database.query(DB_TABLE, new String[] {TB_F7,TB_F2,TB_F3,TB_F6},TB_F1_PK+"="+id_teacher,null,null,null,null);
         return c;
     }
+
+    public boolean Login(String email_db, String psw_db) throws SQLException {
+
+        Cursor cursor = database.rawQuery("SELECT * FROM "+DB_TABLE, new String[]{email_db,psw_db});
+                //+" " + "WHERE institutional_email= ? AND password=?", new String[]{email_db,psw_db});
+        if(cursor!=null) {
+            if(cursor.getCount()>0) {
+                return true;
+            }
+        } return false;
+    }
+
 }

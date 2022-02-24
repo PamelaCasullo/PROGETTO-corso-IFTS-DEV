@@ -4,17 +4,37 @@ package it.rizzoli.RED;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.Connection;
+
+import it.rizzoli.RED.Database.ConnectionHelper;
+import it.rizzoli.RED.Database.DBAdapterTeacher;
+import it.rizzoli.RED.Database.DbAdapterStudent;
+
 public class LoginActivity extends AppCompatActivity {
 
+
+    //parte connessione db
+   /* Connection connection;
+    String resultSet="";
+    */
+
+    private Cursor cursor;
+    private DBAdapterTeacher teacher;
+    private DbAdapterStudent students;
+    //altro
     Button pulsanteLoginText;
     RadioButton studenteButton, docenteButton;
     boolean isStudent = true; //else is teacher
@@ -38,53 +58,71 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         pulsanteLoginText = findViewById(R.id.loginButtonText);
-
-        //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
-
+        
         studenteButton = findViewById(R.id.radio_studente);
         docenteButton = findViewById(R.id.radio_docente);
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+        email =(EditText) findViewById(R.id.email);
+        password =(EditText) findViewById(R.id.password);
+
+
 
         pulsanteLoginText.setOnClickListener(v -> {
 
-                if ( //admin
-                        email.getText().toString().equals("admin@itsrizzoli.it") && password.getText().toString().equals("admin") && docenteButton.isChecked()) {
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Admin!", Toast.LENGTH_SHORT).show();
+            try {
+                String email_db = email.getText().toString();
+                String psw_db = password.getText().toString();
+             if ( //docente
+                     email_db.length()>0 && psw_db.length()>0 && docenteButton.isChecked()) {
 
-                    SavePreferencesData(v);
+                 teacher = new DBAdapterTeacher(LoginActivity.this);
+                 teacher.open();
 
-                    Intent intentHome = new Intent(this, MainActivity.class);
-                    startActivity(intentHome);
+                 Toast.makeText(LoginActivity.this,"Before Login", Toast.LENGTH_LONG).show();
+                 if(teacher.Login(email_db, psw_db))
+                 {
+                     Toast.makeText(LoginActivity.this,"Successfully Logged In", Toast.LENGTH_LONG).show();
+                 }else{
+                     Toast.makeText(LoginActivity.this,"Invalid email/Password", Toast.LENGTH_LONG).show();
+                 }
+                 Toast.makeText(LoginActivity.this,"After Login", Toast.LENGTH_LONG).show();
 
-                    finish();
 
-
-                } else if ( //docente
-                        email.getText().toString().equals("docente@itsrizzoli.it") && password.getText().toString().equals("docente") && docenteButton.isChecked()) {
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
                     SavePreferencesData(v);
 
                     Intent intentHome = new Intent(this, MainActivityDoc.class);
                     startActivity(intentHome);
 
                     finish();
-
+                 teacher.close();
                 } else if ( //studente
-                        email.getText().toString().equals("studente@itsrizzoli.it") && password.getText().toString().equals("studente") && studenteButton.isChecked()) {
-                    Toast.makeText(getApplicationContext(), "Benvenuto, Studente!", Toast.LENGTH_SHORT).show();
+                     email_db.length()>0 && psw_db.length()>0 && studenteButton.isChecked()) {
 
-                    SavePreferencesData(v);
+                  students = (DbAdapterStudent) new DbAdapterStudent(LoginActivity.this);
+                  students.open();
+                 if(students.Login(email_db, psw_db))
+                 {
+                     Toast.makeText(getApplicationContext(), "Benvenuto, Studente!", Toast.LENGTH_SHORT).show();
+                     SavePreferencesData(v);
 
-                    Intent intentHome = new Intent(this, MainActivity.class);
-                    startActivity(intentHome);
+                     Intent intentHome = new Intent(this, MainActivity.class);
+                     startActivity(intentHome);
 
-                    finish();
+                     finish();
+                 }else {
+                     Toast.makeText(LoginActivity.this, "Invalid email/Password", Toast.LENGTH_LONG).show();
+                 }
+                 students.close();
 
                 } else { //dati errati
                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_SHORT).show();
                 }
+
+            }catch (Exception exceptionx) {
+                Log.e("Error",exceptionx.getMessage());
+            }
+
 
         });
     }
@@ -93,10 +131,8 @@ public class LoginActivity extends AppCompatActivity {
     //@todo implements RadioButton interaction with database
     public void onRadioButtonClicked(View v) {
         //is checked?
-
         checked = ((RadioButton)v).isChecked();
-        String selected ;
-
+        String selected;
         //switch for checked status
 
         switch (v.getId()) {
@@ -106,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
                     isStudent = false;
                     selected = "Docente";
                     Toast.makeText(this, selected, Toast.LENGTH_SHORT).show();
-                    break;
+                   break;
                 }
             }
             case R.id.radio_studente: {
@@ -171,6 +207,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
 
 
 }
