@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 public class AbsenceFragment extends Fragment {
@@ -24,7 +25,7 @@ public class AbsenceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_absence, container, false);
 
         // CODICE PER L'ANIMAZIONE DI BACKGROUNG
-        RelativeLayout drawerLayout = view.findViewById(R.id.my_drawer_layout);
+        DrawerLayout drawerLayout = view.findViewById(R.id.my_drawer_layout);
         AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2500);
         animationDrawable.setExitFadeDuration(5000);
