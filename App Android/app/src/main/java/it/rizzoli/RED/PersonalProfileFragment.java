@@ -20,7 +20,7 @@ public class PersonalProfileFragment extends Fragment {
         // CODICE PER L'ANIMAZIONE DI BACKGROUNG
         DrawerLayout drawerLayout = view.findViewById(R.id.my_drawer_layout);
         AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setEnterFadeDuration(5000);
         animationDrawable.setExitFadeDuration(5000);
         animationDrawable.start();
 
