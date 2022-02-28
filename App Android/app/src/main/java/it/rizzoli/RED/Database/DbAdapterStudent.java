@@ -22,11 +22,11 @@ public class DbAdapterStudent {
     private final Context context;
     private DatabaseHelper dbHelper;
     private SQLiteDatabase database;
-    private ConnectionHelper connectionHelper;
-    Connection connection;
-    ResultSet rs;
-    PreparedStatement ps;
-    Statement st;
+    private ConnectionHelper connectionHelper = null;
+    Connection connection = null;
+    ResultSet rs= null;
+    PreparedStatement ps = null;
+    Statement st = null;
     private static final String DB_TABLE = "student";
 
     private static final String TB_F1_PK = "id_student";
@@ -80,8 +80,9 @@ public class DbAdapterStudent {
         String sql = "insert into " + DB_TABLE + " (first_name,last_name,phone_number,personal_email,institutional_email,photo,password) values (?,?,?,?,?,?,?)";
         rs = st.executeQuery(sql);
 
-        try (Connection connection = connectionHelper.connectionClass();) {
-            ps = connection.prepareCall(sql);
+
+        try (Connection connection = connectionHelper.getInstance().getConnection()) {
+            ps = connection.prepareStatement(sql);
 
             ps.setString(1, first_name);
             ps.setString(2, last_name);
@@ -92,8 +93,13 @@ public class DbAdapterStudent {
             ps.setString(7, photo);
             ps.setString(8, password);
 
-        } catch (ClassNotFoundException e) {
+
+            ps.close();
+
+        } catch (SQLException e) {
             e.printStackTrace();
+            Log.e("Info","ErroreCreazioneStudentesuMYSQLLite");
+
         }
 
         return database.insertOrThrow(DB_TABLE, null, cv);
@@ -133,13 +139,13 @@ public class DbAdapterStudent {
 
         if (c.getCount() <= 0) {
             Toast.makeText(context, "test1Login", Toast.LENGTH_SHORT).show();
-            try (Connection conn = connectionHelper.connectionClass()) {
+            try {
+                Connection conn = ConnectionHelper.getInstance().getConnection();
 
                 ps = conn.prepareStatement(sql);
                 ps.setString(1, email_db);
                 ps.setString(2, psw_db);
 
-                System.out.print("Login Studente" + ps.toString());
 
                 ResultSet rs = ps.executeQuery();
                 if (rs != null) {
@@ -163,6 +169,10 @@ public class DbAdapterStudent {
                     }
                     return true;
                 } else return false;
+
+            } catch (SQLException exception) {
+                Log.e("Info","ErroreLogin");
+                exception.printStackTrace();
             }
         }
         if (c.getCount() > 0) {

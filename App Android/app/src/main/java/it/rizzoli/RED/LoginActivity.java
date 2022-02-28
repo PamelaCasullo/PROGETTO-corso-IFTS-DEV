@@ -96,8 +96,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     finish();
                  teacher.close();
-                } else if ( //studente
-                     email_db.length()>0 && psw_db.length()>0 && studenteButton.isChecked()) {
+                 //studente
+                } else if (email_db.length()>0 && psw_db.length()>0 && studenteButton.isChecked()) {
 
                   students = (DbAdapterStudent) new DbAdapterStudent(LoginActivity.this);
                   students.open();

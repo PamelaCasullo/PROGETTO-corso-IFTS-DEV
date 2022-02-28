@@ -1,36 +1,50 @@
 package it.rizzoli.RED.Database;
 
+
 import android.os.StrictMode;
+import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/*TODO look at https://github.com/wynsryd/android-mysql-example for help*/
 
 public class ConnectionHelper {
 
-    String uname, passw, ip, port, database;
 
+    String DNS = "lorenzodns.ddns.net";
+    String DATABASE = "RED";
+    String USERNAME = "userRED";
+    String PASSWORD = "^XMX^Xt4dG3Kh4%e$4ErwZU#6";
+    String PORT = "3306";
 
-    public Connection connectionClass() throws ClassNotFoundException, SQLException {
-        ip = "lorenzodns.ddns.net";
-        database = "RED";
-        uname = "userRED";
-        passw = "^XMX^Xt4dG3Kh4%e$4ErwZU#6";
-        port = "3306";
-        Class.forName("com.mysql.cj.jdbc.Driver");
+    private static ConnectionHelper _instance;
+
+    public static ConnectionHelper getInstance() {
+        if(_instance == null) _instance = new ConnectionHelper();
+        return _instance;
+    }
+
+    private Connection connection;
+
+    public ConnectionHelper() {
         StrictMode.ThreadPolicy pol = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(pol);
+        try {
 
-        Connection connection = null;
-        String connURL = null;
+            Class.forName("com.mysql.jdbc.Driver");
 
-        Class.forName("com.mysql.jdbc.Driver");
-        connURL = "jdbc:mysql://" + ip + ":" + port + ";" + "databasename=" + database + ";user=" + uname + ";password=" + passw;
-        connection = DriverManager.getConnection(connURL);
+            connection = DriverManager.getConnection("jdbc:mysql://lorenzodns.ddns.net:3306/RED",USERNAME,PASSWORD);
+            Log.e("Info","Connection Opened");
+        } catch (SQLException | ClassNotFoundException exception) {
+            Log.e("Error","ERROR");
+            exception.printStackTrace();
+        }
 
-        return connection;
-
-        //return conn;
     }
+    public Connection getConnection() {
+        return connection;
+    }
+
 }
