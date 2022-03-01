@@ -19,7 +19,7 @@ import it.red.JdbcUtilityInterface;
 public class StudentRESTController implements JdbcUtilityInterface<Student> {
 
 	@Autowired
-	@Qualifier("MYSQL")
+	@Qualifier("MYSQLS")
 	StudentRepository repository;
 
 	//showAll

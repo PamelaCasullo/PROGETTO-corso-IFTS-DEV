@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository(value="MYSQL")
+@Repository(value="MYSQLA")
 public class jdbcAgendaController implements AgendaRepository {
 	@Autowired
 	JdbcTemplate jdbcTemplate;

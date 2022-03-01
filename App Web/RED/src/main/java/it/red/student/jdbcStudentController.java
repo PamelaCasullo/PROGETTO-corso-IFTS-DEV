@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository(value="MYSQL")
+@Repository(value="MYSQLS")
 public class jdbcStudentController implements StudentRepository {
 
 	@Autowired

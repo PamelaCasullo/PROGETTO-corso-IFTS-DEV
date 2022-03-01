@@ -19,7 +19,7 @@ import it.red.JdbcUtilityInterface;
 public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 
 	@Autowired
-	@Qualifier("MYSQL")
+	@Qualifier("MYSQLT")
 	TeacherRepository repository;
 
 	@RequestMapping(value="/Teachers/showAll")

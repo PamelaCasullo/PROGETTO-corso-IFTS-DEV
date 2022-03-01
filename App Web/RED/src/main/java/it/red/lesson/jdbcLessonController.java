@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository(value="MYSQL")
+@Repository(value="MYSQLL")
 public class jdbcLessonController implements LessonRepository{
 	@Autowired
 	JdbcTemplate jdbcTemplate;

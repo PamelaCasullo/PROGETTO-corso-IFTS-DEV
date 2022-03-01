@@ -15,7 +15,7 @@ import it.red.JdbcUtilityInterface;
 @RestController
 public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
 	@Autowired
-	@Qualifier("MYSQL")
+	@Qualifier("MYSQLA")
 	AgendaRepository repository;
 	
 	@RequestMapping(value="/Agenda/showAll")

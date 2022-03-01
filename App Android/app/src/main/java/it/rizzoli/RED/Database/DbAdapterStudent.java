@@ -135,21 +135,23 @@ public class DbAdapterStudent {
         String sql = "SELECT * FROM " + DB_TABLE + " WHERE institutional_email=? AND password=? ";
         Cursor c = database.rawQuery(sql, new String[]{email_db, psw_db});
 
-        //doRetrieveByLogin
 
         if (c.getCount() <= 0) {
-            Toast.makeText(context, "test1Login", Toast.LENGTH_SHORT).show();
-            try {
-                Connection conn = ConnectionHelper.getInstance().getConnection();
+            Log.e("Info","Non esiste nessuno studente del dbInterno");
 
-                ps = conn.prepareStatement(sql);
+            try {
+                connection = ConnectionHelper.getInstance().getConnection();
+                //database esterno
+                ps = connection.prepareStatement(sql);
+
                 ps.setString(1, email_db);
                 ps.setString(2, psw_db);
+                //select dbEsterno
+                rs = ps.executeQuery();
 
-
-                ResultSet rs = ps.executeQuery();
-                if (rs != null) {
+                if (rs.first() && rs.getFetchSize() >= 1) {
                     DbAdapterStudent newStudent = new DbAdapterStudent(context);
+                    Log.e("Info","rs != null");
                     while (rs.next()) {
                         StudentBean studentBean = new StudentBean();
 
@@ -168,19 +170,21 @@ public class DbAdapterStudent {
 
                     }
                     return true;
-                } else return false;
+                } else {
+                    Log.e("Info","rs = null");
+                    return false;
+                }
 
             } catch (SQLException exception) {
                 Log.e("Info","ErroreLogin");
                 exception.printStackTrace();
             }
-        }
-        if (c.getCount() > 0) {
+        } else {
             c.close();
-            Toast.makeText(context, "test2Login", Toast.LENGTH_SHORT).show();
+            Log.e("Info","Login Failed");
             return true;
         }
-        Toast.makeText(context, "sono uscito", Toast.LENGTH_SHORT).show();
+        Log.e("Info","Login Failed 1");
         return false;
     }
 

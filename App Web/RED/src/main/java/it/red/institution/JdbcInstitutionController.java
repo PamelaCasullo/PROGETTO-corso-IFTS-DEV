@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 
-@Repository(value="MYSQL")
+@Repository(value="MYSQLI")
 public class JdbcInstitutionController implements InstitutionRepository{
 
 	@Autowired

@@ -16,7 +16,7 @@ import it.red.agenda.Agenda;
 @RestController
 public class LessonRESTController implements JdbcUtilityInterface<Lesson> {
 	@Autowired
-	@Qualifier("MYSQL")
+	@Qualifier("MYSQLL")
 	LessonRepository repository;
 
 	@RequestMapping(value="/Lessons/showAll")

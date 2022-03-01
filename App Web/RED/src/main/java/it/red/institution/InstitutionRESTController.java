@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class InstitutionRESTController {
 
-	@Autowired
-	@Qualifier("MYSQL") //per il testing usare @Qualifier("MEM")
 	
+	@Qualifier("MYSQLI") //per il testing usare @Qualifier("MEM")
+	@Autowired
 	InstitutionRepository repository ;
 	
 	//mostrare tutti le istituzioni

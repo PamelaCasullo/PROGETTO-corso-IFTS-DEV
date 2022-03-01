@@ -72,29 +72,23 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 String email_db = email.getText().toString();
                 String psw_db = password.getText().toString();
-             if ( //docente
-                     email_db.length()>0 && psw_db.length()>0 && docenteButton.isChecked()) {
+                //docente
+             if (email_db.length()>0 && psw_db.length()>0 && docenteButton.isChecked()) {
 
-                 teacher = new DBAdapterTeacher(LoginActivity.this);
+                 teacher = (DBAdapterTeacher) new DBAdapterTeacher(LoginActivity.this);
                  teacher.open();
-
-                 Toast.makeText(LoginActivity.this,"Before Login", Toast.LENGTH_LONG).show();
                  if(teacher.Login(email_db, psw_db))
                  {
-                     Toast.makeText(LoginActivity.this,"Successfully Logged In", Toast.LENGTH_LONG).show();
-                 }else{
-                     Toast.makeText(LoginActivity.this,"Invalid email/Password", Toast.LENGTH_LONG).show();
+                     Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
+                     SavePreferencesData(v);
+
+                     Intent intentHome = new Intent(this, MainActivityDoc.class);
+                     startActivity(intentHome);
+
+                     finish();
+                 }else {
+                     Toast.makeText(LoginActivity.this, "Invalid email/Password", Toast.LENGTH_LONG).show();
                  }
-                 Toast.makeText(LoginActivity.this,"After Login", Toast.LENGTH_LONG).show();
-
-
-                 Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
-                    SavePreferencesData(v);
-
-                    Intent intentHome = new Intent(this, MainActivityDoc.class);
-                    startActivity(intentHome);
-
-                    finish();
                  teacher.close();
                  //studente
                 } else if (email_db.length()>0 && psw_db.length()>0 && studenteButton.isChecked()) {

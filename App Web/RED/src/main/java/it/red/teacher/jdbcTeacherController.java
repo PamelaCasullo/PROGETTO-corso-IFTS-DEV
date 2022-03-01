@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 
 
-@Repository(value="MYSQL")
+@Repository(value="MYSQLT")
 public class jdbcTeacherController implements TeacherRepository {
 	
 	@Autowired
