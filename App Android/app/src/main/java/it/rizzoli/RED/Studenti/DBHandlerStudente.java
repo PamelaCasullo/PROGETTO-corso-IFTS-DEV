@@ -9,14 +9,14 @@ import java.util.ArrayList;
 
 public class DBHandlerStudente extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "coursedb";
+    private static final String DB_NAME = "votodb";
     private static final int DB_VERSION = 1;
-    private static final String TABLE_NAME = "mycourses";
+    private static final String TABLE_NAME = "myvoto";
     private static final String ID_COL = "id";
-    private static final String NAME_COL = "name"; //DATA
-    private static final String DURATION_COL = "duration"; //NOME E COGNOME
-    private static final String DESCRIPTION_COL = "description"; //VOTO
-    private static final String TRACKS_COL = "tracks"; //MODULO
+    private static final String DATA_COL = "data"; //DATA
+    private static final String NOME_COL = "nome"; //NOME E COGNOME
+    private static final String VOTO_COL = "voto"; //VOTO
+    private static final String MODULO_COL = "modulo"; //MODULO
 
     public DBHandlerStudente(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -27,10 +27,10 @@ public class DBHandlerStudente extends SQLiteOpenHelper {
         // CREAZIONE DELLA TABELLA
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + NAME_COL + " TEXT,"
-                + DURATION_COL + " TEXT,"
-                + DESCRIPTION_COL + " TEXT,"
-                + TRACKS_COL + " TEXT)";
+                + DATA_COL + " TEXT,"
+                + NOME_COL + " TEXT,"
+                + VOTO_COL + " TEXT,"
+                + MODULO_COL + " TEXT)";
 
         // ESEGUI LA TABELLA SQL
         db.execSQL(query);

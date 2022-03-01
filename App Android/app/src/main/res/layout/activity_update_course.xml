@@ -28,7 +28,8 @@
         android:hint="Inserisci la data"
         android:textColorHint="@color/gray"
         android:textStyle="italic"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:inputType="date"/>
 
     <!--INSERISCI IL NOME/COGNOME-->
     <EditText
@@ -39,7 +40,8 @@
         android:hint="Inserisci il nome ed il Cognome"
         android:textColorHint="@color/gray"
         android:textStyle="italic"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:inputType="text"/>
 
     <!--INSERISCI IL MODULO-->
     <EditText
@@ -50,7 +52,8 @@
         android:hint="Inserisci il Modulo"
         android:textColorHint="@color/gray"
         android:textStyle="italic"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:inputType="text"/>
 
     <!--INSERISCI IL VOTO-->
     <EditText
