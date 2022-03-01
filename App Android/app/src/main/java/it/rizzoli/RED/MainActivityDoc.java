@@ -16,6 +16,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import it.rizzoli.RED.Docente.CalendarDocenteFragment;
+import it.rizzoli.RED.Docente.DocenteAssegnaVotiFragment;
+import it.rizzoli.RED.Docente.HomepageDocenteFragment;
+import it.rizzoli.RED.Docente.MenuCreationClass;
+import it.rizzoli.RED.Docente.PersonalProfileDocenteFragment;
+import it.rizzoli.RED.Docente.PresenceDocenteFragment;
+import it.rizzoli.RED.Docente.ProfileDocenteFragment;
+import it.rizzoli.RED.Docente.VoteDocenteFragment;
+
 public class MainActivityDoc extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -82,7 +91,7 @@ public class MainActivityDoc extends AppCompatActivity implements NavigationView
                 break;
             case R.id.PRESENCEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new AbsenceDocenteFragment()).commit();
+                        new PresenceDocenteFragment()).commit();
                 break;
             case R.id.PROFILEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
@@ -109,6 +118,10 @@ public class MainActivityDoc extends AppCompatActivity implements NavigationView
             case R.id.PERSONAL_PROFILEDOC:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new PersonalProfileDocenteFragment()).commit();
+                break;
+            case R.id.ASSEGNAVOTIDOC:
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                        new DocenteAssegnaVotiFragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

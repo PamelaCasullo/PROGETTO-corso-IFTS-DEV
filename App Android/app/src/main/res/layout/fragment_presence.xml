@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bgcol">
+    android:background="@drawable/backg">
 
     <!--barra con i titoli di data/materia/voto, niente id perchè non hanno bisogno di essere modificati-->
     <LinearLayout
@@ -51,7 +51,6 @@
     <!--lista dei voti ottenuti tramite database-->
 
     <!--footer con sfondo rosso e nome progetto-->
-
     <TextView
         android:id="@+id/footer"
         android:layout_width="match_parent"

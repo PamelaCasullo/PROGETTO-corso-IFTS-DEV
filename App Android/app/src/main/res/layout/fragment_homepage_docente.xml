@@ -6,13 +6,9 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_animation"
+    android:background="@drawable/backg"
     tools:ignore="HardcodedText"
     tools:openDrawer="start">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -88,23 +84,12 @@
             android:textSize="15dp"
             android:textStyle="italic" />
 
-        <ListView
-            android:id="@+id/listaVotiDocente"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:layout_above="@id/footer"
-            android:layout_below="@+id/testo3"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bgred"
-            android:verticalScrollbarPosition="right" />
-
         <Button
             android:id="@+id/buttonVotiDocente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/listaVotiDocente"
+            android:layout_marginTop="80dp"
+            android:layout_below="@+id/testo3"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:ems="15"
@@ -119,8 +104,6 @@
             android:layout_below="@+id/appBarLayout" />
 
     </RelativeLayout>
-
-    </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--text view for our course name-->
+        <!--DATA-->
+        <TextView
+            android:id="@+id/idTVCourseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/red"
+            android:text="data"
+            android:textAlignment="center"
+            android:textColor="@color/yellow" />
+
+
+        <!--text view for our course tracks-->
+        <!--NOME/COGNOME-->
+        <TextView
+            android:id="@+id/idTVCourseDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVCourseName"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:text="Nome e Cognome:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/nome_cognomeset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/idTVCourseName"
+            android:layout_toEndOf="@id/idTVCourseDuration"
+            android:layout_toRightOf="@id/idTVCourseDuration"
+            android:text="textview1" />
+
+
+        <!--text view for our course duration-->
+        <!--MODULO-->
+        <TextView
+            android:id="@+id/idTVCourseTracks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVCourseDuration"
+            android:padding="5dp"
+            android:text="Modulo:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/moduloset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVCourseDuration"
+            android:layout_marginLeft="25dp"
+            android:layout_toEndOf="@id/idTVCourseDuration"
+            android:layout_toRightOf="@id/idTVCourseDuration"
+            android:padding="5dp"
+            android:text="textview2" />
+
+
+        <!--text view for our course description-->
+        <!--VOTO-->
+        <TextView
+            android:id="@+id/idTVCourseDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVCourseTracks"
+            android:padding="5dp"
+            android:text="Voto:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/votoset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/idTVCourseTracks"
+            android:layout_toEndOf="@id/idTVCourseDuration"
+            android:layout_toRightOf="@id/idTVCourseDuration"
+            android:text="textview3" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

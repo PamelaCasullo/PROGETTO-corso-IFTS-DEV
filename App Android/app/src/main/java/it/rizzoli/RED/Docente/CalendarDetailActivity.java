@@ -1,8 +1,10 @@
-package it.rizzoli.RED;
+package it.rizzoli.RED.Docente;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import it.rizzoli.RED.R;
 
 public class CalendarDetailActivity extends AppCompatActivity {
 

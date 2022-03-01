@@ -1,4 +1,4 @@
-package it.rizzoli.RED;
+package it.rizzoli.RED.Studenti;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import it.rizzoli.RED.R;
 
 public class CalendarFragment extends Fragment {
     private final static String MY_PREFERENCES = "MyPref";

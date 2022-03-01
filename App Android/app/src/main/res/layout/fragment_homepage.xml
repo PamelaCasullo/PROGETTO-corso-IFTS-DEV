@@ -6,7 +6,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_animation"
+    android:background="@drawable/backg"
     tools:ignore="HardcodedText"
     tools:openDrawer="start">
 
@@ -16,7 +16,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/testostart"
@@ -53,9 +53,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imagebg"
+            android:layout_marginLeft="140dp"
             android:layout_marginTop="20dp"
             android:text="Cos'è"
-            android:layout_marginLeft="140dp"
             android:textColor="@color/white"
             android:textSize="22dp"
             android:textStyle="bold" />
@@ -81,31 +81,19 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/testo"
             android:layout_centerHorizontal="true"
+            android:padding="30dp"
             android:text="R.E.D è un innovatissimo Registro Elettronico Digitale, che accompagna i nostri collaboratori (Docenti, Studenti e clienti) durante l'evoluzione digitale."
             android:textAlignment="viewStart"
-            android:padding="30dp"
             android:textColor="@color/white"
             android:textSize="15dp"
             android:textStyle="italic" />
-
-        <ListView
-            android:id="@+id/listaVoti"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:layout_above="@id/footer"
-            android:layout_below="@+id/testo3"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bgred"
-            android:verticalScrollbarPosition="right" />
-
 
         <Button
             android:id="@+id/buttonVoti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/listaVoti"
+            android:layout_marginTop="80dp"
+            android:layout_below="@+id/testo3"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:ems="15"

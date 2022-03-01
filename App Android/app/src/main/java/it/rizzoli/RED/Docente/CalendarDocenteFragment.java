@@ -1,4 +1,4 @@
-package it.rizzoli.RED;
+package it.rizzoli.RED.Docente;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 
 import androidx.fragment.app.Fragment;
+
+import it.rizzoli.RED.R;
 
 
 public class CalendarDocenteFragment extends Fragment {

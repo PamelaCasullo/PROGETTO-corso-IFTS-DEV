@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_animation"
-    tools:ignore="HardcodedText"
-    tools:openDrawer="start">
+    android:background="@drawable/backg">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -62,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/barraTitoli"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="30dp"
                 android:layout_toRightOf="@+id/imageProfile"
                 android:text="Nome:"
                 android:textColor="@color/red"
@@ -129,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/numero"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/imageProfile2"
                 android:text="Nome:"
                 android:textColor="@color/red"
@@ -196,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/numero2"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/imageProfile3"
                 android:text="Nome:"
                 android:textColor="@color/red"
@@ -263,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/numero3"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/imageProfile4"
                 android:text="Nome:"
                 android:textColor="@color/red"
@@ -331,7 +327,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/numero4"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/imageProfile5"
                 android:text="Nome:"
                 android:textColor="@color/red"
@@ -449,7 +445,7 @@
                 android:layout_below="@+id/imageProfile6"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="3dp"
                 app:cardCornerRadius="90dp"
                 app:cardPreventCornerOverlap="false">
 
@@ -465,7 +461,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/numero6"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="40dp"
                 android:layout_toRightOf="@+id/imageProfile7"
                 android:text="Nome:"
                 android:textColor="@color/red"
@@ -513,7 +509,6 @@
                 android:id="@+id/footer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:background="@color/redb"
@@ -527,4 +522,4 @@
 
     </ScrollView>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

@@ -27,6 +27,11 @@
             android:title="@string/elenco_docenti" />
 
         <item
+            android:id="@+id/ASSEGNAVOTIDOC"
+            android:icon="@drawable/ic_baseline_add_24"
+            android:title="Assegna voti"/>
+
+        <item
             android:id="@+id/VOTEDOC"
             android:icon="@drawable/ic_baseline_format_list_numbered_24"
             android:title="@string/voti" />

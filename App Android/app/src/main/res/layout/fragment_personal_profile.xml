@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_animation"
-    tools:ignore="HardcodedText"
-    tools:openDrawer="start">
-
-<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/backg">
 
     <TextView
         android:layout_width="match_parent"
@@ -54,7 +46,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:hint="MATRICOLA"/>
+        android:text="MATRICOLA:    #xxxxxx"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -66,7 +58,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:hint="CORSO"/>
+        android:text="CORSO:          IFTS Developer"/>
 
     <EditText
         android:id="@+id/nome"
@@ -79,7 +71,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:hint="NOME E COGNOME"/>
+        android:text="NOME/COGN.:     xxxxxxxxx xxxxxx"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -91,7 +83,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:hint="E-MAIL"/>
+        android:text="E-MAIL:       studente@itsrizzoli.it"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -103,7 +95,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:hint="DATA"/>
+        android:text="DATA:        02/04/2001"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -115,8 +107,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/white"
         android:background="@color/redb"
-        android:hint="GENERE"/>
+        android:text="GENERE:       Maschio"/>
 
 
 </LinearLayout>
-</androidx.drawerlayout.widget.DrawerLayout>

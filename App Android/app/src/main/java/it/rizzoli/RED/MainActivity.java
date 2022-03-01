@@ -16,6 +16,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import it.rizzoli.RED.Studenti.CalendarFragment;
+import it.rizzoli.RED.Studenti.HomepageFragment;
+import it.rizzoli.RED.Studenti.MenuCreationClass;
+import it.rizzoli.RED.Studenti.PersonalProfileFragment;
+import it.rizzoli.RED.Studenti.PresenceFragment;
+import it.rizzoli.RED.Studenti.ProfileFragment;
+import it.rizzoli.RED.Studenti.VoteFragment;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public DrawerLayout drawerLayout;
@@ -85,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.PRESENCE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new AbsenceFragment()).commit();
+                        new PresenceFragment()).commit();
                 break;
             case R.id.PROFILE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,

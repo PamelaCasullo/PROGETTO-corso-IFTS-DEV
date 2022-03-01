@@ -6,7 +6,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_animation"
+    android:background="@drawable/backg"
     tools:openDrawer="start">
 
     <RelativeLayout
@@ -14,63 +14,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
-        <!--barra con i titoli di data/materia/voto, niente id perchè non hanno bisogno di essere modificati-->
-        <LinearLayout
-            android:id="@+id/barraTitoli"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gradient_center3_3"
-            android:elevation="10dp"
-            android:orientation="horizontal"
-            android:padding="20dp">
-
-            <TextView
+            <!--recycler view for displaying our courses-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/idRVCourses"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:layout_weight="1"
-                android:text="DATA"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textMenuSize" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="MATERIA"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textMenuSize" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="VOTO"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textMenuSize" />
-
-        </LinearLayout>
-
-        <!--lista dei voti ottenuti tramite database-->
-
-        <!--footer con sfondo rosso e nome progetto-->
-
-        <ListView
-            android:id="@+id/listaVoti"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/footer"
-            android:layout_below="@+id/barraTitoli"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:verticalScrollbarPosition="right" />
+                android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/footer"

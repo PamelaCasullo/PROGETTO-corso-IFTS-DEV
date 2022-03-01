@@ -1,4 +1,4 @@
-package it.rizzoli.RED;
+package it.rizzoli.RED.Docente;
 
 
 import android.content.SharedPreferences;

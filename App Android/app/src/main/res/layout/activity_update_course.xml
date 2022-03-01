@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backg"
+    android:orientation="vertical"
+    tools:context=".UpdateCourseActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="Modifica Valutazione"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:layout_marginBottom="50dp"/>
+
+    <!--INSERISCI LA DATA-->
+    <EditText
+        android:id="@+id/idEdtCourseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Inserisci la data"
+        android:textColorHint="@color/gray"
+        android:textStyle="italic"
+        android:textColor="@color/white"/>
+
+    <!--INSERISCI IL NOME/COGNOME-->
+    <EditText
+        android:id="@+id/idEdtCourseDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Inserisci il nome ed il Cognome"
+        android:textColorHint="@color/gray"
+        android:textStyle="italic"
+        android:textColor="@color/white"/>
+
+    <!--INSERISCI IL MODULO-->
+    <EditText
+        android:id="@+id/idEdtCourseTracks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Inserisci il Modulo"
+        android:textColorHint="@color/gray"
+        android:textStyle="italic"
+        android:textColor="@color/white"/>
+
+    <!--INSERISCI IL VOTO-->
+    <EditText
+        android:id="@+id/idEdtCourseDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="0123456789"
+        android:layout_margin="10dp"
+        android:hint="Inserisci il Voto"
+        android:textColorHint="@color/gray"
+        android:inputType="number"
+        android:textStyle="italic"
+        android:textColor="@color/white"/>
+
+    <!--button for updating our course-->
+    <Button
+        android:id="@+id/idBtnUpdateCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:ems="20"
+        android:layout_marginTop="50dp"
+        android:text="Aggiorna voto"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/red"/>
+
+    <!--button for deleting our course-->
+    <Button
+        android:id="@+id/idBtnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:ems="20"
+        android:layout_marginTop="30dp"
+        android:text="Elimina Voto"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/red"/>
+
+
+</LinearLayout>
