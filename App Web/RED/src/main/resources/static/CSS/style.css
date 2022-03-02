@@ -191,3 +191,31 @@
     transition: all 300ms ease-in-out;
     transform: translate(-50%, -50%) scale(1);
 }
+
+
+.input_file_hidden {
+    color: transparent;
+}
+
+.input_file_hidden::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.input_file_hidden::before {
+    content: 'CARICA UN\'IMMAGINE PROFILO';
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    border: 2px solid darkred;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    
+}
+
+.input_file_hidden::before:hover {
+    background-color: darkred;
+    border-color: white;
+    color: black;
+    transition: 0.4s;
+}
