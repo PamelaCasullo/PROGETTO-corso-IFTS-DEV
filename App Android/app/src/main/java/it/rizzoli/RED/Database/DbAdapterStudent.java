@@ -6,9 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Toast;
 
-import java.io.Console;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -22,7 +20,7 @@ public class DbAdapterStudent {
     private final Context context;
     private DatabaseHelper dbHelper;
     private SQLiteDatabase database;
-    private ConnectionHelper connectionHelper = null;
+    private final ConnectionHelper connectionHelper = null;
     Connection connection = null;
     ResultSet rs= null;
     PreparedStatement ps = null;
@@ -131,7 +129,7 @@ public class DbAdapterStudent {
         return database.query(DB_TABLE, new String[]{TB_F8, TB_F2, TB_F3, TB_F7, TB_F5}, TB_F1_PK + "=" + id_student, null, null, null, null);
     }
 
-    public boolean Login(String email_db, String psw_db) throws SQLException, java.sql.SQLException, ClassNotFoundException {
+    public boolean Login(String email_db, String psw_db) throws java.sql.SQLException, SQLException {
         String sql = "SELECT * FROM " + DB_TABLE + " WHERE institutional_email=? AND password=? ";
         Cursor c = database.rawQuery(sql, new String[]{email_db, psw_db});
 
@@ -171,7 +169,7 @@ public class DbAdapterStudent {
                     }
                     return true;
                 } else {
-                    Log.e("Info","rs = null");
+                    Log.e("Info","rs = 0");
                     return false;
                 }
 

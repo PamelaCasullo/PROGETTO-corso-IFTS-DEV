@@ -44,7 +44,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
 	}
 
-	@RequestMapping(value="/Teachers/search/{id_teacher}", method=RequestMethod.PUT) 
+	@RequestMapping(value="/Teachers/update/{id_teacher}", method=RequestMethod.PUT) 
 	public Teacher updateElementById(@PathVariable long id,@RequestBody Teacher stMod) {
 		Teacher i = this.repository.findValueById(id);
 
@@ -66,7 +66,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return i;
 	}
 	
-	@RequestMapping(value="/Teachers/search/{id_teacher}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/Teachers/delete/{id_teacher}", method=RequestMethod.DELETE)
 	public void deleteElement(@PathVariable long id) {
 		this.repository.deleteValueById(id);
 		

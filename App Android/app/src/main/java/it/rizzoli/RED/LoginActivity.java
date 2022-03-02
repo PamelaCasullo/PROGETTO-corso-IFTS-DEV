@@ -4,8 +4,10 @@ package it.rizzoli.RED;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +17,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import it.rizzoli.RED.Database.DBAdapterTeacher;
+import it.rizzoli.RED.Database.DbAdapterStudent;
+
 public class LoginActivity extends AppCompatActivity {
 
+    //parte connessione db
+    private DBAdapterTeacher teacher;
+    private DbAdapterStudent students;
+    //altro
     Button pulsanteLoginText;
     RadioButton studenteButton, docenteButton;
     boolean isStudent = true; //else is teacher
@@ -28,8 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
-    //private final static String TEXT_EMAIL_KEY = "textEMAIL";
-    //private final static String TEXT_PW_KEY = "textPW";
+
     private final static String TEXT_EMAIL_KEY = "textEmail";
     private final static String TEXT_PW_KEY = "textPassword";
     private final static String TEXT_KIND_KEY = "radioBtnKind";
@@ -57,42 +65,52 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
 
         pulsanteLoginText.setOnClickListener(v -> {
+            try {
+                String email_db = email.getText().toString();
+                String psw_db = password.getText().toString();
+                if ( //docente
+                        email.getText().toString().equals("docente@itsrizzoli.it") && password.getText().toString().equals("docente") && docenteButton.isChecked()) {
 
-            if ( //admin
-                    email.getText().toString().equals("admin@itsrizzoli.it") && password.getText().toString().equals("admin") && docenteButton.isChecked()) {
-                Toast.makeText(getApplicationContext(), "Benvenuto, Admin!", Toast.LENGTH_SHORT).show();
+                    teacher = (DBAdapterTeacher) new DBAdapterTeacher(LoginActivity.this);
+                    teacher.open();
 
-                SavePreferencesData(v);
+                    if (teacher.Login(email_db, psw_db)) {
+                        Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
+                        SavePreferencesData(v);
 
-                Intent intentHome = new Intent(this, MainActivity.class);
-                startActivity(intentHome);
+                        Intent intentHome = new Intent(this, MainActivityDoc.class);
+                        startActivity(intentHome);
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Invalid email/Password", Toast.LENGTH_LONG).show();
+                    }
+                    teacher.close();
 
-                finish();
+                } else if ( //studente
+                        email.getText().toString().equals("studente@itsrizzoli.it") && password.getText().toString().equals("studente") && studenteButton.isChecked()) {
 
+                    students = (DbAdapterStudent) new DbAdapterStudent(LoginActivity.this);
+                    students.open();
+                    if(students.Login(email_db, psw_db))
+                    {
+                        Toast.makeText(getApplicationContext(), "Benvenuto, Studente!", Toast.LENGTH_SHORT).show();
+                        SavePreferencesData(v);
 
-            } else if ( //docente
-                    email.getText().toString().equals("docente@itsrizzoli.it") && password.getText().toString().equals("docente") && docenteButton.isChecked()) {
-                Toast.makeText(getApplicationContext(), "Benvenuto, Docente!", Toast.LENGTH_SHORT).show();
-                SavePreferencesData(v);
+                        Intent intentHome = new Intent(this, MainActivity.class);
+                        startActivity(intentHome);
 
-                Intent intentHome = new Intent(this, MainActivityDoc.class);
-                startActivity(intentHome);
+                        finish();
+                    }else {
+                        Toast.makeText(LoginActivity.this, "Invalid email/Password", Toast.LENGTH_LONG).show();
+                    }
+                    students.close();
 
-                finish();
+                } else { //dati errati
+                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_SHORT).show();
+                }
 
-            } else if ( //studente
-                    email.getText().toString().equals("studente@itsrizzoli.it") && password.getText().toString().equals("studente") && studenteButton.isChecked()) {
-                Toast.makeText(getApplicationContext(), "Benvenuto, Studente!", Toast.LENGTH_SHORT).show();
-
-                SavePreferencesData(v);
-
-                Intent intentHome = new Intent(this, MainActivity.class);
-                startActivity(intentHome);
-
-                finish();
-
-            } else { //dati errati
-                Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_SHORT).show();
+            } catch (Exception exceptionx) {
+                Log.e("Error", exceptionx.getMessage());
             }
 
         });
@@ -166,17 +184,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         updatePreferencesData();
         if(textEmail != null && textPassword != null) {
+            Intent i;
             if(isStudent) {
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
+                i = new Intent(LoginActivity.this, MainActivity.class);
             }
 
             else {
-                Intent i = new Intent(LoginActivity.this, MainActivityDoc.class);
-                startActivity(i);
-                finish();
+                i = new Intent(LoginActivity.this, MainActivityDoc.class);
             }
+            startActivity(i);
+            finish();
         }
 
     }

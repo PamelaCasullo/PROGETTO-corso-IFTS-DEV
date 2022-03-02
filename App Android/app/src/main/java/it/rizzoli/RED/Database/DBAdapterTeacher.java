@@ -8,17 +8,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DBAdapterTeacher {
+
     private static final String LOG_TAG = DbAdapterInstitution.class.getSimpleName();
     private final Context context;
     private DatabaseHelper dbHelper;
     private SQLiteDatabase database;
     Connection connection = null;
+    private final ConnectionHelper connectionHelper = null;
     ResultSet rs = null;
     PreparedStatement ps = null;
     Statement st = null;
@@ -36,10 +37,11 @@ public class DBAdapterTeacher {
     public DBAdapterTeacher(Context context) {
 
         this.context = context;
-        dbHelper = new DatabaseHelper(context);
+       // dbHelper = new DatabaseHelper(context);
     }
 
     public void open() throws SQLException {
+        dbHelper = new DatabaseHelper(context);
         database = dbHelper.getWritableDatabase();
     }
 
@@ -96,17 +98,14 @@ public class DBAdapterTeacher {
 
     //fetchById
     public Cursor fetchTeacherById(String id_teacher) {
-        Cursor c = database.query(DB_TABLE, new String[]{TB_F7, TB_F2, TB_F3, TB_F6}, TB_F1_PK + "=" + id_teacher, null, null, null, null);
-        return c;
+        return database.query(DB_TABLE, new String[]{TB_F7, TB_F2, TB_F3, TB_F6}, TB_F1_PK + "=" + id_teacher, null, null, null, null);
     }
 
 
 
-        public boolean Login (String email_db, String psw_db) {
-            String sql = "SELECT * FROM " + DB_TABLE + " WHERE institutional_email=? AND password=? ";
+        public boolean Login (String email_db, String psw_db) throws java.sql.SQLException, SQLException  {
+            String sql = "select * from "+DB_TABLE+" where institutional_email = ? and password=?";
             Cursor c = database.rawQuery(sql, new String[]{email_db, psw_db});
-
-
 
             if (c.getCount() <= 0) {
                 Log.e("Info", "Non esiste nessuno docente del dbInterno");
@@ -121,7 +120,7 @@ public class DBAdapterTeacher {
                     //select dbEsterno
                     rs = ps.executeQuery();
 
-                    if (rs.first() && rs.getFetchSize() >= 0) {
+                    if (rs.first() && rs.getFetchSize() >= 1) {
                         DBAdapterTeacher newTeacher = new DBAdapterTeacher(context);
                         Log.e("Info", "rs != null");
                         while (rs.next()) {
@@ -135,18 +134,19 @@ public class DBAdapterTeacher {
                             teacherBean.setPassword(rs.getString("password"));
 
                             newTeacher.createContentValue(teacherBean.getFirstName(), teacherBean.getLast_name(),
-                                    teacherBean.getPhone_number(), teacherBean.getPersonal_email(), teacherBean.getInstitutional_email(),
+                                    teacherBean.getPhone_number(), teacherBean.getPersonal_email(),
+                                    teacherBean.getInstitutional_email(),
                                     teacherBean.getPhoto(), teacherBean.getPassword()
                             );
 
                         }
                         return true;
                     } else {
-                        Log.e("Info", "rs = null");
+                        Log.e("Info", "rs = 0");
                         return false;
                     }
 
-                } catch (SQLException | java.sql.SQLException exception) {
+                } catch (SQLException exception) {
                     Log.e("Info", "ErroreLogin");
                     exception.printStackTrace();
                 }
