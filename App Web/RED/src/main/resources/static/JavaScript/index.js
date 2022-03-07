@@ -20,6 +20,8 @@ function login(){
 			if(JSON.stringify(response)=="") {
 				alert("ERRORE INSERIMENTO DATI");
 			} else {
+				var p = JSON.stringify(response);
+				sessionStorage.setItem("value",p);
 				window.open('STUDENTE_html/homepage.html',"_self");
 			}
       	},
@@ -42,6 +44,8 @@ function login(){
  			if(JSON.stringify(response)=="") {
 				alert("ERRORE INSERIMENTO DATI");
 			} else {
+				var p = JSON.stringify(response);
+				sessionStorage.setItem(p);
 				window.open('DOCENTE_html/homepage.html',"_self");
 			}
 			
@@ -69,3 +73,7 @@ function radioBTN(){
  }
  }
 }
+
+
+
+
