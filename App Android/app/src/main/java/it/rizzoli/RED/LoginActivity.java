@@ -47,13 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // CODICE PER L'ANIMAZIONE DI BACKGROUNG
-        DrawerLayout drawerLayout = findViewById(R.id.my_drawer_layout);
-        AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(10);
-        animationDrawable.setExitFadeDuration(5000);
-        animationDrawable.start();
-
         pulsanteLoginText = findViewById(R.id.loginButtonText);
 
         //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
