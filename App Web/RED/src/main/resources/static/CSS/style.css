@@ -94,6 +94,8 @@
 
 /*PULSANTE VOTI*/
 .button-votes {
+    padding: 1px;
+    text-decoration: none;
     border: 5px;
     background-color: darkred;
     color: black;
