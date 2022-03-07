@@ -39,6 +39,12 @@ public class jdbcStudentController implements StudentRepository {
 		return jdbcTemplate.query("SELECT * FROM student", BeanPropertyRowMapper.newInstance(Student.class));
 
 	}
+	
+	@Override
+	public List<Student> findEmailPassword(String institutional_email, String password) {
+		return jdbcTemplate.query("SELECT * FROM student WHERE institutional_email=? AND password=?", BeanPropertyRowMapper.newInstance(Student.class),institutional_email,password);
+
+	}
 
 	@Override
 	public long updateValueById(Student p) {
@@ -50,7 +56,6 @@ public class jdbcStudentController implements StudentRepository {
 				+ " image=? WHERE id_student=?",new Object[] 
 						{p.getPersonal_email(),p.getPhone_number(),p.getDate_of_birth(),
 								p.getPassword(),p.getPhoto(),p.getId_student()});
-
 	}
 
 	@Override

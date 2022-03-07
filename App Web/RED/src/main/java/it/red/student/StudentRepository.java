@@ -19,6 +19,10 @@ public interface StudentRepository {
 	List<Student> findAll();
 	
 	//GET
+	// permette l'accesso a uno studente
+	List<Student> findEmailPassword(String institutional_email, String password);
+	
+	//GET
 	//aggiorno un T, passandogli un T
 	long updateValueById(Student p);
 		
@@ -31,5 +35,5 @@ public interface StudentRepository {
 	//cancella tutti i record
 	int deleteAll();
 
-
+	
 }
