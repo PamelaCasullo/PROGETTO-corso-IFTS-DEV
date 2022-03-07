@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import it.red.student.Student;
+
 
 
 @Repository(value="MYSQLT")
@@ -61,6 +63,12 @@ public class jdbcTeacherController implements TeacherRepository {
 	@Override
 	public int deleteAll() {
 		return jdbcTemplate.update("DELETE FROM teacher");
+	}
+
+	@Override
+	public List<Teacher> findEmailPassword(String institutional_email, String password) {
+		return jdbcTemplate.query("SELECT * FROM teacher WHERE institutional_email=? AND password=?", BeanPropertyRowMapper.newInstance(Teacher.class),institutional_email,password);
+
 	}
 
 	

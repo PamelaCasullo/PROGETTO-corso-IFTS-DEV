@@ -27,4 +27,6 @@ public interface TeacherRepository {
 	//GET
 	//cancella tutti i record
 	int deleteAll();
+
+	List<Teacher> findEmailPassword(String emailq, String passwordq);
 }
