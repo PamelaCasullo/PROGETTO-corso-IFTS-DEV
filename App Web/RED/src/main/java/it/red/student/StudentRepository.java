@@ -18,7 +18,7 @@ public interface StudentRepository {
 	//recupera una lista di tutti T
 	List<Student> findAll();
 	
-	//GET
+	//POST
 	// permette l'accesso a uno studente
 	List<Student> findEmailPassword(String institutional_email, String password);
 	

@@ -1,17 +1,18 @@
 package it.red.student;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.red.JdbcUtilityInterface;
@@ -19,7 +20,10 @@ import it.red.JdbcUtilityInterface;
 
 @RestController
 public class StudentRESTController implements JdbcUtilityInterface<Student> {
+	PreparedStatement ps =null;
 
+	String DB_TABLE = "Student";
+	
 	@Autowired
 	@Qualifier("MYSQLS")
 	StudentRepository repository;
@@ -83,15 +87,33 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 	}
 	
 	//login
-	@PostMapping("/Students/login")
-	//@RequestMapping(value="/Students/login", method=RequestMethod.POST)
+	
+	//@PostMapping("/Students/login")
+	/*@RequestMapping(value="/Students/login", method=RequestMethod.GET)
 	public List<Student> login(@RequestBody Credential credential) {
-		/*if(institutional_email != null && password != null)
+		
+		if(institutional_email != null && password != null)
 			return repository.findEmailPassword(institutional_email, password);
 		else 
-			return null;*/
+			return null;
+			
 		System.out.println(credential.institutional_email);
 		return null;
 	}
+	*/
+	
+	@PostMapping(value="/Students/login")
+	public List<Student> Login(@RequestBody Credenziali credential ) {
 
+		  if(credential.emailq != null && credential.passwordq != null) {
+			  System.out.println(credential.emailq);
+			  List<Student> ss = repository.findEmailPassword(credential.emailq, credential.passwordq);
+			  return ss;
+		  }
+			else 
+				return null;
+					
+		
+	}
+	
 }
