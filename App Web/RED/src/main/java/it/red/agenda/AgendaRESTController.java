@@ -32,11 +32,8 @@ public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
 	}
 
 	@RequestMapping(value="/Agenda/search/{id_agenda}", method=RequestMethod.PUT)
-	public ResponseEntity<String> searchElementById(int id) {
-		if(this.repository.findValueById(id)!=null)
-			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
-		else 
-			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
+	public Agenda searchElementById(long id) {
+		return this.repository.findValueById(id);
 	}
 
 	@RequestMapping(value="/Agenda/update/{id_agenda}", method=RequestMethod.PUT)

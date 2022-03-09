@@ -45,14 +45,14 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 
 	//doRetrieveByKey
 	@RequestMapping(value="/Students/search/{id_student}", method=RequestMethod.PUT)
-	public Student searchElementById(@RequestBody long id) {
+	public Student searchElementById(@PathVariable long id_student) {
 		/*if(this.repository.findValueById(id)!=null)
 			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
 		else 
 			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
 			*/
 		
-		return this.repository.findValueById(id);
+		return this.repository.findValueById(id_student);
 		
 	}
 
