@@ -39,11 +39,8 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 	}
 
 	@RequestMapping(value="/Teachers/search/{id_teacher}", method=RequestMethod.PUT)
-	public ResponseEntity<String> searchElementById(@RequestBody int id) {
-		if(this.repository.findValueById(id)!=null)
-			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
-		else 
-			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
+	public Teacher searchElementById(@RequestBody long id) {
+		return this.repository.findValueById(id);
 	}
 
 	@RequestMapping(value="/Teachers/update/{id_teacher}", method=RequestMethod.PUT) 

@@ -5,7 +5,6 @@ var sessionSt = sessionStorage.getItem("value");
 function caricamento() {
 	 var daCar = JSON.parse(sessionSt);
 	 
-
 	console.log(daCar[0].id_student);
 	console.log(daCar);
 	

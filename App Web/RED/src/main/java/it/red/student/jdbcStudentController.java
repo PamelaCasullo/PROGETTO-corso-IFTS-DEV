@@ -29,7 +29,6 @@ public class jdbcStudentController implements StudentRepository {
 
 	@Override
 	public Student findValueById(long id) {
-
 		return jdbcTemplate.queryForObject("SELECT * FROM student where id_student=?", BeanPropertyRowMapper.newInstance(Student.class),id);
 
 	}
