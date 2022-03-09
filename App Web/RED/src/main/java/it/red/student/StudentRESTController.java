@@ -87,21 +87,6 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 	}
 	
 	//login
-	
-	//@PostMapping("/Students/login")
-	/*@RequestMapping(value="/Students/login", method=RequestMethod.GET)
-	public List<Student> login(@RequestBody Credential credential) {
-		
-		if(institutional_email != null && password != null)
-			return repository.findEmailPassword(institutional_email, password);
-		else 
-			return null;
-			
-		System.out.println(credential.institutional_email);
-		return null;
-	}
-	*/
-	
 	@PostMapping(value="/Students/login")
 	public List<Student> Login(@RequestBody Credenziali credential ) {
 
@@ -112,8 +97,10 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		  }
 			else 
 				return null;
-					
-		
 	}
+	//homepage
+	
+	
+	
 	
 }

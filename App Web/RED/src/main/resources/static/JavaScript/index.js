@@ -21,7 +21,7 @@ function login(){
 				alert("ERRORE INSERIMENTO DATI");
 			} else {
 				var p = JSON.stringify(response);
-				sessionStorage.setItem("value",p);
+				sessionStorage.setItem(p);
 				window.open('STUDENTE_html/homepage.html',"_self");
 			}
       	},
@@ -38,9 +38,7 @@ function login(){
       	contentType: 'application/json; charset=utf-8',
       	data:  datajson,
       	success: function (response) {
-			//alert(JSON.stringify(response));
-			//alert("AAAAAAAA");
- 			//window.open('STUDENTE_html/homepage.html');
+			
  			if(JSON.stringify(response)=="") {
 				alert("ERRORE INSERIMENTO DATI");
 			} else {
@@ -62,12 +60,12 @@ function radioBTN(){
     if(getSelectedValue != null) { 
 	    if(document.getElementById('student_radio_button').checked) {   
            var selectedValue = document.getElementById('student_radio_button').value;  
-           alert("Selected Radio Button is: " + selectedValue);    
+          // alert("Selected Radio Button is: " + selectedValue);    
            return "STUDENTE";
     } else {  
            if(document.getElementById('teacher_radio_button').checked) {   
           	var selectedValue = document.getElementById('teacher_radio_button').value;  
-           	alert("Selected Radio Button is: " + selectedValue);    
+          // 	alert("Selected Radio Button is: " + selectedValue);    
            	return "DOCENTE";
            }
  }

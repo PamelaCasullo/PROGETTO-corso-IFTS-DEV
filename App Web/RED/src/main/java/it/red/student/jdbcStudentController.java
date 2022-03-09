@@ -39,7 +39,8 @@ public class jdbcStudentController implements StudentRepository {
 		return jdbcTemplate.query("SELECT * FROM student", BeanPropertyRowMapper.newInstance(Student.class));
 
 	}
-	
+
+
 	@Override
 	public List<Student> findEmailPassword(String institutional_email, String password) {
 		return jdbcTemplate.query("SELECT * FROM student WHERE institutional_email=? AND password=?", BeanPropertyRowMapper.newInstance(Student.class),institutional_email,password);
