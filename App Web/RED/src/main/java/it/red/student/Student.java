@@ -53,11 +53,11 @@ public Student() {
 		this.institutional_email = institutional_email;
 	}
 	
-	public String getFirstName() {
+	public String getFirst_name() {
 		return first_name;
 	}
 	
-	public void setFirstName(String name) {
+	public void setFirst_name(String name) {
 		this.first_name = name;
 	}
 	
