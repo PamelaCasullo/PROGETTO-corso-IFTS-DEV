@@ -104,7 +104,6 @@ public class LoginActivity extends AppCompatActivity {
                             public void onResponse(Call call, Response response) {
                                 int statusCode = response.code();
                                 Student student = (Student) response.body();
-                                //Log.e("ciao", student.getInstitutional_email());
                                 if(response.code() == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
