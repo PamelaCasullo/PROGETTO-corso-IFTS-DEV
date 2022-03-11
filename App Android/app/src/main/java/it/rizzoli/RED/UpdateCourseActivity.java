@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import it.rizzoli.RED.Docente.DBHandler;
+import it.rizzoli.RED.Teacher.TeacherDBHandler;
 
 
 public class UpdateCourseActivity extends AppCompatActivity {
@@ -17,7 +17,7 @@ public class UpdateCourseActivity extends AppCompatActivity {
     // variables for our edit text, button, strings and dbhandler class.
     private EditText courseNameEdt, courseTracksEdt, courseDurationEdt, courseDescriptionEdt;
     private Button updateCourseBtn, deleteCourseBtn;
-    private DBHandler dbHandler;
+    private TeacherDBHandler teacherDBHandler;
     String courseName, courseDesc, courseDuration, courseTracks;
 
     @Override
@@ -34,7 +34,7 @@ public class UpdateCourseActivity extends AppCompatActivity {
         deleteCourseBtn = findViewById(R.id.idBtnDelete);
 
         // on below line we are initialing our dbhandler class.
-        dbHandler = new DBHandler(UpdateCourseActivity.this);
+        teacherDBHandler = new TeacherDBHandler(UpdateCourseActivity.this);
 
         // on below lines we are getting data which
         // we passed in our adapter class.
@@ -57,13 +57,13 @@ public class UpdateCourseActivity extends AppCompatActivity {
 
                 // inside this method we are calling an update course
                 // method and passing all our edit text values.
-                dbHandler.updateCourse(courseName, courseNameEdt.getText().toString(), courseDescriptionEdt.getText().toString(), courseTracksEdt.getText().toString(), courseDurationEdt.getText().toString());
+                teacherDBHandler.updateCourse(courseName, courseNameEdt.getText().toString(), courseDescriptionEdt.getText().toString(), courseTracksEdt.getText().toString(), courseDurationEdt.getText().toString());
 
                 // displaying a toast message that our course has been updated.
                 Toast.makeText(UpdateCourseActivity.this, "Voto aggiornato con successo", Toast.LENGTH_SHORT).show();
 
                 // launching our main activity.
-                Intent i = new Intent(UpdateCourseActivity.this, MainActivityDoc.class);
+                Intent i = new Intent(UpdateCourseActivity.this, TeacherMainActivity.class);
                 startActivity(i);
             }
         });
@@ -73,9 +73,9 @@ public class UpdateCourseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // calling a method to delete our course.
-                dbHandler.deleteCourse(courseName);
+                teacherDBHandler.deleteCourse(courseName);
                 Toast.makeText(UpdateCourseActivity.this, "Voto cancellato con successo", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(UpdateCourseActivity.this, MainActivityDoc.class);
+                Intent i = new Intent(UpdateCourseActivity.this, TeacherMainActivity.class);
                 startActivity(i);
             }
         });

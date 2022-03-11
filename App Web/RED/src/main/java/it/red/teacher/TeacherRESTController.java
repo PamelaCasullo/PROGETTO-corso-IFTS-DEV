@@ -73,11 +73,12 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 
 	//login
 	@PostMapping(value="/Teachers/login")
-	public List<Teacher> Login(@RequestBody Credenziali credential) {
+	public Teacher Login(@RequestBody Credenziali credential) {
 
 		if(credential.emailq != null && credential.passwordq != null) {
 			System.out.println(credential.emailq);
-			List<Teacher> ss = repository.findEmailPassword(credential.emailq, credential.passwordq);
+			System.out.println(credential.passwordq);
+			Teacher ss = repository.findEmailPassword(credential.emailq, credential.passwordq).get(0);
 			return ss;
 		}
 		else 

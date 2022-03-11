@@ -92,11 +92,11 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 	
 	//login
 	@PostMapping(value="/Students/login")
-	public List<Student> Login(@RequestBody Credenziali credential ) {
+	public Student Login(@RequestBody Credenziali credential) {
 
 		  if(credential.emailq != null && credential.passwordq != null) {
 			  System.out.println(credential.emailq);
-			  List<Student> ss = repository.findEmailPassword(credential.emailq, credential.passwordq);
+			  Student ss = repository.findEmailPassword(credential.emailq, credential.passwordq).get(0);
 			  return ss;
 		  }
 			else 

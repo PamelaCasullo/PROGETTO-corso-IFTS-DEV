@@ -4,8 +4,6 @@ package it.rizzoli.RED;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,28 +13,19 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import java.io.Console;
-import java.net.URI;
-
-import it.rizzoli.RED.Database.AsynkTaskApp;
-import it.rizzoli.RED.Database.DBAdapterTeacher;
-import it.rizzoli.RED.Database.DbAdapterStudent;
-import it.rizzoli.RED.Database.Student;
-import it.rizzoli.RED.Database.WebInterface;
-import it.rizzoli.RED.Studenti.Credenziali;
-import it.rizzoli.RED.Studenti.HomepageFragment;
+import it.rizzoli.RED.Connection.AsynkTaskApp;
+import it.rizzoli.RED.Connection.Student;
+import it.rizzoli.RED.Connection.StudentWebInterface;
+import it.rizzoli.RED.Connection.Credential;
+import it.rizzoli.RED.Connection.Teacher;
+import it.rizzoli.RED.Connection.TeacherWebInterface;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //parte connessione db
-    private DBAdapterTeacher teacher;
-    private DbAdapterStudent students;
     //altro
     Button pulsanteLoginText;
     RadioButton studenteButton, docenteButton;
@@ -71,58 +60,66 @@ public class LoginActivity extends AppCompatActivity {
 
         pulsanteLoginText.setOnClickListener(v -> {
             try {
-                String email_db = email.getText().toString();
-                String psw_db = password.getText().toString();
+                String email = this.email.getText().toString();
+                String password = this.password.getText().toString();
                 if ( //docente
-                        email.getText().toString().equals("docente@itsrizzoli.it") && password.getText().toString().equals("docente") && docenteButton.isChecked()) {
+                        docenteButton.isChecked()){
+                    if (!this.email.equals(null) && !this.email.equals("") && !this.password.equals(null) && !this.password.equals("")){
+                        AsynkTaskApp app = (AsynkTaskApp)getApplication();
+                        TeacherWebInterface apiService = null;
+                        apiService = app.retrofit.create(TeacherWebInterface.class);
+                        Credential credential = new Credential(email, password);
+                        Call<Teacher> call = apiService.login(credential);
+                        call.enqueue(new Callback<Teacher>() {
+                            @Override
+                            public void onResponse(Call call, Response response) {
+                                int statusCode = response.code();
+                                Teacher teacher = (Teacher) response.body();
+                                if(response.code() == 500) {
+                                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Intent intent = new Intent(LoginActivity.this, TeacherMainActivity.class);
+                                    startActivity(intent);
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure(Call call, Throwable t) {
+                                Log.e("Fallito! ", t.getMessage());
+                            }
+                        });
+                    }
 
                 } else if ( //studente
-                        email.getText().toString().equals("l.passoni@itsrizzoli.it") && password.getText().toString().equals("Lorenzo123")) {
-                    AsynkTaskApp app = (AsynkTaskApp)getApplication();
-                    WebInterface apiService = null;
-                    apiService = app.retrofit.create(WebInterface.class);
-                    Credenziali credenziali = new Credenziali(email_db, psw_db);
-                    Call<Student> call = apiService.login(credenziali);
-                    Log.e("Email" + credenziali.getEmailq(), "");
-                    Log.e("password" + credenziali.getPasswordq(), "");
-                    call.enqueue(new Callback<Student>() {
-                        @Override
-                        public void onResponse(Call call, Response response) {
-                            int statusCode = response.code();
-                            Student student = (Student) response.body();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                        }
-
-                        @Override
-                        public void onFailure(Call call, Throwable t) {
-                            Log.e("Fallito", t.getMessage());
-                        }
-                    });
-                    /*
-                    Retrofit retrofit = ((AsynkTaskApp)getApplication()).getRetrofit();
-
-                    WebInterface api = retrofit.create(WebInterface.class);
-
-                    Call<Boolean> checkLoginCall = api.login(email.getText().toString(), password.getText().toString());
-                    checkLoginCall.enqueue(new Callback<Boolean>() {
-                        @Override
-                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                            if (response.body()){ //response.body ritorna il valore di ritorno della funzione chiamata
-                                Toast.makeText(LoginActivity.this, "ok!!!!!!!!", Toast.LENGTH_LONG).show();
-                                Intent openActivity = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(openActivity);
-                            } else {
-                                Toast.makeText(LoginActivity.this, "hai cannato qualcosa", Toast.LENGTH_LONG).show();
+                        studenteButton.isChecked()) {
+                    if (!this.email.equals(null) && !this.email.equals("") && !this.password.equals(null) && !this.password.equals("")){
+                        AsynkTaskApp app = (AsynkTaskApp)getApplication();
+                        StudentWebInterface apiService = null;
+                        apiService = app.retrofit.create(StudentWebInterface.class);
+                        Credential credential = new Credential(email, password);
+                        Call<Student> call = apiService.login(credential);
+                        call.enqueue(new Callback<Student>() {
+                            @Override
+                            public void onResponse(Call call, Response response) {
+                                int statusCode = response.code();
+                                Student student = (Student) response.body();
+                                //Log.e("ciao", student.getInstitutional_email());
+                                if(response.code() == 500) {
+                                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Intent intent = new Intent(LoginActivity.this, StudentMainActivity.class);
+                                    startActivity(intent);
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<Boolean> call, Throwable throwable) {
-                            throwable.printStackTrace();
-                        }
-                    });
-                     */
+                            @Override
+                            public void onFailure(Call call, Throwable t) {
+                                Log.e("Fallito! ", t.getMessage());
+                            }
+                        });
+                    }
+
                 } else { //dati errati
                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_SHORT).show();
                 }
@@ -204,11 +201,11 @@ public class LoginActivity extends AppCompatActivity {
         if(textEmail != null && textPassword != null) {
             Intent i;
             if(isStudent) {
-                i = new Intent(LoginActivity.this, MainActivity.class);
+                i = new Intent(LoginActivity.this, StudentMainActivity.class);
             }
 
             else {
-                i = new Intent(LoginActivity.this, MainActivityDoc.class);
+                i = new Intent(LoginActivity.this, TeacherMainActivity.class);
             }
             startActivity(i);
             finish();

@@ -9,7 +9,7 @@
     android:background="@drawable/backg"
     tools:ignore="HardcodedText"
     tools:openDrawer="start"
-    tools:context=".Database.LoginActivity">
+    tools:context=".Connection.LoginActivity">
 
 <RelativeLayout
     android:layout_width="match_parent"
