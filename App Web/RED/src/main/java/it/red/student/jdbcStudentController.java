@@ -18,7 +18,7 @@ public class jdbcStudentController implements StudentRepository {
 		int retCode;
 		if((jdbcTemplate.update("INSERT INTO student(first_name,last_name,date_of_birth,phone_number,"
 				+ "personal_email,institutional_email,photo,password) values(?,?,?,?,?,?,?,?)",
-				new Object[] {p.getFirstName(),p.getLast_name(),p.getDate_of_birth(),p.getPhone_number(),
+				new Object[] {p.getFirst_name(),p.getLast_name(),p.getDate_of_birth(),p.getPhone_number(),
 						p.getPersonal_email(),p.getInstitutional_email(),p.getPhoto(),p.getPassword()}))==1)
 			retCode=1;
 

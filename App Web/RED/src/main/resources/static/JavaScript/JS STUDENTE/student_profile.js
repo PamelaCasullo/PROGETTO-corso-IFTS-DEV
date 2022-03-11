@@ -29,8 +29,8 @@ $(document).ready(function() {
 
 function caricamento() {
 	 var daCar = JSON.parse(sessionSt);
-	 var id_student = daCar[0].id_student;
-	console.log(daCar[0].id_student);
+	 var id_student = daCar.id_student;
+	console.log(daCar.id_student);
 	console.log(daCar);
 	
 	var request = new XMLHttpRequest();
@@ -40,14 +40,14 @@ function caricamento() {
 	  var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status >= 200) {
-			console.log(daCar[0].firstName);
+			console.log(daCar.firstName);
                  var obJSON = JSON.parse(xmlHttp.responseText);
                  console.log(obJSON);
-					  document.getElementById("user_name_lastname").innerHTML=daCar[0].firstName+ " " + daCar[0].last_name;
-					 document.getElementById("date_of_birth").innerHTML=daCar[0].date_of_birth;
-					 document.getElementById("personal_email").innerHTML=daCar[0].personal_email;
-					 document.getElementById("institutional_email").innerHTML=daCar[0].institutional_email;
-					 document.getElementById("phone_number").innerHTML=daCar[0].phone_number;				
+					  document.getElementById("user_name_lastname").innerHTML=daCar.first_name+ " " + daCar.last_name;
+					 document.getElementById("date_of_birth").innerHTML=daCar.date_of_birth;
+					 document.getElementById("personal_email").innerHTML=daCar.personal_email;
+					 document.getElementById("institutional_email").innerHTML=daCar.institutional_email;
+					 document.getElementById("phone_number").innerHTML=daCar.phone_number;				
             }
         }
 	
