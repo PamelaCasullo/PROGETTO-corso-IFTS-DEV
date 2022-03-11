@@ -16,7 +16,7 @@
 
     <title>RED-HOME</title>
   </head>
-  <body class="black-color-ground">
+  <body class="black-color-ground" onload=caricamento()>
         <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px 3px 0px darkred;">
             
@@ -31,15 +31,18 @@
                 width="66px"
                 style="border: 2px solid darkred;"
               />
-
+		
               <!--NOME E COGNOME UTENTE-->
-              <span class="titles-underline" id="user_name_lastname">DORJAN KURTI
-                
-                <!--OCCUPAZIONE-->
-                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">STUDENTE</span></span>
-            
-              </a>
+             
+              <span class="titles-underline" id="user_name_lastname">DORJAN KURTI</span>
+              
 
+                <!--OCCUPAZIONE-->
+     <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">STUDENTE</span>
+
+              </a>
+				
+			
             <!--VOCI MENU-->
             <ul class="nav justify-content-between">
               <li class="nav-item">
@@ -102,10 +105,10 @@
             
             
             <ul class="list-group list-group-flush" style="margin-top: 20px;">
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">DATA DI NASCITA</span><span style="margin-left: 10px; color: white;" class="font-text">12/02/2003</span></li>
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL PERSONALE</span><span style="margin-left: 10px; color: white;" class="font-text">qualcosa@email.it</span><</li>
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL INSTITUZIONALE</span><span style="margin-left: 10px; color: white;" class="font-text">q.cosa@itsrizzoli.it</span><</li>
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">NUMERO TELEFONICO</span><span style="margin-left: 10px; color: white;" class="font-text">123456789 </span><</li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">DATA DI NASCITA</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="date_of_birth">12/02/2003</div></span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL PERSONALE</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="personal_email">qualcosa@email.it </div></span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL INSTITUZIONALE</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="institutional_email">qualcosa@itsrizzoli.it</div></span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">NUMERO TELEFONICO</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="phone_number">123456789</div> </span></li>
             </ul>
             <div class="card-body">
               <button type="button" class="btn btn-outline-danger" style="width: 100%;" onclick="togglePopup()">MODIFICA I DATI</button>

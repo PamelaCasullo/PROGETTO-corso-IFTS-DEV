@@ -11,16 +11,23 @@ function onPageLoaded(){
             console.log(xmlHttp.responseText);
             //document.getElementById("tblPlayer").innerText = xmlHttp.responseText;
             var jsonObj = JSON.parse(xmlHttp.responseText);
-            //console.log(playerObj[0]);
+           
             for(var idx=0; idx<jsonObj.length; idx++)
             {
                 var student = jsonObj[idx];
+                
+                 console.log(student);
+                document.getElementById("students_list_instistutional_mail").innerHTML=jsonObj[0].institutional_email;
+                document.getElementById("student_name").innerHTML=jsonObj[0].firstName + " " + jsonObj[0].last_name;
+                
+                /*
                 document.getElementById("sos").innerHTML += 
                 `<tr>` +
                 `<td>` + student.institutional_email +`</td>`+ 
                 `<td>` + student.phone_number +`</td>`+  
                 '<td><img src="' + student.photo + '"><td>' +           
                 `</tr>`;
+                */
             }
            
         }

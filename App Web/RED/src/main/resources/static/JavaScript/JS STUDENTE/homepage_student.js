@@ -18,7 +18,8 @@ function caricamento() {
 			console.log(daCar[0].firstName);
                  var obJSON = JSON.parse(xmlHttp.responseText);
                  
-					 document.getElementById("user_name_lastname").innerHTML=daCar[0].firstName;
+					 document.getElementById("user_name_lastname").innerHTML=daCar[0].firstName+ " " + daCar[0].last_name;
+
 					
 					
 				
