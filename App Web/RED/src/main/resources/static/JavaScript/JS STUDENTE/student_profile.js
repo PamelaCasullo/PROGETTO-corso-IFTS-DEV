@@ -43,7 +43,7 @@ function caricamento() {
 			console.log(daCar.firstName);
                  var obJSON = JSON.parse(xmlHttp.responseText);
                  console.log(obJSON);
-					  document.getElementById("user_name_lastname").innerHTML=daCar.first_name+ " " + daCar.last_name;
+					 document.getElementById("user_name_lastname").innerHTML=daCar.first_name+" "+ daCar.last_name;
 					 document.getElementById("date_of_birth").innerHTML=daCar.date_of_birth;
 					 document.getElementById("personal_email").innerHTML=daCar.personal_email;
 					 document.getElementById("institutional_email").innerHTML=daCar.institutional_email;
