@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     String textEmail, textPassword = null;
+    int textId = 0;
     SharedPreferences sharedpreferences;
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private final static String TEXT_EMAIL_KEY = "textEmail";
     private final static String TEXT_PW_KEY = "textPassword";
+    private final static String TEXT_ID_KEY = "textId";
     private final static String TEXT_KIND_KEY = "radioBtnKind";
 
     @Override
@@ -49,8 +51,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         pulsanteLoginText = findViewById(R.id.loginButtonText);
-
-        //singleton di controllo per simulare una autenticazione utente. Funziona su Emulatore pixel 2 API 19
 
         studenteButton = findViewById(R.id.radio_studente);
         docenteButton = findViewById(R.id.radio_docente);
@@ -78,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                                 if(response.code() == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
+
+                                    SavePreferencesData(v, teacher.getId_teacher());
                                     Intent intent = new Intent(LoginActivity.this, TeacherMainActivity.class);
                                     startActivity(intent);
                                 }
@@ -107,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if(response.code() == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
+                                    SavePreferencesData(v, student.getId_student());
                                     Intent intent = new Intent(LoginActivity.this, StudentMainActivity.class);
                                     startActivity(intent);
                                 }
@@ -162,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void SavePreferencesData(View view) {
+    public void SavePreferencesData(View view, int id) {
         // Otteniamo il riferimento alle preferenze
         SharedPreferences preference = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         // Otteniamo il corrispondente Editor
@@ -176,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
             // Lo salviamo nelle preferences
             editor.putString(TEXT_EMAIL_KEY, textDataEmail.toString());
             editor.putString(TEXT_PW_KEY, textDataPassword.toString());
+            editor.putInt(TEXT_ID_KEY, id);
             editor.putBoolean(TEXT_KIND_KEY, isStudent);
             editor.apply();
 
@@ -189,6 +193,7 @@ public class LoginActivity extends AppCompatActivity {
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         textEmail = preferiti.getString(TEXT_EMAIL_KEY, null);
         textPassword = preferiti.getString(TEXT_PW_KEY, null);
+        textId = preferiti.getInt(TEXT_ID_KEY, 0);
         isStudent = preferiti.getBoolean(TEXT_KIND_KEY, true);
         Toast.makeText(this, "E-mail: " + textEmail + " Password: " + textPassword, Toast.LENGTH_LONG).show();
     }
@@ -197,7 +202,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         updatePreferencesData();
-        if(textEmail != null && textPassword != null) {
+        if(textEmail != null && textPassword != null && textId != 0) {
             Intent i;
             if(isStudent) {
                 i = new Intent(LoginActivity.this, StudentMainActivity.class);

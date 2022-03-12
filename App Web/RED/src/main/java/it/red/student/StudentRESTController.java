@@ -23,7 +23,7 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 	PreparedStatement ps =null;
 
 	String DB_TABLE = "Student";
-	
+
 	@Autowired
 	@Qualifier("MYSQLS")
 	StudentRepository repository;
@@ -50,10 +50,11 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
 		else 
 			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
-			*/
+		 */
 		
+		System.out.println(id_student);
 		return this.repository.findValueById(id_student);
-		
+
 	}
 
 	//update 
@@ -89,22 +90,22 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		this.repository.deleteValueById(id);
 
 	}
-	
+
 	//login
 	@PostMapping(value="/Students/login")
 	public Student Login(@RequestBody Credenziali credential) {
 
-		  if(credential.emailq != null && credential.passwordq != null) {
-			  System.out.println(credential.emailq);
-			  Student ss = repository.findEmailPassword(credential.emailq, credential.passwordq).get(0);
-			  return ss;
-		  }
-			else 
-				return null;
+		if(credential.emailq != null && credential.passwordq != null) {
+			System.out.println(credential.emailq);
+			Student ss = repository.findEmailPassword(credential.emailq, credential.passwordq).get(0);
+			return ss;
+		}
+		else 
+			return null;
 	}
 	//homepage
-	
-	
-	
-	
+
+
+
+
 }
