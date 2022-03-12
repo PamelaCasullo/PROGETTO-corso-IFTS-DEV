@@ -24,13 +24,13 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Elenco studenti"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/barraTitoli"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="45dp"
                 android:layout_toRightOf="@+id/imageProfile"
                 android:text="Nome:"
@@ -264,7 +264,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/imageProfile4"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="3dp"
                 app:cardCornerRadius="90dp"
@@ -286,7 +286,7 @@
                 android:layout_toRightOf="@+id/imageProfile5"
                 android:text="Nome:"
                 android:textColor="@color/red"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -294,11 +294,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/none5"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_toRightOf="@+id/imageProfile5"
                 android:text="Cognome:"
                 android:textColor="@color/red"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -306,11 +306,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cognome5"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/imageProfile5"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/imageProfile5"
                 android:text="E-Mail:"
                 android:textColor="@color/red"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
 
@@ -320,7 +320,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/imageProfile5"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="3dp"
                 app:cardCornerRadius="90dp"
@@ -337,12 +337,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/email5"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="60dp"
-                android:layout_toRightOf="@+id/imageProfile6"
+                android:layout_toEndOf="@+id/imageProfile6"
                 android:text="Nome:"
                 android:textColor="@color/red"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -350,8 +350,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/none6"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/imageProfile6"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/imageProfile6"
                 android:text="Cognome:"
                 android:textColor="@color/red"
                 android:textSize="18dp"
@@ -406,7 +406,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/none7"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_toRightOf="@+id/imageProfile7"
                 android:text="Cognome:"
                 android:textColor="@color/red"
@@ -418,8 +418,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cognome7"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/imageProfile7"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/imageProfile7"
                 android:text="E-Mail:"
                 android:textColor="@color/red"
                 android:textSize="18dp"
@@ -436,7 +436,7 @@
                 android:text="\@ Copyright"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 tools:ignore="TextContrastCheck" />
 
         </RelativeLayout>

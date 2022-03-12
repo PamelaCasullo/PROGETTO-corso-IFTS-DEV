@@ -17,7 +17,7 @@
         android:text="Profilo Personale"
         android:textAlignment="center"
         android:textColor="@color/red"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 
@@ -114,7 +114,8 @@
         android:layout_toEndOf="@+id/textViewPersonalEmail"
         android:hint=""
         android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/textViewPhoneNumber"
@@ -178,7 +179,8 @@
         android:layout_toEndOf="@+id/textViewPassword"
         android:hint=""
         android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:inputType="text" />
 
 
 </RelativeLayout>

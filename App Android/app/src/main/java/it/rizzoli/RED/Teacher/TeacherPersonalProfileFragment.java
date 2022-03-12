@@ -36,11 +36,11 @@ public class TeacherPersonalProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_teacher_personal_profile, container, false);
 
         // LEGGIAMO LA PREFERENZA
-        SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences preferiti = requireActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
-        AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
+        AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         TeacherWebInterface apiService;
         apiService = app.retrofit.create(TeacherWebInterface.class);
 
@@ -52,7 +52,7 @@ public class TeacherPersonalProfileFragment extends Fragment {
             public void onResponse(Call call, Response response) {
                 Teacher teacher = (Teacher) response.body();
                 if(response.code() == 500) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
                     TextView textViewFirstName = view.findViewById(R.id.textViewDataFirstName);
                     textViewFirstName.setText(teacher.getFirst_name());

@@ -14,7 +14,7 @@
         android:padding="20dp"
         android:text="Modifica Valutazione"
         android:textAlignment="center"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/red"
         android:layout_marginBottom="50dp"/>
@@ -29,7 +29,8 @@
         android:textColorHint="@color/gray"
         android:textStyle="italic"
         android:textColor="@color/white"
-        android:inputType="date"/>
+        android:inputType="date"
+        android:autofillHints="" />
 
     <!--INSERISCI IL NOME/COGNOME-->
     <EditText
@@ -41,7 +42,8 @@
         android:textColorHint="@color/gray"
         android:textStyle="italic"
         android:textColor="@color/white"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:autofillHints="" />
 
     <!--INSERISCI IL MODULO-->
     <EditText
@@ -53,7 +55,8 @@
         android:textColorHint="@color/gray"
         android:textStyle="italic"
         android:textColor="@color/white"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:autofillHints="" />
 
     <!--INSERISCI IL VOTO-->
     <EditText
@@ -66,7 +69,8 @@
         android:textColorHint="@color/gray"
         android:inputType="number"
         android:textStyle="italic"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:autofillHints="" />
 
     <!--button for updating our course-->
     <Button

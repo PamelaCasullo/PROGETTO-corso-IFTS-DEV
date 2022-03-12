@@ -23,6 +23,7 @@ import it.rizzoli.RED.Connection.TeacherWebInterface;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.internal.EverythingIsNonNull;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -35,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     String textEmail, textPassword = null;
     int textId = 0;
-    SharedPreferences sharedpreferences;
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
@@ -64,27 +64,28 @@ public class LoginActivity extends AppCompatActivity {
                 String password = this.password.getText().toString();
                 if ( //docente
                         docenteButton.isChecked()){
-                    if (!this.email.equals(null) && !this.email.equals("") && !this.password.equals(null) && !this.password.equals("")){
+                    if (!email.equals("") && !password.equals("")){
                         AsynkTaskApp app = (AsynkTaskApp)getApplication();
-                        TeacherWebInterface apiService = null;
-                        apiService = app.retrofit.create(TeacherWebInterface.class);
+                        TeacherWebInterface apiService = app.retrofit.create(TeacherWebInterface.class);
                         Credential credential = new Credential(email, password);
                         Call<Teacher> call = apiService.login(credential);
+
                         call.enqueue(new Callback<Teacher>() {
+                            @EverythingIsNonNull
                             @Override
                             public void onResponse(Call call, Response response) {
                                 int statusCode = response.code();
                                 Teacher teacher = (Teacher) response.body();
-                                if(response.code() == 500) {
+                                if(statusCode == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
-                                    SavePreferencesData(v, teacher.getId_teacher());
+                                    SavePreferencesData(teacher.getId_teacher());
                                     Intent intent = new Intent(LoginActivity.this, TeacherMainActivity.class);
                                     startActivity(intent);
                                 }
 
                             }
-
+                            @EverythingIsNonNull
                             @Override
                             public void onFailure(Call call, Throwable t) {
                                 Log.e("Fallito! ", t.getMessage());
@@ -94,26 +95,27 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else if ( //studente
                         studenteButton.isChecked()) {
-                    if (!this.email.equals(null) && !this.email.equals("") && !this.password.equals(null) && !this.password.equals("")){
+                    if (!email.equals("") && !password.equals("")){
                         AsynkTaskApp app = (AsynkTaskApp)getApplication();
-                        StudentWebInterface apiService = null;
-                        apiService = app.retrofit.create(StudentWebInterface.class);
+                        StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
                         Credential credential = new Credential(email, password);
                         Call<Student> call = apiService.login(credential);
+
                         call.enqueue(new Callback<Student>() {
+                            @EverythingIsNonNull
                             @Override
                             public void onResponse(Call call, Response response) {
                                 int statusCode = response.code();
                                 Student student = (Student) response.body();
-                                if(response.code() == 500) {
+                                if(statusCode == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
-                                    SavePreferencesData(v, student.getId_student());
+                                    SavePreferencesData(student.getId_student());
                                     Intent intent = new Intent(LoginActivity.this, StudentMainActivity.class);
                                     startActivity(intent);
                                 }
                             }
-
+                            @EverythingIsNonNull
                             @Override
                             public void onFailure(Call call, Throwable t) {
                                 Log.e("Fallito! ", t.getMessage());
@@ -121,8 +123,8 @@ public class LoginActivity extends AppCompatActivity {
                         });
                     }
 
-                } else { //dati errati
-                    Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Selezionare il tipo di utente e riprovare!", Toast.LENGTH_SHORT).show();
                 }
 
             } catch (Exception exceptionx) {
@@ -164,7 +166,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void SavePreferencesData(View view, int id) {
+    public void SavePreferencesData(int id) {
         // Otteniamo il riferimento alle preferenze
         SharedPreferences preference = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         // Otteniamo il corrispondente Editor

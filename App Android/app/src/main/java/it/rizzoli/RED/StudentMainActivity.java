@@ -131,11 +131,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
         new AlertDialog.Builder(this)
                 .setMessage("Sei sicuro/a di voler uscire?")
                 .setCancelable(false)
-                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        StudentMainActivity.this.finish();
-                    }
-                })
+                .setPositiveButton("Si", (dialog, id) -> StudentMainActivity.this.finish())
                 .setNegativeButton("No", null)
                 .show();
     }

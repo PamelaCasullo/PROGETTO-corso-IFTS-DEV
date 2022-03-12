@@ -1,7 +1,6 @@
 package it.rizzoli.RED;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,12 +16,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 import it.rizzoli.RED.Teacher.TeacherCalendarFragment;
-import it.rizzoli.RED.Teacher.TeacherSetVoteFragment;
 import it.rizzoli.RED.Teacher.TeacherHomepageFragment;
 import it.rizzoli.RED.Teacher.TeacherMenuCreationClass;
 import it.rizzoli.RED.Teacher.TeacherPersonalProfileFragment;
 import it.rizzoli.RED.Teacher.TeacherPresenceFragment;
 import it.rizzoli.RED.Teacher.TeacherProfileFragment;
+import it.rizzoli.RED.Teacher.TeacherSetVoteFragment;
 import it.rizzoli.RED.Teacher.TeacherVoteFragment;
 
 public class TeacherMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -134,11 +133,7 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
         new AlertDialog.Builder(this)
                 .setMessage("Sei sicuro/a di voler uscire?")
                 .setCancelable(false)
-                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        TeacherMainActivity.this.finish();
-                    }
-                })
+                .setPositiveButton("Si", (dialog, id) -> TeacherMainActivity.this.finish())
                 .setNegativeButton("No", null)
                 .show();
     }

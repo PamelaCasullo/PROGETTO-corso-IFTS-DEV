@@ -18,8 +18,8 @@ import it.rizzoli.RED.UpdateCourseActivity;
 public class TeacherCourseRVAdapter extends RecyclerView.Adapter<TeacherCourseRVAdapter.ViewHolder> {
 
     // variable for our array list and context
-    private ArrayList<TeacherCourseModal> teacherCourseModalArrayList;
-    private Context context;
+    private final ArrayList<TeacherCourseModal> teacherCourseModalArrayList;
+    private final Context context;
 
     // constructor
     public TeacherCourseRVAdapter(ArrayList<TeacherCourseModal> teacherCourseModalArrayList, Context context) {
@@ -47,22 +47,19 @@ public class TeacherCourseRVAdapter extends RecyclerView.Adapter<TeacherCourseRV
         holder.courseDescTV.setText(modal.getCourseDescription());
 
         // below line is to add on click listener for our recycler view item.
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.itemView.setOnClickListener(v -> {
 
-                // on below line we are calling an intent.
-                Intent i = new Intent(context, UpdateCourseActivity.class);
+            // on below line we are calling an intent.
+            Intent i = new Intent(context, UpdateCourseActivity.class);
 
-                // below we are passing all our values.
-                i.putExtra("name", modal.getCourseName());
-                i.putExtra("duration", modal.getCourseDuration());
-                i.putExtra("tracks", modal.getCourseTracks());
-                i.putExtra("description", modal.getCourseDescription());
+            // below we are passing all our values.
+            i.putExtra("name", modal.getCourseName());
+            i.putExtra("duration", modal.getCourseDuration());
+            i.putExtra("tracks", modal.getCourseTracks());
+            i.putExtra("description", modal.getCourseDescription());
 
-                // starting our activity.
-                context.startActivity(i);
-            }
+            // starting our activity.
+            context.startActivity(i);
         });
 
     }
@@ -73,10 +70,13 @@ public class TeacherCourseRVAdapter extends RecyclerView.Adapter<TeacherCourseRV
         return teacherCourseModalArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating variables for our text views.
-        private TextView courseNameTV, courseDescTV, courseDurationTV, courseTracksTV;
+        private final TextView courseNameTV;
+        private final TextView courseDescTV;
+        private final TextView courseDurationTV;
+        private final TextView courseTracksTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

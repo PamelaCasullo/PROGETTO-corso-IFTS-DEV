@@ -2,7 +2,6 @@ package it.rizzoli.RED;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -51,33 +50,27 @@ public class UpdateCourseActivity extends AppCompatActivity {
         courseDurationEdt.setText(courseDuration);
 
         // adding on click listener to our update course button.
-        updateCourseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        updateCourseBtn.setOnClickListener(v -> {
 
-                // inside this method we are calling an update course
-                // method and passing all our edit text values.
-                teacherDBHandler.updateCourse(courseName, courseNameEdt.getText().toString(), courseDescriptionEdt.getText().toString(), courseTracksEdt.getText().toString(), courseDurationEdt.getText().toString());
+            // inside this method we are calling an update course
+            // method and passing all our edit text values.
+            teacherDBHandler.updateCourse(courseName, courseNameEdt.getText().toString(), courseDescriptionEdt.getText().toString(), courseTracksEdt.getText().toString(), courseDurationEdt.getText().toString());
 
-                // displaying a toast message that our course has been updated.
-                Toast.makeText(UpdateCourseActivity.this, "Voto aggiornato con successo", Toast.LENGTH_SHORT).show();
+            // displaying a toast message that our course has been updated.
+            Toast.makeText(UpdateCourseActivity.this, "Voto aggiornato con successo", Toast.LENGTH_SHORT).show();
 
-                // launching our main activity.
-                Intent i = new Intent(UpdateCourseActivity.this, TeacherMainActivity.class);
-                startActivity(i);
-            }
+            // launching our main activity.
+            Intent i = new Intent(UpdateCourseActivity.this, TeacherMainActivity.class);
+            startActivity(i);
         });
 
         // adding on click listener for delete button to delete our course.
-        deleteCourseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // calling a method to delete our course.
-                teacherDBHandler.deleteCourse(courseName);
-                Toast.makeText(UpdateCourseActivity.this, "Voto cancellato con successo", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(UpdateCourseActivity.this, TeacherMainActivity.class);
-                startActivity(i);
-            }
+        deleteCourseBtn.setOnClickListener(v -> {
+            // calling a method to delete our course.
+            teacherDBHandler.deleteCourse(courseName);
+            Toast.makeText(UpdateCourseActivity.this, "Voto cancellato con successo", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(UpdateCourseActivity.this, TeacherMainActivity.class);
+            startActivity(i);
         });
     }
 }
