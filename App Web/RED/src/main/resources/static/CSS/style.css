@@ -27,6 +27,7 @@
 .titles-shadow-black {
     text-shadow: 2px 3px 0px black;
     color: white;
+    font-size: 14px;
 }
 
 /*TITLE WITH DARKRED SHADOW*/

@@ -22,7 +22,7 @@ function login(){
 			} else {
 				var p = JSON.stringify(response);
 				sessionStorage.setItem("value",p);
-				window.open('STUDENTE_html/homepage.html',"_self");
+				window.open('STUDENTE_html/student_homepage.html',"_self");
 			}
       	},
 		error: function (request, status, error) {
@@ -44,7 +44,7 @@ function login(){
 			} else {
 				var p = JSON.stringify(response);
 				sessionStorage.setItem("value",p);
-				window.open('DOCENTE_html/homepage.html',"_self");
+				window.open('DOCENTE_html/teacher_homepage.html',"_self");
 			}
 			
       	},
