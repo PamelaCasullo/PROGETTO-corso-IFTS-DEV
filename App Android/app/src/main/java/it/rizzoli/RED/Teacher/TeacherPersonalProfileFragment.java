@@ -14,11 +14,10 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import it.rizzoli.RED.Connection.AsynkTaskApp;
-import it.rizzoli.RED.Connection.Student;
-import it.rizzoli.RED.Connection.StudentWebInterface;
 import it.rizzoli.RED.Connection.Teacher;
 import it.rizzoli.RED.Connection.TeacherWebInterface;
 import it.rizzoli.RED.R;
+import okhttp3.internal.annotations.EverythingIsNonNull;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,12 +41,13 @@ public class TeacherPersonalProfileFragment extends Fragment {
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
-        TeacherWebInterface apiService = null;
+        TeacherWebInterface apiService;
         apiService = app.retrofit.create(TeacherWebInterface.class);
 
         Call<Teacher> call = apiService.searchById(textId);
 
         call.enqueue(new Callback<Teacher>() {
+            @EverythingIsNonNull
             @Override
             public void onResponse(Call call, Response response) {
                 Teacher teacher = (Teacher) response.body();
@@ -56,7 +56,6 @@ public class TeacherPersonalProfileFragment extends Fragment {
                 } else {
                     TextView textViewFirstName = view.findViewById(R.id.textViewDataFirstName);
                     textViewFirstName.setText(teacher.getFirst_name());
-                    Toast.makeText(getActivity().getApplicationContext(), teacher.getFirst_name(), Toast.LENGTH_LONG).show();
                     TextView textViewLastName = view.findViewById(R.id.textViewDataLastName);
                     textViewLastName.setText(teacher.getLast_name());
                     TextView editText = view.findViewById(R.id.textViewDataInstitutionalEmail);
@@ -69,7 +68,7 @@ public class TeacherPersonalProfileFragment extends Fragment {
                     editTextPassword.setText(teacher.getPassword());
                 }
             }
-
+            @EverythingIsNonNull
             @Override
             public void onFailure(Call call, Throwable t) {
                 Log.e("Fallito! ", t.getMessage());

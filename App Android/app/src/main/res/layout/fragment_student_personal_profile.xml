@@ -155,6 +155,7 @@
         android:layout_below="@+id/textViewPhoneNumber"
         android:layout_toEndOf="@+id/textViewDateOfBirth"
         android:hint=""
+        android:inputType="date"
         android:textColorHint="@color/white"
         android:textColor="@color/white" />
 
