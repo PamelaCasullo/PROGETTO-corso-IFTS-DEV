@@ -22,12 +22,7 @@ public class StudentHomepageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_student_homepage, container, false);
 
         bv = view.findViewById(R.id.buttonVoti);
-        bv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, StudentVoteFragment.class, null).commit();
-            }
-        });
+        bv.setOnClickListener(view1 -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, StudentVoteFragment.class, null).commit());
 
         return view;
     }

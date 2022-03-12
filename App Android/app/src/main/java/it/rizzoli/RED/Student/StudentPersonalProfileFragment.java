@@ -43,7 +43,7 @@ public class StudentPersonalProfileFragment extends Fragment {
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
-        StudentWebInterface apiService = null;
+        StudentWebInterface apiService;
         apiService = app.retrofit.create(StudentWebInterface.class);
 
         Call<Student> call = apiService.searchById(textId);
