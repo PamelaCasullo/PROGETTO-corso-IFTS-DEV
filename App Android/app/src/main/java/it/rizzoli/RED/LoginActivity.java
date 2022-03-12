@@ -133,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    //@todo implements RadioButton interaction with database
+
     public void onRadioButtonClicked(View v) {
         //is checked?
 
