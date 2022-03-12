@@ -30,7 +30,6 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
     public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
 
-    //TODO METTERE OVUNQUE LA LOGOUT FUNZIONANTE(vedere commit 31/01/2022)
     SharedPreferences sharedpreferences;
     String email, password;
 

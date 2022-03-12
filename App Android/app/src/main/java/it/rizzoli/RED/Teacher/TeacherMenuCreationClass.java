@@ -3,7 +3,6 @@ package it.rizzoli.RED.Teacher;
 
 import android.content.SharedPreferences;
 
-//TODO FARE CLASSE GENERICA DEL MENU
 public class TeacherMenuCreationClass {
 
     // key for storing email.
