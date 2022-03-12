@@ -19,7 +19,7 @@ public class TeacherCalendarFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_calendar_docente, container, false);
+        View view = inflater.inflate(R.layout.fragment_teacher_calendar, container, false);
 
         // INIZIALIZZA WEBVIEW
         webView = (WebView) view.findViewById(R.id.webview_docente);

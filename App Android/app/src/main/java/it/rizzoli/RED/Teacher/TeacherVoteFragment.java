@@ -25,7 +25,7 @@ public class TeacherVoteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_vote_docente, container, false);
+        View view = inflater.inflate(R.layout.fragment_teacher_vote, container, false);
 
         // initializing our all variables.
         teacherCourseModalArrayList = new ArrayList<>();

@@ -23,7 +23,7 @@ public class StudentCalendarFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_calendar, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_calendar, container, false);
 
         // INIZIALIZZA WEBVIEW
         webView = (WebView) view.findViewById(R.id.webview);

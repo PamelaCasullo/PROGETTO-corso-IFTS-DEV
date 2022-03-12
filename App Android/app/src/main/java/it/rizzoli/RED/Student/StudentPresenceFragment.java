@@ -16,7 +16,7 @@ public class StudentPresenceFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_presence, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_presence, container, false);
 
         return view;
     }

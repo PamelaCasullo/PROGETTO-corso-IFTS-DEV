@@ -16,7 +16,7 @@ public class TeacherHomepageFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_homepage_docente, container, false);
+        View view = inflater.inflate(R.layout.fragment_teacher_homepage, container, false);
 
         bvd = view.findViewById(R.id.buttonVotiDocente);
         bvd.setOnClickListener(new View.OnClickListener() {

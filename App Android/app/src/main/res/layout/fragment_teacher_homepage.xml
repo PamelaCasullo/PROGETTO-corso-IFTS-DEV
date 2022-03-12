@@ -111,6 +111,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/menu_docente"
-        app:headerLayout="@layout/nav_header_docente" />
+        app:headerLayout="@layout/nav_teacher_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

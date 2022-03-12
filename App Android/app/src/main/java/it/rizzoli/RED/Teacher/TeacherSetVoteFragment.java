@@ -23,7 +23,7 @@ public class TeacherSetVoteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_docente_assegna_voti, container, false);
+        View view = inflater.inflate(R.layout.fragment_teacher_set_vote, container, false);
 
         // initializing all our variables.
         courseNameEdt = view.findViewById(R.id.idEdtCourseName);

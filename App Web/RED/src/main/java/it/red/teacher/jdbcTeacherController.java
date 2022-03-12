@@ -22,7 +22,7 @@ public class jdbcTeacherController implements TeacherRepository {
 		int retCode;
 		if((jdbcTemplate.update("INSERT INTO teacher(first_name,last_name,phone_number,"
 				+ "personal_email,institutional_email,photo,password) values(?,?,?,?,?,?,?,?)",
-				new Object[] {p.getFirstName(),p.getLast_name(),p.getPhone_number(),
+				new Object[] {p.getFirst_name(),p.getLast_name(),p.getPhone_number(),
 						p.getPersonal_email(),p.getInstitutional_email(),p.getPhoto(),p.getPassword()}))==1)
 			retCode=1;
 

@@ -1,7 +1,6 @@
 package it.rizzoli.RED.Student;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,10 +18,7 @@ import androidx.fragment.app.Fragment;
 import it.rizzoli.RED.Connection.AsynkTaskApp;
 import it.rizzoli.RED.Connection.Student;
 import it.rizzoli.RED.Connection.StudentWebInterface;
-import it.rizzoli.RED.Connection.Teacher;
-import it.rizzoli.RED.LoginActivity;
 import it.rizzoli.RED.R;
-import it.rizzoli.RED.TeacherMainActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -33,20 +29,18 @@ public class StudentPersonalProfileFragment extends Fragment {
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
-    String textEmail, textPassword = null;
     private final static String TEXT_ID_KEY = "textId";
-    private final static String TEXT_PW_KEY = "textPassword";
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_personal_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_personal_profile, container, false);
 
         // LEGGIAMO LA PREFERENZA
         SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
-        textPassword = preferiti.getString(TEXT_PW_KEY, null);
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
         StudentWebInterface apiService = null;
@@ -61,24 +55,20 @@ public class StudentPersonalProfileFragment extends Fragment {
                 if(response.code() == 500) {
                     Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
-                    TextView textViewFirstName = (TextView)view.findViewById(R.id.editTextFirstName);
-                    textViewFirstName.setText(student.getFirst_name(), TextView.BufferType.SPANNABLE);
-                    /*
-                    EditText editText = (EditText)view.findViewById(R.id.editTextFirstName);
-                    editText.setText(student.getFirst_name(), TextView.BufferType.EDITABLE);
-                    EditText editText = (EditText)view.findViewById(R.id.editTextFirstName);
-                    editText.setText(student.getFirst_name(), TextView.BufferType.EDITABLE);
-                    EditText editText = (EditText)view.findViewById(R.id.editTextFirstName);
-                    editText.setText(student.getFirst_name(), TextView.BufferType.EDITABLE);
-                    EditText editText = (EditText)view.findViewById(R.id.editTextFirstName);
-                    editText.setText(student.getFirst_name(), TextView.BufferType.EDITABLE);
-                    EditText editText = (EditText)view.findViewById(R.id.editTextFirstName);
-                    editText.setText(student.getFirst_name(), TextView.BufferType.EDITABLE);
-                    EditText editText = (EditText)view.findViewById(R.id.editTextFirstName);
-                    editText.setText(student.getFirst_name(), TextView.BufferType.EDITABLE);
-
-
-                    */
+                    TextView textViewFirstName = view.findViewById(R.id.textViewDataFirstName);
+                    textViewFirstName.setText(student.getFirst_name());
+                    TextView textViewLastName = view.findViewById(R.id.textViewDataLastName);
+                    textViewLastName.setText(student.getLast_name());
+                    TextView editText = view.findViewById(R.id.textViewDataInstitutionalEmail);
+                    editText.setText(student.getInstitutional_email());
+                    EditText editTextPhoneNumber = view.findViewById(R.id.editTextPhoneNumber);
+                    editTextPhoneNumber.setText(student.getPhone_number());
+                    EditText editTextPersonalEmail = view.findViewById(R.id.editTextPersonalEmail);
+                    editTextPersonalEmail.setText(student.getPersonal_email());
+                    TextView textViewDateOfBirth = view.findViewById(R.id.textViewDataDateOfBirth);
+                    textViewDateOfBirth.setText(student.getDate_of_birth().toString());
+                    EditText editTextPassword = view.findViewById(R.id.editTextDataPassword);
+                    editTextPassword.setText(student.getPassword());
                 }
             }
 

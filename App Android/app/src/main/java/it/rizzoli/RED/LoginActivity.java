@@ -78,7 +78,6 @@ public class LoginActivity extends AppCompatActivity {
                                 if(response.code() == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
-
                                     SavePreferencesData(v, teacher.getId_teacher());
                                     Intent intent = new Intent(LoginActivity.this, TeacherMainActivity.class);
                                     startActivity(intent);

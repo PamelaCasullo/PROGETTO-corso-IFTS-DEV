@@ -51,12 +51,12 @@ public class Teacher {
 		this.institutional_email = institutional_email;
 	}
 
-	public String getFirstName() {
+	public String getFirst_name() {
 		return first_name;
 	}
 
-	public void setFirstName(String name) {
-		this.first_name = name;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
 
 	public String getLast_name() {
