@@ -59,33 +59,42 @@
           </div>
         </nav>
       </div>    
+
+      <!--FORM DI INSERIMENTO VOTO-->
       
       <div id="container">
         <p>
           <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Link with href
+            Aggiungi Voto
           </a>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Button with data-bs-target
-          </button>
         </p>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
+            
             <form>
               <div class="it-datepicker-wrapper">
                 <div class="form-group">
                   <label for="date1">Date label</label>
-                  <input class="form-control it-date-datepicker" id="date1" type="text" placeholder="inserisci la data in formato gg/mm/aaaa">
+                 
+                  <!--INPUT DAT-->
+                  <input class="form-control it-date-datepicker" id="teacher_in_date" type="text" placeholder="inserisci la data in formato gg/mm/aaaa">
+                
                 </div>
               </div>
               <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="materia">MATERIA</span>
-                <input type="text" class="form-control" placeholder="Inserisci la materia">
+                <span class="input-group-text">MODULO</span>
+                
+                <!--INPUT MODULO-->
+                <input type="text" class="form-control" placeholder="Inserisci la materia" id="teacher_in_module">
+              
               </div>
               <div class="input-group">
                 <span class="input-group-text">First and last name</span>
-                <input type="text" aria-label="First name" class="form-control" id="name_teacher">
-                <input type="text" aria-label="Last name" class="form-control" id="last_name_teacher">
+                
+                <!--INPUT NOME/COGNOME-->
+                <input type="text" aria-label="First name" class="form-control" id="teacher_in_name">
+                <input type="text" aria-label="Last name" class="form-control" id="teacher_in_last_name">
+              
               </div>
               <div class="input-group">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">VOTO</button>
@@ -96,8 +105,9 @@
                   <li><a class="dropdown-item" href="#">4</a></li>
                 </ul>
                 </div>
-              <button id="salva_btn">SAVE</button>
+              <button id="teacher_in_save_btn">SAVE</button>
             </form>
+          
           </div>
         </div>
       </div>
@@ -118,16 +128,16 @@
             <tr>
 
               <!--DATA-->  
-              <th scope="row"><span class="font-text">12/02/2022</span></th>
+              <th scope="row"><span class="font-text" id="teacher_votes_date">12/02/2022</span></th>
               
               <!--MODULO-->
-              <td><span class="font-text">MODULO 07 - SVILUPPO APPLICAZIONI ANDROID</span></td>
+              <td><span class="font-text" id="teacher_votes_module">MODULO 07 - SVILUPPO APPLICAZIONI ANDROID</span></td>
 
               <!--DOCENTE-->
-              <td><span class="font-text">Antonio Giovanni Lezzi</span></td>
+              <td><span class="font-text" id="teacher_votes_teacher">Antonio Giovanni Lezzi</span></td>
 
               <!--VOTO-->
-              <td style="background-color: darkred; text-align: center;"><span class="font-text">18</span></td>
+              <td style="background-color: darkred; text-align: center;" id="teacher_votes_vote"><span class="font-text">18</span></td>
             
             </tr>      
           </tbody>
