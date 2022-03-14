@@ -24,7 +24,7 @@ function onPageLoaded() {
                     "<span class='card-title titles-shadow-black font-text' style='background-color: darkred; margin-left: 5px' id='student_name'>"+student.first_name + " " + student.last_name+"</span>" +
                     "<ul class = 'list-group list-group-flush'style = 'margin-top: 10px;' > " +
                     "<li class = 'list-group-item' style = 'background-color: darkred; border-radius: 5px; box-shadow: 0px 3px 2px black;'> <span class = 'badge bg-dark'>E - MAIL</span> " +
-                    "<a style = 'margin-left: 5px;' class = 'mailto-text' id = 'students_list_instistutional_mail'> "+student.institutional_email+" </a></li >" +
+                    "<a href='mailto:' " + student.institutional_email + " style = 'margin-left: 5px;' class = 'mailto-text' id = 'students_list_instistutional_mail'> "+student.institutional_email+" </a></li >" +
                     "<li class = 'list-group-item' style = 'background-color: darkred; border-radius: 5px; box-shadow: 0px 3px 2px black; margin-top: 5px;'>" +
                     "<span class = 'badge bg-dark'> NR. </span><span style='margin-left: 5px; color: white;' id='students_list_number'>"+student.phone_number+"</span > </li></ul >";
 
