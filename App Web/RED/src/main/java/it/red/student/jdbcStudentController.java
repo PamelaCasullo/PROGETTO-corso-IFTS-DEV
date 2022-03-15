@@ -51,11 +51,8 @@ public class jdbcStudentController implements StudentRepository {
 		return jdbcTemplate.update("UPDATE student SET"
 				+ "	personal_email = ?,"
 				+ "	phone_number = ?,"
-				+ "	date_of_birth = ?,"
-				+ "	password = ?,"
-				+ " image=? WHERE id_student=?",new Object[] 
-						{p.getPersonal_email(),p.getPhone_number(),p.getDate_of_birth(),
-								p.getPassword(),p.getPhoto(),p.getId_student()});
+				+ "	password = ? WHERE id_student=?",new Object[] 
+						{p.getPersonal_email(),p.getPhone_number(),p.getPassword(),p.getId_student()});
 	}
 
 	@Override

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.red.JdbcUtilityInterface;
-import it.red.student.Student;
 
 
 @RestController
@@ -44,21 +43,17 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 	}
 
 	@RequestMapping(value="/Teachers/update/{id_teacher}", method=RequestMethod.PUT) 
-	public Teacher updateElementById(@PathVariable long id,@RequestBody Teacher stMod) {
-		Teacher i = this.repository.findValueById(id);
-
-
-		if(stMod.getPersonal_email()!=null) {
-			i.setPersonal_email(stMod.getPersonal_email());
+	public Teacher updateElementById(@RequestBody UpdateProfile updateProfile) {
+		Teacher i = this.repository.findValueById(updateProfile.getId_teacher());
+		
+		if(updateProfile.getPersonal_email() != null) {
+			i.setPersonal_email(updateProfile.getPersonal_email());
 		}
-		if(stMod.getPassword()!=null) {
-			i.setPassword(stMod.getPassword());
+		if(updateProfile.getPassword() != null) {
+			i.setPassword(updateProfile.getPassword());
 		}
-		if(stMod.getPhone_number()!=null) {
-			i.setPhone_number(stMod.getPhone_number());
-		}
-		if(stMod.getPhoto()!=null) {
-			i.setPhoto(stMod.getPhoto());
+		if(updateProfile.getPhone_number() != null) {
+			i.setPhone_number(updateProfile.getPhone_number());
 		}
 
 		this.repository.updateValueById(i);
@@ -85,5 +80,8 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 			return null;
 
 	}
+
+
+
 
 }

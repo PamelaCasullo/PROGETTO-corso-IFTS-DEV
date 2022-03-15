@@ -35,7 +35,7 @@
     <TextView
         android:id="@+id/textViewFirstName"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewProfiloPersonale"
         android:layout_marginTop="-1150px"
         android:background="@color/redb"
@@ -46,19 +46,19 @@
 
     <TextView
         android:id="@+id/textViewDataFirstName"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewProfiloPersonale"
         android:layout_marginTop="-1150px"
         android:layout_toEndOf="@+id/textViewFirstName"
         android:hint=""
-        android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <TextView
         android:id="@+id/textViewLastName"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewFirstName"
         android:background="@color/redb"
         android:drawablePadding="10dp"
@@ -68,17 +68,17 @@
 
     <TextView
         android:id="@+id/textViewDataLastName"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewFirstName"
         android:layout_toEndOf="@+id/textViewLastName"
         android:hint=""
-        android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
     <TextView
         android:id="@+id/textViewInstitutionalEmail"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewLastName"
         android:background="@color/redb"
         android:drawablePadding="10dp"
@@ -88,17 +88,17 @@
 
     <TextView
         android:id="@+id/textViewDataInstitutionalEmail"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewLastName"
         android:layout_toEndOf="@+id/textViewInstitutionalEmail"
         android:hint=""
-        android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
     <TextView
         android:id="@+id/textViewPersonalEmail"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewInstitutionalEmail"
         android:background="@color/redb"
         android:drawablePadding="10dp"
@@ -108,8 +108,8 @@
 
     <EditText
         android:id="@+id/editTextPersonalEmail"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewInstitutionalEmail"
         android:layout_toEndOf="@+id/textViewPersonalEmail"
         android:hint=""
@@ -120,7 +120,7 @@
     <TextView
         android:id="@+id/textViewPhoneNumber"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewPersonalEmail"
         android:background="@color/redb"
         android:drawablePadding="10dp"
@@ -130,18 +130,18 @@
 
     <EditText
         android:id="@+id/editTextPhoneNumber"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewPersonalEmail"
         android:layout_toEndOf="@+id/textViewPhoneNumber"
         android:hint=""
-        android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <TextView
         android:id="@+id/textViewDateOfBirth"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewPhoneNumber"
         android:background="@color/redb"
         android:drawablePadding="10dp"
@@ -151,19 +151,19 @@
 
     <TextView
         android:id="@+id/textViewDataDateOfBirth"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewPhoneNumber"
         android:layout_toEndOf="@+id/textViewDateOfBirth"
         android:hint=""
         android:inputType="date"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <TextView
         android:id="@+id/textViewPassword"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewDateOfBirth"
         android:background="@color/redb"
         android:drawablePadding="10dp"
@@ -173,14 +173,27 @@
 
     <EditText
         android:id="@+id/editTextDataPassword"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/textViewDateOfBirth"
         android:layout_toEndOf="@+id/textViewPassword"
         android:hint=""
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:inputType="text" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/textViewPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:padding="@dimen/textMenuSize"
+        android:text="update"
+        android:backgroundTint="@color/red" />
 
 
 </RelativeLayout>

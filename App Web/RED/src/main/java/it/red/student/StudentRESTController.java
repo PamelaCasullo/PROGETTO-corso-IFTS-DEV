@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapProperties.Credential;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import it.red.JdbcUtilityInterface;
 
@@ -57,37 +60,32 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 
 	}
 
-	//update 
-	@RequestMapping(value="/Students/update/{id_student}", method=RequestMethod.PUT) 
-	public Student updateElementById(@PathVariable long id, @RequestBody Student stMod) {
+	//update
+	@RequestMapping(value="/Students/update", method=RequestMethod.PUT) 
+	public Student updateElementById(@RequestBody UpdateProfile updateProfile) {
+		
+		Student i = this.repository.findValueById(updateProfile.getId_student());
 
-		Student i = this.repository.findValueById(id);
-
-		if(stMod.getDate_of_birth()!=null) {
-			i.setDate_of_birth(stMod.getDate_of_birth());
+		if(updateProfile.personal_email != null) {
+			i.setPersonal_email(updateProfile.personal_email);
 		}
-		if(stMod.getPersonal_email()!=null) {
-			i.setPersonal_email(stMod.getPersonal_email());
+		if(updateProfile.password != null) {
+			i.setPassword(updateProfile.password);
 		}
-		if(stMod.getPassword()!=null) {
-			i.setPassword(stMod.getPassword());
-		}
-		if(stMod.getPhone_number()!=null) {
-			i.setPhone_number(stMod.getPhone_number());
-		}
-		if(stMod.getPhoto()!=null) {
-			i.setPhoto(stMod.getPhoto());
+		if(updateProfile.phone_number != null) {
+			i.setPhone_number(updateProfile.phone_number);
 		}
 
+		System.out.println(i.getPersonal_email());
 		this.repository.updateValueById(i);
 		return i;
 	}
 
 	//delete
 	@RequestMapping(value="/Students/delete/{id_student}", method=RequestMethod.DELETE) 
-	public void deleteElement(@PathVariable long id) {
+	public void deleteElement(@PathVariable long id_student) {
 
-		this.repository.deleteValueById(id);
+		this.repository.deleteValueById(id_student);
 
 	}
 
@@ -104,7 +102,6 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 			return null;
 	}
 	//homepage
-
 
 
 

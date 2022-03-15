@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,9 +17,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.util.Date;
+
 import it.rizzoli.RED.Connection.AsynkTaskApp;
 import it.rizzoli.RED.Connection.Student;
 import it.rizzoli.RED.Connection.StudentWebInterface;
+import it.rizzoli.RED.Connection.UpdateProfile;
 import it.rizzoli.RED.R;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,19 +45,20 @@ public class StudentPersonalProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_student_personal_profile, container, false);
-
+        Button updateDataButton;
         // LEGGIAMO LA PREFERENZA
         SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
+        updateDataButton = view.findViewById(R.id.updateButton);
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
         StudentWebInterface apiService;
         apiService = app.retrofit.create(StudentWebInterface.class);
 
-        Call<Student> call = apiService.searchById(textId);
+        Call<Student> dataVisualization = apiService.searchById(textId);
 
-        call.enqueue(new Callback<Student>() {
+        dataVisualization.enqueue(new Callback<Student>() {
             @Override
             public void onResponse(Call call, Response response) {
                 Student student = (Student) response.body();
@@ -65,8 +75,10 @@ public class StudentPersonalProfileFragment extends Fragment {
                     editTextPhoneNumber.setText(student.getPhone_number());
                     EditText editTextPersonalEmail = view.findViewById(R.id.editTextPersonalEmail);
                     editTextPersonalEmail.setText(student.getPersonal_email());
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                    String strDate = formatter.format(student.getDate_of_birth());
                     TextView textViewDateOfBirth = view.findViewById(R.id.textViewDataDateOfBirth);
-                    textViewDateOfBirth.setText(student.getDate_of_birth().toString());
+                    textViewDateOfBirth.setText(strDate);
                     EditText editTextPassword = view.findViewById(R.id.editTextDataPassword);
                     editTextPassword.setText(student.getPassword());
                 }
@@ -75,6 +87,35 @@ public class StudentPersonalProfileFragment extends Fragment {
             @Override
             public void onFailure(Call call, Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
+            }
+        });
+
+        updateDataButton.setOnClickListener(v -> {
+
+            EditText personalEmail = view.findViewById(R.id.editTextPersonalEmail);
+            EditText phoneNumber = view.findViewById(R.id.editTextPhoneNumber);
+            EditText password = view.findViewById(R.id.editTextDataPassword);
+
+            UpdateProfile updateProfile = new UpdateProfile(textId, personalEmail.getText().toString(), "2233142554", password.getText().toString());
+
+            try {
+                Call<Student> updateData = apiService.updateElementById(updateProfile);
+
+                updateData.enqueue(new Callback<Student>() {
+                    @Override
+                    public void onResponse(Call call, Response response) {
+                        phoneNumber.setText(updateProfile.getPhone_number());
+                        personalEmail.setText(updateProfile.getPersonal_email());
+                        password.setText(updateProfile.getPassword());
+                    }
+
+                    @Override
+                    public void onFailure(Call call, Throwable t) {
+                        Log.e("Fallito! ", t.getMessage());
+                    }
+                });
+            } catch (Exception exceptionx) {
+                Log.e("Error", exceptionx.getMessage());
             }
         });
 

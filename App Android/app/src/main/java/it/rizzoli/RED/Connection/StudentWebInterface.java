@@ -13,4 +13,8 @@ public interface StudentWebInterface {
 
     @PUT("/Students/search/{id_student}")
     Call<Student> searchById(@Path("id_student") long id);
+
+    @PUT("/Students/update")
+    Call<Student> updateElementById(@Body UpdateProfile updateProfile);
+
 }
