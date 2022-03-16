@@ -49,14 +49,14 @@ public class jdbcTeacherController implements TeacherRepository {
 				+ "	personal_email = ?,"
 				+ "	phone_number = ?,"
 				+ "	password = ?,"
-				+ " image=? WHERE id_student=?",new Object[] 
+				+ " image=? WHERE id_teacher=?",new Object[] 
 						{p.getPersonal_email(),p.getPhone_number(),
 								p.getPassword(),p.getPhoto(),p.getId_teacher()});
 	}
 
 	@Override
 	public int deleteValueById(long id) {
-		return jdbcTemplate.update("DELETE FROM teacher where id_student=?",id);
+		return jdbcTemplate.update("DELETE FROM teacher where id_teacher=?",id);
 
 	}
 
