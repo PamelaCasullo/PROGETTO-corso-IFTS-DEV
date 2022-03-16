@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,12 +40,10 @@ public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
 	@RequestMapping(value="/Agenda/update/{id_agenda}", method=RequestMethod.PUT)
 	public Agenda updateElementById(long id, Agenda stMod) {
 		Agenda i = this.repository.findValueById(id);
-
 		
 		if(stMod.getDescription()!=null) 
 			i.setDescription(stMod.getDescription());
 	
-
 		this.repository.updateValueById(i);
 		return i;
 	}
@@ -54,5 +53,7 @@ public class AgendaRESTController implements JdbcUtilityInterface<Agenda> {
 		this.repository.deleteValueById(id);
 		
 	}
+	
+	
 
 }

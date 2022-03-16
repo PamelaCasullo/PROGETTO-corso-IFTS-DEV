@@ -7,6 +7,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import it.red.LessonHomepageStudent;
+import it.red.agenda.Agenda;
+
 @Repository(value="MYSQLS")
 public class jdbcStudentController implements StudentRepository {
 
@@ -63,6 +66,14 @@ public class jdbcStudentController implements StudentRepository {
 	@Override
 	public int deleteAll() {
 		return jdbcTemplate.update("DELETE * FROM student");
+	}
+	public List<LessonHomepageStudent> SearchLessonById(long id) {
+		return jdbcTemplate.query("select distinct agenda.date, module.title, teacher.first_name, teacher.last_name from student"
+				+ "			inner join lesson on lesson.student_id_student=student.id_student"
+				+ "			right join agenda on lesson.agenda_id_agenda=agenda.id_agenda"
+				+ "			left join module on module.id_module=agenda.module_id_module"
+				+ "			left join teacher on teacher.id_teacher=agenda.teacher_id_teacher"
+				+ "			where student.id_student=?", BeanPropertyRowMapper.newInstance(LessonHomepageStudent.class),id);
 	}
 
 }

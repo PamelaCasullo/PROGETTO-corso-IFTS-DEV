@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import it.red.JdbcUtilityInterface;
+import it.red.LessonHomepageStudent;
 
 
 @RestController
@@ -49,11 +51,6 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 	//doRetrieveByKey
 	@RequestMapping(value="/Students/search/{id_student}", method=RequestMethod.PUT)
 	public Student searchElementById(@PathVariable long id_student) {
-		/*if(this.repository.findValueById(id)!=null)
-			return new ResponseEntity<String>("FOUND",HttpStatus.FOUND);
-		else 
-			return new ResponseEntity<String>("NOT FOUND",HttpStatus.NOT_FOUND);
-		 */
 		
 		System.out.println(id_student);
 		return this.repository.findValueById(id_student);
@@ -101,7 +98,13 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		else 
 			return null;
 	}
-	//homepage
+	//listaLezioni
+	@RequestMapping(value="/Students/show/ElencoLezioni")
+	public List<LessonHomepageStudent> ShowLesson(@RequestHeader int id_student){
+		System.out.println("Dentro ShowLesson");
+		return repository.SearchLessonById(id_student);
+		
+	}
 
 
 

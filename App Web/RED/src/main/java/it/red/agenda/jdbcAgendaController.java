@@ -59,4 +59,5 @@ public class jdbcAgendaController implements AgendaRepository {
 		return jdbcTemplate.update("DELETE FROM agenda");
 	}
 
+
 }

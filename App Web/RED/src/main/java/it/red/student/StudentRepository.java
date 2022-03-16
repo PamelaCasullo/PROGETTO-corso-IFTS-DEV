@@ -2,6 +2,8 @@ package it.red.student;
 
 import java.util.List;
 
+import it.red.LessonHomepageStudent;
+
 
 
 public interface StudentRepository {
@@ -34,6 +36,8 @@ public interface StudentRepository {
 	//GET
 	//cancella tutti i record
 	int deleteAll();
+	
+	List<LessonHomepageStudent> SearchLessonById(long id);
 
 	
 }
