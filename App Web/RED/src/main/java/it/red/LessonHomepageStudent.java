@@ -6,9 +6,10 @@ public class LessonHomepageStudent {
 	private String title;
 	private String date;
 	
-	public LessonHomepageStudent(String first_name,String last_name, String date) {
+	public LessonHomepageStudent(String first_name,String last_name, String date, String title) {
 		this.first_name=first_name;
 		this.last_name = last_name;
+		this.title=title;
 		this.date=date;
 	}
 	public LessonHomepageStudent() {

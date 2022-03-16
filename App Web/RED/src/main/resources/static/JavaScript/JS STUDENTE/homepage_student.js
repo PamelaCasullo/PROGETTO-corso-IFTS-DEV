@@ -33,7 +33,44 @@ function caricamento() {
 	loadVote();
 }
 function loadVote(){
-	
+	 var uriAddr = "/Students/show/ElencoVoti";
+    var xmlHttp = new XMLHttpRequest();
+	var daCar = JSON.parse(sessionSt);
+	 var id_student = daCar.id_student;
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            //codice di gestione del ritorno dal servizio web
+            console.log(xmlHttp.responseText);
+			console.log(uriAddr);
+            var jsonObj = JSON.parse(xmlHttp.responseText);
+             for (var idx = 0; idx < jsonObj.length;idx++) {
+	  		 var grades = jsonObj[idx];
+	  		 
+			document.getElementById("MostraVoti").innerHTML=
+			     "<p style='padding: 5px;' class='titles-shadow titles-underline'>Visualizza tutti i voti<a href='student_votes.html' class='button-votes'>VAI</a><p>"
+                + "<ul class='list-group'>"
+                 +"<li class='list-group-item d-flex justify-content-between align-items-center' style='background-color: #484848; border: 1px solid ;'>"
+                      
+                  +   "<!--NOME MODULO-->"
+                   + "  <span id='student_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>"
+                      
+                    +  "<!--DATA VOTO-->"
+                     +" <span style='margin: auto; color: white;' id='student_vote_date' class='font-text'>"+grades.date+"</span>"
+                      
+                      +"<!--VOTO-->"
+                      +"<span class='badge bg-danger rounded-pill' id='student_vote'>"+grades.grade+"</span>"
+                    
+                   + "</li>"
+                  +"</ul>";
+	     
+    		}
+ 				
+        }
+    };
+
+    xmlHttp.open("GET", uriAddr);
+    xmlHttp.setRequestHeader("id_student",id_student);
+    xmlHttp.send(null);
 }
 function loadLesson() {
     var uriAddr = "/Students/show/ElencoLezioni";

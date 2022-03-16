@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapProperties.Credential;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,13 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import it.red.JdbcUtilityInterface;
 import it.red.LessonHomepageStudent;
+import it.red.StudentShowGrades;
 
 
 @RestController
@@ -92,8 +89,8 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 
 		if(credential.emailq != null && credential.passwordq != null) {
 			System.out.println(credential.emailq);
-			Student ss = repository.findEmailPassword(credential.emailq, credential.passwordq).get(0);
-			return ss;
+			Student s = repository.findEmailPassword(credential.emailq, credential.passwordq).get(0);
+			return s;
 		}
 		else 
 			return null;
@@ -101,11 +98,17 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 	//listaLezioni
 	@RequestMapping(value="/Students/show/ElencoLezioni")
 	public List<LessonHomepageStudent> ShowLesson(@RequestHeader int id_student){
-		System.out.println("Dentro ShowLesson");
+		
 		return repository.SearchLessonById(id_student);
 		
 	}
-
+	//listaVotiAsegnati
+	@RequestMapping(value="/Students/show/ElencoVoti")
+	public List<StudentShowGrades> ShowGrades(@RequestHeader int id_student){
+		System.out.println("MOSTRA VOTI");
+		return repository.SearchGradesById(id_student);
+		
+	}
 
 
 }

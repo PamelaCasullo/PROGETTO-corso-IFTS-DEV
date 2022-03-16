@@ -3,6 +3,7 @@ package it.red.student;
 import java.util.List;
 
 import it.red.LessonHomepageStudent;
+import it.red.StudentShowGrades;
 
 
 
@@ -36,8 +37,12 @@ public interface StudentRepository {
 	//GET
 	//cancella tutti i record
 	int deleteAll();
-	
+	//GET
+	//mostra tutte le lezioni
 	List<LessonHomepageStudent> SearchLessonById(long id);
+	//GET
+	//mostra tutti i voti
+	List<StudentShowGrades> SearchGradesById(long id);
 
 	
 }
