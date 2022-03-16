@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,16 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
-import java.time.ZoneId;
-import java.util.Date;
 
 import it.rizzoli.RED.Connection.AsynkTaskApp;
 import it.rizzoli.RED.Connection.Student;
 import it.rizzoli.RED.Connection.StudentWebInterface;
-import it.rizzoli.RED.Connection.UpdateProfile;
 import it.rizzoli.RED.R;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -96,17 +90,17 @@ public class StudentPersonalProfileFragment extends Fragment {
             EditText phoneNumber = view.findViewById(R.id.editTextPhoneNumber);
             EditText password = view.findViewById(R.id.editTextDataPassword);
 
-            UpdateProfile updateProfile = new UpdateProfile(textId, personalEmail.getText().toString(), "2233142554", password.getText().toString());
+            StudentUpdateProfile studentUpdateProfile = new StudentUpdateProfile(textId, personalEmail.getText().toString(), phoneNumber.getText().toString(), password.getText().toString());
 
             try {
-                Call<Student> updateData = apiService.updateElementById(updateProfile);
+                Call<Student> updateData = apiService.updateElementById(studentUpdateProfile);
 
                 updateData.enqueue(new Callback<Student>() {
                     @Override
                     public void onResponse(Call call, Response response) {
-                        phoneNumber.setText(updateProfile.getPhone_number());
-                        personalEmail.setText(updateProfile.getPersonal_email());
-                        password.setText(updateProfile.getPassword());
+                        phoneNumber.setText(studentUpdateProfile.getPhone_number());
+                        personalEmail.setText(studentUpdateProfile.getPersonal_email());
+                        password.setText(studentUpdateProfile.getPassword());
                     }
 
                     @Override

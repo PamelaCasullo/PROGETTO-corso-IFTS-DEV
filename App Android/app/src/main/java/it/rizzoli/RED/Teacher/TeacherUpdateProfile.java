@@ -1,26 +1,27 @@
-package it.rizzoli.RED.Connection;
+package it.rizzoli.RED.Teacher;
 
-public class UpdateProfile {
-    int id_student;
+public class TeacherUpdateProfile {
+
+    int id_teacher;
     String personal_email;
     String phone_number;
     String password;
 
-    public UpdateProfile() {
+    public TeacherUpdateProfile() {
     }
 
-    public UpdateProfile(int id_student, String personal_email, String phone_number, String password) {
-        this.id_student = id_student;
+    public TeacherUpdateProfile(int id_teacher, String personal_email, String phone_number, String password) {
+        this.id_teacher = id_teacher;
         this.personal_email = personal_email;
         this.phone_number = phone_number;
         this.password = password;
     }
 
-    public int getId_student() {
-        return id_student;
+    public int getId_teacher() {
+        return id_teacher;
     }
-    public void setId_student(int id_student) {
-        this.id_student = id_student;
+    public void setId_teacher(int id_teacher) {
+        this.id_teacher = id_teacher;
     }
     public String getPersonal_email() {
         return personal_email;
@@ -40,6 +41,4 @@ public class UpdateProfile {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
-

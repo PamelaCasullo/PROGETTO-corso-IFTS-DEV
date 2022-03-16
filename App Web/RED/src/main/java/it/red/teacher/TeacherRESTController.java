@@ -42,7 +42,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return this.repository.findValueById(id_teacher);
 	}
 
-	@RequestMapping(value="/Teachers/update/{id_teacher}", method=RequestMethod.PUT) 
+	@RequestMapping(value="/Teachers/update", method=RequestMethod.PUT) 
 	public Teacher updateElementById(@RequestBody UpdateProfile updateProfile) {
 		Teacher i = this.repository.findValueById(updateProfile.getId_teacher());
 		
