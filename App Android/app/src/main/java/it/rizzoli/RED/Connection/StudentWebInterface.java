@@ -1,5 +1,6 @@
 package it.rizzoli.RED.Connection;
 
+import it.rizzoli.RED.Student.StudentUpdateProfile;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -15,6 +16,6 @@ public interface StudentWebInterface {
     Call<Student> searchById(@Path("id_student") long id);
 
     @PUT("/Students/update")
-    Call<Student> updateElementById(@Body UpdateProfile updateProfile);
+    Call<Student> updateElementById(@Body StudentUpdateProfile studentUpdateProfile);
 
 }

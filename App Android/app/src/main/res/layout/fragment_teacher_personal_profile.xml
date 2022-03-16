@@ -158,5 +158,18 @@
         android:textColorHint="@color/white"
         android:textColor="@color/white" />
 
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/textViewPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:padding="@dimen/textMenuSize"
+        android:text="update"
+        android:backgroundTint="@color/red" />
+
 
 </RelativeLayout>

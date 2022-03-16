@@ -49,7 +49,7 @@ public class jdbcTeacherController implements TeacherRepository {
 				+ "	personal_email = ?,"
 				+ "	phone_number = ?,"
 				+ "	password = ?,"
-				+ " image=? WHERE id_teacher=?",new Object[] 
+				+ " photo=? WHERE id_teacher=?",new Object[] 
 						{p.getPersonal_email(),p.getPhone_number(),
 								p.getPassword(),p.getPhoto(),p.getId_teacher()});
 	}
