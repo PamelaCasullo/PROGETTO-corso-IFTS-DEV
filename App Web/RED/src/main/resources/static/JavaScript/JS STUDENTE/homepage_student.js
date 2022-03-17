@@ -18,8 +18,7 @@ function caricamento() {
                  
 				 document.getElementById("user_name_lastname").innerHTML=daCar.first_name+ " " + daCar.last_name;
 
-					
-					
+		
 				
             }
         }
@@ -27,9 +26,9 @@ function caricamento() {
 	
 	xmlHttp.open("PUT", uriAddress);
     xmlHttp.send(null);
-	
-	loadLesson();
 	loadVote();
+	loadLesson();
+	
 }
 function loadVote(){
 	 var uriAddr = "/Students/show/ElencoVoti";

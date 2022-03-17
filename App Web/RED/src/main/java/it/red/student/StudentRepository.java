@@ -45,7 +45,6 @@ public interface StudentRepository {
 	//GET
 	//mostra tutte le presenze e le assenze
 	List<StudentShowPresences> SearchPresenceById(long id);
-
 	
 	long uploadPhoto(Photo photo);
 	
