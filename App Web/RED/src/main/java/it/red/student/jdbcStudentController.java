@@ -9,11 +9,13 @@ import org.springframework.stereotype.Repository;
 
 import it.red.LessonHomepageStudent;
 import it.red.StudentShowGrades;
-import it.red.agenda.Agenda;
 
 @Repository(value="MYSQLS")
 public class jdbcStudentController implements StudentRepository {
 
+	
+	String directory = "./src/main/resources/static/red_img/";
+	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -83,6 +85,18 @@ public class jdbcStudentController implements StudentRepository {
 				+ " left join module on module.id_module=agenda.module_id_module"
 				+ " left join teacher on agenda.teacher_id_teacher=teacher.id_teacher"
 				+ " where student.id_student=? and lesson.grade IS NOT NULL", BeanPropertyRowMapper.newInstance(StudentShowGrades.class),id);
+	}
+	
+	@Override
+	public long uploadPhoto(Photo photo) {
+		return jdbcTemplate.update("UPDATE student SET photo = ? WHERE id_student = ?", new Object[] {
+				directory + photo.getInstitutional_email(), photo.getId_student()
+		});
+	}
+
+	@Override
+	public Student downloadPhoto(long id) {
+		return jdbcTemplate.queryForObject("SELECT * FROM student WHERE id_student = ?", BeanPropertyRowMapper.newInstance(Student.class), id);
 	}
 }
 

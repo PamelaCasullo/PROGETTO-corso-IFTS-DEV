@@ -1,5 +1,10 @@
 package it.red.student;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.PreparedStatement;
 import java.util.List;
 
@@ -14,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.red.JdbcUtilityInterface;
 import it.red.LessonHomepageStudent;
@@ -22,6 +28,9 @@ import it.red.StudentShowGrades;
 
 @RestController
 public class StudentRESTController implements JdbcUtilityInterface<Student> {
+	
+	String directory = "./src/main/resources/static/red_img/";
+	
 	PreparedStatement ps =null;
 
 	String DB_TABLE = "Student";
@@ -109,6 +118,42 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		return repository.SearchGradesById(id_student);
 		
 	}
+	
+	
+	@RequestMapping(value = "/Student/uploadFile", method = RequestMethod.PUT)
+	public String uploadFile(@RequestBody Photo photo) {
+
+		MultipartFile uploadFile = photo.getUploadfile();
+		String name = photo.getInstitutional_email();
+
+		String filePath = Paths.get(directory, name).toString();
+
+		BufferedOutputStream stream;
+		try {
+			stream = new BufferedOutputStream(new FileOutputStream(new File(filePath)));
+			stream.write(uploadFile.getBytes());
+			stream.close();
+			this.repository.uploadPhoto(photo);
+			return directory + photo.getInstitutional_email();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+
+
+	@RequestMapping(value = "/Student/getFile", method = RequestMethod.POST)
+	public String getFile(@PathVariable long id_student) {
+
+		Student student = this.repository.downloadPhoto(id_student);
+		return student.getPhoto();
+
+	}
+	
+	
+	
 
 
 }

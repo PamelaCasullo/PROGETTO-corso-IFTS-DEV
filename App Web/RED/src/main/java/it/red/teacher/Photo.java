@@ -1,14 +1,25 @@
-package it.red;
+package it.red.teacher;
 
 import org.springframework.web.multipart.MultipartFile;
 
 public class Photo {
+	int id_teacher;
 	String institutional_email;
 	MultipartFile uploadfile;
 	
-	public Photo(String institutional_email, MultipartFile uploadfile) {
+	public Photo(int id_teacher, String institutional_email, MultipartFile uploadfile) {
+		super();
+		this.id_teacher = id_teacher;
 		this.institutional_email = institutional_email;
 		this.uploadfile = uploadfile;
+	}
+
+	public int getId_teacher() {
+		return id_teacher;
+	}
+
+	public void setId_teacher(int id_teacher) {
+		this.id_teacher = id_teacher;
 	}
 
 	public String getInstitutional_email() {

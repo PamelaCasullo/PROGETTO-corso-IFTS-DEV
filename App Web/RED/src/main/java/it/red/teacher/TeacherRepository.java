@@ -29,4 +29,8 @@ public interface TeacherRepository {
 	int deleteAll();
 
 	List<Teacher> findEmailPassword(String emailq, String passwordq);
+	
+	long uploadPhoto(Photo photo);
+	
+	Teacher downloadPhoto(long id_teacher);
 }

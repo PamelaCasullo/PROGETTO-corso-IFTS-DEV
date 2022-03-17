@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AsynkTaskApp extends Application {
 
-    public static final String BASE_URL = "http://192.168.178.23:9090/"; //TODO Cambiare sempre nell'indirizzo IP della propria macchina, altrimenti non funziona
+    public static final String BASE_URL = "http://192.168.178.45:9090/"; //TODO Cambiare sempre nell'indirizzo IP della propria macchina, altrimenti non funziona
     public Retrofit retrofit;
 
     public AsynkTaskApp(){
@@ -16,5 +16,9 @@ public class AsynkTaskApp extends Application {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
+
+    public static String getBaseUrl() {
+        return BASE_URL;
     }
 }

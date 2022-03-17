@@ -5,8 +5,6 @@ import java.util.List;
 import it.red.LessonHomepageStudent;
 import it.red.StudentShowGrades;
 
-
-
 public interface StudentRepository {
 	
 	//POST
@@ -44,5 +42,9 @@ public interface StudentRepository {
 	//mostra tutti i voti
 	List<StudentShowGrades> SearchGradesById(long id);
 
+	
+	long uploadPhoto(Photo photo);
+	
+	Student downloadPhoto(long id_student);
 	
 }

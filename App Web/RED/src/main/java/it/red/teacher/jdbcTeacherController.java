@@ -7,13 +7,12 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import it.red.student.Student;
-
-
 
 @Repository(value="MYSQLT")
 public class jdbcTeacherController implements TeacherRepository {
-	
+
+	String directory = "./src/main/resources/static/red_img/";
+
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -33,7 +32,7 @@ public class jdbcTeacherController implements TeacherRepository {
 
 	@Override
 	public Teacher findValueById(long id) {
-		
+
 		return jdbcTemplate.queryForObject("SELECT * FROM teacher where id_teacher=?", BeanPropertyRowMapper.newInstance(Teacher.class),id);
 	}
 
@@ -71,7 +70,17 @@ public class jdbcTeacherController implements TeacherRepository {
 
 	}
 
-	
+	@Override
+	public long uploadPhoto(Photo photo) {
+		return jdbcTemplate.update("UPDATE teacher SET photo = ? WHERE id_teacher = ?", new Object[] {
+				directory + photo.getInstitutional_email(), photo.getId_teacher()
+		});
+	}
+
+	@Override
+	public Teacher downloadPhoto(long id) {
+		return jdbcTemplate.queryForObject("SELECT * FROM teacher WHERE id_teacher = ?", BeanPropertyRowMapper.newInstance(Teacher.class), id);
+	}
 
 
 }
