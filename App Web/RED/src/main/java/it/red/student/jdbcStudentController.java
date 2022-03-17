@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import it.red.LessonHomepageStudent;
 import it.red.StudentShowGrades;
+import it.red.StudentShowPresences;
+
 
 @Repository(value="MYSQLS")
 public class jdbcStudentController implements StudentRepository {
@@ -97,6 +99,13 @@ public class jdbcStudentController implements StudentRepository {
 	@Override
 	public Student downloadPhoto(long id) {
 		return jdbcTemplate.queryForObject("SELECT * FROM student WHERE id_student = ?", BeanPropertyRowMapper.newInstance(Student.class), id);
+	}
+	public List<StudentShowPresences> SearchPresenceById(long id) {
+		return jdbcTemplate.query("select distinct lesson.presence,module.title, agenda.date from student"
+				+ " inner join lesson on lesson.student_id_student=student.id_student"
+				+ " inner join agenda on agenda.id_agenda=lesson.agenda_id_agenda"
+				+ " inner join module on agenda.module_id_module=module.id_module"
+				+ " where student.id_student=? ", BeanPropertyRowMapper.newInstance(StudentShowPresences.class),id);
 	}
 }
 

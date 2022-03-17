@@ -24,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 import it.red.JdbcUtilityInterface;
 import it.red.LessonHomepageStudent;
 import it.red.StudentShowGrades;
+import it.red.StudentShowPresences;
 
 
 @RestController
@@ -51,7 +52,7 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		if(this.repository.save(newStudent)>0)
 			return new ResponseEntity<String>("SAVED",HttpStatus.CREATED);
 		else 
-			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_FOUND);
 	}
 
 	//doRetrieveByKey
@@ -143,7 +144,6 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 
 	}
 
-
 	@RequestMapping(value = "/Student/getFile", method = RequestMethod.POST)
 	public String getFile(@PathVariable long id_student) {
 
@@ -152,8 +152,13 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 
 	}
 	
-	
-	
+	//listaPresenzeStudente
+	@RequestMapping(value="/Students/show/ElencoPresenze")
+	public List<StudentShowPresences> ShowPresences(@RequestHeader int id_student){
+		System.out.println("MOSTRA PRESENZE");
+		return repository.SearchPresenceById(id_student);
+		
+	}
 
 
 }

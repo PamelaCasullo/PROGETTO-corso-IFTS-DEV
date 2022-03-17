@@ -14,7 +14,6 @@ public class Credenziali {
 		this.passwordq = passwordq;
 	}
 	
-	
 	public String getEmailq() {
 		return emailq;
 	}

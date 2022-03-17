@@ -1,5 +1,4 @@
 
-
 var sessionSt = sessionStorage.getItem("value");
 
 function caricamento() {
@@ -52,7 +51,7 @@ function loadVote(){
                  +"<li class='list-group-item d-flex justify-content-between align-items-center' style='background-color: #484848; border: 1px solid ;'>"
                       
                   +   "<!--NOME MODULO-->"
-                   + "  <span id='student_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>"
+                   + "<span id='student_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>"
                       
                     +  "<!--DATA VOTO-->"
                      +" <span style='margin: auto; color: white;' id='student_vote_date' class='font-text'>"+grades.date+"</span>"

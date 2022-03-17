@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.red.LessonHomepageStudent;
 import it.red.StudentShowGrades;
+import it.red.StudentShowPresences;
 
 public interface StudentRepository {
 	
@@ -41,6 +42,9 @@ public interface StudentRepository {
 	//GET
 	//mostra tutti i voti
 	List<StudentShowGrades> SearchGradesById(long id);
+	//GET
+	//mostra tutte le presenze e le assenze
+	List<StudentShowPresences> SearchPresenceById(long id);
 
 	
 	long uploadPhoto(Photo photo);

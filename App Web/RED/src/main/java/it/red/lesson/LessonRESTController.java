@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.red.JdbcUtilityInterface;
-import it.red.agenda.Agenda;
 
 @RestController
 public class LessonRESTController implements JdbcUtilityInterface<Lesson> {
