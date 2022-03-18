@@ -49,6 +49,30 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
     public static final String PASSWORD_KEY = "textPassword";
     private final static String TEXT_ID_KEY = "textId";
 
+    public void funzione(Bundle savedInstanceState){
+        // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
+        drawerLayout = findViewById(R.id.my_drawer_layout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
+        navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getBackground().setAlpha(120);
+
+        // SERVE PER COLLEGARSI CON IL LAYOUT DELL'AMBURGER MENU (PER APRIRE E CHIUDERE)
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                    new TeacherHomepageFragment()).commit();
+            navigationView.setCheckedItem(R.id.HOMEPAGEDOC);
+        }
+
+        // SERVE PER FAR APPARIRE L'AMBURGER MENU
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +100,7 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
                     textViewNameLastName.setText(all);
                     TextView editText = findViewById(R.id.textViewDataInstitutionalEmail);
                     editText.setText(teacher.getInstitutional_email());
+                    funzione(savedInstanceState);
                 }
             }
             @EverythingIsNonNull
@@ -85,26 +110,7 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
             }
         });
 
-        // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
-        drawerLayout = findViewById(R.id.my_drawer_layout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
-        navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.getBackground().setAlpha(120);
 
-        // SERVE PER COLLEGARSI CON IL LAYOUT DELL'AMBURGER MENU (PER APRIRE E CHIUDERE)
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                    new TeacherHomepageFragment()).commit();
-            navigationView.setCheckedItem(R.id.HOMEPAGEDOC);
-        }
-
-        // SERVE PER FAR APPARIRE L'AMBURGER MENU
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     // SERVE A APRIRE E CHIUDERE IL MENU
