@@ -32,12 +32,12 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
 
     SharedPreferences sharedpreferences;
     String email, password;
+    int textId = 0;
 
-    // key for storing email.
     public static final String EMAIL_KEY = "textEmail";
     public final static String MY_PREFERENCES = "MyPref";
-    // key for storing password.
     public static final String PASSWORD_KEY = "textPassword";
+    private final static String TEXT_ID_KEY = "textId";
 
 
     @Override
@@ -106,6 +106,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
                 sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
                 email = sharedpreferences.getString(EMAIL_KEY, null);
                 password = sharedpreferences.getString(PASSWORD_KEY, null);
+                textId = sharedpreferences.getInt(TEXT_ID_KEY, 0);
 
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 StudentMenuCreationClass studentMenuCreationClass = new StudentMenuCreationClass();

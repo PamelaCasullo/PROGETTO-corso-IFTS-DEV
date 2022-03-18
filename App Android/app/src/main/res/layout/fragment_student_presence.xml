@@ -22,6 +22,7 @@
             android:paddingHorizontal="35dp"
             android:layout_gravity="center_vertical"
             android:text="DATA"
+
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="15sp"/>
@@ -31,7 +32,8 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="35dp"
             android:layout_gravity="center_vertical"
-            android:text="MATERIA"
+            android:text="MODULO"
+
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="15sp"/>
@@ -42,6 +44,7 @@
             android:paddingHorizontal="30dp"
             android:layout_gravity="center_vertical"
             android:text="PRESENZE"
+
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="15sp"/>
@@ -49,7 +52,12 @@
     </LinearLayout>
 
     <!--lista dei voti ottenuti tramite database-->
-
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listview"
+        android:layout_below="@+id/barraTitoli"
+        android:layout_above="@+id/footer"/>
     <!--footer con sfondo rosso e nome progetto-->
     <TextView
         android:id="@+id/footer"

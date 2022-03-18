@@ -7,14 +7,14 @@ public class Course {
 	private String name;
 	private Date start_date;
 	private String type_of_course;
-	private int course_id_institution;
+	private int institution_id_institution;
 	
 	public Course(int id_course, String name, Date start_date, String type_of_course, int institution_id_institution) {
 		this.id_course = id_course;
 		this.name = name;
 		this.start_date = start_date;
 		this.type_of_course = type_of_course;
-		this.course_id_institution = institution_id_institution;
+		this.institution_id_institution = institution_id_institution;
 	}
 
 	public int getId_course() {
@@ -50,11 +50,11 @@ public class Course {
 	}
 
 	public int getInstitution_id_institution() {
-		return course_id_institution;
+		return institution_id_institution;
 	}
 
 	public void setInstitution_id_institution(int institution_id_institution) {
-		this.course_id_institution = institution_id_institution;
+		this.institution_id_institution = institution_id_institution;
 	}
 	
 	

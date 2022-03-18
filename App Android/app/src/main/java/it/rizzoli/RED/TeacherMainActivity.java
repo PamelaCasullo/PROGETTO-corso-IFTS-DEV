@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,6 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import it.rizzoli.RED.Connection.AsynkTaskApp;
+import it.rizzoli.RED.Connection.Teacher;
+import it.rizzoli.RED.Connection.TeacherWebInterface;
 import it.rizzoli.RED.Teacher.TeacherCalendarFragment;
 import it.rizzoli.RED.Teacher.TeacherHomepageFragment;
 import it.rizzoli.RED.Teacher.TeacherMenuCreationClass;
@@ -23,6 +29,10 @@ import it.rizzoli.RED.Teacher.TeacherPresenceFragment;
 import it.rizzoli.RED.Teacher.TeacherProfileFragment;
 import it.rizzoli.RED.Teacher.TeacherSetVoteFragment;
 import it.rizzoli.RED.Teacher.TeacherVoteFragment;
+import okhttp3.internal.annotations.EverythingIsNonNull;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TeacherMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public DrawerLayout drawerLayout;
@@ -32,20 +42,50 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
 
     SharedPreferences sharedpreferences;
     String email, password;
+    int textId = 0;
 
-    // key for storing email.
     public static final String EMAIL_KEY = "textEmail";
     public final static String MY_PREFERENCES = "MyPref";
-    // key for storing password.
     public static final String PASSWORD_KEY = "textPassword";
+    private final static String TEXT_ID_KEY = "textId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_main);
 
-        // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
+        SharedPreferences preferiti = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
+        AsynkTaskApp app = (AsynkTaskApp)getApplication();
+        TeacherWebInterface apiService;
+        apiService = app.retrofit.create(TeacherWebInterface.class);
+
+        Call<Teacher> call = apiService.searchById(textId);
+
+        call.enqueue(new Callback<Teacher>() {
+            @EverythingIsNonNull
+            @Override
+            public void onResponse(Call call, Response response) {
+                Teacher teacher = (Teacher) response.body();
+                if(response.code() == 500) {
+                    Toast.makeText(getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                } else {
+                    TextView textViewNameLastName = findViewById(R.id.textViewNameLastName);
+                    String all = teacher.getFirst_name() + " " + teacher.getLast_name();
+                    textViewNameLastName.setText(all);
+                    TextView editText = findViewById(R.id.textViewDataInstitutionalEmail);
+                    editText.setText(teacher.getInstitutional_email());
+                }
+            }
+            @EverythingIsNonNull
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.e("Fallito! ", t.getMessage());
+            }
+        });
+
+        // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
         drawerLayout = findViewById(R.id.my_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
         navigationView = findViewById(R.id.navigation_view);
@@ -104,6 +144,7 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
                 sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
                 email = sharedpreferences.getString(EMAIL_KEY, null);
                 password = sharedpreferences.getString(PASSWORD_KEY, null);
+                textId = sharedpreferences.getInt(TEXT_ID_KEY, 0);
 
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 TeacherMenuCreationClass teacherMenuCreationClass = new TeacherMenuCreationClass();

@@ -17,10 +17,10 @@
         android:layout_marginBottom="3dp">
 
         <ImageView
-            android:id="@+id/foto"
+            android:id="@+id/photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/batman"/>
+            android:background="@drawable/profile"/>
     </androidx.cardview.widget.CardView>
 
     <TextView

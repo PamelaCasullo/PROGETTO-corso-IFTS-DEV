@@ -2,19 +2,19 @@ package it.red.lesson;
 
 public class Lesson {
 	private int id_lesson;
-	private int lesson_id_agenda;
+	private int agenda_id_agenda;
 	private boolean presence;
 	private int grade;
-	private int lesson_id_student;
+	private int student_id_student;
 	
 	public Lesson() {}
 	
-	public Lesson(int id_lesson, int lesson_id_agenda, boolean presence, int grade, int lesson_id_student) {
+	public Lesson(int id_lesson, int agenda_id_agenda, boolean presence, int grade, int student_id_student) {
 		this.id_lesson = id_lesson;
-		this.lesson_id_agenda = lesson_id_agenda;
+		this.agenda_id_agenda = agenda_id_agenda;
 		this.presence = presence;
 		this.grade = grade;
-		this.lesson_id_student = lesson_id_student;
+		this.student_id_student = student_id_student;
 	}
 	
 	public int getId_lesson() {
@@ -26,10 +26,10 @@ public class Lesson {
 	}
 	
 	public int getAgenda_id_agenda() {
-		return lesson_id_agenda;
+		return agenda_id_agenda;
 	}
 	public void setAgenda_id_agenda(int agenda_id_agenda) {
-		this.lesson_id_agenda = agenda_id_agenda;
+		this.agenda_id_agenda = agenda_id_agenda;
 	}
 	
 	public boolean getPresence() {
@@ -48,11 +48,11 @@ public class Lesson {
 	}
 	
 	public int getStudent_id_student() {
-		return lesson_id_student;
+		return student_id_student;
 	}
 	
 	public void setStudent_id_student(int student_id_student) {
-		this.lesson_id_student = student_id_student;
+		this.student_id_student = student_id_student;
 	}
 	
 	

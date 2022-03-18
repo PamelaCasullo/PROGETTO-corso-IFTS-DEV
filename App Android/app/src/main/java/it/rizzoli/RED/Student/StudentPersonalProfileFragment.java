@@ -2,6 +2,7 @@ package it.rizzoli.RED.Student;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,10 +30,12 @@ import retrofit2.Response;
 
 public class StudentPersonalProfileFragment extends Fragment {
 
+    String textEmail = null;
     int textId = 0;
     // Identificatore delle preferenze dell'applicazione
     private final static String MY_PREFERENCES = "MyPref";
     // Costante relativa al nome della particolare preferenza
+    private final static String TEXT_EMAIL_KEY = "textEmail";
     private final static String TEXT_ID_KEY = "textId";
 
 
@@ -40,16 +44,15 @@ public class StudentPersonalProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_student_personal_profile, container, false);
         Button updateDataButton;
-        // LEGGIAMO LA PREFERENZA
+
         SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-        // Leggiamo l'informazione associata alla proprietà TEXT_DATA
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
+        textEmail = preferiti.getString(TEXT_EMAIL_KEY, null);
         updateDataButton = view.findViewById(R.id.updateButton);
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
         StudentWebInterface apiService;
         apiService = app.retrofit.create(StudentWebInterface.class);
-
         Call<Student> dataVisualization = apiService.searchById(textId);
 
         dataVisualization.enqueue(new Callback<Student>() {

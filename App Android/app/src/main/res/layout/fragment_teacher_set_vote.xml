@@ -25,8 +25,9 @@
             android:layout_marginBottom="50dp"/>
 
         <!--INSERISCI LA DATA-->
+
         <EditText
-            android:id="@+id/idEdtCourseName"
+            android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -38,7 +39,7 @@
 
         <!--INSERISCI IL NOME/COGNOME-->
         <EditText
-            android:id="@+id/idEdtCourseDuration"
+            android:id="@+id/idEditCourseDuration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

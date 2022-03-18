@@ -22,12 +22,12 @@
 
 
     <ImageView
-        android:id="@+id/foto"
+        android:id="@+id/photo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/textViewProfiloPersonale"
         android:layout_marginTop="-1600px"
-        android:background="@drawable/batman"
+        android:background="@drawable/profile"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_horizontal" />
@@ -154,7 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextPhoneNumber"
         android:layout_toEndOf="@+id/textViewPassword"
-        android:hint=""
+        android:inputType="textVisiblePassword"
         android:textColorHint="@color/white"
         android:textColor="@color/white" />
 
