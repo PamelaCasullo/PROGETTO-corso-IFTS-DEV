@@ -5,7 +5,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,6 +19,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import it.rizzoli.RED.Connection.AsynkTaskApp;
+import it.rizzoli.RED.Connection.Student;
+import it.rizzoli.RED.Connection.StudentWebInterface;
+import it.rizzoli.RED.Connection.Teacher;
+import it.rizzoli.RED.Connection.TeacherWebInterface;
 import it.rizzoli.RED.Student.StudentCalendarFragment;
 import it.rizzoli.RED.Student.StudentHomepageFragment;
 import it.rizzoli.RED.Student.StudentMenuCreationClass;
@@ -23,6 +31,10 @@ import it.rizzoli.RED.Student.StudentPersonalProfileFragment;
 import it.rizzoli.RED.Student.StudentPresenceFragment;
 import it.rizzoli.RED.Student.StudentProfileFragment;
 import it.rizzoli.RED.Student.StudentVoteFragment;
+import okhttp3.internal.annotations.EverythingIsNonNull;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class StudentMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -39,13 +51,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
     public static final String PASSWORD_KEY = "textPassword";
     private final static String TEXT_ID_KEY = "textId";
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_main);
-
-
+    public void funzione(Bundle savedInstanceState){
         // SERVE A VISUALIZZARE L'ANIMAZIONE FIGA DEL MENU APRI/CHIUDI
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
@@ -67,6 +73,46 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
 
         // SERVE PER FAR APPARIRE L'AMBURGER MENU
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_student_main);
+
+        SharedPreferences preferiti = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        textId = preferiti.getInt(TEXT_ID_KEY, 0);
+
+        AsynkTaskApp app = (AsynkTaskApp)getApplication();
+        StudentWebInterface apiService;
+        apiService = app.retrofit.create(StudentWebInterface.class);
+
+        Call<Student> call = apiService.searchById(textId);
+
+        call.enqueue(new Callback<Student>() {
+            @EverythingIsNonNull
+            @Override
+            public void onResponse(Call call, Response response) {
+                Student student = (Student) response.body();
+                if(response.code() == 500) {
+                    Toast.makeText(getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                } else {
+                    TextView textViewNameLastName = findViewById(R.id.textViewNameLastName);
+                    String all = student.getFirst_name() + " " + student.getLast_name();
+                    textViewNameLastName.setText(all);
+                    TextView editText = findViewById(R.id.textViewDataInstitutionalEmail);
+                    editText.setText(student.getInstitutional_email());
+                    funzione(savedInstanceState);
+                }
+            }
+            @EverythingIsNonNull
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.e("Fallito! ", t.getMessage());
+            }
+        });
+
+
     }
 
     // SERVE A APRIRE E CHIUDERE IL MENU
