@@ -222,3 +222,31 @@
     color: black;
     transition: 0.4s;
 }
+
+
+/*STYLE DEL PULSANTE MODIFICA DATI*/
+.btn-primary {
+    background-color: darkred;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    border-color: darkred;
+    transition: 0.4s;
+}
+
+
+.card-body-collapse {
+    background-color: darkred;
+
+}
+
+.form-control {
+    margin: auto;
+}
+
+.form-floating {
+    margin-top: 10px;
+}

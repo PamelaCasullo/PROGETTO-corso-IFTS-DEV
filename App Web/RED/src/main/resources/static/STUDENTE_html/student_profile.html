@@ -113,13 +113,51 @@
               <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">NUMERO TELEFONICO</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="phone_number">123456789</div> </span></li>
             </ul>
             <div class="card-body">
-              <button type="button" class="btn btn-outline-danger" style="width: 100%;" onclick="togglePopup()">MODIFICA I DATI</button>
-              <button type="button" class="btn btn-outline-light" style="width: 100%; margin-top: 10px;">RECUPERA PASSWORD</button>
+              <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  MODIFICA I DATI
+                </a>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body-collapse">
+                  <h2 style="text-align: center;">INSERISCI I NUOVI DATI</h2>
+                  
+                  <div class="form-floating">
+                   
+                    <!--INPUT EMAIL PERSONALE-->
+                    <input type="email" name="personal_email_update" class="form-control" id="personal_email_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="personal_email_update" style="color: white;">E-mail Personale:</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    
+                    <!--INPUT PASSSOWRD-->
+                    <input type="password" name="password_input_update" class="form-control" id="password_input_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="password_input_update" style="color: white;">Password:</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    
+                    <!--INPUT NUMERO TELEFONICO-->
+                    <input type="text" name="phone_number_upate" class="form-control" id="phone_number_upate" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="phone_number_upate" style="color: white;">Numero Telefonico:</label>
+                  </div>
+                
+                <!--PULSANTE AGGIORNA DATI-->
+                <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;" onclick="#">AGGIORNA I DATI</button>
+                
+              </div>
+                <div>
+                </div>
+              </div>
             </div>
           </div>
       </div>
 
-      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   </body>
 </html>
