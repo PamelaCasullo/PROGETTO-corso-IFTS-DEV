@@ -16,7 +16,7 @@
 
     <title>RED-HOME</title>
   </head>
-  <body class="black-color-ground" onload=caricamento()>
+  <body class="black-color-ground" onload="caricamento();">
         <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px 3px 0px darkred;">
             
@@ -118,6 +118,7 @@
                   MODIFICA I DATI
                 </a>
               </p>
+              <form id=newForm>
               <div class="collapse" id="collapseExample">
                 <div class="card card-body-collapse">
                   <h2 style="text-align: center;">INSERISCI I NUOVI DATI</h2>
@@ -125,7 +126,7 @@
                   <div class="form-floating">
                    
                     <!--INPUT EMAIL PERSONALE-->
-                    <input type="email" name="personal_email_update" class="form-control" id="personal_email_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    <input type="email" name="personal_email" class="form-control" id="personal_email_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
                     
                     <label for="personal_email_update" style="color: white;">E-mail Personale:</label>
                   </div>
@@ -133,7 +134,7 @@
                   <div class="form-floating">
                     
                     <!--INPUT PASSSOWRD-->
-                    <input type="password" name="password_input_update" class="form-control" id="password_input_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    <input type="password" name="password_input" class="form-control" id="password_input_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
                     
                     <label for="password_input_update" style="color: white;">Password:</label>
                   </div>
@@ -141,13 +142,13 @@
                   <div class="form-floating">
                     
                     <!--INPUT NUMERO TELEFONICO-->
-                    <input type="text" name="phone_number_upate" class="form-control" id="phone_number_upate" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    <input type="text" name="phone_number" class="form-control" id="phone_number_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
                     
                     <label for="phone_number_upate" style="color: white;">Numero Telefonico:</label>
                   </div>
                 
                 <!--PULSANTE AGGIORNA DATI-->
-                <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;" onclick="#">AGGIORNA I DATI</button>
+                <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;" onclick="aggiorna()">AGGIORNA I DATI</button></form>
                 
               </div>
                 <div>

@@ -26,7 +26,7 @@ public interface StudentRepository {
 	
 	//GET
 	//aggiorno un T, passandogli un T
-	long updateValueById(Student p);
+	int updateValueById(Student p);
 		
 	//GET
 	//Cancello un T dal DB tramite id T

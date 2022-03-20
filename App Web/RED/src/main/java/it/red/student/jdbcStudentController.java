@@ -55,7 +55,7 @@ public class jdbcStudentController implements StudentRepository {
 	}
 
 	@Override
-	public long updateValueById(Student p) {
+	public int updateValueById(Student p) {
 		return jdbcTemplate.update("UPDATE student SET"
 				+ "	personal_email = ?,"
 				+ "	phone_number = ?,"

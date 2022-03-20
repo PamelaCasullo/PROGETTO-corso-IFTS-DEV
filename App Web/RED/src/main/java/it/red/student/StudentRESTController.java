@@ -70,17 +70,19 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		
 		Student i = this.repository.findValueById(updateProfile.getId_student());
 
-		if(updateProfile.personal_email != null) {
+		if(updateProfile.personal_email.isBlank()) {
+			System.out.println("email="+updateProfile.personal_email);
 			i.setPersonal_email(updateProfile.personal_email);
 		}
-		if(updateProfile.password != null) {
+		if(updateProfile.password.isBlank()) {
+			System.out.println("pws="+updateProfile.password);
 			i.setPassword(updateProfile.password);
 		}
-		if(updateProfile.phone_number != null) {
+		if(updateProfile.phone_number.isBlank()) {
+			System.out.println("ph="+updateProfile.password);
 			i.setPhone_number(updateProfile.phone_number);
 		}
-
-		System.out.println(i.getPersonal_email());
+		
 		this.repository.updateValueById(i);
 		return i;
 	}

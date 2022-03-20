@@ -2,7 +2,7 @@ package it.red;
 
 public class StudentShowGrades {
 	/*
-			select teacher.first_name,teacher.last_name, lesson.grade, module.title, agenda.date from student 
+select teacher.first_name,teacher.last_name, lesson.grade, module.title, agenda.date from student 
 right join lesson on lesson.student_id_student=student.id_student 
 left join agenda on agenda.id_agenda=lesson.agenda_id_agenda 
 left join module on module.id_module=agenda.module_id_module 
