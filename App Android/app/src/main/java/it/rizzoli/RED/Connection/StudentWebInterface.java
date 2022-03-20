@@ -2,13 +2,13 @@ package it.rizzoli.RED.Connection;
 
 import java.util.List;
 
-import it.rizzoli.RED.Student.Presence;
+import it.rizzoli.RED.Student.RecyclerViewPresence;
 import it.rizzoli.RED.Student.StudentUpdateProfile;
+import it.rizzoli.RED.Student.RecyclerViewVote;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -25,6 +25,9 @@ public interface StudentWebInterface {
     Call<Student> updateElementById(@Body StudentUpdateProfile studentUpdateProfile);
 
     @GET("/Students/show/ElencoPresenze")
-    Call<List<Presence>> showPreferences(@Header("id_student") int id_student);
+    Call<List<RecyclerViewPresence>> showPresence(@Header("id_student") int id_student);
+
+    @GET("/Students/show/ElencoVoti")
+    Call<List<RecyclerViewVote>> showVote(@Header("id_student") int id_student);
 
 }
