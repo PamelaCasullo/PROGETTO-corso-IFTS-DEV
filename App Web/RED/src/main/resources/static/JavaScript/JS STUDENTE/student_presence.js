@@ -20,14 +20,25 @@ function onPageLoaded() {
                 console.log(student);
  				console.log(idx);
  				if(student.presence==true) {
-				var risultato='PRESENZA';
-				} else var risultato='ASSENZA';
-                document.getElementById("daRiempire_Presenze").innerHTML += 
-                "<tr>"+
-                "<th scope='row'><span class='font-text' id='student_presence_date'>"+student.date+"</span></th>"+
-                "<td><span class='font-text' id='student_presence_module'>"+student.title+"</span></td>"+
-                "<td style='background-color: darkgreen;' id='style_td_presence'><span class='titles-shadow-black font-text' id='student_presence'>"+risultato+"</span>"+
-                "</td></tr>";
+                    var risultato='PRESENTE';
+                    document.getElementById("daRiempire_Presenze").innerHTML += 
+                    "<tr>"+
+                    "<th scope='row'><span class='font-text' id='student_presence_date'>"+student.date+"</span></th>"+
+                    "<td><span class='font-text' id='student_presence_module'>"+student.title+"</span></td>"+
+                    "<td><span class='font-text' id='student_presence_module'>Qua ci va il docente</span></td>" +
+                    "<td style='background-color: darkgreen;' id='style_td_presence'><span class='titles-shadow-black font-text' id='student_presence'>"+risultato+"</span>"+
+                    "</td></tr>";
+				} 
+                if(student.presence==false) {
+                    risultato = 'ASSENTE'
+                    document.getElementById("daRiempire_Presenze").innerHTML += 
+                    "<tr>"+
+                    "<th scope='row'><span class='font-text' id='student_presence_date'>"+student.date+"</span></th>"+
+                    "<td><span class='font-text' id='student_presence_module'>"+student.title+"</span></td>"+
+                    "<td><span class='font-text' id='student_presence_module'>Qua ci va il docente</span></td>" +
+                    "<td style='background-color: darkred;' id='style_td_presence'><span class='titles-shadow-black font-text' id='student_presence'>"+risultato+"</span>"+
+                    "</td></tr>";
+                }
           
           
 			}
