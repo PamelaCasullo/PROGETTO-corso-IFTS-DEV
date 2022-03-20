@@ -51,8 +51,8 @@ function loadVote(){
 			}
 			document.getElementById("MostraVoti").innerHTML+=
 			   "<tr> <th scope='row'><span class='font-text' id='student_votes_date'>"+grades.date+"</span></th>"+
-			   "<td><span class='font-text' id='student_votes_module'>Qua ci va il modulo</span></td>"+
-			   "<td><span class='font-text' id='student_votes_module'>Qua va il docente</span></td>" + 	
+			   "<td><span class='font-text' id='student_votes_module'>" + grades.title + "</span></td>"+
+			   "<td><span class='font-text' id='student_votes_module'>" + grades.first_name + " " + grades.last_name + "</span></td>" + 	
                "<td style='background-color: darkred; text-align: center;' id='student_votes_vote'><span class='font-text'>"+ch+"</span></td>"+
                "</tr></tbody></table> ";
                console.log(grades);  
