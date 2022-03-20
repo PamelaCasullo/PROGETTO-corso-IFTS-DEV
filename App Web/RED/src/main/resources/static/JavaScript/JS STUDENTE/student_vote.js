@@ -50,14 +50,9 @@ function loadVote(){
 				ch="Nessun voto assegnato";
 			}
 			document.getElementById("MostraVoti").innerHTML+=
-			  " <table class='table'>"+
-			   "<thead><tr style='background-color: transparent;'>"+
-			   "<th scope='col'><h4 class='titles-shadow titles-underline'>DATA</h4></th>"+
-			   "<th scope='col'><h4 class='titles-shadow titles-underline'>MATERIA</h4></th>"+
-			   "<th scope='col'><h4 class='titles-shadow titles-underline'>VOTO</h4></th></tr></thead>"+
-			   "<tbody style='background-color: rgb(68, 66, 66);'>"+
 			   "<tr> <th scope='row'><span class='font-text' id='student_votes_date'>"+grades.date+"</span></th>"+
-			   "<td><span class='font-text' id='student_votes_module'>MODULO 07 - SVILUPPO APPLICAZIONI ANDROID</span></td>"+	
+			   "<td><span class='font-text' id='student_votes_module'>Qua ci va il modulo</span></td>"+
+			   "<td><span class='font-text' id='student_votes_module'>Qua va il docente</span></td>" + 	
                "<td style='background-color: darkred; text-align: center;' id='student_votes_vote'><span class='font-text'>"+ch+"</span></td>"+
                "</tr></tbody></table> ";
                console.log(grades);  
