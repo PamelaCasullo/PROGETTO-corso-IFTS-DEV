@@ -17,9 +17,6 @@ public class Presence implements Serializable {
     @Expose
     private String date;
 
-    public Presence(){
-    }
-
     public Presence(boolean presence, String title, String date) {
         this.presence = presence;
         this.title = title;

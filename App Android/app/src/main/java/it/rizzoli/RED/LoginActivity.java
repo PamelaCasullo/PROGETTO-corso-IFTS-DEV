@@ -183,7 +183,6 @@ public class LoginActivity extends AppCompatActivity {
             editor.putInt(TEXT_ID_KEY, id);
             editor.putBoolean(TEXT_KIND_KEY, isStudent);
             editor.apply();
-
         }
         updatePreferencesData();
     }
