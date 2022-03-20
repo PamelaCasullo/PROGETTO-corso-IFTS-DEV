@@ -51,25 +51,12 @@ function loadVote(){
 			}
 			
 				 
-			document.getElementById("MostraVoti").innerHTML+=
-			     "<p style='padding: 5px;' class='titles-shadow titles-underline'>Visualizza tutti i voti<a href='student_votes.html' class='button-votes'>VAI</a><p>"
-                + "<ul class='list-group'>"
-                 +"<li class='list-group-item d-flex justify-content-between align-items-center' style='background-color: #484848; border: 1px solid ;'>"
-                      
-                  +   "<!--NOME MODULO-->"
-                   + "<span id='student_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>"
-                      
-                    +  "<!--DATA VOTO-->"
-                     +" <span style='margin: auto; color: white;' id='student_vote_date' class='font-text'>"+grades.date+"</span>"
-                      
-                      +"<!--VOTO-->"
-                      +"<span class='badge bg-danger rounded-pill' id='student_vote'>"+ch+"</span>"
-                    
-                   + "</li>"
-                  +"</ul>";
-                  
-	     			
-					
+			document.getElementById("MostraVoti").innerHTML+=  
+                    "<li class='list-group-item d-flex justify-content-between align-items-center' style='background-color: #484848; border: 1px solid ;'>" +
+                    "<span id='student_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>" +
+                    "<span style='margin: auto; color: white;' id='student_vote_date' class='font-text'>"+grades.date+"</span>" +
+                    "<span class='badge bg-danger rounded-pill' id='student_vote'>"+ch+"</span>" +
+                    "</li>";					
     		}
     		
  
