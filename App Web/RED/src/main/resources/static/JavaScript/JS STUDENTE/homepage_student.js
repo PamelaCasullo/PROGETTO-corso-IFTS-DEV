@@ -44,7 +44,7 @@ function loadVote(){
              for (var idx = 0; idx < jsonObj.length;idx++) {
 	  		 var grades = jsonObj[idx];
 	  		 
-			document.getElementById("MostraVoti").innerHTML=
+			document.getElementById("MostraVoti").innerHTML+=
 			     "<p style='padding: 5px;' class='titles-shadow titles-underline'>Visualizza tutti i voti<a href='student_votes.html' class='button-votes'>VAI</a><p>"
                 + "<ul class='list-group'>"
                  +"<li class='list-group-item d-flex justify-content-between align-items-center' style='background-color: #484848; border: 1px solid ;'>"
@@ -84,7 +84,7 @@ function loadLesson() {
              for (var idx = 0; idx < jsonObj.length;idx++) {
 	  		 var lesson = jsonObj[idx];
 	  		 
-			document.getElementById("inserisciLezioni").innerHTML=
+			document.getElementById("inserisciLezioni").innerHTML+=
 			
 			"<div class='list-group' style='box-shadow: 0px 3px 0px darkred;'>" +
 			 "<a class='list-group-item list-group-item-action active' aria-current='true' style='background-color: darkred; border: 2px solid black;'>"+

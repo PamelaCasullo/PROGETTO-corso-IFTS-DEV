@@ -43,8 +43,8 @@ function loadVote(){
              for (var idx = 0; idx < jsonObj.length;idx++) {
 	  		 var grades = jsonObj[idx];
 	  		 
-			document.getElementById("MostraVoti").innerHTML=
-			   "<table class='table'>"+
+			document.getElementById("MostraVoti").innerHTML+=
+			  " <table class='table'>"+
 			   "<thead><tr style='background-color: transparent;'>"+
 			   "<th scope='col'><h4 class='titles-shadow titles-underline'>DATA</h4></th>"+
 			   "<th scope='col'><h4 class='titles-shadow titles-underline'>MATERIA</h4></th>"+
@@ -53,7 +53,8 @@ function loadVote(){
 			   "<tr> <th scope='row'><span class='font-text' id='student_votes_date'>"+grades.date+"</span></th>"+
 			   "<td><span class='font-text' id='student_votes_module'>MODULO 07 - SVILUPPO APPLICAZIONI ANDROID</span></td>"+	
                "<td style='background-color: darkred; text-align: center;' id='student_votes_vote'><span class='font-text'>"+grades.grade+"</span></td>"+
-               "</tr></tbody> </table>";  
+               "</tr></tbody></table> ";
+               console.log(grades);  
       
     		}
  				
