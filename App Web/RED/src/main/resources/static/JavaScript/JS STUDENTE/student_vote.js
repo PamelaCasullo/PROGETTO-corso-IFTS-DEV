@@ -34,6 +34,7 @@ function loadVote(){
     var xmlHttp = new XMLHttpRequest();
 	var daCar = JSON.parse(sessionSt);
 	 var id_student = daCar.id_student;
+	  var ch="Nessun voto assegnato";
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             //codice di gestione del ritorno dal servizio web
@@ -42,7 +43,12 @@ function loadVote(){
             var jsonObj = JSON.parse(xmlHttp.responseText);
              for (var idx = 0; idx < jsonObj.length;idx++) {
 	  		 var grades = jsonObj[idx];
-	  		 
+	  		
+	  		  if(grades.grade!=0) {
+						ch=grades.grade;
+			} else {
+				ch="Nessun voto assegnato";
+			}
 			document.getElementById("MostraVoti").innerHTML+=
 			  " <table class='table'>"+
 			   "<thead><tr style='background-color: transparent;'>"+
@@ -52,7 +58,7 @@ function loadVote(){
 			   "<tbody style='background-color: rgb(68, 66, 66);'>"+
 			   "<tr> <th scope='row'><span class='font-text' id='student_votes_date'>"+grades.date+"</span></th>"+
 			   "<td><span class='font-text' id='student_votes_module'>MODULO 07 - SVILUPPO APPLICAZIONI ANDROID</span></td>"+	
-               "<td style='background-color: darkred; text-align: center;' id='student_votes_vote'><span class='font-text'>"+grades.grade+"</span></td>"+
+               "<td style='background-color: darkred; text-align: center;' id='student_votes_vote'><span class='font-text'>"+ch+"</span></td>"+
                "</tr></tbody></table> ";
                console.log(grades);  
       

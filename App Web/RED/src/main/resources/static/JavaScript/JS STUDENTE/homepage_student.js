@@ -35,6 +35,7 @@ function loadVote(){
     var xmlHttp = new XMLHttpRequest();
 	var daCar = JSON.parse(sessionSt);
 	 var id_student = daCar.id_student;
+	 var ch="Nessun voto assegnato";
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             //codice di gestione del ritorno dal servizio web
@@ -43,7 +44,13 @@ function loadVote(){
             var jsonObj = JSON.parse(xmlHttp.responseText);
              for (var idx = 0; idx < jsonObj.length;idx++) {
 	  		 var grades = jsonObj[idx];
-	  		 
+	  		 if(grades.grade!=0) {
+						ch=grades.grade;
+			} else {
+				ch="Nessun voto assegnato";
+			}
+			
+				 
 			document.getElementById("MostraVoti").innerHTML+=
 			     "<p style='padding: 5px;' class='titles-shadow titles-underline'>Visualizza tutti i voti<a href='student_votes.html' class='button-votes'>VAI</a><p>"
                 + "<ul class='list-group'>"
@@ -56,14 +63,18 @@ function loadVote(){
                      +" <span style='margin: auto; color: white;' id='student_vote_date' class='font-text'>"+grades.date+"</span>"
                       
                       +"<!--VOTO-->"
-                      +"<span class='badge bg-danger rounded-pill' id='student_vote'>"+grades.grade+"</span>"
+                      +"<span class='badge bg-danger rounded-pill' id='student_vote'>"+ch+"</span>"
                     
                    + "</li>"
                   +"</ul>";
-	     
+                  
+	     			
+					
     		}
- 				
+    		
+ 
         }
+        
     };
 
     xmlHttp.open("GET", uriAddr);
@@ -94,9 +105,9 @@ function loadLesson() {
              "<!--DATA ORARIO-->"+
              "<small id='datetime_calendar'><span class='badge bg-dark'><h6 style='margin: 0;' id='student_lesson_date'>"+lesson.date+"</h6></span></small></div>"+
               "<!--DOCENTE-->"+
-              "<small id='student_teacher'>"+ lesson.first_name +"</small></a></div>";
+              "<small id='student_teacher'>"+ lesson.first_name + " "+ lesson.last_name +"</small></a></div>";
     		}
- 				
+ 			
         }
     };
 
