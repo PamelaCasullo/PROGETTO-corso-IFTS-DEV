@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.red.JdbcUtilityInterface;
+import it.red.lesson.Lesson;
+import it.red.student.Student;
 
 
 @RestController
@@ -143,12 +145,24 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 			//	public List<ModuleTeacher> SearchGradeByIdSpecified(long id) {
 
 		}
+	
 		
 	@RequestMapping(value="/Teachers/show/ElencoVoteModuleSelected/{title}")
 	public List<VoteTeacher> Show(@PathVariable String title, @RequestHeader long id_teacher ){
 		System.out.println("ElencoVotiSelected");
 		return repository.ShowGradeById(id_teacher, title);
 		
+	}
+	@RequestMapping(value="/Teachers/add/newVoto", method=RequestMethod.POST)
+	public ResponseEntity<String> addVoto(@RequestBody Lesson newItem) {
+		if(this.repository.saveVoto(newItem)>0)
+			return new ResponseEntity<String>("SAVED",HttpStatus.CREATED);
+		else 
+			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_ACCEPTABLE);
+	}
+	@RequestMapping(value="/Teachers/search/studentsEmail")
+	public List<Student> searchEmailStudent(@RequestHeader int id_teacher) {
+		return repository.showStudentByTeacher(id_teacher);
 	}
 
 }
