@@ -6,58 +6,13 @@
     android:layout_height="wrap_content"
     android:background="@drawable/backg">
 
-    <!--barra con i titoli di data/materia/voto, niente id perchè non hanno bisogno di essere modificati-->
-    <LinearLayout
-        android:id="@+id/barraTitoli"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_center3_3"
-        android:elevation="10dp"
-        android:weightSum="99"
-        android:orientation="horizontal"
-        android:padding="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="DATA"
-            android:layout_weight="33"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="MODULO"
-            android:layout_weight="33"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="VOTO"
-            android:layout_weight="33"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
-
-    </LinearLayout>
-
-    <!--lista dei voti ottenuti tramite database-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_below="@+id/barraTitoli"
         android:layout_above="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"/>
-    <!--footer con sfondo rosso e nome progetto-->
+
     <TextView
         android:id="@+id/footer"
         android:layout_width="match_parent"

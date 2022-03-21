@@ -32,6 +32,7 @@ public class StudentShowStudentTeacherAdapter extends RecyclerView.Adapter<CardV
     public void onBindViewHolder(@NonNull CardViewHolderShowStudentTeacher holder, int position){
         holder.textViewEmail.setText(items.get(position).getInstitutional_email());
         holder.textViewFirstNameLastName.setText(String.format("%s %s", items.get(position).getFirst_name(), items.get(position).getLast_name()));
+        holder.textViewPhonenumber.setText(items.get(position).getPhone_number());
     }
 
     @Override
@@ -43,11 +44,13 @@ public class StudentShowStudentTeacherAdapter extends RecyclerView.Adapter<CardV
 class CardViewHolderShowStudentTeacher extends RecyclerView.ViewHolder{
     TextView textViewFirstNameLastName;
     TextView textViewEmail;
+    TextView textViewPhonenumber;
 
     public  CardViewHolderShowStudentTeacher(@NonNull View itemView){
-     super(itemView);
-     textViewEmail = itemView.findViewById(R.id.email);
-     textViewFirstNameLastName = itemView.findViewById(R.id.first_name_last_name);
+        super(itemView);
+        textViewEmail = itemView.findViewById(R.id.email);
+        textViewFirstNameLastName = itemView.findViewById(R.id.first_name_last_name);
+        textViewPhonenumber = itemView.findViewById(R.id.phone_number);
     }
 
     public CardViewHolderShowStudentTeacher linkAdapter() {

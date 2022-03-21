@@ -4,17 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_calendar.xml" value="0.23143115942028986" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_calendar_detail.xml" value="0.18614130434782608" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_communication.xml" value="0.23143115942028986" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_login.xml" value="0.23143115942028986" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_presence_absence.xml" value="0.55" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_student_main.xml" value="0.303125" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_teacher_main.xml" value="0.39947916666666666" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_update_course.xml" value="0.18614130434782608" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_vote.xml" value="0.23143115942028986" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_vote_docente.xml" value="0.23143115942028986" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_list_student.xml" value="0.1" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_personal_profile.xml" value="0.4" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_personal_profile_docente.xml" value="0.3140625" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_profile.xml" value="0.384963768115942" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_show_student_teacher.xml" value="0.18614130434782608" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_student_calendar.xml" value="0.223731884057971" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_student_personal_profile.xml" value="0.1" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_student_presence.xml" value="0.1" />
@@ -23,17 +26,22 @@
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_calendar.xml" value="0.17222222222222222" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_homepage.xml" value="0.17222222222222222" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_personal_profile.xml" value="0.384963768115942" />
-        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_presence.xml" value="0.17222222222222222" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_presence.xml" value="0.1" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_profile.xml" value="0.39947916666666666" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_set_vote.xml" value="0.39947916666666666" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_show_students.xml" value="0.18614130434782608" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/fragment_teacher_vote.xml" value="0.18614130434782608" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/nav_student_header.xml" value="0.303125" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/nav_teacher_header.xml" value="0.39947916666666666" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/show_student_teacher_recyclerview.xml" value="0.18614130434782608" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/show_students_recyclerview.xml" value="0.18614130434782608" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/student_lesson_recyclerview.xml" value="0.223731884057971" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/student_presence_listview.xml" value="0.25" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/student_presence_recyclerview.xml" value="0.1" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/student_show_student_teacher_recyclerview.xml" value="0.165" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/student_vote_recyclerview.xml" value="0.29583333333333334" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/teacher_lesson_recyclerview.xml" value="0.2246376811594203" />
+        <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/teacher_presence_recyclerview.xml" value="0.18614130434782608" />
         <entry key="..\:/Github/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/menu/menu.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/AdamaEmmanuelTraore/Desktop/GITHUB/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_calendar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/AdamaEmmanuelTraore/Desktop/GITHUB/PROGETTO-corso-IFTS-DEV/App Android/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />

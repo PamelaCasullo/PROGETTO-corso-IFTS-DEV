@@ -9,8 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <!--DATA-->
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
@@ -24,22 +22,9 @@
             android:textStyle="bold"
             android:textSize="14sp"/>
 
-        <!--MODULO-->
-        <TextView
-            android:id="@+id/modulo"
-            android:layout_below="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:padding="5dp"
-            android:text="Modulo:"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
         <TextView
             android:id="@+id/title"
             android:layout_below="@+id/date"
-            android:layout_toEndOf="@+id/presenze"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -48,22 +33,9 @@
             android:textStyle="italic"
             android:textSize="15sp"/>
 
-        <!--PRESENZE-->
-        <TextView
-            android:id="@+id/presenze"
-            android:layout_below="@+id/modulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:padding="5dp"
-            android:text="Presenze:"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
         <TextView
             android:id="@+id/presence"
             android:layout_below="@+id/title"
-            android:layout_toEndOf="@+id/presenze"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"

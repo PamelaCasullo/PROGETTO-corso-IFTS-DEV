@@ -9,8 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <!--DATA-->
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
@@ -23,7 +21,6 @@
             android:textStyle="bold"
             android:textSize="14sp"/>
 
-        <!--MODULO-->
         <TextView
             android:id="@+id/modulo"
             android:layout_below="@+id/date"
@@ -47,7 +44,6 @@
             android:textStyle="italic"
             android:textSize="15sp"/>
 
-        <!--VOTO-->
         <TextView
             android:id="@+id/valutazione"
             android:layout_below="@+id/modulo"
