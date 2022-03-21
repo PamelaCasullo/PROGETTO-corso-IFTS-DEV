@@ -33,10 +33,10 @@
               />
 
               <!--NOME E COGNOME UTENTE-->
-              <span class="titles-underline" id="user_name_lastname">NOME/PROFESSORE
+              <span class="titles-underline" id="user_name_lastname">NOME/PROFESSORE</span>
                 
                 <!--OCCUPAZIONE-->
-                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">DOCENTE</span></span>
+                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">DOCENTE</span>
             
               </a>
 
@@ -103,19 +103,55 @@
             
             
             <ul class="list-group list-group-flush" style="margin-top: 20px;">
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">DATA DI NASCITA</span><span style="margin-left: 10px; color: white;" class="font-text">12/02/2003</span></li>
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL PERSONALE</span><span style="margin-left: 10px; color: white;" class="font-text">qualcosa@email.it</span><</li>
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL INSTITUZIONALE</span><span style="margin-left: 10px; color: white;" class="font-text">q.cosa@itsrizzoli.it</span><</li>
-              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">NUMERO TELEFONICO</span><span style="margin-left: 10px; color: white;" class="font-text">123456789 </span><</li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger" >E-MAIL PERSONALE</span><span style="margin-left: 10px; color: white;" class="font-text" id=personal_email >qualcosa@email.it</span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger" >E-MAIL INSTITUZIONALE</span><span style="margin-left: 10px; color: white;" class="font-text" id=institutional_email >q.cosa@itsrizzoli.it</span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">NUMERO TELEFONICO</span><span style="margin-left: 10px; color: white;" class="font-text" id=phone_number >123456789 </span></li>
+			  <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">PASSWORD</span><span style="margin-left: 10px; color: white;" class="font-text" id=password >123456789 </span></li>
+
             </ul>
             <div class="card-body">
-              <button type="button" class="btn btn-outline-danger" style="width: 100%;" onclick="togglePopup()">MODIFICA I DATI</button>
-              <button type="button" class="btn btn-outline-light" style="width: 100%; margin-top: 10px;">RECUPERA PASSWORD</button>
+            <p>
+   				<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  MODIFICA I DATI
+                </a>
+                </p> 
+			<form id=newForm>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body-collapse">
+                  <h2 style="text-align: center;">INSERISCI I NUOVI DATI</h2>
+                  
+                  <div class="form-floating">
+                   
+                    <!--INPUT EMAIL PERSONALE-->
+                    <input type="email" name="personal_email" class="form-control" id="personal_email_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="personal_email_update" style="color: white;">E-mail Personale:</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    
+                    <!--INPUT PASSWORD-->
+                    <input type="password" name="password_input" class="form-control" id="password_input_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="password_input_update" style="color: white;">Password:</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    
+                    <!--INPUT NUMERO TELEFONICO-->
+                    <input type="text" name="phone_number" class="form-control" id="phone_number_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="phone_number_upate" style="color: white;">Numero Telefonico:</label>
+                  </div>
+                
+                <!--PULSANTE AGGIORNA DATI-->
+                <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;" onclick="aggiorna()">AGGIORNA I DATI</button></form>
             </div>
           </div>
       </div>
 
-      
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
 
   </body>
 </html>

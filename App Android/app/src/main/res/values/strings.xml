@@ -3,14 +3,14 @@
     <string name="password_hint">Password</string>
     <string name="homepage">Homepage</string>
     <string name="calendario">Calendario</string>
-    <string name="absence">Absence</string>
+    <string name="absence">Assenze</string>
     <string name="elenco_studenti">Elenco studenti</string>
     <string name="elenco_docenti">Elenco docenti</string>
     <string name="comunicazioni">Comunicazioni</string>
     <string name="voti">Voti</string>
     <string name="voti_doc">Assegna voti</string>
     <string name="logout">Logout</string>
-    <string name="profilo_personale">profilo Personale</string>
+    <string name="profilo_personale">Profilo Personale</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

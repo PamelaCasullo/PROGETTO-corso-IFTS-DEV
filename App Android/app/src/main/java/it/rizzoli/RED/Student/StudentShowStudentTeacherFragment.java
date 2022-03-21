@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,16 +20,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 import it.rizzoli.RED.Connection.AsynkTaskApp;
+import it.rizzoli.RED.Connection.Student;
 import it.rizzoli.RED.Connection.StudentWebInterface;
 import it.rizzoli.RED.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class StudentCalendarFragment extends Fragment {
+public class StudentShowStudentTeacherFragment extends Fragment {
 
-    RecyclerView recyclerViewLesson = null;
+    RecyclerView recyclerView = null;
     Activity activity = null;
+
     int textId = 0;
     private final static String MY_PREFERENCES = "MyPref";
     private final static String TEXT_ID_KEY = "textId";
@@ -42,35 +45,35 @@ public class StudentCalendarFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_student_calendar, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_show_student_teacher, container, false);
 
         SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
-        Call<List<RecyclerViewLesson>> call = apiService.showAllLesson(textId);
+        Call<List<Student>> call = apiService.showAllStudent();
 
-        call.enqueue(new Callback<List<RecyclerViewLesson>>() {
+        call.enqueue(new Callback<List<Student>>() {
             @Override
-            public void onResponse(Call<List<RecyclerViewLesson>> call, Response<List<RecyclerViewLesson>> response) {
-                if(response.code() == 500) {
+            public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
+                if (response.code() == 500){
                     Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
-                    recyclerViewLesson = view.findViewById(R.id.recyclerView);
-                    recyclerViewLesson.setLayoutManager(new LinearLayoutManager(activity));
-                    List<RecyclerViewLesson> lessons = response.body();
+                    recyclerView = view.findViewById(R.id.recyclerView);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                    List<Student> students = response.body();
+                    students.remove(textId);
+                    StudentShowStudentTeacherAdapter spa = new StudentShowStudentTeacherAdapter(students);
+                    recyclerView.setAdapter(spa);
 
-                    StudentCalendarAdapter spa = new StudentCalendarAdapter(lessons);
-                    recyclerViewLesson.setAdapter(spa);
-
+                    Toast.makeText(getActivity().getApplicationContext(), students.get(2).getFirst_name(), Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<List<RecyclerViewLesson>> call, Throwable t) {
-
+            public void onFailure(Call<List<Student>> call, Throwable t) {
+                Log.e("Fallito! ", t.getMessage());
             }
         });
 

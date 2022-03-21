@@ -2,6 +2,7 @@ package it.rizzoli.RED.Connection;
 
 import java.util.List;
 
+import it.rizzoli.RED.Student.RecyclerViewLesson;
 import it.rizzoli.RED.Student.RecyclerViewPresence;
 import it.rizzoli.RED.Student.StudentUpdateProfile;
 import it.rizzoli.RED.Student.RecyclerViewVote;
@@ -30,4 +31,9 @@ public interface StudentWebInterface {
     @GET("/Students/show/ElencoVoti")
     Call<List<RecyclerViewVote>> showVote(@Header("id_student") int id_student);
 
+    @GET("/Students/showAll")
+    Call<List<Student>> showAllStudent();
+
+    @GET("/Students/show/ElencoLezioni")
+    Call<List<RecyclerViewLesson>> showAllLesson(@Header("id_student") int id_student);
 }

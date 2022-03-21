@@ -26,7 +26,7 @@ import it.rizzoli.RED.Student.StudentHomepageFragment;
 import it.rizzoli.RED.Student.StudentMenuCreationClass;
 import it.rizzoli.RED.Student.StudentPersonalProfileFragment;
 import it.rizzoli.RED.Student.StudentPresenceFragment;
-import it.rizzoli.RED.Student.StudentShowStudenteTeacherFragment;
+import it.rizzoli.RED.Student.StudentShowStudentTeacherFragment;
 import it.rizzoli.RED.Student.StudentVoteFragment;
 import okhttp3.internal.annotations.EverythingIsNonNull;
 import retrofit2.Call;
@@ -139,7 +139,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
                 break;
             case R.id.PROFILE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new StudentShowStudenteTeacherFragment()).commit();
+                        new StudentShowStudentTeacherFragment()).commit();
                 break;
             case R.id.VOTE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,

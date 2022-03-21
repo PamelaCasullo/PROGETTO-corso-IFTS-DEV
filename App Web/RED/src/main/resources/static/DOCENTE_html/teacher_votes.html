@@ -28,10 +28,10 @@
               />
 
               <!--NOME E COGNOME UTENTE-->
-              <span class="titles-underline" id="user_name_lastname">DORJAN KURTI
+              <span class="titles-underline" id="user_name_lastname">DORJAN KURTI</span>
                 
                 <!--OCCUPAZIONE-->
-                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">STUDENTE</span></span>
+                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">DOCENTE</span>
             
               </a>
 
@@ -62,54 +62,79 @@
 
       <!--FORM DI INSERIMENTO VOTO-->
       
-      <div id="container">
+      <div id="container" style="width: 50%; margin: auto; margin-top: 20px;">
         <p>
           <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             Aggiungi Voto
           </a>
         </p>
         <div class="collapse" id="collapseExample">
-          <div class="card card-body">
+          <div class="card card-body" style="background-color: darkred;">
             
             <form>
-              <div class="it-datepicker-wrapper">
-                <div class="form-group">
-                  <label for="date1">Date label</label>
-                 
-                  <!--INPUT DAT-->
-                  <input class="form-control it-date-datepicker" id="teacher_in_date" type="text" placeholder="inserisci la data in formato gg/mm/aaaa">
-                
-                </div>
-              </div>
-              <div class="input-group flex-nowrap">
-                <span class="input-group-text">MODULO</span>
-                
-                <!--INPUT MODULO-->
-                <input type="text" class="form-control" placeholder="Inserisci la materia" id="teacher_in_module">
+              <div class="form-floating">
+                    
+                <!--INPUT PASSSOWRD-->
+                <input type="date" name="date_input" class="form-control" id="date_input" placeholder="..." required style="background-color: #484848; border-color: black; color: white; margin-top: 10px;">
+                <label for="date_input" style="color: white;">INSERISCI LA DATA:</label>
               
               </div>
-              <div class="input-group">
-                <span class="input-group-text">First and last name</span>
-                
-                <!--INPUT NOME/COGNOME-->
-                <input type="text" aria-label="First name" class="form-control" id="teacher_in_name">
-                <input type="text" aria-label="Last name" class="form-control" id="teacher_in_last_name">
               
-              </div>
               <div class="input-group">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">VOTO</button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">1</a></li>
-                  <li><a class="dropdown-item" href="#">2</a></li>
-                  <li><a class="dropdown-item" href="#">3</a></li>
-                  <li><a class="dropdown-item" href="#">4</a></li>
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; margin-top: 10px;">MODULO</button>
+                <ul class="dropdown-menu" style="width: 100%;" id="lista_moduli">
+                  
                 </ul>
                 </div>
-              <button id="teacher_in_save_btn">SAVE</button>
+              
+              <div class="input-group" style="margin-top: 10px;">
+                <span class="input-group-text">NOME/COGNOME STUDENTE</span>
+                
+                <!--INPUT NOME/COGNOME-->
+                <input type="text" aria-label="First name" class="form-control" id="teacher_student_in_name" style="background-color: #484848; color: white;">
+                <input type="text" aria-label="Last name" class="form-control" id="teacher_student_in_last_name" style="background-color: #484848; color: white;">
+              
+              </div>
+              
+              <div class="input-group">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; margin-top: 10px;">VOTO</button>
+                <ul class="dropdown-menu" style="width: 100%" id="lista_voti">
+                  
+                </ul>
+                </div>
+              
+                <div class="container" style="margin: auto; margin-top: 10px; ">
+                  <button id="teacher_in_save_btn" style="width: 100%;">SAVE</button>
+                </div>
+                
             </form>
+
+            
           
           </div>
         </div>
+      </div>
+
+      <div class="container" style="margin: auto; margin-top: 20px">
+        <form class="row g-3">
+          <div class="col-auto">
+            <span class="titles-shadow">INSERISCI IL MODULO DA RICERCARE...</span>
+          </div>
+          <div class="col-auto">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                MODULO
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin: 0; padding: 0;" id="cercaStudentiPerModulo">
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3" onclick="#">Cerca</button>
+          </div>
+        </form>
+
       </div>
       
 
@@ -123,7 +148,7 @@
               <th scope="col"><h4 class="titles-shadow titles-underline">VOTO</h4></th>
             </tr>
           </thead>
-          <tbody style="background-color: rgb(68, 66, 66);">
+          <tbody style="background-color: rgb(68, 66, 66);" id="riempireConVoti">
             <!--RIGHE CON I DATI-->
             <tr>
 

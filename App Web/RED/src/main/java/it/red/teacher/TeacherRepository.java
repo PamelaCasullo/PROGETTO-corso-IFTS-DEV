@@ -33,4 +33,9 @@ public interface TeacherRepository {
 	long uploadPhoto(Photo photo);
 	
 	Teacher downloadPhoto(long id_teacher);
+	
+	public List<TeacherShowLesson> SearchLessonById(long id);
+	
+	public List<TeacherShowGrades> SearchGradeById(long id);
+
 }

@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -121,5 +122,19 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return teacher.getPhoto();
 
 	}
+	//listaLezioni
+	@RequestMapping(value="/Teachers/show/ElencoLezioni")
+	public List<TeacherShowLesson> ShowLesson(@RequestHeader long id_teacher){
+		System.out.println("ElencoLezioni");
+		return repository.SearchLessonById(id_teacher);
+		
+	}
+	//listaVotiAssegnatiDalDocente
+		@RequestMapping(value="/Teachers/show/ElencoVoti")
+		public List<TeacherShowGrades> ShowGrade(@RequestHeader long id_teacher){
+			System.out.println("ElencoVoti");
+			return repository.SearchGradeById(id_teacher);
+			
+		}
 
 }

@@ -26,16 +26,16 @@ function caricamento() {
 	
 	xmlHttp.open("PUT", uriAddress);
     xmlHttp.send(null);
-	//loadVote();
-	//loadLesson();
+	loadVote();
+	loadLesson();
 	
 }
 function loadVote(){
-	 var uriAddr = "/Students/show/ElencoVoti";
+	 var uriAddr = "/Teachers/show/ElencoVoti";
     var xmlHttp = new XMLHttpRequest();
 	var daCar = JSON.parse(sessionSt);
-	 var id_student = daCar.id_student;
-	 var ch="Nessun voto assegnato";
+	 var id_teacher = daCar.id_teacher;
+	// var ch="Nessun voto assegnato";
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             //codice di gestione del ritorno dal servizio web
@@ -43,19 +43,22 @@ function loadVote(){
 			console.log(uriAddr);
             var jsonObj = JSON.parse(xmlHttp.responseText);
              for (var idx = 0; idx < jsonObj.length;idx++) {
-	  		 var grades = jsonObj[idx];
+	  		var grades = jsonObj[idx];
+	  		/*
 	  		 if(grades.grade!=0) {
 						ch=grades.grade;
 			} else {
 				ch="Nessun voto assegnato";
 			}
+			*/
+			
 			
 				 
 			document.getElementById("MostraVoti").innerHTML+=  
                     "<li class='list-group-item d-flex justify-content-between align-items-center' style='background-color: #484848; border: 1px solid ;'>" +
-                    "<span id='student_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>" +
-                    "<span style='margin: auto; color: white;' id='student_vote_date' class='font-text'>"+grades.date+"</span>" +
-                    "<span class='badge bg-danger rounded-pill' id='student_vote'>"+ch+"</span>" +
+                    "<span id='teacher_module_name' style='color: white;' class='font-text'>"+grades.title+"</span>" +
+                    "<span style='margin: auto; color: white;' id='teacher_vote_date' class='font-text'>"+grades.date+"</span>" +
+                    "<span class='badge bg-danger rounded-pill' id='teacher_vote'>"+grades.grade+"</span>" +
                     "</li>";					
     		}
     		
@@ -65,14 +68,14 @@ function loadVote(){
     };
 
     xmlHttp.open("GET", uriAddr);
-    xmlHttp.setRequestHeader("id_student",id_student);
+    xmlHttp.setRequestHeader("id_teacher",id_teacher);
     xmlHttp.send(null);
 }
 function loadLesson() {
-    var uriAddr = "/Students/show/ElencoLezioni";
+    var uriAddr = "/Teachers/show/ElencoLezioni";
     var xmlHttp = new XMLHttpRequest();
 	var daCar = JSON.parse(sessionSt);
-	 var id_student = daCar.id_student;
+	 var id_teacher = daCar.id_teacher;
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             //codice di gestione del ritorno dal servizio web
@@ -90,16 +93,15 @@ function loadLesson() {
 			 "<!--NOME LEZIONE-->"+
              "<h5 class='mb-1 font-text' id='student_lesson_name'>"+ lesson.title +"</h5>"+
              "<!--DATA ORARIO-->"+
-             "<small id='datetime_calendar'><span class='badge bg-dark'><h6 style='margin: 0;' id='student_lesson_date'>"+lesson.date+"</h6></span></small></div>"+
-              "<!--DOCENTE-->"+
-              "<small id='student_teacher'>"+ lesson.first_name + " "+ lesson.last_name +"</small></a></div>";
+             "<small id='datetime_calendar'><span class='badge bg-dark'><h6 style='margin: 0;' id='student_lesson_date'>"+lesson.date+"</h6></span></small></div>";
+             
     		}
  			
         }
     };
 
     xmlHttp.open("GET", uriAddr);
-    xmlHttp.setRequestHeader("id_student",id_student);
+    xmlHttp.setRequestHeader("id_teacher",id_teacher);
     xmlHttp.send(null);
 
 
