@@ -6,7 +6,6 @@ function caricamento() {
 	 var id_teacher = daCar.id_teacher;
 	console.log(sessionSt);
 	
-	var request = new XMLHttpRequest();
 	var uriAddress = "/Teachers/search/" + id_teacher;
 	console.log(uriAddress);
 	//var p =request.open(PUT,uriAddress);

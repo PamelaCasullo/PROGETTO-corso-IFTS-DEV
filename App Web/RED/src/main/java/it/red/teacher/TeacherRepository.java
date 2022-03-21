@@ -37,5 +37,11 @@ public interface TeacherRepository {
 	public List<TeacherShowLesson> SearchLessonById(long id);
 	
 	public List<TeacherShowGrades> SearchGradeById(long id);
+	
+	public List<ModuleTeacher> SearchModuleById(long id);
+	
+	public List<VoteTeacher> ShowGradeById(long id, String title);
+
+
 
 }

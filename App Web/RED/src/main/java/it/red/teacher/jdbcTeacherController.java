@@ -97,5 +97,26 @@ public class jdbcTeacherController implements TeacherRepository {
 				+ " left join student on student.id_student=lesson.student_id_student"
 				+ " where lesson.grade !=0 and teacher.id_teacher=?", BeanPropertyRowMapper.newInstance(TeacherShowGrades.class),id);
 	}
+	public List<ModuleTeacher> SearchModuleById(long id) {
+		return jdbcTemplate.query("select distinct module.title from teacher "
+				+ "left join agenda on agenda.teacher_id_teacher=teacher.id_teacher "
+				+ "left join module on module.id_module=agenda.module_id_module "
+				+ "where teacher.id_teacher=? and module.title IS NOT NULL",BeanPropertyRowMapper.newInstance(ModuleTeacher.class) ,id);
+	}
+	public List<VoteTeacher> ShowGradeById(long id, String title){
+				return jdbcTemplate.query("select student.last_name,student.first_name,lesson.grade,agenda.date from teacher "
+						+ "left join agenda on agenda.teacher_id_teacher=teacher.id_teacher "
+						+ "left join module on module.id_module=agenda.module_id_module "
+						+ "left join lesson on lesson.agenda_id_agenda=agenda.id_agenda "
+						+ "left join student on lesson.student_id_student=student.id_student "
+						+ "where teacher.id_teacher=? and module.title = ?", BeanPropertyRowMapper.newInstance(VoteTeacher.class),id,title);
+	}
+	/*select distinct student.last_name,student.first_name, lesson.grade from teacher
+left join agenda on agenda.teacher_id_teacher=teacher.id_teacher
+left join module on module.id_module=agenda.module_id_module
+left join lesson on lesson.agenda_id_agenda=agenda.id_agenda
+left join student on lesson.student_id_student=student.id_student 
+where teacher.id_teacher=1 and module.title = "?"
+ */
 
 }

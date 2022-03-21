@@ -136,5 +136,19 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 			return repository.SearchGradeById(id_teacher);
 			
 		}
+		@RequestMapping(value="/Teachers/show/ElencoModuli")
+		public List<ModuleTeacher> ShowModules(@RequestHeader long id_teacher){
+			System.out.println("ElencoModuliSpecifico");
+			return repository.SearchModuleById(id_teacher);
+			//	public List<ModuleTeacher> SearchGradeByIdSpecified(long id) {
+
+		}
+		
+	@RequestMapping(value="/Teachers/show/ElencoVoteModuleSelected/{title}")
+	public List<VoteTeacher> Show(@PathVariable String title, @RequestHeader long id_teacher ){
+		System.out.println("ElencoVotiSelected");
+		return repository.ShowGradeById(id_teacher, title);
+		
+	}
 
 }

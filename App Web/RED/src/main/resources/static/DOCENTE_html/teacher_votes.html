@@ -50,7 +50,7 @@
                   <a class="nav-link navlink-effect" href="#">ELENCO STUDENTI</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link current" href="#">VOTI</a>
+                  <a class="nav-link current" href="teacher_votes.html">VOTI</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link log-out" href="../index.html">LOGOUT</a>
@@ -122,16 +122,21 @@
           </div>
           <div class="col-auto">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+             <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 MODULO
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin: 0; padding: 0;" id="cercaStudentiPerModulo">
                 
-              </ul>
+              </ul> -->
+              <select id = "myList" onchange = "saveIdModule()" >  
+				<option> ---Choose module--- </option>
+				
+              </select>  
+              
             </div>
           </div>
           <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3" onclick="#">Cerca</button>
+            <button type="submit" class="btn btn-primary mb-3" onclick="RicercaVoti()">Cerca</button>
           </div>
         </form>
 
@@ -144,27 +149,13 @@
             <tr style="background-color: transparent;">
               <th scope="col"><h4 class="titles-shadow titles-underline">DATA</h4></th>
               <th scope="col"><h4 class="titles-shadow titles-underline">MATERIA</h4></th>
-              <th scope="col"><h4 class="titles-shadow titles-underline">DOCENTE</h4></th>
+              <th scope="col"><h4 class="titles-shadow titles-underline">STUDENTE</h4></th>
               <th scope="col"><h4 class="titles-shadow titles-underline">VOTO</h4></th>
             </tr>
           </thead>
           <tbody style="background-color: rgb(68, 66, 66);" id="riempireConVoti">
             <!--RIGHE CON I DATI-->
-            <tr>
-
-              <!--DATA-->  
-              <th scope="row"><span class="font-text" id="teacher_votes_date">12/02/2022</span></th>
-              
-              <!--MODULO-->
-              <td><span class="font-text" id="teacher_votes_module">MODULO 07 - SVILUPPO APPLICAZIONI ANDROID</span></td>
-
-              <!--DOCENTE-->
-              <td><span class="font-text" id="teacher_votes_teacher">Antonio Giovanni Lezzi</span></td>
-
-              <!--VOTO-->
-              <td style="background-color: darkred; text-align: center;" id="teacher_votes_vote"><span class="font-text">18</span></td>
-            
-            </tr>      
+           
           </tbody>
         </table>
       </div>
