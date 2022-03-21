@@ -33,8 +33,10 @@ public class StudentPresenceAdapter extends RecyclerView.Adapter<CardViewHolderP
         holder.textViewTitle.setText(items.get(position).getTitle());
         if(items.get(position).getPresence()){
             holder.textViewPresence.setText("Presente");
+            holder.textViewPresence.setTextColor(0xFF00FF00);
         } else {
             holder.textViewPresence.setText("Assente");
+            holder.textViewPresence.setTextColor(0xFFFF0000);
         }
 
     }

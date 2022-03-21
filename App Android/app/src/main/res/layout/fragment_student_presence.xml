@@ -30,6 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="125dp"
             android:layout_gravity="center_vertical"
             android:text="MODULO"
             android:layout_weight="33"
@@ -40,6 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
             android:layout_gravity="center_vertical"
             android:text="PRESENZE"
             android:layout_weight="33"
