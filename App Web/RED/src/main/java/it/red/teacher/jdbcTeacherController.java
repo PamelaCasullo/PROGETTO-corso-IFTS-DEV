@@ -1,11 +1,15 @@
 package it.red.teacher;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import it.red.lesson.Lesson;
+import it.red.student.Student;
 
 
 @Repository(value="MYSQLT")
@@ -109,14 +113,43 @@ public class jdbcTeacherController implements TeacherRepository {
 						+ "left join module on module.id_module=agenda.module_id_module "
 						+ "left join lesson on lesson.agenda_id_agenda=agenda.id_agenda "
 						+ "left join student on lesson.student_id_student=student.id_student "
-						+ "where teacher.id_teacher=? and module.title = ?", BeanPropertyRowMapper.newInstance(VoteTeacher.class),id,title);
+						+ "where teacher.id_teacher=? and module.title =? ", BeanPropertyRowMapper.newInstance(VoteTeacher.class),id,title);
 	}
-	/*select distinct student.last_name,student.first_name, lesson.grade from teacher
-left join agenda on agenda.teacher_id_teacher=teacher.id_teacher
+	/*select agenda.id_agenda from agenda
+left join teacher on teacher.id_teacher=agenda.teacher_id_teacher
 left join module on module.id_module=agenda.module_id_module
-left join lesson on lesson.agenda_id_agenda=agenda.id_agenda
-left join student on lesson.student_id_student=student.id_student 
-where teacher.id_teacher=1 and module.title = "?"
- */
+where date="2022-02-16" and module.title="Sviluppo applicazioni Android"*/
+	
+	public List<AgendaPerVote> getIdAgendaPerVote(Date date, String title) {
+		return jdbcTemplate.query("select distinct agenda.id_agenda from agenda "
+				+ "left join teacher on teacher.id_teacher=agenda.teacher_id_teacher "
+				+ "left join module on module.id_module=agenda.module_id_module "
+				+ "where date=? and module.title=? ", BeanPropertyRowMapper.newInstance(AgendaPerVote.class), date,title);
+	}
+	
+	public List<Student>getIdStudentPerVote(String institutional_email){
+		return jdbcTemplate.query("select * from student "
+				+ "where student.institutional_email=?",BeanPropertyRowMapper.newInstance(Student.class),institutional_email);
+	}
+	
+	public int saveVoto(Lesson p) {
+		int retCode;
+		if((jdbcTemplate.update("INSERT INTO lesson(grade,agenda_id_agenda,student_id_student)"
+				+ " values(?,?,?)",
+				new Object[] {p.getAgenda_id_agenda(),p.getStudent_id_student(),p.getGrade()}))==1)
+			retCode=1;
+
+		else retCode=-1;
+
+		return retCode;
+	}
+	public List<Student> showStudentByTeacher(long id) {
+		
+		return jdbcTemplate.query("select student.institutional_email from teacher "
+				+ "left join agenda on agenda.teacher_id_teacher=teacher.id_teacher "
+				+ "left join lesson on lesson.agenda_id_agenda=agenda.id_agenda "
+				+ "left join student on lesson.student_id_student=student.id_student "
+				+ "where id_teacher=?", BeanPropertyRowMapper.newInstance(Student.class) ,id);
+	}
 
 }

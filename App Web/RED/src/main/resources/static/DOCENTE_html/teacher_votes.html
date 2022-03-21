@@ -71,40 +71,43 @@
         <div class="collapse" id="collapseExample">
           <div class="card card-body" style="background-color: darkred;">
             
-            <form>
+            <form id=InserimentoVoto>
               <div class="form-floating">
                     
                 <!--INPUT PASSSOWRD-->
-                <input type="date" name="date_input" class="form-control" id="date_input" placeholder="..." required style="background-color: #484848; border-color: black; color: white; margin-top: 10px;">
+                <input type="date" name="date_input" class="form-control" id="date_input" placeholder="..." required style="background-color: #484848; border-color: black; color: white; margin-top: 10px;" onchange="SalvaData()">
                 <label for="date_input" style="color: white;">INSERISCI LA DATA:</label>
               
               </div>
               
               <div class="input-group">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; margin-top: 10px;">MODULO</button>
-                <ul class="dropdown-menu" style="width: 100%;" id="lista_moduli">
-                  
-                </ul>
+                <select id = "lista_moduli" onchange = "saveIdModuleVote()" >  
+				<option> ---Choose module--- </option>
+				
+              </select>  
+              
                 </div>
               
               <div class="input-group" style="margin-top: 10px;">
-                <span class="input-group-text">NOME/COGNOME STUDENTE</span>
+                <span class="input-group-text">Email istituzionale studente</span>
                 
                 <!--INPUT NOME/COGNOME-->
-                <input type="text" aria-label="First name" class="form-control" id="teacher_student_in_name" style="background-color: #484848; color: white;">
-                <input type="text" aria-label="Last name" class="form-control" id="teacher_student_in_last_name" style="background-color: #484848; color: white;">
-              
+                 <select id = "lista_student" onchange = "saveidStudent()" >  
+				<option> ---Choose student--- </option>
+				
+              </select>  
+                  
               </div>
               
               <div class="input-group">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%; margin-top: 10px;">VOTO</button>
-                <ul class="dropdown-menu" style="width: 100%" id="lista_voti">
-                  
-                </ul>
+                 <select id = "lista_vote" onchange = "saveidVote()" >  
+				<option> ---Choose Vote--- </option>
+				
+              </select> 
                 </div>
               
                 <div class="container" style="margin: auto; margin-top: 10px; ">
-                  <button id="teacher_in_save_btn" style="width: 100%;">SAVE</button>
+                  <button id="teacher_in_save_btn" style="width: 100%;" onClick=aggiorna()>SAVE</button>
                 </div>
                 
             </form>
