@@ -2,51 +2,76 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/student_presence_recyclerview"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:textAlignment="viewStart"
-        android:background="@drawable/backg">
+        android:layout_height="wrap_content">
 
+
+        <!--DATA-->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="35"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:id="@+id/date"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_horizontal"
-            android:layout_weight="33"
-            android:textColor="@color/white"
-            android:textStyle="bold"
+            android:background="@color/red"
             android:textAlignment="center"
-            android:id="@+id/title"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_horizontal"
-            android:layout_weight="40"
-            android:textColor="@color/white"
+            android:textColor="@color/yellow"
+            android:layout_weight="35"
             android:textStyle="bold"
-            android:textAlignment="center"
-            android:id="@+id/presence"
             android:textSize="14sp"/>
 
-    </LinearLayout>
+        <!--MODULO-->
+        <TextView
+            android:id="@+id/modulo"
+            android:layout_below="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:text="Modulo:"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@+id/date"
+            android:layout_toEndOf="@+id/presenze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:textSize="15sp"/>
+
+        <!--PRESENZE-->
+        <TextView
+            android:id="@+id/presenze"
+            android:layout_below="@+id/modulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:text="Presenze:"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/presence"
+            android:layout_below="@+id/title"
+            android:layout_toEndOf="@+id/presenze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
