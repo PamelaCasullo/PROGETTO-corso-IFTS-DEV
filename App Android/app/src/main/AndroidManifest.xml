@@ -15,9 +15,6 @@
         android:theme="@style/Theme.RED">
 
         <activity
-            android:name=".UpdateCourseActivity"
-            android:exported="false" />
-        <activity
             android:name=".TeacherMainActivity"
             android:exported="false" />
         <activity

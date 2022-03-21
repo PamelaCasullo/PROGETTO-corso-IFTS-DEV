@@ -1,5 +1,6 @@
 package it.rizzoli.RED;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Objects;
+
 import it.rizzoli.RED.Connection.AsynkTaskApp;
 import it.rizzoli.RED.Connection.Teacher;
 import it.rizzoli.RED.Connection.TeacherWebInterface;
@@ -26,7 +29,7 @@ import it.rizzoli.RED.Teacher.TeacherHomepageFragment;
 import it.rizzoli.RED.Teacher.TeacherMenuCreationClass;
 import it.rizzoli.RED.Teacher.TeacherPersonalProfileFragment;
 import it.rizzoli.RED.Teacher.TeacherPresenceFragment;
-import it.rizzoli.RED.Teacher.TeacherProfileFragment;
+import it.rizzoli.RED.Teacher.TeacherShowStudentTeacherFragment;
 import it.rizzoli.RED.Teacher.TeacherSetVoteFragment;
 import it.rizzoli.RED.Teacher.TeacherVoteFragment;
 import okhttp3.internal.annotations.EverythingIsNonNull;
@@ -65,11 +68,11 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                     new TeacherHomepageFragment()).commit();
-            navigationView.setCheckedItem(R.id.HOMEPAGEDOC);
+            navigationView.setCheckedItem(R.id.TEACHER_HOMEPAGE);
         }
 
         // SERVE PER FAR APPARIRE L'AMBURGER MENU
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
 
 
@@ -95,6 +98,7 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
                 if(response.code() == 500) {
                     Toast.makeText(getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
+                    assert teacher != null;
                     TextView textViewNameLastName = findViewById(R.id.textViewNameLastName);
                     String all = teacher.getFirst_name() + " " + teacher.getLast_name();
                     textViewNameLastName.setText(all);
@@ -123,30 +127,31 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
     }
 
     // SERVE A, QUANDO CLICCO SU UNA VOCE DEL MENU SI APRE E FUNZIONAAAAAA!!!
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.CALENDARDOC:
+            case R.id.TEACHER_CALENDAR:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new TeacherCalendarFragment()).commit();
                 break;
-            case R.id.HOMEPAGEDOC:
+            case R.id.TEACHER_HOMEPAGE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new TeacherHomepageFragment()).commit();
                 break;
-            case R.id.PRESENCEDOC:
+            case R.id.TEACHER_PRESENCE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new TeacherPresenceFragment()).commit();
                 break;
-            case R.id.PROFILEDOC:
+            case R.id.TEACHER_SHOW_STUDENT_TEACHER:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new TeacherProfileFragment()).commit();
+                        new TeacherShowStudentTeacherFragment()).commit();
                 break;
-            case R.id.VOTEDOC:
+            case R.id.TEACHER_VOTE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new TeacherVoteFragment()).commit();
                 break;
-            case R.id.LOGOUTDOC:
+            case R.id.TEACHER_LOGOUT:
                 sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
                 email = sharedpreferences.getString(EMAIL_KEY, null);
                 password = sharedpreferences.getString(PASSWORD_KEY, null);
@@ -161,11 +166,11 @@ public class TeacherMainActivity extends AppCompatActivity implements Navigation
 
                 finish();
                 break;
-            case R.id.PERSONAL_PROFILEDOC:
+            case R.id.TEACHER_PERSONAL_PROFILE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new TeacherPersonalProfileFragment()).commit();
                 break;
-            case R.id.ASSEGNAVOTIDOC:
+            case R.id.TEACHER_SET_VOTE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new TeacherSetVoteFragment()).commit();
                 break;

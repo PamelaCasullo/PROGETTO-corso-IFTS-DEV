@@ -44,18 +44,18 @@ public class StudentPresenceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_student_presence, container, false);
 
-        SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences preferiti = requireActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
-        AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
+        AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
         Call<List<RecyclerViewPresence>> call = apiService.showPresence(textId);
 
         call.enqueue(new Callback<List<RecyclerViewPresence>>() {
             @Override
-            public void onResponse(Call<List<RecyclerViewPresence>> call, Response<List<RecyclerViewPresence>> response) {
+            public void onResponse(@NonNull Call<List<RecyclerViewPresence>> call, @NonNull Response<List<RecyclerViewPresence>> response) {
                 if(response.code() == 500) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else{
                     recyclerView = view.findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -69,7 +69,7 @@ public class StudentPresenceFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<RecyclerViewPresence>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<RecyclerViewPresence>> call, @NonNull Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
             }
         });

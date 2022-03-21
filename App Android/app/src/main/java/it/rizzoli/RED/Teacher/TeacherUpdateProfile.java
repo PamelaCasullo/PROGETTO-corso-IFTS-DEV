@@ -7,9 +7,6 @@ public class TeacherUpdateProfile {
     String phone_number;
     String password;
 
-    public TeacherUpdateProfile() {
-    }
-
     public TeacherUpdateProfile(int id_teacher, String personal_email, String phone_number, String password) {
         this.id_teacher = id_teacher;
         this.personal_email = personal_email;

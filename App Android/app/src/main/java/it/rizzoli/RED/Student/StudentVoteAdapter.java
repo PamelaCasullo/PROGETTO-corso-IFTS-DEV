@@ -1,6 +1,7 @@
 package it.rizzoli.RED.Student;
 
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,14 +26,15 @@ public class StudentVoteAdapter extends RecyclerView.Adapter<CardViewHolderVote>
     @Override
     public CardViewHolderVote onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_vote_recyclerview, parent, false);
-        return new CardViewHolderVote(view).linkAdapter(this);
+        return new CardViewHolderVote(view).linkAdapter();
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onBindViewHolder(@NonNull CardViewHolderVote holder, int position) {
         holder.textViewDate.setText(items.get(position).getDate());
         holder.textViewTitle.setText(items.get(position).getTitle());
-        holder.textViewVote.setText("" + items.get(position).getGrade());
+        holder.textViewVote.setText(String.format("%d", items.get(position).getGrade()));
     }
 
     @Override
@@ -46,8 +48,6 @@ class CardViewHolderVote extends RecyclerView.ViewHolder{
     TextView textViewTitle;
     TextView textViewVote;
 
-    private StudentVoteAdapter adapter;
-
     public CardViewHolderVote(@NonNull View itemView) {
         super(itemView);
         textViewDate = itemView.findViewById(R.id.date);
@@ -55,8 +55,7 @@ class CardViewHolderVote extends RecyclerView.ViewHolder{
         textViewVote = itemView.findViewById(R.id.vote);
     }
 
-    public CardViewHolderVote linkAdapter(StudentVoteAdapter adapter){
-        this.adapter = adapter;
+    public CardViewHolderVote linkAdapter(){
         return this;
     }
 }

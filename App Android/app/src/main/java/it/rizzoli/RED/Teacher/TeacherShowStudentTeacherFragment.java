@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import it.rizzoli.RED.R;
 
 
-public class TeacherProfileFragment extends Fragment {
+public class TeacherShowStudentTeacherFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

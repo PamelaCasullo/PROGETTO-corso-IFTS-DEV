@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import it.rizzoli.RED.Connection.AsynkTaskApp;
@@ -47,32 +46,31 @@ public class StudentShowStudentTeacherFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_student_show_student_teacher, container, false);
 
-        SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences preferiti = requireActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
-        AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
+        AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
         Call<List<Student>> call = apiService.showAllStudent();
 
         call.enqueue(new Callback<List<Student>>() {
             @Override
-            public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
+            public void onResponse(@NonNull Call<List<Student>> call, @NonNull Response<List<Student>> response) {
                 if (response.code() == 500){
-                    Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
                     recyclerView = view.findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     List<Student> students = response.body();
+                    assert students != null;
                     students.remove(textId);
                     StudentShowStudentTeacherAdapter spa = new StudentShowStudentTeacherAdapter(students);
                     recyclerView.setAdapter(spa);
-
-                    Toast.makeText(getActivity().getApplicationContext(), students.get(2).getFirst_name(), Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Student>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Student>> call, @NonNull Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
             }
         });

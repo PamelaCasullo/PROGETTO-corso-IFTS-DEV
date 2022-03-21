@@ -4,8 +4,8 @@ import java.util.List;
 
 import it.rizzoli.RED.Student.RecyclerViewLesson;
 import it.rizzoli.RED.Student.RecyclerViewPresence;
-import it.rizzoli.RED.Student.StudentUpdateProfile;
 import it.rizzoli.RED.Student.RecyclerViewVote;
+import it.rizzoli.RED.Student.StudentUpdateProfile;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;

@@ -7,37 +7,37 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/HOMEPAGEDOC"
+            android:id="@+id/TEACHER_HOMEPAGE"
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/homepage" />
 
         <item
-            android:id="@+id/CALENDARDOC"
+            android:id="@+id/TEACHER_CALENDAR"
             android:icon="@drawable/ic_baseline_calendar_month_24"
             android:title="@string/calendario" />
 
         <item
-            android:id="@+id/PRESENCEDOC"
+            android:id="@+id/TEACHER_PRESENCE"
             android:icon="@drawable/ic_baseline_menu_book_24"
             android:title="@string/absence" />
 
         <item
-            android:id="@+id/PROFILEDOC"
+            android:id="@+id/TEACHER_SHOW_STUDENT_TEACHER"
             android:icon="@drawable/ic_baseline_book_24"
             android:title="@string/elenco_studenti" />
 
         <item
-            android:id="@+id/ASSEGNAVOTIDOC"
+            android:id="@+id/TEACHER_SET_VOTE"
             android:icon="@drawable/ic_baseline_add_24"
             android:title="Assegna voti"/>
 
         <item
-            android:id="@+id/VOTEDOC"
+            android:id="@+id/TEACHER_VOTE"
             android:icon="@drawable/ic_baseline_format_list_numbered_24"
             android:title="@string/voti" />
 
         <item
-            android:id="@+id/LOGOUTDOC"
+            android:id="@+id/TEACHER_LOGOUT"
             android:icon="@drawable/ic_baseline_login_24"
             android:title="@string/logout" />
 
@@ -49,7 +49,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/PERSONAL_PROFILEDOC"
+                    android:id="@+id/TEACHER_PERSONAL_PROFILE"
                     android:icon="@drawable/ic_baseline_person_24"
                     android:title="@string/profilo_personale" />
             </group>

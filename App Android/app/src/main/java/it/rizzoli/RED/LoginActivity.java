@@ -1,6 +1,7 @@
 package it.rizzoli.RED;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -79,7 +80,9 @@ public class LoginActivity extends AppCompatActivity {
                                 if(statusCode == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
+                                    assert teacher != null;
                                     SavePreferencesData(teacher.getId_teacher());
+                                    Toast.makeText(LoginActivity.this, "Benvenuto Docente!", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(LoginActivity.this, TeacherMainActivity.class);
                                     startActivity(intent);
                                 }
@@ -110,7 +113,9 @@ public class LoginActivity extends AppCompatActivity {
                                 if(statusCode == 500) {
                                     Toast.makeText(getApplicationContext(), "Dati Errati, Riprovare!", Toast.LENGTH_LONG).show();
                                 } else {
+                                    assert student != null;
                                     SavePreferencesData(student.getId_student());
+                                    Toast.makeText(LoginActivity.this, "Benvenuto Studente!", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(LoginActivity.this, StudentMainActivity.class);
                                     startActivity(intent);
                                 }
@@ -136,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    @SuppressLint("NonConstantResourceId")
     public void onRadioButtonClicked(View v) {
         //is checked?
 
@@ -195,7 +201,6 @@ public class LoginActivity extends AppCompatActivity {
         textPassword = preferiti.getString(TEXT_PW_KEY, null);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
         isStudent = preferiti.getBoolean(TEXT_KIND_KEY, true);
-        Toast.makeText(this, "E-mail: " + textEmail + " Password: " + textPassword, Toast.LENGTH_LONG).show();
     }
 
     @Override

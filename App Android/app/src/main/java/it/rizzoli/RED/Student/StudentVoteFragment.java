@@ -45,19 +45,19 @@ public class StudentVoteFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_student_vote, container, false);
 
-        SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences preferiti = requireActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
 
-        AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
+        AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
         Call<List<RecyclerViewVote>> call = apiService.showVote(textId);
 
         call.enqueue(new Callback<List<RecyclerViewVote>>() {
             @Override
-            public void onResponse(Call<List<RecyclerViewVote>> call, Response<List<RecyclerViewVote>> response) {
+            public void onResponse(@NonNull Call<List<RecyclerViewVote>> call, @NonNull Response<List<RecyclerViewVote>> response) {
                 if(response.code() == 500) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
-                } else{
+                    Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                } else {
                     recyclerView = view.findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
                     List<RecyclerViewVote> vote = new LinkedList<>();
@@ -76,7 +76,7 @@ public class StudentVoteFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<RecyclerViewVote>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<RecyclerViewVote>> call, @NonNull Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
             }
         });

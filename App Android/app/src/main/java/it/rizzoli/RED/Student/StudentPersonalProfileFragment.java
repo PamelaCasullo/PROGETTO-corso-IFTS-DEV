@@ -1,8 +1,8 @@
 package it.rizzoli.RED.Student;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,23 +44,24 @@ public class StudentPersonalProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_student_personal_profile, container, false);
         Button updateDataButton;
 
-        SharedPreferences preferiti = getActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences preferiti = requireActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
         textEmail = preferiti.getString(TEXT_EMAIL_KEY, null);
         updateDataButton = view.findViewById(R.id.updateButton);
 
-        AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
+        AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         StudentWebInterface apiService;
         apiService = app.retrofit.create(StudentWebInterface.class);
         Call<Student> dataVisualization = apiService.searchById(textId);
 
         dataVisualization.enqueue(new Callback<Student>() {
             @Override
-            public void onResponse(Call call, Response response) {
+            public void onResponse(@NonNull Call call, @NonNull Response response) {
                 Student student = (Student) response.body();
                 if(response.code() == 500) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
+                    assert student != null;
                     TextView textViewFirstName = view.findViewById(R.id.textViewDataFirstName);
                     textViewFirstName.setText(student.getFirst_name());
                     TextView textViewLastName = view.findViewById(R.id.textViewDataLastName);
@@ -72,7 +72,7 @@ public class StudentPersonalProfileFragment extends Fragment {
                     editTextPhoneNumber.setText(student.getPhone_number());
                     EditText editTextPersonalEmail = view.findViewById(R.id.editTextPersonalEmail);
                     editTextPersonalEmail.setText(student.getPersonal_email());
-                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                    @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                     String strDate = formatter.format(student.getDate_of_birth());
                     TextView textViewDateOfBirth = view.findViewById(R.id.textViewDataDateOfBirth);
                     textViewDateOfBirth.setText(strDate);
@@ -82,7 +82,7 @@ public class StudentPersonalProfileFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call call, Throwable t) {
+            public void onFailure(@NonNull Call call, @NonNull Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
             }
         });
@@ -100,14 +100,14 @@ public class StudentPersonalProfileFragment extends Fragment {
 
                 updateData.enqueue(new Callback<Student>() {
                     @Override
-                    public void onResponse(Call call, Response response) {
+                    public void onResponse(@NonNull Call call, @NonNull Response response) {
                         phoneNumber.setText(studentUpdateProfile.getPhone_number());
                         personalEmail.setText(studentUpdateProfile.getPersonal_email());
                         password.setText(studentUpdateProfile.getPassword());
                     }
 
                     @Override
-                    public void onFailure(Call call, Throwable t) {
+                    public void onFailure(@NonNull Call call, @NonNull Throwable t) {
                         Log.e("Fallito! ", t.getMessage());
                     }
                 });

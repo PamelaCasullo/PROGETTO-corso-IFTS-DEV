@@ -1,5 +1,6 @@
 package it.rizzoli.RED.Student;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +26,16 @@ public class StudentCalendarAdapter extends RecyclerView.Adapter<CardViewHolderL
     @Override
     public CardViewHolderLesson onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_lesson_recyclerview, parent, false);
-        return new CardViewHolderLesson(view).linkAdapter(this);
+        return new CardViewHolderLesson(view).linkAdapter();
     }
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolderLesson holder, int position) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String strDate = formatter.format(items.get(position).getDate());
         holder.textViewDate.setText(strDate);
         holder.textViewTitle.setText(items.get(position).getTitle());
-        holder.textViewFirstNameLastName.setText(items.get(position).getFirst_name() + " " + items.get(position).getLast_name());
+        holder.textViewFirstNameLastName.setText(String.format("%s %s", items.get(position).getFirst_name(), items.get(position).getLast_name()));
     }
 
     @Override
@@ -49,8 +50,6 @@ class CardViewHolderLesson extends RecyclerView.ViewHolder{
     TextView textViewTitle;
     TextView textViewFirstNameLastName;
 
-    private StudentCalendarAdapter adapter;
-
     public CardViewHolderLesson(@NonNull View itemView) {
         super(itemView);
         textViewDate = itemView.findViewById(R.id.date);
@@ -58,8 +57,7 @@ class CardViewHolderLesson extends RecyclerView.ViewHolder{
         textViewFirstNameLastName = itemView.findViewById(R.id.first_name_last_name);
     }
 
-    public CardViewHolderLesson linkAdapter(StudentCalendarAdapter adapter){
-        this.adapter = adapter;
+    public CardViewHolderLesson linkAdapter(){
         return this;
     }
 }

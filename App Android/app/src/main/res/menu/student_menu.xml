@@ -7,32 +7,32 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/HOMEPAGE"
+            android:id="@+id/STUDENT_HOMEPAGE"
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/homepage" />
 
         <item
-            android:id="@+id/CALENDAR"
+            android:id="@+id/STUDENT_CALENDAR"
             android:icon="@drawable/ic_baseline_calendar_month_24"
             android:title="@string/calendario" />
 
         <item
-            android:id="@+id/PRESENCE"
+            android:id="@+id/STUDENT_PRESENCE"
             android:icon="@drawable/ic_baseline_menu_book_24"
             android:title="@string/absence" />
 
         <item
-            android:id="@+id/PROFILE"
+            android:id="@+id/STUDENT_SHOW_STUDENT_TEACHER"
             android:icon="@drawable/ic_baseline_book_24"
             android:title="@string/elenco_studenti" />
 
         <item
-            android:id="@+id/VOTE"
+            android:id="@+id/STUDENT_VOTE"
             android:icon="@drawable/ic_baseline_format_list_numbered_24"
             android:title="@string/voti" />
 
         <item
-            android:id="@+id/LOGOUT"
+            android:id="@+id/STUDENT_LOGOUT"
             android:icon="@drawable/ic_baseline_login_24"
             android:title="@string/logout" />
 
@@ -44,7 +44,7 @@
             <menu>
                 <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/PERSONAL_PROFILE"
+                    android:id="@+id/STUDENT_PERSONAL_PROFILE"
                     android:icon="@drawable/ic_baseline_person_24"
                     android:title="@string/profilo_personale" />
                 </group>

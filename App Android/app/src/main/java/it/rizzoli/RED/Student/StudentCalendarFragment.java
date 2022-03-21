@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import it.rizzoli.RED.Connection.AsynkTaskApp;
@@ -54,7 +53,7 @@ public class StudentCalendarFragment extends Fragment {
 
         call.enqueue(new Callback<List<RecyclerViewLesson>>() {
             @Override
-            public void onResponse(Call<List<RecyclerViewLesson>> call, Response<List<RecyclerViewLesson>> response) {
+            public void onResponse(@NonNull Call<List<RecyclerViewLesson>> call, @NonNull Response<List<RecyclerViewLesson>> response) {
                 if(response.code() == 500) {
                     Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
@@ -69,7 +68,7 @@ public class StudentCalendarFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<RecyclerViewLesson>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<RecyclerViewLesson>> call, @NonNull Throwable t) {
 
             }
         });
