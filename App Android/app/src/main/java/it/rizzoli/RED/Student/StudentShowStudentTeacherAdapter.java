@@ -24,7 +24,7 @@ public class StudentShowStudentTeacherAdapter extends RecyclerView.Adapter<CardV
     @NonNull
     @Override
     public CardViewHolderShowStudentTeacher onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_show_student_teacher_recyclerview, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.show_student_teacher_recyclerview, parent, false);
         return new CardViewHolderShowStudentTeacher(view).linkAdapter();
     }
 

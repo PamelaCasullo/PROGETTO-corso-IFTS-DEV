@@ -44,7 +44,7 @@ public class StudentShowStudentTeacherFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_student_show_student_teacher, container, false);
+        View view = inflater.inflate(R.layout.fragment_show_student_teacher, container, false);
 
         SharedPreferences preferiti = requireActivity().getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
         textId = preferiti.getInt(TEXT_ID_KEY, 0);
