@@ -14,12 +14,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import it.red.JdbcUtilityInterface;
 import it.red.LessonHomepageStudent;
@@ -122,22 +127,23 @@ public class StudentRESTController implements JdbcUtilityInterface<Student> {
 		
 	}
 	
-	
-	@RequestMapping(value = "/Student/uploadFile", method = RequestMethod.PUT)
-	public String uploadFile(@RequestBody Photo photo) {
-
-		MultipartFile uploadFile = photo.getUploadfile();
-		String name = photo.getInstitutional_email();
-
+	@RequestMapping(value = "/Student/uploadFile", method = RequestMethod.POST)
+	public String uploadFile(@RequestParam Photo photo) {
+		System.out.println("Dentro REST");
+		MultipartFile uploadFile = photo.uploadfile;
+		String name = photo.institutional_email;
+		
 		String filePath = Paths.get(directory, name).toString();
-
+		File newFile = new File(filePath);
+			System.out.println(filePath);
 		BufferedOutputStream stream;
 		try {
-			stream = new BufferedOutputStream(new FileOutputStream(new File(filePath)));
-			stream.write(uploadFile.getBytes());
+			byte[] fileContent = uploadFile.getBytes();
+			stream = new BufferedOutputStream(new FileOutputStream(newFile));
+			stream.write(fileContent);
 			stream.close();
 			this.repository.uploadPhoto(photo);
-			return directory + photo.getInstitutional_email();
+			return directory + name;
 		} catch (IOException e) {
 
 			e.printStackTrace();

@@ -11,12 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import it.rizzoli.RED.R;
 
-public class StudentProfileFragment extends Fragment {
+public class StudentShowStudenteTeacherFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_list_student, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_show_student_teacher, container, false);
 
         return view;
     }
