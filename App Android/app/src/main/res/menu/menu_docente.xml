@@ -24,7 +24,7 @@
         <item
             android:id="@+id/PROFILEDOC"
             android:icon="@drawable/ic_baseline_book_24"
-            android:title="@string/elenco_docenti" />
+            android:title="@string/elenco_studenti" />
 
         <item
             android:id="@+id/ASSEGNAVOTIDOC"
