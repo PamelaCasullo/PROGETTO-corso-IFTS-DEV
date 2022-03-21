@@ -1,4 +1,4 @@
-package it.red;
+package it.red.student;
 /*
  select distinct lesson.presence,module.title, agenda.date from student 
 inner join lesson on lesson.student_id_student=student.id_student 

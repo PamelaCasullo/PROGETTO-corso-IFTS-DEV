@@ -3,8 +3,6 @@ package it.red.student;
 import java.util.List;
 
 import it.red.LessonHomepageStudent;
-import it.red.StudentShowGrades;
-import it.red.StudentShowPresences;
 
 public interface StudentRepository {
 	

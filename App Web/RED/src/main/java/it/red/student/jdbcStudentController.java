@@ -8,8 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import it.red.LessonHomepageStudent;
-import it.red.StudentShowGrades;
-import it.red.StudentShowPresences;
 
 
 @Repository(value="MYSQLS")
