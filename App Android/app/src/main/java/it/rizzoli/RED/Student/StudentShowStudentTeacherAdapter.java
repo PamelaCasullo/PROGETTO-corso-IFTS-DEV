@@ -31,8 +31,7 @@ public class StudentShowStudentTeacherAdapter extends RecyclerView.Adapter<CardV
     @Override
     public void onBindViewHolder(@NonNull CardViewHolderShowStudentTeacher holder, int position){
         holder.textViewEmail.setText(items.get(position).getInstitutional_email());
-        holder.textViewFirstName.setText(items.get(position).getFirst_name());
-        holder.textViewLastName.setText(items.get(position).getLast_name());
+        holder.textViewFirstNameLastName.setText(items.get(position).getFirst_name() + " " + items.get(position).getLast_name());
     }
 
     @Override
@@ -42,8 +41,7 @@ public class StudentShowStudentTeacherAdapter extends RecyclerView.Adapter<CardV
 }
 
 class CardViewHolderShowStudentTeacher extends RecyclerView.ViewHolder{
-    TextView textViewFirstName;
-    TextView textViewLastName;
+    TextView textViewFirstNameLastName;
     TextView textViewEmail;
 
     private StudentShowStudentTeacherAdapter adapter;
@@ -51,8 +49,7 @@ class CardViewHolderShowStudentTeacher extends RecyclerView.ViewHolder{
     public  CardViewHolderShowStudentTeacher(@NonNull View itemView){
      super(itemView);
      textViewEmail = itemView.findViewById(R.id.email);
-     textViewFirstName = itemView.findViewById(R.id.first_name);
-     textViewLastName = itemView.findViewById(R.id.last_name);
+     textViewFirstNameLastName = itemView.findViewById(R.id.first_name_last_name);
     }
 
     public CardViewHolderShowStudentTeacher linkAdapter(StudentShowStudentTeacherAdapter adapter) {
