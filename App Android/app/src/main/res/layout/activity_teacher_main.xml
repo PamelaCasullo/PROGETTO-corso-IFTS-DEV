@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/menu_docente"
+        app:menu="@menu/teacher_menu"
         app:headerLayout="@layout/nav_teacher_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
