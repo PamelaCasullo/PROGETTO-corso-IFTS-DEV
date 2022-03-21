@@ -50,18 +50,18 @@ public class StudentVoteFragment extends Fragment {
 
         AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
-        Call<List<RecyclerViewVote>> call = apiService.showVote(textId);
+        Call<List<RecyclerViewVoteStudent>> call = apiService.showVote(textId);
 
-        call.enqueue(new Callback<List<RecyclerViewVote>>() {
+        call.enqueue(new Callback<List<RecyclerViewVoteStudent>>() {
             @Override
-            public void onResponse(@NonNull Call<List<RecyclerViewVote>> call, @NonNull Response<List<RecyclerViewVote>> response) {
+            public void onResponse(@NonNull Call<List<RecyclerViewVoteStudent>> call, @NonNull Response<List<RecyclerViewVoteStudent>> response) {
                 if(response.code() == 500) {
                     Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
                     recyclerView = view.findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
-                    List<RecyclerViewVote> vote = new LinkedList<>();
-                    List<RecyclerViewVote> responseVote = response.body();
+                    List<RecyclerViewVoteStudent> vote = new LinkedList<>();
+                    List<RecyclerViewVoteStudent> responseVote = response.body();
 
                     for (int i = 0; i < responseVote.size(); i++){
                         if(responseVote.get(i).getGrade() > 0){
@@ -76,7 +76,7 @@ public class StudentVoteFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<RecyclerViewVote>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<RecyclerViewVoteStudent>> call, @NonNull Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
             }
         });

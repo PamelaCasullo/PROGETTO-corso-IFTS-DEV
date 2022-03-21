@@ -15,9 +15,9 @@ import it.rizzoli.RED.R;
 
 public class StudentPresenceAdapter extends RecyclerView.Adapter<CardViewHolderPresence> {
 
-    List<RecyclerViewPresence> items;
+    List<RecyclerViewPresenceStudent> items;
 
-    public StudentPresenceAdapter(List<RecyclerViewPresence> items) {
+    public StudentPresenceAdapter(List<RecyclerViewPresenceStudent> items) {
         this.items = items;
     }
 

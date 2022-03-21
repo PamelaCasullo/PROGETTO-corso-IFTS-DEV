@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class RecyclerViewVote implements Serializable {
+public class RecyclerViewVoteStudent implements Serializable {
     @SerializedName("grade")
     @Expose
     private int grade;
@@ -22,7 +22,7 @@ public class RecyclerViewVote implements Serializable {
     @Expose
     private String last_name;
 
-    public RecyclerViewVote(int grade, String title, String date, String first_name, String last_name) {
+    public RecyclerViewVoteStudent(int grade, String title, String date, String first_name, String last_name) {
         this.grade = grade;
         this.title = title;
         this.date = date;

@@ -49,18 +49,18 @@ public class StudentPresenceFragment extends Fragment {
 
         AsynkTaskApp app = (AsynkTaskApp) requireActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
-        Call<List<RecyclerViewPresence>> call = apiService.showPresence(textId);
+        Call<List<RecyclerViewPresenceStudent>> call = apiService.showPresence(textId);
 
-        call.enqueue(new Callback<List<RecyclerViewPresence>>() {
+        call.enqueue(new Callback<List<RecyclerViewPresenceStudent>>() {
             @Override
-            public void onResponse(@NonNull Call<List<RecyclerViewPresence>> call, @NonNull Response<List<RecyclerViewPresence>> response) {
+            public void onResponse(@NonNull Call<List<RecyclerViewPresenceStudent>> call, @NonNull Response<List<RecyclerViewPresenceStudent>> response) {
                 if(response.code() == 500) {
                     Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else{
                     recyclerView = view.findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(activity));
 
-                    List<RecyclerViewPresence> presence = response.body();
+                    List<RecyclerViewPresenceStudent> presence = response.body();
 
                     StudentPresenceAdapter spa = new StudentPresenceAdapter(presence);
                     recyclerView.setAdapter(spa);
@@ -69,7 +69,7 @@ public class StudentPresenceFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<RecyclerViewPresence>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<RecyclerViewPresenceStudent>> call, @NonNull Throwable t) {
                 Log.e("Fallito! ", t.getMessage());
             }
         });

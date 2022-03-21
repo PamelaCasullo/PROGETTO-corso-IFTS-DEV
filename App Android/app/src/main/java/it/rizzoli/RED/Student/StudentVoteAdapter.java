@@ -16,9 +16,9 @@ import it.rizzoli.RED.R;
 
 public class StudentVoteAdapter extends RecyclerView.Adapter<CardViewHolderVote> {
 
-    List<RecyclerViewVote> items;
+    List<RecyclerViewVoteStudent> items;
 
-    public StudentVoteAdapter(List<RecyclerViewVote> items){
+    public StudentVoteAdapter(List<RecyclerViewVoteStudent> items){
         this.items = items;
     }
 

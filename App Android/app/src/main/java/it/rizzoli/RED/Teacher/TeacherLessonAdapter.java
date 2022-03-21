@@ -1,4 +1,4 @@
-package it.rizzoli.RED.Student;
+package it.rizzoli.RED.Teacher;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,33 +9,29 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import it.rizzoli.RED.R;
 
-public class StudentCalendarAdapter extends RecyclerView.Adapter<CardViewHolderLesson> {
+public class TeacherLessonAdapter extends RecyclerView.Adapter<CardViewHolderLesson>{
+    List<RecyclerViewShowLessonTeacher> items;
 
-    List<RecyclerViewLessonStudent> items;
-
-    public StudentCalendarAdapter(List<RecyclerViewLessonStudent> items) {
+    public TeacherLessonAdapter(List<RecyclerViewShowLessonTeacher> items){
         this.items = items;
     }
 
     @NonNull
     @Override
     public CardViewHolderLesson onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_lesson_recyclerview, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.teacher_lesson_recyclerview, parent, false);
         return new CardViewHolderLesson(view).linkAdapter();
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onBindViewHolder(@NonNull CardViewHolderLesson holder, int position) {
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String strDate = formatter.format(items.get(position).getDate());
-        holder.textViewDate.setText(strDate);
+        holder.textViewDate.setText(items.get(position).getDate());
         holder.textViewTitle.setText(items.get(position).getTitle());
-        holder.textViewFirstNameLastName.setText(String.format("%s %s", items.get(position).getFirst_name(), items.get(position).getLast_name()));
     }
 
     @Override
@@ -43,23 +39,18 @@ public class StudentCalendarAdapter extends RecyclerView.Adapter<CardViewHolderL
         return items.size();
     }
 }
-
 class CardViewHolderLesson extends RecyclerView.ViewHolder{
 
     TextView textViewDate;
     TextView textViewTitle;
-    TextView textViewFirstNameLastName;
 
     public CardViewHolderLesson(@NonNull View itemView) {
         super(itemView);
         textViewDate = itemView.findViewById(R.id.date);
         textViewTitle = itemView.findViewById(R.id.title);
-        textViewFirstNameLastName = itemView.findViewById(R.id.first_name_last_name);
     }
 
     public CardViewHolderLesson linkAdapter(){
         return this;
     }
 }
-
-

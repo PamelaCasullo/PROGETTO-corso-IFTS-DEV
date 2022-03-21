@@ -49,17 +49,17 @@ public class StudentCalendarFragment extends Fragment {
 
         AsynkTaskApp app = (AsynkTaskApp)getActivity().getApplication();
         StudentWebInterface apiService = app.retrofit.create(StudentWebInterface.class);
-        Call<List<RecyclerViewLesson>> call = apiService.showAllLesson(textId);
+        Call<List<RecyclerViewLessonStudent>> call = apiService.showAllLesson(textId);
 
-        call.enqueue(new Callback<List<RecyclerViewLesson>>() {
+        call.enqueue(new Callback<List<RecyclerViewLessonStudent>>() {
             @Override
-            public void onResponse(@NonNull Call<List<RecyclerViewLesson>> call, @NonNull Response<List<RecyclerViewLesson>> response) {
+            public void onResponse(@NonNull Call<List<RecyclerViewLessonStudent>> call, @NonNull Response<List<RecyclerViewLessonStudent>> response) {
                 if(response.code() == 500) {
                     Toast.makeText(getActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
                     recyclerViewLesson = view.findViewById(R.id.recyclerView);
                     recyclerViewLesson.setLayoutManager(new LinearLayoutManager(activity));
-                    List<RecyclerViewLesson> lessons = response.body();
+                    List<RecyclerViewLessonStudent> lessons = response.body();
 
                     StudentCalendarAdapter spa = new StudentCalendarAdapter(lessons);
                     recyclerViewLesson.setAdapter(spa);
@@ -68,7 +68,7 @@ public class StudentCalendarFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<RecyclerViewLesson>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<RecyclerViewLessonStudent>> call, @NonNull Throwable t) {
 
             }
         });
