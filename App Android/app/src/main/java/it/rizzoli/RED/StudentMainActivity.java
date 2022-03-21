@@ -1,7 +1,6 @@
 package it.rizzoli.RED;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,14 +21,12 @@ import com.google.android.material.navigation.NavigationView;
 import it.rizzoli.RED.Connection.AsynkTaskApp;
 import it.rizzoli.RED.Connection.Student;
 import it.rizzoli.RED.Connection.StudentWebInterface;
-import it.rizzoli.RED.Connection.Teacher;
-import it.rizzoli.RED.Connection.TeacherWebInterface;
 import it.rizzoli.RED.Student.StudentCalendarFragment;
 import it.rizzoli.RED.Student.StudentHomepageFragment;
 import it.rizzoli.RED.Student.StudentMenuCreationClass;
 import it.rizzoli.RED.Student.StudentPersonalProfileFragment;
 import it.rizzoli.RED.Student.StudentPresenceFragment;
-import it.rizzoli.RED.Student.StudentProfileFragment;
+import it.rizzoli.RED.Student.StudentShowStudenteTeacherFragment;
 import it.rizzoli.RED.Student.StudentVoteFragment;
 import okhttp3.internal.annotations.EverythingIsNonNull;
 import retrofit2.Call;
@@ -142,7 +139,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
                 break;
             case R.id.PROFILE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                        new StudentProfileFragment()).commit();
+                        new StudentShowStudenteTeacherFragment()).commit();
                 break;
             case R.id.VOTE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
