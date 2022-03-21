@@ -30,4 +30,6 @@ public interface StudentWebInterface {
     @GET("/Students/show/ElencoVoti")
     Call<List<RecyclerViewVote>> showVote(@Header("id_student") int id_student);
 
+    @GET("/Students/showAll")
+    Call<List<Student>> showAllStudent();
 }
