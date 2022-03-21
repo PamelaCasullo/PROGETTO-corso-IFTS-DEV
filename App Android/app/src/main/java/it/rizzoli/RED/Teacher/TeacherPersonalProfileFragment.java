@@ -2,9 +2,6 @@ package it.rizzoli.RED.Teacher;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,25 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import it.rizzoli.RED.Connection.AsynkTaskApp;
-import it.rizzoli.RED.Connection.Student;
 import it.rizzoli.RED.Connection.Teacher;
 import it.rizzoli.RED.Connection.TeacherWebInterface;
 import it.rizzoli.RED.R;
-import it.rizzoli.RED.Student.StudentUpdateProfile;
 import okhttp3.internal.annotations.EverythingIsNonNull;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,6 +57,7 @@ public class TeacherPersonalProfileFragment extends Fragment {
                 if(response.code() == 500) {
                     Toast.makeText(requireActivity().getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
+                    assert teacher != null;
                     TextView textViewFirstName = view.findViewById(R.id.textViewDataFirstName);
                     textViewFirstName.setText(teacher.getFirst_name());
                     TextView textViewLastName = view.findViewById(R.id.textViewDataLastName);
@@ -103,14 +92,14 @@ public class TeacherPersonalProfileFragment extends Fragment {
 
                 updateData.enqueue(new Callback<Teacher>() {
                     @Override
-                    public void onResponse(Call call, Response response) {
+                    public void onResponse(@NonNull Call call, @NonNull Response response) {
                         phoneNumber.setText(teacherUpdateProfile.getPhone_number());
                         personalEmail.setText(teacherUpdateProfile.getPersonal_email());
                         password.setText(teacherUpdateProfile.getPassword());
                     }
 
                     @Override
-                    public void onFailure(Call call, Throwable t) {
+                    public void onFailure(@NonNull Call call, @NonNull Throwable t) {
                         Log.e("Fallito! ", t.getMessage());
                     }
                 });

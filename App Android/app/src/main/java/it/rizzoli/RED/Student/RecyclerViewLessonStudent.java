@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
-public class RecyclerViewLesson {
+public class RecyclerViewLessonStudent {
     @SerializedName("first_name")
     @Expose
     private String first_name;
@@ -19,7 +19,7 @@ public class RecyclerViewLesson {
     @Expose
     private Date date;
 
-    public RecyclerViewLesson(String first_name, String last_name, Date date, String title) {
+    public RecyclerViewLessonStudent(String first_name, String last_name, Date date, String title) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.title = title;

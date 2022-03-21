@@ -1,5 +1,6 @@
 package it.rizzoli.RED;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +18,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Objects;
 
 import it.rizzoli.RED.Connection.AsynkTaskApp;
 import it.rizzoli.RED.Connection.Student;
@@ -65,11 +68,11 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                     new StudentHomepageFragment()).commit();
-            navigationView.setCheckedItem(R.id.HOMEPAGE);
+            navigationView.setCheckedItem(R.id.STUDENT_HOMEPAGE);
         }
 
         // SERVE PER FAR APPARIRE L'AMBURGER MENU
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -94,6 +97,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
                 if(response.code() == 500) {
                     Toast.makeText(getApplicationContext(), "Errore inaspettato!", Toast.LENGTH_LONG).show();
                 } else {
+                    assert student != null;
                     TextView textViewNameLastName = findViewById(R.id.textViewNameLastName);
                     String all = student.getFirst_name() + " " + student.getLast_name();
                     textViewNameLastName.setText(all);
@@ -122,30 +126,31 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
     }
 
     // SERVE A, QUANDO CLICCO SU UNA VOCE DEL MENU SI APRE E FUNZIONAAAAAA!!!
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.CALENDAR:
+            case R.id.STUDENT_CALENDAR:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new StudentCalendarFragment()).commit();
                 break;
-            case R.id.HOMEPAGE:
+            case R.id.STUDENT_HOMEPAGE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new StudentHomepageFragment()).commit();
                 break;
-            case R.id.PRESENCE:
+            case R.id.STUDENT_PRESENCE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new StudentPresenceFragment()).commit();
                 break;
-            case R.id.PROFILE:
+            case R.id.STUDENT_SHOW_STUDENT_TEACHER:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new StudentShowStudentTeacherFragment()).commit();
                 break;
-            case R.id.VOTE:
+            case R.id.STUDENT_VOTE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new StudentVoteFragment()).commit();
                 break;
-            case R.id.LOGOUT:
+            case R.id.STUDENT_LOGOUT:
                 sharedpreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
                 email = sharedpreferences.getString(EMAIL_KEY, null);
                 password = sharedpreferences.getString(PASSWORD_KEY, null);
@@ -160,7 +165,7 @@ public class StudentMainActivity extends AppCompatActivity implements Navigation
 
                 finish();
                 break;
-            case R.id.PERSONAL_PROFILE:
+            case R.id.STUDENT_PERSONAL_PROFILE:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
                         new StudentPersonalProfileFragment()).commit();
                 break;

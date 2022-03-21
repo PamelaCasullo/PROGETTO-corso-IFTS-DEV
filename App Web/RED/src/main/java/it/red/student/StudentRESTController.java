@@ -28,8 +28,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import it.red.JdbcUtilityInterface;
 import it.red.LessonHomepageStudent;
-import it.red.StudentShowGrades;
-import it.red.StudentShowPresences;
 
 
 @RestController

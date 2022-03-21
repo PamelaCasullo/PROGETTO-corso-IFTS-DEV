@@ -1,6 +1,5 @@
 package it.rizzoli.RED.Connection;
 
-import it.rizzoli.RED.Student.StudentUpdateProfile;
 import it.rizzoli.RED.Teacher.TeacherUpdateProfile;
 import retrofit2.Call;
 import retrofit2.http.Body;

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class RecyclerViewPresence implements Serializable {
+public class RecyclerViewPresenceStudent implements Serializable {
 
     @SerializedName("presence")
     @Expose
@@ -17,7 +17,7 @@ public class RecyclerViewPresence implements Serializable {
     @Expose
     private String date;
 
-    public RecyclerViewPresence(boolean presence, String title, String date) {
+    public RecyclerViewPresenceStudent(boolean presence, String title, String date) {
         this.presence = presence;
         this.title = title;
         this.date = date;

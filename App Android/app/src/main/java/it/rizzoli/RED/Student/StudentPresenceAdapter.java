@@ -1,5 +1,6 @@
 package it.rizzoli.RED.Student;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,9 @@ import it.rizzoli.RED.R;
 
 public class StudentPresenceAdapter extends RecyclerView.Adapter<CardViewHolderPresence> {
 
-    List<RecyclerViewPresence> items;
+    List<RecyclerViewPresenceStudent> items;
 
-    public StudentPresenceAdapter(List<RecyclerViewPresence> items) {
+    public StudentPresenceAdapter(List<RecyclerViewPresenceStudent> items) {
         this.items = items;
     }
 
@@ -24,9 +25,10 @@ public class StudentPresenceAdapter extends RecyclerView.Adapter<CardViewHolderP
     @Override
     public CardViewHolderPresence onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_presence_recyclerview, parent, false);
-        return new CardViewHolderPresence(view).linkAdapter(this);
+        return new CardViewHolderPresence(view).linkAdapter();
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull CardViewHolderPresence holder, int position) {
         holder.textViewDate.setText(items.get(position).getDate());
@@ -53,8 +55,6 @@ class CardViewHolderPresence extends RecyclerView.ViewHolder{
     TextView textViewTitle;
     TextView textViewPresence;
 
-    private StudentPresenceAdapter adapter;
-
     public CardViewHolderPresence(@NonNull View itemView) {
         super(itemView);
         textViewDate = itemView.findViewById(R.id.date);
@@ -62,8 +62,7 @@ class CardViewHolderPresence extends RecyclerView.ViewHolder{
         textViewPresence = itemView.findViewById(R.id.presence);
     }
 
-    public CardViewHolderPresence linkAdapter(StudentPresenceAdapter adapter){
-        this.adapter = adapter;
+    public CardViewHolderPresence linkAdapter(){
         return this;
     }
 }
