@@ -81,6 +81,21 @@ public class jdbcTeacherController implements TeacherRepository {
 	public Teacher downloadPhoto(long id) {
 		return jdbcTemplate.queryForObject("SELECT * FROM teacher WHERE id_teacher = ?", BeanPropertyRowMapper.newInstance(Teacher.class), id);
 	}
-
+	public List<TeacherShowLesson> SearchLessonById(long id) {
+		return jdbcTemplate.query("select distinct agenda.date, module.title from teacher "
+				+ "left join agenda "
+				+ "on agenda.teacher_id_teacher=teacher.id_teacher "
+				+ "left join module "
+				+ "on agenda.module_id_module=module.id_module "
+				+ "where teacher.id_teacher=?", BeanPropertyRowMapper.newInstance(TeacherShowLesson.class),id);
+	}
+	public List<TeacherShowGrades> SearchGradeById(long id) {
+		return jdbcTemplate.query("select distinct student.first_name,student.last_name,lesson.grade, module.title ,agenda.date from teacher"
+				+ "	left join agenda on agenda.teacher_id_teacher=teacher.id_teacher"
+				+ " left join module on module.id_module=agenda.module_id_module"
+				+ " left join lesson on lesson.agenda_id_agenda=agenda_id_agenda"
+				+ " left join student on student.id_student=lesson.student_id_student"
+				+ " where lesson.grade !=0 and teacher.id_teacher=?", BeanPropertyRowMapper.newInstance(TeacherShowGrades.class),id);
+	}
 
 }
