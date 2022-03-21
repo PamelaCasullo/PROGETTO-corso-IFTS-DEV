@@ -47,10 +47,10 @@ public class jdbcTeacherController implements TeacherRepository {
 		return jdbcTemplate.update("UPDATE teacher SET"
 				+ "	personal_email = ?,"
 				+ "	phone_number = ?,"
-				+ "	password = ?,"
-				+ " photo=? WHERE id_teacher=?",new Object[] 
+				+ "	password = ?"
+				+ " WHERE id_teacher=? ",new Object[] 
 						{p.getPersonal_email(),p.getPhone_number(),
-								p.getPassword(),p.getPhoto(),p.getId_teacher()});
+								p.getPassword(),p.getId_teacher()});
 	}
 
 	@Override
