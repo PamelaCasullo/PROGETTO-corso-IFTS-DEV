@@ -101,14 +101,15 @@ function saveIdStudentPerVote(){
 	//console.log(document.getElementById("lista_moduli").value);
 	//var daCar = JSON.parse(sessionSt);
 	 //var id_teacher = daCar.id_teacher;
-	 var uriAddress = "/Teachers/show/StudentId";
+	 console.log("dentroSaveIdPerVote"+salvataggioStudent);
+	 var uriAddress = "/Teachers/show/StudentId/"+salvataggioStudent;
 	console.log(uriAddress);	  
 	var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status >= 200) {
-			console.log(daCar.first_name);
+		
                  var obJSON = JSON.parse(xmlHttp.responseText);
-                 
+                 	console.log(obJSON);
  					id_1=obJSON.id_student[0];
  					console.log("uriAddress="+salvataggioStudent);
  					
@@ -182,7 +183,7 @@ function RicercaVoti(value,id_teacher){
 		  		var grades = obJSON[idx];
 		document.getElementById("riempireConVoti").innerHTML+=
 		"<tr><th scope='row'><span class='font-text'>"+grades.date+"</span></th>"+
-        "<td><span class='font-text' >NomeDelModulo</span></td>"+      
+        "<td><span class='font-text' >"+value+"</span></td>"+      
  		"<td><span class='font-text'>"+grades.first_name + " "+ grades.last_name+"</span></td>"+
  		"<td><span class='font-text'>"+grades.grade+"</span></td></tr>";
              

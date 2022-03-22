@@ -3,13 +3,13 @@ package it.red.course;
 import java.sql.Date;
 
 public class Course {
-	private int id_course;
+	private long id_course;
 	private String name;
 	private Date start_date;
 	private String type_of_course;
-	private int institution_id_institution;
+	private long institution_id_institution;
 	
-	public Course(int id_course, String name, Date start_date, String type_of_course, int institution_id_institution) {
+	public Course(long id_course, String name, Date start_date, String type_of_course, long institution_id_institution) {
 		this.id_course = id_course;
 		this.name = name;
 		this.start_date = start_date;
@@ -17,11 +17,11 @@ public class Course {
 		this.institution_id_institution = institution_id_institution;
 	}
 
-	public int getId_course() {
+	public long getId_course() {
 		return id_course;
 	}
 
-	public void setId_course(int id_course) {
+	public void setId_course(long id_course) {
 		this.id_course = id_course;
 	}
 
@@ -49,11 +49,11 @@ public class Course {
 		this.type_of_course = type_of_course;
 	}
 
-	public int getInstitution_id_institution() {
+	public long getInstitution_id_institution() {
 		return institution_id_institution;
 	}
 
-	public void setInstitution_id_institution(int institution_id_institution) {
+	public void setInstitution_id_institution(long institution_id_institution) {
 		this.institution_id_institution = institution_id_institution;
 	}
 	

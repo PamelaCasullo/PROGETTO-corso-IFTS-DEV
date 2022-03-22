@@ -1,17 +1,17 @@
 package it.red.module;
 
 public class Module {
-	private int id_module;
+	private long id_module;
 	private String title;
-	private int duration;
+	private long duration;
 	private String program;
-	private int course_id_course;
+	private long course_id_course;
 	
 	public Module() {
 		
 	}
 	
-	public Module(int id_module, String title, int duration, String program, int course_id_course) {
+	public Module(long id_module, String title, long duration, String program, long course_id_course) {
 		this.id_module = id_module;
 		this.title = title;
 		this.duration = duration;
@@ -19,11 +19,11 @@ public class Module {
 		this.course_id_course = course_id_course;
 	}
 
-	public int getId_module() {
+	public long getId_module() {
 		return id_module;
 	}
 
-	public void setId_module(int id_module) {
+	public void setId_module(long id_module) {
 		this.id_module = id_module;
 	}
 
@@ -35,11 +35,11 @@ public class Module {
 		this.title = title;
 	}
 
-	public int getDuration() {
+	public long getDuration() {
 		return duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(long duration) {
 		this.duration = duration;
 	}
 
@@ -51,11 +51,11 @@ public class Module {
 		this.program = program;
 	}
 
-	public int getCourse_id_course() {
+	public long getCourse_id_course() {
 		return course_id_course;
 	}
 
-	public void setCourse_id_course(int course_id_course) {
+	public void setCourse_id_course(long course_id_course) {
 		this.course_id_course = course_id_course;
 	}
 	

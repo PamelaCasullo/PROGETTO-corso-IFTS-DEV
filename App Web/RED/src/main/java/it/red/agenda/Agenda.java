@@ -3,18 +3,18 @@ package it.red.agenda;
 import java.sql.Date;
 
 public class Agenda {
-	private int id_agenda;
+	private long id_agenda;
 	private Date date;
 	private String description;
 	private boolean sign;
-	private int module_id_module;
-	private int teacher_id_teacher;
+	private long module_id_module;
+	private long teacher_id_teacher;
 
 	public Agenda() {
 		
 	}
 	
-	public Agenda(int id_agenda, Date date, String description, boolean sign, int module_id_module, int teacher_id_teacher) {
+	public Agenda(long id_agenda, Date date, String description, boolean sign, long module_id_module, long teacher_id_teacher) {
 		this.id_agenda = id_agenda;
 		this.date = date;
 		this.description = description;
@@ -23,11 +23,11 @@ public class Agenda {
 		this.teacher_id_teacher = teacher_id_teacher;
 	}
 	
-	public int getId_agenda() {
+	public long getId_agenda() {
 		return id_agenda;
 	}
 	
-	public void setId_agenda(int id_agenda) {
+	public void setId_agenda(long id_agenda) {
 		this.id_agenda = id_agenda;
 	}
 	
@@ -55,19 +55,19 @@ public class Agenda {
 		this.sign = sign;
 	}
 	
-	public int getModule_id_module() {
+	public long getModule_id_module() {
 		return module_id_module;
 	}
 	
-	public void setModule_id_module(int module_id_module) {
+	public void setModule_id_module(long module_id_module) {
 		this.module_id_module = module_id_module;
 	}
 		
-	public int getTeacher_id_teacher() {
+	public long getTeacher_id_teacher() {
 		return teacher_id_teacher;
 	}
 	
-	public void setTeacher_id_teacher(int teacher_id_teacher) {
+	public void setTeacher_id_teacher(long teacher_id_teacher) {
 		this.teacher_id_teacher = teacher_id_teacher;
 	}
 }

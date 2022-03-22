@@ -179,15 +179,17 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 			return repository.showStudentByTeacher1(id_teacher,title);
 		}
 
-	@RequestMapping(value="/Teachers/show/StudentId")
-	public List<Student> ShowStudentForVotes(@RequestHeader String institutional_email){
+	@RequestMapping(value="/Teachers/show/StudentId/{institutional_email}")
+	public List<Student> ShowStudentForVotes(@PathVariable String institutional_email){
 		System.out.println("Id_student per vote");
+		System.out.println((repository.getIdStudentPerVote(institutional_email)).stream());
 		return repository.getIdStudentPerVote(institutional_email);
 	}
 	@RequestMapping(value="/Teachers/show/AgendaId/{date}")
 	public List<AgendaPerVote> ShowAgendaForVotes(@PathVariable Date date, @RequestHeader String title){
 		System.out.println("id_agenda per vote");
-		return repository.getIdAgendaPerVote( date,  title);
+		System.out.println(repository.getIdAgendaPerVote(date,title).toString());
+		return repository.getIdAgendaPerVote(date,title);
 
 	}
 	

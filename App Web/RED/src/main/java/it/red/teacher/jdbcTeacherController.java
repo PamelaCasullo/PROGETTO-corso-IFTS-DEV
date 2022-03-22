@@ -121,7 +121,7 @@ left join module on module.id_module=agenda.module_id_module
 where date="2022-02-16" and module.title="Sviluppo applicazioni Android"*/
 	
 	public List<AgendaPerVote> getIdAgendaPerVote(Date date, String title) {
-		return jdbcTemplate.query("select distinct agenda.id_agenda from agenda "
+		return jdbcTemplate.query("select distinct agenda.* from agenda "
 				+ "left join teacher on teacher.id_teacher=agenda.teacher_id_teacher "
 				+ "left join module on module.id_module=agenda.module_id_module "
 				+ "where date=? and module.title=? ", BeanPropertyRowMapper.newInstance(AgendaPerVote.class), date,title);
