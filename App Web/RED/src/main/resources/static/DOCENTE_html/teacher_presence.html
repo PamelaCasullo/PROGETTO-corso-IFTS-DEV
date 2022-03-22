@@ -46,7 +46,7 @@
                   <a class="nav-link navlink-effect" href="teacher_calendar.html">CALENDARIO</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link current" href="teacher_presence.html">PRESENZE</a>
+                  <a class="nav-link current" href="#">PRESENZE</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link navlink-effect" href="teacher_list.html">ELENCO STUDENTI</a>
@@ -62,26 +62,10 @@
         </nav>
       </div>    
 
-      <div class="container" style="margin: auto; margin-top: 20px">
-        <form class="row g-3">
-          <div class="col-auto">
-            <span class="titles-shadow">INSERISCI IL MODULO DA RICERCARE...</span>
-          </div>
-          <div class="col-auto">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                MODULO
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin: 0; padding: 0;">
-                <li><a class="dropdown-item" href="#">MDOULO 1...</a></li>
-                <li><a class="dropdown-item" href="#">MODULO 2...</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3" onclick="">Cerca</button>
-          </div>
-        </form>
+      <div class="container" style="margin: auto; margin-top: 10px; text-align: center;">
+
+        <span class="titles-shadow">Per segnare le PRESENZE e ASSENZE degli studenti:</span>
+        <button style="border: 1px solid black; backgroud-color: grey"><a href="teacher_student_presence.html">CLICCA QUI</a></button>
 
       </div>
       
@@ -91,21 +75,14 @@
             <tr style="background-color: transparent;">
               <th scope="col"><h4 class="titles-shadow titles-underline">DATA</h4></th>
               <th scope="col"><h4 class="titles-shadow titles-underline">MATERIA</h4></th>
-              <th scope="col"><h4 class="titles-shadow titles-underline">PRESENZA</h4></th>
+              <th scope="col"><h4 class="titles-shadow titles-underline">FIRMA</h4></th>
             </tr>
           </thead>
           <tbody style="background-color: rgb(68, 66, 66);">
             <tr>
               <th scope="row"><span class="font-text" id="teacher_presence_date">12/02/2022</span></th>
               <td><span class="font-text" id="teacher_presence_module;">MODULO 11 - ARCHITETTURE E SISTEMI</span></td>
-              <td><div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Inserisci presenza...
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin: 0; padding: 0;">
-                  <li><a class="dropdown-item" href="#" id="student_presence">PRESENTE</a></li>
-                  <li><a class="dropdown-item" href="#" id="student_absence">ASSENTE</a></li>
-                </ul>
+              <td><button style="background-color: rgb(68, 66, 66);" onclick="#" id="teacher_sign">INSERISCI FIRMA</button>
               </div></td>
             </tr>      
           </tbody>
