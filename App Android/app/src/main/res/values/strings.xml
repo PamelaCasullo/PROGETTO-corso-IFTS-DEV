@@ -14,7 +14,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="app_name">Navigation Drawer</string>
+    <string name="app_name">RED</string>
+
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
 </resources>
