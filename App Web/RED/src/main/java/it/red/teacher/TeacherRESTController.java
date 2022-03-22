@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,7 +94,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 	}
 
 
-	@RequestMapping(value = "/Teachers/uploadFile", method = RequestMethod.PUT)
+	@RequestMapping(value = "/Teachers/uploadFile")
 	public String uploadFile(@RequestBody Photo photo) {
 
 		MultipartFile uploadFile = photo.getUploadfile();
@@ -124,6 +125,8 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return teacher.getPhoto();
 
 	}
+
+	
 	//listaLezioni
 	@RequestMapping(value="/Teachers/show/ElencoLezioni")
 	public List<TeacherShowLesson> ShowLesson(@RequestHeader long id_teacher){
@@ -138,11 +141,10 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 			return repository.SearchGradeById(id_teacher);
 			
 		}
-		@RequestMapping(value="/Teachers/show/ElencoModuli")
+	@RequestMapping(value="/Teachers/show/ElencoModuli")
 		public List<ModuleTeacher> ShowModules(@RequestHeader long id_teacher){
 			System.out.println("ElencoModuliSpecifico");
 			return repository.SearchModuleById(id_teacher);
-			//	public List<ModuleTeacher> SearchGradeByIdSpecified(long id) {
 
 		}
 	
@@ -153,16 +155,40 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return repository.ShowGradeById(id_teacher, title);
 		
 	}
-	@RequestMapping(value="/Teachers/add/newVoto", method=RequestMethod.POST)
+
+	@RequestMapping(value="/Teachers/add/newVoto", method=RequestMethod.PUT)
 	public ResponseEntity<String> addVoto(@RequestBody Lesson newItem) {
-		if(this.repository.saveVoto(newItem)>0)
-			return new ResponseEntity<String>("SAVED",HttpStatus.CREATED);
-		else 
-			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_ACCEPTABLE);
+		if(this.repository.saveVoto(newItem)>0) {
+			System.out.println("Voto Salvato");
+			return new ResponseEntity<String>("SAVED",HttpStatus.OK);
+		}
+		else {
+			System.out.println("Errore inserimento voto");
+			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_FOUND);
+		}
 	}
-	@RequestMapping(value="/Teachers/search/studentsEmail")
-	public List<Student> searchEmailStudent(@RequestHeader int id_teacher) {
+	//Elenco Studenti
+	@RequestMapping(value="/Teachers/search/studentsEmail/")
+	public List<Student> searchEmailStudent(@RequestHeader long id_teacher) {
 		return repository.showStudentByTeacher(id_teacher);
 	}
 
+	//Elenco Studenti1
+		@RequestMapping(value="/Teachers/search/studentsEmail/{title}")
+		public List<Student> searchEmailStudent1(@PathVariable String title,@RequestHeader long id_teacher) {
+			return repository.showStudentByTeacher1(id_teacher,title);
+		}
+
+	@RequestMapping(value="/Teachers/show/StudentId")
+	public List<Student> ShowStudentForVotes(@RequestHeader String institutional_email){
+		System.out.println("Id_student per vote");
+		return repository.getIdStudentPerVote(institutional_email);
+	}
+	@RequestMapping(value="/Teachers/show/AgendaId/{date}")
+	public List<AgendaPerVote> ShowAgendaForVotes(@PathVariable Date date, @RequestHeader String title){
+		System.out.println("id_agenda per vote");
+		return repository.getIdAgendaPerVote( date,  title);
+
+	}
+	
 }
