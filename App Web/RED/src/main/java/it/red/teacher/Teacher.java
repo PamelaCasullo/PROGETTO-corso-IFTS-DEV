@@ -2,7 +2,7 @@ package it.red.teacher;
 
 public class Teacher {
 
-	private int id_teacher;
+	private long id_teacher;
 	private String personal_email;
 	private String institutional_email;
 	private String first_name;
@@ -15,7 +15,7 @@ public class Teacher {
 		
 	}
 	
-	public Teacher(int id_teacher, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, String password,String photo) {
+	public Teacher(long id_teacher, String personal_email, String institutional_email, String first_name, String last_name, String phone_number, String password,String photo) {
 		this.id_teacher = id_teacher;
 		this.personal_email = personal_email;
 		this.institutional_email = institutional_email;
@@ -27,7 +27,7 @@ public class Teacher {
 	}
 
 
-	public int getId_teacher() {
+	public long getId_teacher() {
 		return id_teacher;
 	}
 

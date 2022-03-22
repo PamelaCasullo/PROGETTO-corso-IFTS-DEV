@@ -47,6 +47,8 @@ public interface TeacherRepository {
 	public int saveVoto(Lesson p);
 	public List<Student> showStudentByTeacher(long id);
 
+	List<Student> showStudentByTeacher1(long id_teacher, String title);
+
 
 
 

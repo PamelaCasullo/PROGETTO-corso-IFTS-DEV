@@ -143,13 +143,23 @@ where date="2022-02-16" and module.title="Sviluppo applicazioni Android"*/
 
 		return retCode;
 	}
-	public List<Student> showStudentByTeacher(long id) {
+	public List<Student> showStudentByTeacher(long id_teacher) {
 		
-		return jdbcTemplate.query("select student.institutional_email from teacher "
+		return jdbcTemplate.query("select distinct student.first_name,student.last_name,student.institutional_email,student.phone_number from teacher "
 				+ "left join agenda on agenda.teacher_id_teacher=teacher.id_teacher "
 				+ "left join lesson on lesson.agenda_id_agenda=agenda.id_agenda "
 				+ "left join student on lesson.student_id_student=student.id_student "
-				+ "where id_teacher=?", BeanPropertyRowMapper.newInstance(Student.class) ,id);
+				+ "left join module on agenda.module_id_module=module.id_module "
+				+ "where teacher.id_teacher=?", BeanPropertyRowMapper.newInstance(Student.class) ,id_teacher);
 	}
-
+//
+public List<Student> showStudentByTeacher1(long id_teacher,String title) {
+		
+		return jdbcTemplate.query("select distinct student.first_name,student.last_name,student.institutional_email,student.phone_number from teacher "
+				+ "left join agenda on agenda.teacher_id_teacher=teacher.id_teacher "
+				+ "left join lesson on lesson.agenda_id_agenda=agenda.id_agenda "
+				+ "left join student on lesson.student_id_student=student.id_student "
+				+ "left join module on agenda.module_id_module=module.id_module "
+				+ "where teacher.id_teacher=? and module.title=?", BeanPropertyRowMapper.newInstance(Student.class) ,id_teacher,title);
+	}
 }

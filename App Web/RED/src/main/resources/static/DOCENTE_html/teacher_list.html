@@ -11,6 +11,7 @@
     <link href="../CSS/style.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="../JavaScript/JS DOCENTE/teacher_list.js"></script>
 
     <title>RED-STUDENTS</title>
 </head>
@@ -65,12 +66,7 @@
           </div>
           <div class="col-auto">
             <div class="dropdown">
-             <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                MODULO
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin: 0; padding: 0;" id="cercaStudentiPerModulo">
-                
-              </ul> -->
+            
               <select id = "myList" onchange = "saveIdModule()" >  
 				<option> ---Choose module--- </option>
 				
@@ -79,7 +75,7 @@
             </div>
           </div>
           <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3" onclick="#">Cerca</button>
+            <button  class="btn btn-primary mb-3" >Reset</button>
           </div>
         </form>
 

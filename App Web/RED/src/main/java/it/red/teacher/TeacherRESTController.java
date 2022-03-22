@@ -93,7 +93,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 	}
 
 
-	@RequestMapping(value = "/Teachers/uploadFile", method = RequestMethod.PUT)
+	@RequestMapping(value = "/Teachers/uploadFile")
 	public String uploadFile(@RequestBody Photo photo) {
 
 		MultipartFile uploadFile = photo.getUploadfile();
@@ -124,6 +124,8 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		return teacher.getPhoto();
 
 	}
+
+	
 	//listaLezioni
 	@RequestMapping(value="/Teachers/show/ElencoLezioni")
 	public List<TeacherShowLesson> ShowLesson(@RequestHeader long id_teacher){
@@ -154,15 +156,21 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		
 	}
 	@RequestMapping(value="/Teachers/add/newVoto", method=RequestMethod.POST)
-	public ResponseEntity<String> addVoto(@RequestBody Lesson newItem) {
+	public ResponseEntity<String> addVoto(@RequestHeader Lesson newItem) {
 		if(this.repository.saveVoto(newItem)>0)
 			return new ResponseEntity<String>("SAVED",HttpStatus.CREATED);
 		else 
 			return new ResponseEntity<String>("ERROR",HttpStatus.NOT_ACCEPTABLE);
 	}
-	@RequestMapping(value="/Teachers/search/studentsEmail")
-	public List<Student> searchEmailStudent(@RequestHeader int id_teacher) {
+	//Elenco Studenti
+	@RequestMapping(value="/Teachers/search/studentsEmail/")
+	public List<Student> searchEmailStudent(@RequestHeader long id_teacher) {
 		return repository.showStudentByTeacher(id_teacher);
 	}
+	//Elenco Studenti1
+		@RequestMapping(value="/Teachers/search/studentsEmail/{title}")
+		public List<Student> searchEmailStudent1(@PathVariable String title,@RequestHeader long id_teacher) {
+			return repository.showStudentByTeacher1(id_teacher,title);
+		}
 
 }
