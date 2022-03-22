@@ -26,8 +26,6 @@ function caricamento() {
 					 document.getElementById("phone_number").innerHTML=ops.phone_number;
 					 document.getElementById("password").innerHTML=ops.password;
 					 
-				
-				
 
             }
         }

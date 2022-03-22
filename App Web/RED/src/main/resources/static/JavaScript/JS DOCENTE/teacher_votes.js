@@ -45,7 +45,6 @@ function RicercaStudenti(id_teacher){
 				 console.log(obJSON);
              for (var idx = 0; idx < obJSON.length;idx++) {
 		  		var grades = obJSON[idx];
-		//document.getElementById("dropdownMenuButton1").classList.toggle("show");
 		document.getElementById("lista_student").innerHTML+=
 		"<option>" 
 		+ grades.institutional_email + 

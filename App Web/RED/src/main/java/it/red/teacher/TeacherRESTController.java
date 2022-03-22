@@ -168,7 +168,7 @@ public class TeacherRESTController implements JdbcUtilityInterface<Teacher>{
 		}
 	}
 	//Elenco Studenti
-	@RequestMapping(value="/Teachers/search/studentsEmail/")
+	@RequestMapping(value="/Teachers/search/studentsEmail")
 	public List<Student> searchEmailStudent(@RequestHeader long id_teacher) {
 		return repository.showStudentByTeacher(id_teacher);
 	}
