@@ -1,5 +1,6 @@
 package it.red.teacher;
 
+import java.sql.Date;
 import java.util.List;
 
 import it.red.lesson.Lesson;
@@ -37,17 +38,23 @@ public interface TeacherRepository {
 	
 	Teacher downloadPhoto(long id_teacher);
 	
-	public List<TeacherShowLesson> SearchLessonById(long id);
+	 List<TeacherShowLesson> SearchLessonById(long id);
 	
-	public List<TeacherShowGrades> SearchGradeById(long id);
+	 List<TeacherShowGrades> SearchGradeById(long id);
 	
-	public List<ModuleTeacher> SearchModuleById(long id);
+	 List<ModuleTeacher> SearchModuleById(long id);
 	
-	public List<VoteTeacher> ShowGradeById(long id, String title);
-	public int saveVoto(Lesson p);
-	public List<Student> showStudentByTeacher(long id);
+	 List<VoteTeacher> ShowGradeById(long id, String title);
+	
+	 List<Student> showStudentByTeacher(long id);
+
+	List<Student> getIdStudentPerVote(String institutional_email);
+	 List<AgendaPerVote> getIdAgendaPerVote(Date date, String title);
+
 
 	List<Student> showStudentByTeacher1(long id_teacher, String title);
+
+	 int saveVoto(Lesson p);
 
 
 
