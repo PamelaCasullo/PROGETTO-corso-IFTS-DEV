@@ -6,9 +6,22 @@
 }
 
 
+
+/*AUTOCOMPLETE BROWSER FIX*/
+input:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #484848 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+
+
+
 .black-color-ground {
     background: linear-gradient(360deg, #000000, #484848) fixed;     
 }
+
+
 
 
 /*MAKE THE CIRCLE BUTTON OF RADIO DISSAPEAR*/
@@ -20,7 +33,7 @@
 
 /*CHANGE THE ATTRIBUTE WHEN THE RADIO IS CHECKED*/
 .radio-check-input:checked + label{
-    background-color: darkred;
+    background-color: red;
     color: white;
     transition: 0.5s;
 }

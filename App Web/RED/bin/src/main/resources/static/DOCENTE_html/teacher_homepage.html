@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../CSS/style.css" rel="stylesheet">
+    <script src="../JavaScript/JS DOCENTE/teacher_homepage.js"></script>
+    <title>RED-HOME</title>
+  </head>
+  <body class="black-color-ground" onload="caricamento();">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px 3px 0px darkred;">
+          
+          <!--PROFILO-->
+          <div class="container-fluid">
+            <a class="navbar-brand" href="teacher_profile.html" id="user_img_profile">
+              <!--IMMAGINE PROFILO-->
+              <img
+                src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
+                class="rounded-circle"
+                height="66px"
+                width="66px"
+                style="border: 2px solid darkred;"
+                id="teacher_img_profile"
+              />
+
+              <!--NOME E COGNOME UTENTE-->
+              <span class="titles-underline" id="user_name_lastname">NOME/COGNOME PROFESSORE</span>
+                
+                <!--OCCUPAZIONE-->
+                <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">DOCENTE</span>
+            
+              </a>
+
+            <!--VOCI MENU-->
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link current" href="teacher_homepage.html">HOMEPAGE</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="teacher_calendar.html">CALENDARIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="teacher_presence.html">PRESENZE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="teacher_list.html">ELENCO STUDENTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="teacher_votes.html">VOTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link log-out" href="../index.html">LOGOUT</a>
+                </li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!--CORPO DELLA HOMEPAGE-->
+      <div class="container" style="margin: auto; padding: 0;">
+        <div class="row" style="margin-left: 5%; margin: auto; margin-top: 50px;">
+          <div class="col-md-6">
+
+            <!--TITOLO PROSSIME LEZIONI-->
+            <h2 class="titles-shadow titles-underline">PROSSIME LEZIONI</h2>
+            
+            
+          <!--PROSSIME LEZIONI-->
+            <div id="inserisciLezioni"></div>
+        </div>
+        
+        <!--VOTI-->
+       <div class="col-md-6" style="box-shadow: 0px 3px 0px darkred; border-radius: 5px;">
+            <h2 class="titles-shadow">VOTI RECENTI</h2>
+                 <div>
+                    <p style='padding: 5px;' class='titles-shadow titles-underline'>Visualizza tutti i voti<a href='teacher_votes.html' class='button-votes'>VAI</a><p>
+                    <ul class='list-group' id="MostraVoti">
+                      </ul>    
+                 </div>
+    
+
+  </body>
+</html>

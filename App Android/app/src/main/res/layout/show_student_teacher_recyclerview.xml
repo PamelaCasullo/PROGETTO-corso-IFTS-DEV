@@ -2,47 +2,85 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/student_show_student_teacher_recyclerview"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/backg">
+    android:layout_height="150dp"
+    android:layout_margin="30dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="100"
-        android:textAlignment="viewStart"
-        android:background="@drawable/backg">
+        android:layout_height="wrap_content">
+
+        <!--NOME-->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Nome/Cognome:"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/first_name_last_name"
+            android:layout_toEndOf="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:padding="5dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:textSize="15sp"/>
+
+        <!--EMAIL-->
+        <TextView
+            android:id="@+id/mail"
+            android:layout_below="@+id/name"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="E-Mail:"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="60"
+            android:layout_toEndOf="@+id/mail"
             android:layout_below="@+id/first_name_last_name"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:padding="5dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:textSize="15sp"/>
+
+        <!--NUMBER-->
+        <TextView
+            android:id="@+id/num"
+            android:layout_below="@+id/mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Numero Tel.:"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/phone_number"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="60"
+            android:layout_toEndOf="@+id/num"
             android:layout_below="@+id/email"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:padding="5dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:textSize="15sp"/>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -4,59 +4,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bgcol">
-
-    <LinearLayout
-        android:id="@+id/barraTitoli"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient_center3_3"
-        android:elevation="10dp"
-        android:weightSum="99"
-        android:orientation="horizontal"
-        android:padding="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="35dp"
-            android:layout_weight="33"
-            android:layout_gravity="center_vertical"
-            android:text="DATA"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="35dp"
-            android:layout_weight="33"
-            android:layout_gravity="center_vertical"
-            android:text="MATERIA"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
-            android:layout_weight="33"
-            android:layout_gravity="center_vertical"
-            android:text="PRESENZE"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
-
-    </LinearLayout>
+    android:background="@drawable/backg">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_below="@+id/barraTitoli"
         android:layout_above="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
 
     <TextView

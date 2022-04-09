@@ -3,35 +3,50 @@
     android:id="@+id/teacher_lesson_recyclerview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/backg">
+    android:layout_margin="8dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="100"
-        android:textAlignment="viewStart"
-        android:background="@drawable/backg">
+        android:layout_height="wrap_content">
 
+
+        <!--DATA-->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="40"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:id="@+id/date"
-            android:textSize="15sp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/red"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
 
+        <!--MODULO-->
         <TextView
+            android:id="@+id/modulo"
+            android:layout_below="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="60"
-            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:text="Modulo:"
             android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
             android:id="@+id/title"
+            android:layout_below="@+id/date"
+            android:layout_toEndOf="@+id/modulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
             android:textSize="15sp"/>
 
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

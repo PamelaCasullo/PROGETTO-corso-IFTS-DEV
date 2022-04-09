@@ -1,0 +1,252 @@
+/*NAVBAR CONFIGURATION*/
+.navbar {
+    padding: 5px;
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+/*REMOVE THE UNDERLINE FOR LINKS TAGS*/
+.nav-link {
+    text-decoration: none;
+}
+
+/*BODY BACKGROUND*/
+.black-color-ground {
+    background: linear-gradient(360deg, #000000, #484848) fixed;     
+}
+
+/*TITLE WITH DARKRED UNDERLINE*/
+.titles-underline {
+    color: white;
+    box-shadow: 0px 3px 0px darkred;
+}
+
+/*TITLE WITH BLACK SHADOW*/
+.titles-shadow-black {
+    text-shadow: 2px 3px 0px black;
+    color: white;
+    font-size: 14px;
+}
+
+/*TITLE WITH DARKRED SHADOW*/
+.titles-shadow {
+    text-shadow: 2px 3px 0px darkred;
+    color: white;
+}
+
+/*LINK DEL NAVBAR*/
+.navlink-effect {
+    margin-left: 10px;
+    text-shadow: 2px 3px 0px darkred;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.navlink-effect:hover {
+    text-shadow: 2px 3px 5px black;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: darkred;
+    transition: 0.4s;
+    box-shadow: 0px 3px 5px black;
+}
+
+/*LINK NAVBAR DELLA PAGINA CORRENTE*/
+.nav .current {
+    color: darkred;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: #1f1616;
+}
+
+.current:hover {
+    color: darkred;
+}
+
+.current:visited {
+    color: darkred;
+}
+
+.navlink-effect:visited {
+    color: white;
+    border-color: black;
+}
+
+/*PULSANTE LOG-OUT*/
+.log-out {
+    border: 5px;
+    background-color: darkred;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px black;
+    border: 1px solid transparent;
+    margin-left: 10px;
+}
+
+.log-out:hover {
+    background-color: black;
+    color: white;
+}
+
+/*PULSANTE VOTI*/
+.button-votes {
+    padding: 1px;
+    text-decoration: none;
+    border: 5px;
+    background-color: darkred;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px black;
+    border: 1px solid transparent;
+    margin-left: 10px;
+}
+
+.button-votes:hover {
+    background-color: black;
+    color: white;
+    transition: 0.4s;  
+}
+
+.rounded-background-color {
+    border: 1px solid black;
+    background-color: darkred;
+    box-shadow: 0px 3px 5px black;
+    color: white;
+}
+
+
+/*MAIL TEXT EFFECT*/
+.mailto-text {
+    color: white;
+    text-decoration: none;
+}
+
+.mailto-text:hover {
+    text-shadow: 0px 5px 5px black;
+    color: white;
+    transition: 0.4s;
+}
+
+/*FONT STYLE*/
+.font-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  word-spacing: 2px; letter-spacing: 2px;
+    color: white;
+}
+
+.card-background {
+    color: white;
+    background-color: rgb(20, 19, 19);
+    border-radius: 5px;
+    box-shadow: 0px 3px 2px black;
+    margin-top: 10px;
+}
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vw;
+    background: rgba(0, 0, 0, 0.7);
+    z-index:1;
+    display:none;
+}
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.input_file_hidden {
+    color: transparent;
+}
+
+.input_file_hidden::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.input_file_hidden::before {
+    content: 'CARICA UN\'IMMAGINE PROFILO';
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    border: 2px solid darkred;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    
+}
+
+.input_file_hidden::before:hover {
+    background-color: darkred;
+    border-color: white;
+    color: black;
+    transition: 0.4s;
+}
+
+
+/*STYLE DEL PULSANTE MODIFICA DATI*/
+.btn-primary {
+    background-color: darkred;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: black;
+    border-color: darkred;
+    transition: 0.4s;
+}
+
+
+.card-body-collapse {
+    background-color: darkred;
+
+}
+
+.form-control {
+    margin: auto;
+}
+
+.form-floating {
+    margin-top: 10px;
+}

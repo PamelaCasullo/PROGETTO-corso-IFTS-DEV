@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/backg">
+
     <LinearLayout
         android:id="@+id/barraTitoli"
         android:layout_width="match_parent"
@@ -9,25 +13,25 @@
         android:background="@drawable/gradient_center3_3"
         android:elevation="10dp"
         android:orientation="horizontal"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="SELEZIONA UNO STUDENTE"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Elenco studenti"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/barraTitoli"
         android:layout_above="@+id/footer"
-        android:background="@drawable/backg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -38,9 +42,10 @@
         android:layout_centerHorizontal="true"
         android:background="@color/redb"
         android:text="\@ Copyright"
-        android:textStyle="italic"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        tools:ignore="TextContrastCheck" />
+
 
 </RelativeLayout>

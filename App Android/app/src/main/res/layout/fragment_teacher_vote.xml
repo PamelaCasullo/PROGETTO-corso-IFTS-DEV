@@ -1,33 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/backg"
-    tools:ignore="HardcodedText"
-    tools:openDrawer="start">
-
 <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/backg">
 
-    <!--recycler view for displaying our courses-->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVCourses"
+        android:id="@+id/recyclerView"
+        android:layout_above="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/redb"
+        android:text="\@ Copyright"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        tools:ignore="TextContrastCheck" />
 
 </RelativeLayout>
-
-<com.google.android.material.navigation.NavigationView
-android:id="@+id/navigation_view"
-android:layout_width="wrap_content"
-android:layout_height="match_parent"
-android:layout_gravity="start"
-app:menu="@menu/student_menu"
-app:headerLayout="@layout/nav_student_header" />
-
-    </androidx.drawerlayout.widget.DrawerLayout>

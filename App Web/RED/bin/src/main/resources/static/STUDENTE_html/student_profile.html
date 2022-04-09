@@ -1,0 +1,164 @@
+<!--RINOMINARE IN STUDENT_PROFILE.HTML-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../CSS/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../JavaScript/JS STUDENTE/student_profile.js">
+    </script>
+
+    <title>RED-HOME</title>
+  </head>
+  <body class="black-color-ground" onload="caricamento();">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px 3px 0px darkred;">
+            
+        <!--PROFILO-->
+          <div class="container-fluid">
+            <a class="navbar-brand" href="student_profile.html" id="user_img_profile">
+              <!--IMMAGINE PROFILO-->
+              <img
+                src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
+                class="rounded-circle"
+                height="66px"
+                width="66px"
+                style="border: 2px solid darkred;"
+                id="student_img_profile"
+              />
+		
+              <!--NOME E COGNOME UTENTE-->
+             
+              <span class="titles-underline" id="user_name_lastname">DORJAN KURTI</span>
+              
+
+                <!--OCCUPAZIONE-->
+     <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">STUDENTE</span>
+
+              </a>
+				
+			
+            <!--VOCI MENU-->
+            <ul class="nav justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link navlink-effect" href="student_homepage.html">HOMEPAGE</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="student_calendar.html">CALENDARIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="student_presence.html">PRESENZE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="student_list.html">ELENCO STUDENTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="student_votes.html">VOTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link log-out" href="../index.html">LOGOUT</a>
+                </li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+      
+ 
+      <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn">&times;</div>
+          <h1>Title</h1>
+          <p>CIao</p>
+        </div>
+      </div>
+      
+
+      <div class="container" style="margin-top: 20px;">
+        <h2 class="titles-shadow" style="text-align: center;">PROFILO PERSONALE</h2>
+        <div class="card card-background" style="width: 27rem; margin: auto;" >
+            
+          <img src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg" 
+            class="rounded-circle" 
+            alt="..." 
+            width="88" height="88" 
+            style="margin: auto; margin-top: 20px;"
+            id="student_min_img_profile"
+            >
+            
+            <!--<form id="upload_img_form">
+              <span style="text-align: center; margin-top: 10px;">CAMBIA IMMAGINE PROFILO</span>
+              <input type="file" class="btn btn-outline-danger" style="align-self: center; margin-top: 10px;" accept="image/*" id="upload_img" name="uploadimg"></input>
+            </form>-->
+
+            <!-- Upload file form -->
+            <div class="container" style="margin: auto;">
+              <form id="upload-file-form" style="align-items: center;">
+                <input id="upload-file-input" type="file" name="uploadfile" accept="image/*" class="input_file_hidden input_text">
+            </form>
+            </div>
+
+            
+            
+            <ul class="list-group list-group-flush" style="margin-top: 20px;">
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">DATA DI NASCITA</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="date_of_birth">12/02/2003</div></span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL PERSONALE</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="personal_email">qualcosa@email.it </div></span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">E-MAIL INSTITUZIONALE</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="institutional_email">qualcosa@itsrizzoli.it</div></span></li>
+              <li class="list-group-item" style="background-color: transparent;"><span class="badge bg-danger">NUMERO TELEFONICO</span><span style="margin-left: 10px; color: white;" class="font-text"><div id="phone_number">123456789</div> </span></li>
+            </ul>
+            <div class="card-body">
+              <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  MODIFICA I DATI
+                </a>
+              </p>
+              <form id=newForm>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body-collapse">
+                  <h2 style="text-align: center;">INSERISCI I NUOVI DATI</h2>
+                  
+                  <div class="form-floating">
+                   
+                    <!--INPUT EMAIL PERSONALE-->
+                    <input type="email" name="personal_email" class="form-control" id="personal_email_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="personal_email_update" style="color: white;">E-mail Personale:</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    
+                    <!--INPUT PASSSOWRD-->
+                    <input type="password" name="password_input" class="form-control" id="password_input_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="password_input_update" style="color: white;">Password:</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    
+                    <!--INPUT NUMERO TELEFONICO-->
+                    <input type="text" name="phone_number" class="form-control" id="phone_number_update" placeholder="..." required style="background-color: #484848; border-color: black; color: white;">
+                    
+                    <label for="phone_number_upate" style="color: white;">Numero Telefonico:</label>
+                  </div>
+                
+                <!--PULSANTE AGGIORNA DATI-->
+                <button type="button" class="btn btn-outline-dark" style="margin-top: 10px;" onclick="aggiorna()">AGGIORNA I DATI</button></form>
+                
+              </div>
+                <div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
