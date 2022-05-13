@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../CSS/style.css" rel="stylesheet">
+    <script src="../JavaScript/JS SEGRETERIA/admin_communication.js"></script>
+
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+      * {box-sizing: border-box;}
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      .split {
+        height: 100%;
+        width: 50%;
+        margin-top: 10%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .left {
+        left: 0;
+      }
+
+      .right {
+        right: 0;
+        background-color: rgb(238, 238, 238);
+        margin-top: 11%;
+      }
+
+      </style>
+    
+    <title>RED-COMUNICATION</title>
+  </head>
+  <body class="black-color-ground" onload="caricamento()">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0px 3px 0px darkred;">
+          
+          <!--PROFILO-->
+          <div class="container-fluid">
+            <a class="navbar-brand" href="admin_profile.html" id="user_img_profile">
+              <!--IMMAGINE PROFILO-->
+              <img
+                src="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
+                class="rounded-circle"
+                height="66px"
+                width="66px"
+                style="border: 2px solid darkred;"
+                id="admin_img_profile"
+              />
+
+              <!--NOME E COGNOME UTENTE-->
+              <span class="titles-underline" id="user_name_lastname">NOME/COGNOME SEGRETERIA</span>
+                
+                    <!--OCCUPAZIONE-->
+     <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">SEGRETERIA</span>
+
+              </a>
+				
+
+            <!--VOCI MENU-->
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link navlink-effect" href="admin_homepage.html">HOMEPAGE</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link current" href="#">COMUNICAZIONI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="admin_students.html">STUDENTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="admin_teachers.html">DOCENTI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="admin_documentation.html">DOCUMENTAZIONE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link log-out" href="../index.html">LOGOUT</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>    
+
+      </div>
+      <div class="split left">
+        <div class="container">
+          <form>
+            <label for="fname">Titolo</label>
+            <input type="text" id="fname" name="titolo" placeholder="Titolo">
+            <label for="subject">Descrizione</label>
+            <textarea id="subject" name="descrizione" placeholder="Scrivi qualcosa..." style="height:200px"></textarea>
+            <input type="submit" value="Aggiungi">
+          </form>
+        </div>
+      </div>
+
+      <div class="split right">
+        <div class="centered">
+          <p>Le informazioni verranno visualizzate qui</p>
+        </div>
+      </div>
+  
+    </body>
+</html>
