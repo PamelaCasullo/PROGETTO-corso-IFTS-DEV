@@ -1,7 +1,7 @@
 /*NAVBAR CONFIGURATION*/
 .navbar {
     padding: 5px;
-    width: 95%;
+    width: 100%;
     margin: auto;
     margin-top: 30px;
     border-radius: 10px;
@@ -249,4 +249,62 @@
 
 .form-floating {
     margin-top: 10px;
+}
+
+/*COMMUNICATION*/
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.split {
+  height: 100%;
+  width: 50%;
+  margin-top: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+    background-color: rgb(238, 238, 238);
+}
+
+.split {
+    display: inline-block;
+    flex-grow: 1;
+    font-family: gotham light;
+    font-size: 23px;
+    margin-right: 5px;
+    border:solid;
+    text-align:center;
 }

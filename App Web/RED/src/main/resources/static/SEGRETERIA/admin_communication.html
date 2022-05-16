@@ -11,60 +11,12 @@
     <script src="../JavaScript/JS SEGRETERIA/admin_communication.js"></script>
 
     <style>
-      body {font-family: Arial, Helvetica, sans-serif;}
-      * {box-sizing: border-box;}
-      
-      input[type=text], select, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-      }
-      
-      input[type=submit] {
-        background-color: #04AA6D;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      
-      input[type=submit]:hover {
-        background-color: #45a049;
-      }
-      
       .container {
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
       }
-
-      .split {
-        height: 100%;
-        width: 50%;
-        margin-top: 10%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        overflow-x: hidden;
-        padding-top: 20px;
-      }
-      .left {
-        left: 0;
-      }
-
-      .right {
-        right: 0;
-        background-color: rgb(238, 238, 238);
-        margin-top: 11%;
-      }
-
-      </style>
+    </style>
     
     <title>RED-COMUNICATION</title>
   </head>
@@ -86,7 +38,7 @@
               />
 
               <!--NOME E COGNOME UTENTE-->
-              <span class="titles-underline" id="user_name_lastname">NOME/COGNOME SEGRETERIA</span>
+              <span class="titles-underline" id="user_name_lastname">NOME/COGNOME</span>
                 
                     <!--OCCUPAZIONE-->
      <span class="badge" style="padding: 5px; margin-left: 5px; background-color: darkred;" id="occupation">SEGRETERIA</span>
@@ -112,6 +64,12 @@
                   <a class="nav-link navlink-effect" href="admin_documentation.html">DOCUMENTAZIONE</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="admin_lesson.html">LEZIONI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navlink-effect" href="admin_corsi.html">CORSI</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link log-out" href="../index.html">LOGOUT</a>
                 </li>
             </ul>
@@ -127,7 +85,7 @@
             <input type="text" id="fname" name="titolo" placeholder="Titolo">
             <label for="subject">Descrizione</label>
             <textarea id="subject" name="descrizione" placeholder="Scrivi qualcosa..." style="height:200px"></textarea>
-            <input type="submit" value="Aggiungi">
+            <input type="submit" value="Aggiungi" style="max-width: 500px;  height: auto; box-shadow: 0px 5px 20px black; background-color: darkred; border-radius: 10px;">
           </form>
         </div>
       </div>
