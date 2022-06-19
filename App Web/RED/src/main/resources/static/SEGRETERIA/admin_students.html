@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../CSS/style.css" rel="stylesheet">
-    <script src="../JavaScript/JS SEGRETERIA/admin_communication.js"></script>
+    <script src="../JavaScript/JS SEGRETERIA/admin_students.js"></script>
 
     <style>
 
@@ -65,13 +65,13 @@
     .col-25 {
         float: left;
         width: 15%;
-        margin-top: 40px;
+        margin-top: 10px;
     }
 
     .col-75 {
         float: left;
         width: 30%;
-        margin-top: 40px;
+        margin-top: 10px;
     }
 
 /* Clear floats after the columns */
@@ -120,7 +120,7 @@
                   <a class="nav-link navlink-effect" href="admin_communication.html">COMUNICAZIONI</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link navlink-effect" href="admin_students.html">STUDENTI</a>
+                  <a class="nav-link current" href="#">STUDENTI</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link navlink-effect" href="admin_teachers.html">DOCENTI</a>
@@ -129,7 +129,7 @@
                   <a class="nav-link navlink-effect" href="admin_documentation.html">DOCUMENTAZIONE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link current" href="#">LEZIONI</a>
+                  <a class="nav-link navlink-effect" href="admin_lesson.html">LEZIONI</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link navlink-effect" href="admin_courses.html">CORSI</a>
@@ -153,28 +153,36 @@
         <div class="container1">
             <form>
             <div class="row">
-                <div><h3><b>Nuova lezione</b></h3></div>
+                <div><h3><b>Aggiungi studente</b></h3></div>
               <div class="col-25">
-                <label for="fname">Docente</label>
+                <label for="fname">Nome</label>
               </div>
               <div class="col-75">
-                <input type="text" id="fname" name="nome" placeholder="Nome docente...">
+                <input type="text" id="fname" name="nome" placeholder="Nome studente...">
               </div>
             </div>
             <div class="row">
               <div class="col-25">
-                <label for="lname">Aula</label>
+                <label for="lname">Cognome</label>
               </div>
               <div class="col-75">
-                <input type="text" id="lname" name="aula" placeholder="Aula...">
+                <input type="text" id="lname" name="cognome" placeholder="Cognome studente...">
               </div>
             </div>
             <div class="row">
               <div class="col-25">
-                <label for="lname">Data</label>
+                <label for="lname">E-Mail</label>
               </div>
               <div class="col-75">
-                <input type="date" id="lname" name="data" placeholder="Data...">
+                <input type="email" id="lname" name="email" placeholder="E-Mail studente...">
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-25">
+                <label for="lname">Compleanno</label>
+              </div>
+              <div class="col-75">
+                <input type="date" id="lname" name="data-di-nascita" placeholder="Data di nascita...">
               </div>
             </div>
                 <input type="submit" value="Aggiungi" style="max-width: 500px;  height: auto; box-shadow: 0px 5px 20px black; background-color: darkred; border-radius: 10px; margin-top: 50px;">

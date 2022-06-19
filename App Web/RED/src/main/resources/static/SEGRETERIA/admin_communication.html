@@ -10,15 +10,83 @@
     <link href="../CSS/style.css" rel="stylesheet">
     <script src="../JavaScript/JS SEGRETERIA/admin_communication.js"></script>
 
+
+
     <style>
-      .container {
+      
+      .split {
+        height: auto;
+        width: 49.5%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+      }
+
+      .left {
+        left: 0;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+        height: 75%;
+      }
+
+      .right {
+        right: 0;
+        border-radius: 10px;
+        height: 75%;
+      }
+
+      h3 {
+        float: left;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 1px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      label {
+        padding: 5px 5px 5px 0;
+        display: inline-block;
+      }
+
+      .container1 {
         border-radius: 5px;
         background-color: #f2f2f2;
-        padding: 20px;
+        padding: 5px;
+        margin-top: -10px;
       }
+
+      .col-25 {
+        float: left;
+        width: 15%;
+        margin-top: 6px;
+      }
+
+      .col-75 {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+      }
+
+/* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
     </style>
+
     
-    <title>RED-COMUNICATION</title>
+    <title>RED-COMMUNICATION</title>
   </head>
   <body class="black-color-ground" onload="caricamento()">
         <!--NAVBAR-->
@@ -67,7 +135,7 @@
                   <a class="nav-link navlink-effect" href="admin_lesson.html">LEZIONI</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link navlink-effect" href="admin_corsi.html">CORSI</a>
+                  <a class="nav-link navlink-effect" href="admin_courses.html">CORSI</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link log-out" href="../index.html">LOGOUT</a>
@@ -77,18 +145,40 @@
         </nav>
       </div>    
 
-      </div>
-      <div class="split left">
-        <div class="container">
-          <form>
-            <label for="fname">Titolo</label>
-            <input type="text" id="fname" name="titolo" placeholder="Titolo">
-            <label for="subject">Descrizione</label>
-            <textarea id="subject" name="descrizione" placeholder="Scrivi qualcosa..." style="height:200px"></textarea>
-            <input type="submit" value="Aggiungi" style="max-width: 500px;  height: auto; box-shadow: 0px 5px 20px black; background-color: darkred; border-radius: 10px;">
-          </form>
+          <!--FORM CORSI-->
+          <div class="split left1">
+            <div class="container1">
+              <form>
+                <div class="row">
+                    <div><h3><b>Nuovo corso</b></h3></div>
+                  <div class="col-25">
+                    <label for="fname">Nome</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="fname" name="nome" placeholder="Nome corso...">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="lname">Durata</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="lname" name="durata" placeholder="Durata...">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="lname">Descrizione</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea id="subject" name="descrizione" placeholder="Scrivi il programma..." style="max-height: 200px; min-height: 200px; width: 100%;"></textarea>
+                  </div>
+                </div>
+                    <input type="submit" value="Aggiungi" style="max-width: 500px;  height: auto; box-shadow: 0px 5px 20px black; background-color: darkred; border-radius: 10px;">
+              </form>
+            </div>
         </div>
-      </div>
+    </div>
 
       <div class="split right">
         <div class="centered">
