@@ -65,13 +65,13 @@
     .col-25 {
         float: left;
         width: 15%;
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     .col-75 {
         float: left;
-        width: 30%;
-        margin-top: 40px;
+        width: 40%;
+        margin-top: 30px;
     }
 
 /* Clear floats after the columns */
@@ -171,10 +171,18 @@
             </div>
             <div class="row">
               <div class="col-25">
+                <label for="lname">Materia</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="lname" name="materia" placeholder="Materia...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
                 <label for="lname">Data</label>
               </div>
               <div class="col-75">
-                <input type="date" id="lname" name="data" placeholder="Data...">
+                <input type="date" id="lname" name="data" placeholder="Data..." style="padding-right: 100px;">
               </div>
             </div>
                 <input type="submit" value="Aggiungi" style="max-width: 500px;  height: auto; box-shadow: 0px 5px 20px black; background-color: darkred; border-radius: 10px; margin-top: 50px;">
